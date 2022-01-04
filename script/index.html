@@ -45,7 +45,37 @@
         }
 
         * {
+            margin: 0;
+            padding: 0;
             font-family: 'NexonLv1Gothic';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        h1 {
+            padding-bottom: 20px;
+        }
+
+        .list1 li {
+            display: inline;
+        }
+        
+        .list1 li a {
+            border: 1px solid #333;
+            padding: 10px 30px;
+            border-radius: 20px;
         }
     </style>
 </head>
@@ -53,7 +83,7 @@
 <body>
 
     <h1>Javascript</h1>
-    <ul>
+    <ul class="list1">
         <li><a href="javascript/javascript01.html">데이터 저장하기</a></li>
         <li><a href="javascript/javascript02.html">데이터 불러오기</a></li>
         <li><a href="javascript/javascript03.html">데이터 실행하기</a></li>
