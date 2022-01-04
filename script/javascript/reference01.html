@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
-
+    <title>reference</title>
     <style>
         @font-face {
             font-family: 'NexonLv1Gothic';
@@ -64,6 +63,10 @@
             color: #333;
         }
 
+        div {
+            background-color:aquamarine;
+        }
+
         hr {
             margin: 5% 0;
             border-style: dashed;
@@ -110,72 +113,36 @@
 </head>
 
 <body>
+    <h1>변수란?</h1>
+    <p>변수(Variables)는 변하는 데이터(값)를 저장할 수 있는 메모리 공간입니다. 데이터를 담을 수 있는 그릇이라 할 수 있죠. 변수에는 데이터가 오직 한 개만 저장됩니다. 그러다 보니 새로운 데이터가 들어오면 기존에 있던 데이터는 메모리 공간에서 지워지게 됩니다. 변수에 저장할 수 있는 데이터의 종류로는 문자형(String), 숫자형(Number), 논리형(Boolean), 그리고 빈(Null) 데이터가 있습니다.</p>
 
-    <h1><a href="../index.html">Javascript</a></h1>
+    <h2>변수 선언</h2>
+    <p>변수를 선언할 때는 다음 기본형과 같이 var 키워드를 변수명 앞에 붙입니다. 변수명에는 한글을 사용할 수 없으며, 영문과 숫자 그리고 일부 특수 문자(_, $)만 포함할 수 있습니다. 변수명은 의미에 맞게 만드는 것이 좋습니다. 가령, 수학 시험 점수를 저장하는 변수라면 'mathNum'이라고 이름 지으면 되겠죠. 이때 변수명은 단어와 단어의 조합으로 지었고, 두 번재 단어의 첫 글자는 대문자로 표기했습니다. 이는 마치 낙타의 등과 같다고 해서 낙타(Camel) 표기법이라 부릅니다.</p>
 
-    <ul class="list1">
-        <li><a href="javascript01.html">데이터 저장하기</a></li>
-        <li><a href="javascript02.html">데이터 불러오기</a></li>
-        <li><a href="javascript03.html">데이터 실행하기</a></li>
-        <li><a href="javascript04.html">데이터 제어하기</a></li>
-    </ul>
+    <div>
+        <p>var 변수명; 또는 var 변수명=값;</p>
+    </div>
 
-    <h2>데이터 저장하기</h2>
-    <ul>
-        <li>01. 변수 : 데이터 저장 <a href="reference01.html" class="refer">참고</a></li>
-        <li>02. 변수 : 데이터 저장 + 데이터 변경</li>
-        <li>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</li>
-    </ul>
+    <p>변수를 선언하면 변수명으로 데이터를 저장할 수 있는 공간이 생성됩니다. 다음은 box라는 이름을 가진 변수에 100이라는 값을 대입한 예제입니다. 초기에는 값이 등록되지 않은 상태(undefined)입니다. box에 100을 대입하면 다음 그림과 같이 변수에 100이 저장됩니다.</p>
+    
+    <div>
+        <p>var box;</p>
+        <p>box=100;</p>
+    </div>
 
-    <hr>
+    <p>변수에는 하나의 값만 넣을 수 있습니다. 만약 변수 box에 값을 두 번 넣으면 어떻게 될까요? 다음과 같이 변수 box에 새로운 데이터 30이 저장되면 기존에 저장되어 있던 데이터 100은 삭제되고 새로운 데이터 30이 저장됩니다.</p>
+    
+    <div>
+        <p></p>
+    </div>
 
-    <!-- Javascript -->
-    <script>
-        //sample01
-        //01. 변수 : 데이터 저장소
-        {
-            var x = 100; //변수 x에 숫자 100을 저장
-            var y = 200; //변수 y에 숫자 200을 저장
-            var z = "javascript"; //변수 z에 문자 javascript를 저장
+    <p>위에서 작성한 문서를 저장한 후 브라우저에서 확인하면 변수 box에 마지막으로 저장된 된 데이터 30이 출력됩니다.</p>
 
-            document.write("<br>*** 01. 변수 ***<br>")
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
-        }
+    <h2>변수에 저장할 수 있는 자료형</h2>
+    <h3>문자형</h3>
+    <p>문자형(String) 데이터는 다음과 같이</p>
 
-        //02. 변수 : 데이터 저장 + 데이터 변경
-        {
-            let x = 100;
-            let y = 200;
-            let z = "javascript";
-            // let x = 300;  let은 재정의 불가
-            x = 300; // 변경
-            y = 400;
-            z = "jquery"
-            
-            document.write("<br>*** 02. 변수 ***<br>")
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
-        }
-
-        //03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
-        { // 중괄호로 위의 동일한 이름의 변수에 충돌 안됨
-            let x = 100;
-            let y = 200;
-            let z = "javascript";
-
-            x += 300; // 기존의 x에 300을 추가
-            y += 400;
-            z += "jquery";
-
-            document.write("<br>*** 03. 변수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
-        }
-    </script>
+    <h3>숫자형</h3>
 </body>
 
 </html>
