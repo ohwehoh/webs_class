@@ -64,12 +64,28 @@
             color: #333;
         }
 
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+
         h1 {
             padding-bottom: 20px;
+            font-size: 50px;
         }
 
         h2 {
-            margin-top: 40px;
+            margin-top: 30px;
+            background-color: #000;
+            color: #fff;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 400;
+            padding: 2px 10px 0 10px;
+            font-size: 24px;
         }
 
         .list1 li {
@@ -78,7 +94,7 @@
 
         .list1 li a {
             border: 1px solid #333;
-            padding: 10px 30px;
+            padding: 8px 30px 5px 30px;
             border-radius: 40px;
             display: inline-block;
             margin-bottom: 10px;
@@ -98,7 +114,45 @@
     </ul>
 
     <h2>데이터 저장하기</h2>
+    <ul>
+        <li>01. 변수 : 데이터 저장</li>
+        <li>02. 변수 : 데이터 저장 + 데이터 변경</li>
+        <li>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</li>
+    </ul>
 
+    <hr>
+
+    <!-- Javascript -->
+    <script>
+        //sample01
+        //01. 변수 : 데이터 저장소
+        {
+            var x = 100; //변수 x에 숫자 100을 저장
+            var y = 200; //변수 y에 숫자 200을 저장
+            var z = "javascript"; //변수 z에 문자 javascript를 저장
+
+            document.write("<br>*** 01. 변수 ***<br>")
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
+        }
+
+        //02. 변수 : 데이터 저장 + 데이터 변경
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+            // let x = 300;  let은 재정의 불가
+            x = 300; // 변경
+            y = 400;
+            z = "jquery"
+            
+            document.write("<br>*** 02. 변수 ***<br>")
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
+        }
+    </script>
 </body>
 
 </html>
