@@ -103,7 +103,10 @@
             border-collapse: collapse;
             padding: 10px;
             margin: 10px;
-            border: 1px dotted #81C784;
+        }
+
+        .lin {
+            border-right: 2px dotted #81C784;
         }
 
         .txtbox {
@@ -112,90 +115,55 @@
             padding: 10px 15px 7px 15px;
             margin: 10px;
         }
+
+        .cment {
+            color: green;
+        }
+
+        .expln {
+            margin-left: 15px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>식별자 VS 키워드</h1>
+    <h1>객체</h1>
     <hr>
 
-    <h2>키워드</h2>
-    <p>자바스크립트가 처음 만들어질 때 정해진 특정한 기능들이 정의 되어있는 단어이다.</p>
-
+    <h2>객체란?</h2>
+    <p>자바스크립트는 객체(Object) 기반 언어입니다. 객체는 기능과 속성을 가지고 있습니다. 가령, TV에는 켜다, 끄다, 음을 소거하다. 볼륨을 높이다. 볼륨을 낮추다 등의 기능이 있습니다. 이렇듯 TV라는 객체에는 다양한 기능이 있습니다. 이러한 주변의 모든 사물들을 객체라고 합니다.
+    <br><br>자바스크립트 역시 다양한 객체가 있습니다. 우리는 앞에서 도큐먼트라는 객체를 사용해 보았고, 그 객체에 해당하는 출력 기능도 사용해 보았습니다. 자바스크립트에서는 이런 기능들을 메서드(Method)라고 합니다. 또한 객체는 속성(Property)을 가지고 있습니다. TV를 예로 들면 TV의 크기나 색상 그리고 무게 등을 속성이라고 할 수 있죠.
+    <br><br>자바스크립트 객체의 메서드와 속성을 사용하는 기본형은 다음과 같습니다.</p>
     <br>
-    <h3>자바스크립트의 대표적인 키워드</h3>
+
     <table>
         <tr>
-            <td>var</td>
-            <td>변수를 선언한다.</td>
-        </tr>
-        <tr>
-            <td>function</td>
-            <td>함수를 선언한다.</td>
-        </tr>
-        <tr>
-            <td>return</td>
-            <td>함수의 결과값을 반환한다.</td>
-        </tr>
-        <tr>
-            <td>if ... else</td>
-            <td>if문(조건문)을 실행한다.</td>
-        </tr>
-        <tr>
-            <td>do ... while</td>
-            <td>do while반복문을 실행한다.</td>
-        </tr>
-        <tr>
-            <td>for</td>
-            <td>for반복문 실행한다.</td>
-        </tr>
-        <tr>
-            <td>continue</td>
-            <td>loop문을 빠져나가 가장상단으로 간다.</td>
-        </tr>
-        <tr>
-            <td>switch</td>
-            <td>switch문을 실행한다.</td>
-        </tr>
-        <tr>
-            <td>break</td>
-            <td>loop문이나 switch문을 종료하기 위해 사용한다.</td>
+            <td class="lin">기본형</td>
+            <td>1. 객체.메서드();
+            <br>2. 책체.속성; 또는 3. 객체.속성=값;
+            </td>
         </tr>
     </table>
-    <h5>주의 : 자바스크립트 키워드는 예약어로서, 변수명으로 사용 할 수 없다.</h5>
-
-    <h2>식별자</h2>
-    <p>식별자는 자바스크립트에서 이름을 붙일 때 사용하는 단어이다. 식별자의 종류는 변수명, 함수명, 속성명, 메소드명이 있다.</p>
-    <br>
-    <h3>식별자 선언 시 주의 사항</h3>
-    <p>1. 변수명 첫 글자로는 $, _(언더바), 영문자만 올 수 있다.</p>
+    <p class="expln"> 1. 객체의 메서드를 실행합니다.
+    <br>2. 객체의 속성값을 가져옵니다.
+    <br>3. 객체의 속성값을 바꿉니다.</p>
+    
+    <br><br>
+    <p>TV를 예로 들어 메서드와 속성의 사용 방법에 대해 살펴보겠습니다. 만일 자바스크립트에서 TV의 기능(메서드)은 다음과 같이 사용해야 합니다.</p>
     <div class="txtbox">
-        var 1num=10; (X) <br>
-        var $num=10; (O)
+        TV.켜다(); 또는 TV.끄다();
     </div>
     <br>
-    <p>2. 변수명 첫 글자 다음은 영문자, 숫자, $, _(언더바)만 포함할 수 있다.</p>
+    <p>다음은 메서드를 잘못 사용한 경우입니다. '앞으로 전진해'라는 메서드는 자동차에나 있을 법한 기능이겠죠</p>
     <div class="txtbox">
-        var 100num=10; (X) <br>
-        var num100=10; (O)
+        TV.앞으로 전진해(); (X)<br>
+        자동차.앞으로 전진해(); (O)
     </div>
     <br>
-    <p>3. 변수명으로는 예약어(document, location, window 등)를 사용할 수 없다. 예약어란 이미 자바스크립트에서 사용중인 단어를 말한다.</p>
+    <p>또한 자바스크립트에서 TV의 너비와 색상, 속성 정보를 알고 싶다면 다음과 같이 적용할 수 있습니다.</p>
     <div class="txtbox">
-        var document=10; (X) <br>
-        var num=10; (O)
-    </div>
-    <br>
-    <p>4.변수명을 지을 때는 되도록 의미를 부여해 작성하는 것이 좋다.</p>
-    <div class="txtbox">
-        var num="hello"; (X) <br>
-        var num=10; (O)
-    </div>
-    <br>
-    <p>5. 변수명을 사용할 때는 대소문자를 구분해야 한다.</p>
-    <div class="txtbox">
-        var num=10; document.write(Num) (X) <br>
-        var num=10; document.write(num) (O)
+        TV.width; (tv의 너비) 또는 TV.color; (tv의 색상) <span class="cment">//TV의 속성값을 가져옵니다.</span><br>
+        TV.color=black; <span class="cment">//TV의 속성값을 바꿉니다.</span>
     </div>
 </body>
 
