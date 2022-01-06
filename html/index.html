@@ -60,15 +60,57 @@
             border-bottom: 1px solid #000;
         }
 
-        #header h1{
+        #header h1 {
             font-weight: 300;
             padding: 20px 10px 10px 20px;
         }
 
-        #header strong{
+        #header strong {
             font-weight: 300;
             padding: 10px;
             padding: 10px 20px 10px 20px;
+        }
+
+        #contents {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #contents h2 {
+            font-size: 80px;
+            text-align: center;
+            padding: 5% 5% 5% 5%;
+        }
+
+        #contents h2 em {
+            font-style: normal;
+            color: #00db72;
+        }
+
+        #contents .refer {
+            background: #fff;
+            padding: 60px;
+            border: 1px solid #000;
+
+        }
+
+        #contents .refer table {
+            width: 100%;
+            border: 1px solid #aaa;
+            border-collapse: collapse;
+        }
+
+        #contents .refer table th {
+            border: 1px solid #aaa;
+            padding: 15px;
+            background: #f5f5f5;
+            font-weight: 500;
+        }
+
+        #contents .refer table td {
+            border: 1px solid #aaa;
+            padding: 15px;
+            font-weight: 300;
         }
     </style>
 </head>
@@ -80,15 +122,22 @@
         <strong>이연우</strong>
     </header>
 
-    <main id='contents'>
-        <h2>HTML <em>레퍼런스</em> 북</h2>
+    <main id="contents">
+        <h2>HTML <em>레퍼런스 북</em></h2>
         <section class="refer">
             <table>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>속성</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;a&gt;</td>
+                        <td>&lt;a&gt; 태그는 다른 페이지 이동을 설정합니다.</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
     </main>
