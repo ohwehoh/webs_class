@@ -126,8 +126,6 @@
                 <h3>04</h3>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    document.write("<br>*** 04. 변수 : 변수의 종류 ***<br>");
-
     let x = 100;    //전역변수
     let y = 200;    //전역변수
 
@@ -137,17 +135,17 @@
         x = 200;        //지역변수 100->200
         y = 300;        //전역변수 200->300      
 
-        document.write("함수 안<br>");
-        document.write(x, "<br>");
-        document.write(y, "<br>");
-        document.write(z, "<br>");
+        document.write("함수 안");
+        document.write(x);
+        document.write(y);
+        document.write(z);
     }
     func();
 
-    document.write("함수 밖<br>");
-    document.write(x, "<br>");
-    document.write(y, "<br>");
-    document.write(z, "<br>");
+    document.write("함수 밖");
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }</code></pre>
                 </div>
             </div>
@@ -322,10 +320,10 @@
         {a: 100, b: 200},
         {c: "javascript"}
     ];
-    document.write("<br>*** 14. 객체  ***<br>");
-    document.write(obj[0].a, "<br>");
-    document.write(obj[0].b, "<br>");
-    document.write(obj[1].c, "<br>");    
+
+    document.write(obj[0].a);
+    document.write(obj[0].b);
+    document.write(obj[1].c);    
 }</code></pre>
                 </div>
             </div>
@@ -342,13 +340,13 @@
         c: {x: 400, y: 500},
         d: "javascript"
     }
-    document.write("<br>*** 15. 객체  ***<br>");
-    document.write(obj.a, "<br>");
-    document.write(obj.b[0], "<br>");
-    document.write(obj.b[1], "<br>");
-    document.write(obj.c.x, "<br>");
-    document.write(obj.c.y, "<br>");
-    document.write(obj.d, "<br>");
+
+    document.write(obj.a);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c.x);
+    document.write(obj.c.y);
+    document.write(obj.d);
     
 }</code></pre>
                 </div>
@@ -366,10 +364,9 @@
 
     const obj = { a, b, c };
 
-    document.write("<br>*** 16. 객체  ***<br>");
-    document.write(obj.a, "<br>");
-    document.write(obj.b, "<br>");
-    document.write(obj.c, "<br>");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
 }</code></pre>
                 </div>
             </div>
@@ -389,20 +386,19 @@
             document.write("javascript가 실행되었습니다.");
         },
         f: function(){
-            document.write(obj.d + "가 실행되었습니다.<br>");
+            document.write(obj.d + "가 실행되었습니다.");
         },
         g: function(){
-            document.write(this.d + "가 실행되었습니다.<br>");
+            document.write(this.d + "가 실행되었습니다.");
         }
     }
 
-    document.write("<br>*** 17. 객체  ***<br>");
-    document.write(obj.a, "<br>");
-    document.write(obj.b, "<br>");
-    document.write(obj.b[0], "<br>");
-    document.write(obj.b[1], "<br>");
-    document.write(obj.c.x, "<br>");
-    document.write(obj.c.y, "<br>");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c.x);
+    document.write(obj.c.y);
     obj.e();
     obj.d();
     obj.g();
