@@ -256,10 +256,6 @@ a {
     background: #f4f8fa;
 }
 
-.doc .code span.coment {
-    color : green;
-}
-
 .doc strong {
     background: #c3eaff;
     font-weight: normal;
@@ -327,4 +323,8 @@ table tbody tr td {
     border: 1px solid #aaa;
     padding: 15px;
     font-weight: 300;
+}
+
+.coment {
+    color : green;
 }
