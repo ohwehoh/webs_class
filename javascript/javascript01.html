@@ -162,7 +162,16 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result04"></div>
+                    <div class="result04">
+                        함수 안<br>
+                        200<br>
+                        300<br>
+                        javascript<br><br>
+                        함수 밖<br>
+                        100<br>
+                        300<br>
+                        javascript
+                    </div>
                 </div>
             </div>
             <!-- //sample4 -->
@@ -380,7 +389,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result0114"></div>
+                    <div class="result14"></div>
                 </div>
             </div>
             <!-- //sample14 -->
@@ -470,7 +479,17 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result17"></div>
+                    <div class="result17">
+                        100<br>
+                        200, 300<br>
+                        200<br>
+                        300<br>
+                        400<br>
+                        500<br>
+                        javascript가 실행되었습니다.<br>
+                        javascript가 실행되었습니다.<br>
+                        javascript가 실행되었습니다.
+                    </div>
                 </div>
             </div>
             <!-- //sample17 -->
@@ -490,10 +509,10 @@
 
             document.querySelector(".result01").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 01. 변수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+            // document.write("<br>*** 01. 변수 ***<br>");
+            // document.write(x, "<br>");
+            // document.write(y, "<br>");
+            // document.write(z, "<br>");
         }
 
         //02. 변수 : 데이터 저장 + 데이터 변경
@@ -508,10 +527,10 @@
 
             document.querySelector(".result02").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 02. 변수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+            // document.write("<br>*** 02. 변수 ***<br>");
+            // document.write(x, "<br>");
+            // document.write(y, "<br>");
+            // document.write(z, "<br>");
         }
 
         //03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
@@ -526,10 +545,10 @@
 
             document.querySelector(".result03").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 03. 변수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+            // document.write("<br>*** 03. 변수 ***<br>");
+            // document.write(x, "<br>");
+            // document.write(y, "<br>");
+            // document.write(z, "<br>");
         }
 
         // 04. 변수 : 변수의 종류 : 지역변수 + 전역변수
@@ -545,22 +564,23 @@
                 x = 200;        //지역변수 100->200
                 y = 300;        //전역변수 200->300      
 
-                document.querySelector(".result04").innerHTML = "함수 안<br>" + x + "<br>" + y + "<br>" + z;
+               // document.querySelector(".result04").innerHTML = "함수 안<br>" + x + "<br>" + y + "<br>" + z;
 
-                document.write("함수 안<br>");
-                document.write(x, "<br>");
-                document.write(y, "<br>");
-                document.write(z, "<br>");
+                // document.write("함수 안<br>");
+                // document.write(x, "<br>");
+                // document.write(y, "<br>");
+                // document.write(z, "<br>");
             }
-            func();
+            //func();
 
-            document.querySelector(".result04").innerHTML = "함수 밖<br>" + x + "<br>" + y + "<br>" + z;
+            // document.querySelector(".result04").innerHTML = "함수 밖<br>" + x + "<br>" + y + "<br>" + z;
 
 
-            document.write("함수 밖<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+        //     document.write("함수 밖<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br>");
+        // 
         }
 
         // 05. 상수 : 데이터 저장 + 데이터 변경(X)
@@ -575,10 +595,11 @@
 
             document.querySelector(".result05").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 05. 상수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+        //     document.write("<br>*** 05. 상수 ***<br>");
+        //     document.write(x, "<br>");
+        //     document.write(y, "<br>");
+        //     document.write(z, "<br>");
+        // 
         }
 
         // 06. 배열 : 여러개의 데이터를 저장 : 표현 방법1
@@ -590,10 +611,10 @@
 
             document.querySelector(".result06").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
-            document.write("<br>*** 06. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            // document.write("<br>*** 06. 배열 ***<br>");
+            // document.write(arr[0], "<br>");
+            // document.write(arr[1], "<br>");
+            // document.write(arr[2], "<br>");
         }
 
         // 07. 배열 : 여러개의 데이터를 저장 : 표현 방법2
@@ -602,10 +623,10 @@
 
             document.querySelector(".result07").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
-            document.write("<br>*** 07. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            // document.write("<br>*** 07. 배열 ***<br>");
+            // document.write(arr[0], "<br>");
+            // document.write(arr[1], "<br>");
+            // document.write(arr[2], "<br>");
         }
 
         // 08. 배열 : 여러개의 데이터를 저장 : 표현 방법3
@@ -617,10 +638,10 @@
 
             document.querySelector(".result08").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
-            document.write("<br>*** 08. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            // document.write("<br>*** 08. 배열 ***<br>");
+            // document.write(arr[0], "<br>");
+            // document.write(arr[1], "<br>");
+            // document.write(arr[2], "<br>");
         }
 
         // 09. 배열 : 여러개의 데이터를 저장 : 표현 방법4
@@ -629,10 +650,11 @@
 
             document.querySelector(".result09").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
-            document.write("<br>*** 09. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+        //     document.write("<br>*** 09. 배열 ***<br>");
+        //     document.write(arr[0], "<br>");
+        //     document.write(arr[1], "<br>");
+        //     document.write(arr[2], "<br>");
+        // 
         }
 
         // 10. 객체 : 데이터를 저장(키와 값) : 표현 방법1 : 배열의 방법도 동일하게 적용
@@ -645,10 +667,10 @@
 
             document.querySelector(".result10").innerHTML = obj[0] + "<br>" + obj[1] + "<br>" + obj[2];
 
-            document.write("<br>*** 10. 객체  ***<br>");
-            document.write(obj[0], "<br>");
-            document.write(obj[1], "<br>");
-            document.write(obj[2], "<br>");
+            // document.write("<br>*** 10. 객체  ***<br>");
+            // document.write(obj[0], "<br>");
+            // document.write(obj[1], "<br>");
+            // document.write(obj[2], "<br>");
         }
 
         // 11. 객체 : 데이터를 저장(키와 값) : 표현 방법2
@@ -661,10 +683,10 @@
 
             document.querySelector(".result11").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 11. 객체  ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            // document.write("<br>*** 11. 객체  ***<br>");
+            // document.write(obj.a, "<br>");
+            // document.write(obj.b, "<br>");
+            // document.write(obj.c, "<br>");
         }
 
         // 12. 객체 : 데이터를 저장(키와 값) : 표현 방법3
@@ -677,10 +699,10 @@
 
             document.querySelector(".result12").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 12. 객체  ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            // document.write("<br>*** 12. 객체  ***<br>");
+            // document.write(obj.a, "<br>");
+            // document.write(obj.b, "<br>");
+            // document.write(obj.c, "<br>");
         }
 
         // 13. 객체 : 데이터를 저장(키와 값) : 표현 방법4
@@ -689,10 +711,10 @@
 
             document.querySelector(".result13").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 13. 객체  ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            // document.write("<br>*** 13. 객체  ***<br>");
+            // document.write(obj.a, "<br>");
+            // document.write(obj.b, "<br>");
+            // document.write(obj.c, "<br>");
         }
 
         // 14. 객체 : 데이터를 저장(키와 값) : 표현 방법5 : 배열 속에 객체
@@ -704,10 +726,10 @@
 
             document.querySelector(".result14").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 14. 객체  ***<br>");
-            document.write(obj[0].a, "<br>");
-            document.write(obj[0].b, "<br>");
-            document.write(obj[1].c, "<br>");
+            // document.write("<br>*** 14. 객체  ***<br>");
+            // document.write(obj[0].a, "<br>");
+            // document.write(obj[0].b, "<br>");
+            // document.write(obj[1].c, "<br>");
         }
 
         // 15. 객체 : 데이터를 저장(키와 값) : 표현 방법6 : 객체 속에 배열
@@ -721,13 +743,13 @@
 
             document.querySelector(".result15").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 15. 객체  ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            document.write(obj.d, "<br>");
+            // document.write("<br>*** 15. 객체  ***<br>");
+            // document.write(obj.a, "<br>");
+            // document.write(obj.b[0], "<br>");
+            // document.write(obj.b[1], "<br>");
+            // document.write(obj.c.x, "<br>");
+            // document.write(obj.c.y, "<br>");
+            // document.write(obj.d, "<br>");
         }
         
         // 16. 객체 : 데이터를 저장(키와 값) : 표현 방법7 : 객체 속에 변수
@@ -740,11 +762,11 @@
 
             document.querySelector(".result16").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 16. 객체  ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
-            document.write(a);
+            // document.write("<br>*** 16. 객체  ***<br>");
+            // document.write(obj.a, "<br>");
+            // document.write(obj.b, "<br>");
+            // document.write(obj.c, "<br>");
+            // document.write(a);
         }
 
         // 17. 객체 : 데이터를 저장(키와 값) : 표현 방법8 : 객체 속에 함수
@@ -765,21 +787,19 @@
                 }
             };
 
-            document.querySelector(".result17").innerHTML = x + "<br>" + y + "<br>" + z;
+            // document.querySelector(".result17").innerHTML = x + "<br>" + y + "<br>" + z;
 
-            document.write("<br>*** 17. 객체  ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            obj.e();
-            obj.d();
-            obj.g();
+            // document.write("<br>*** 17. 객체  ***<br>");
+            // document.write(obj.a, "<br>");
+            // document.write(obj.b, "<br>");
+            // document.write(obj.b[0], "<br>");
+            // document.write(obj.b[1], "<br>");
+            // document.write(obj.c.x, "<br>");
+            // document.write(obj.c.y, "<br>");
+            // obj.e();
+            // obj.d();
+            // obj.g();
         }
     </script>
-
-
 </body>
 </html>
