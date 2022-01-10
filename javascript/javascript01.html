@@ -299,7 +299,7 @@
                 <h3>13. 객체 : 데이터를 저장(키와 값) : 표현 방법4</h3>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    const obj = { a: 100, b: 200, c: "javascript" }
+    const obj = { a: 100, b: 200, c: "javascript" };
 
     document.write(obj.a);
     document.write(obj.b);
@@ -337,7 +337,7 @@
         b: [200, 300],
         c: {x: 400, y: 500},
         d: "javascript"
-    }
+    };
 
     document.write(obj.a);
     document.write(obj.b[0]);
@@ -588,7 +588,7 @@
 
         // 13. 객체 : 데이터를 저장(키와 값) : 표현 방법4
         {
-            const obj = { a:100, b:200, c:"javascript" }
+            const obj = { a:100, b:200, c:"javascript" };
 
             document.write("<br>*** 13. 객체  ***<br>");
             document.write(obj.a, "<br>");
@@ -602,6 +602,7 @@
                 {a: 100, b: 200},
                 {c: "javascript"}
             ];
+
             document.write("<br>*** 14. 객체  ***<br>");
             document.write(obj[0].a, "<br>");
             document.write(obj[0].b, "<br>");
@@ -615,7 +616,8 @@
                 b: [200, 300],
                 c: {x: 400, y: 500},
                 d: "javascript"
-            }
+            };
+
             document.write("<br>*** 15. 객체  ***<br>");
             document.write(obj.a, "<br>");
             document.write(obj.b[0], "<br>");
@@ -633,11 +635,11 @@
 
             const obj = { a, b, c };
 
-
             document.write("<br>*** 16. 객체  ***<br>");
             document.write(obj.a, "<br>");
             document.write(obj.b, "<br>");
             document.write(obj.c, "<br>");
+            document.write(a);
         }
 
         // 17. 객체 : 데이터를 저장(키와 값) : 표현 방법8 : 객체 속에 함수
@@ -656,7 +658,7 @@
                 g: function(){
                     document.write(this.d + "가 실행되었습니다.<br>");
                 }
-            }
+            };
 
             document.write("<br>*** 17. 객체  ***<br>");
             document.write(obj.a, "<br>");
