@@ -262,15 +262,24 @@ body {
         padding: 10px;
     }
 
+    .refer .table table td:last-child{
+        background: #fff;
+    }
+
     .doc .code {
         padding: 10px 10px 7px 10px;
         border-radius: 10px;
-        background: #cad7dd;
+        background: #fff;
         margin-bottom: 5px;
     }
 
     .doc .code h4 {
         margin: 0;
         font-weight: 700;
+    }
+
+    .doc .code p img {
+        height: 15px;
+        width : 15px;
     }
 }

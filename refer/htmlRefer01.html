@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Reference</title>
+    <title>HTML Reference</title>
 
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="../assets/face/html.png">
@@ -24,7 +24,7 @@
     </header>
 
     <main id="contents">
-        <h2>HTML <em>레퍼런스 북</em></h2>
+        <h2><a href="html.html">HTML <em>기초 문법</em></a></h2>
 
         <div class="menu">
             <ul>
@@ -35,6 +35,63 @@
         <!-- //menu -->
 
         <div class="refer">
+            <div class="doc">
+                <h3>HTML이란?</h3>
+                <p>'HyperText Markup Language'의 약자이며 웹 문서를 표현하기 위한 언어입니다.</p>
+                <p>하이퍼텍스트란 웹 문서에서 다른 문서로 이동하는 것을 말하며, 마크업이란 태그를 사용하여 콘텐츠의 의미를 부여하는 것을 말합니다. HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미를 나타내는 것뿐만 아니라 링크, 인용과 그 밖의 항목으로 구조적 문서를 만들 수 있는 방법을 제공합니다.</p>
+
+                <h3>HTML의 구성 요소</h3>
+
+                <h4>1. 태그(tag)</h4>
+                <p>HTML에서 사용하는 명령어는 태그(tag)라고 하는데 꺽쇠괄호"&lt;&gt;"를 사용하여 나타냅니다. 일반적으로 태그는 시작과 끝을 표시하는 2개의 쌍으로 이루어져 있으나 "img", "br"등의 태그와 같이 시작태그만으로 그 영향을 나타내는 경우도 있으며, 종료 태그의 이름은 슬래시 문자[/]로 시작됩니다.</p>
+                <div class="code">
+                    <p>&lt;TAG&gt;&lt;/TAG&gt;</p>
+                    <p>&lt;TAG&gt;CONTENT&lt;/TAG&gt;</p>
+                </div>
+
+                <h4>2. 속성(Attributes)과 값(Value)</h4>
+                <p>태그(요소)의 기능을 확장하기 위해 '속성'을 사용합니다. 특정한 태그에만 사용하는 속성도 있습니다.</p>
+                <div class="code">
+                    <p>&lt;TAG 속성="값"&gt;&lt;/TAG&gt;</p>
+                </div>
+
+                <h4>3. 빈 태그</h4>
+                <p>HTML에는 닫히는 개념이 없는 태그도 있다. HTML5에서는 "/"가 생략이 가능합니다..</p>
+
+                <h4>4. 요소(Element)</h4>
+                <p>요소란 HTML를 구성하는 가장 기본적인 단위입니다. 태그의 시작태그와 끝나는 태그 사이의 범위를 요소라고 합니다.</p>
+
+                <h4>5. 주석</h4>
+                <p>주석 표시는 프로그램에 영향을 미치지 않으며, 설명이나 메모를 목적으로 사용합니다.</p>
+                <div class="code">
+                    <p>&lt;!-- 주석 -- &gt;</p>
+                </div>               
+
+                <h3>HTML 구조</h3>
+                <p>HTML구조는 html 요소 안에 head와 body 요소로 이루어져 있으며, 독타입 선언을 해주어야 하나의 웹 문서가 완성됩니다.</p>
+                <div class="code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;타이틀&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <h3>HTML 문서 구조</h3>
+                <p>HTML 문서는 상하 관계가 존재하는 계층적인 구조로 되어 있습니다. 상위에 있는 요소와 하위에 있는 요소는 부모 자식 관계로 표현하며, 이러한 구조를 DOM 구조라고 합니다.</p>
+                <div class="code">
+<pre><code>&lt;PARENT&gt;
+    &lt;CHILD&gt;&lt;/CHILD&gt;
+&lt;/PARENT&gt;
+</code></pre>
+                </div>
+            </div>
         </div>
         <!-- //refer -->
 
