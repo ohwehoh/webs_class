@@ -11,123 +11,9 @@
     <link rel="shortcut icon" href="../assets/face/css.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
     <link rel="icon" href=".../assets/face/css.png">
-    <style>
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 300;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 500;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 700;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
-            font-display: swap;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'GmarketSans';
-        }
-
-        body {
-            background: #f5f5f5;
-        }
-
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 1px solid #000;
-        }
-
-        #header h1 {
-            font-weight: 300;
-            padding: 20px 10px 10px 20px;
-        }
-
-        #header strong {
-            font-weight: 300;
-            padding: 10px;
-            padding: 10px 20px 10px 20px;
-        }
-
-        #contents {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        #contents h2 {
-            font-size: 80px;
-            text-align: center;
-            padding: 5% 5% 5% 5%;
-        }
-
-        #contents h2 em {
-            font-style: normal;
-            color: #00db72;
-        }
-
-        #contents .refer {
-            background: #fff;
-            padding: 60px;
-            border: 1px solid #000;
-
-        }
-
-        #contents .refer table {
-            width: 100%;
-            border: 1px solid #aaa;
-            border-collapse: collapse;
-        }
-
-        #contents .refer table caption {
-            text-indent: -9999px;
-        }
-
-        #contents .refer table th {
-            border: 1px solid #aaa;
-            padding: 15px;
-            background: #f5f5f5;
-            font-weight: 500;
-        }
-
-        #contents .refer table td {
-            border: 1px solid #aaa;
-            padding: 15px;
-            font-weight: 300;
-        }
-
-        #contents .refer table tbody tr:hover {
-            background: #00db72;
-            color: #fff;
-            cursor: grab;
-        }
-    </style>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -139,9 +25,7 @@
 
     <main id="contents">
         <h2>CSS <em>레퍼런스 북</em></h2>
-        <section class="refer">
-            
-        </section>
+
         <section class="refer">
             <table>
                 <caption>HTML 레퍼런스 속성과 설명을 나타내는 표입니다.</caption>
@@ -158,7 +42,7 @@
                 <tbody>
                     <tr>
                         <td>align-content</td>
-                        <td></td>
+                        <td>align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</td>
                     </tr>
                     <tr>
                         <td>align-items</td>
@@ -230,7 +114,7 @@
                     </tr>
                     <tr>
                         <td>background-color</td>
-                        <td> background-color 속성은 지정된 색으로 border와 padding을 포함한 영역을 칠합니다.<br>(margin영역 제외)</td>
+                        <td>background-color 속성은 지정된 색으로 border와 padding을 포함한 영역을 칠합니다.<br>(margin영역 제외)</td>
                     </tr>
                     <tr>
                         <td>background-image</td>
@@ -366,11 +250,11 @@
                     </tr>
                     <tr>
                         <td>border-top-left-radius</td>
-                        <td></td>
+                        <td>border-top-left-radius 속성은 윗부분 왼쪽 모서리 굴곡을 설정합니다.</td>
                     </tr>
                     <tr>
                         <td>border-top-right-radius</td>
-                        <td></td>
+                        <td>border-top-right-radius 속성은 윗부분 오른쪽 모서리 굴곡을 설정합니다.</td>
                     </tr>
                     <tr>
                         <td>border-top-style</td>
@@ -398,7 +282,7 @@
                     </tr>
                     <tr>
                         <td>box-sizing</td>
-                        <td></td>
+                        <td>box-sizing 속성은 요소 크기에 패딩 포함 여부를 설정합니다.</td>
                     </tr>
                     <tr>
                         <td>caption-side</td>
@@ -410,7 +294,7 @@
                     </tr>
                     <tr>
                         <td>clear</td>
-                        <td></td>
+                        <td>clear 속성은 float 요소의 성질을 차단합니다.</td>
                     </tr>
                     <tr>
                         <td>clip</td>
