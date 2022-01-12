@@ -198,6 +198,7 @@ body {
     border-radius: 10px;
     background: #F4F8FA;
     margin-bottom: 10px;
+    white-space: nowrap;
     overflow-x: auto;
 }
 
