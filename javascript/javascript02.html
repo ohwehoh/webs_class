@@ -257,9 +257,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result08">
-                        100 200 300 400 500
-                    </div>
+                    <div class="result08"></div>
                 </div>
             </div>
             <!--/sample8 -->
@@ -282,10 +280,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result09">
-                        0 1 2 3 4<br>
-                        100 200 300 400 500
-                    </div>
+                    <div class="result09"></div>
                 </div>
             </div>
             <!--/sample9 -->
@@ -573,9 +568,12 @@
             document.querySelector(".result07").innerHTML += "<br>";
 
             //forEach(element, index, array)
-            num.forEach(element, index, array){
-                document.querySelector(".result07").innerHTML += element + " " + index + " " + array;
-            }
+            num.forEach(function(element, index, array){
+                if(index == num.length - 1) {
+                    document.querySelector(".result07").innerHTML += element + " " + index + " " + array;
+                }else {document.querySelector(".result07").innerHTML += element + " " + index + " " + array + "<br>";}
+                
+            });
         }
 
         //08. 배열 : 데이터 불러오기 : for of
@@ -586,6 +584,9 @@
             // for( let i of num ){
             //     document.write(i);
             // }
+            for( let i of num){
+                document.querySelector(".result08").innerHTML += i + " ";
+            }
         }
 
         //09. 배열 : 데이터 불러오기 : for in
@@ -601,6 +602,16 @@
             // for( let i in num ){
             //     document.write(num[i]);
             // }
+
+            for (let i in num){
+                document.querySelector(".result09").innerHTML += i + " ";
+            }
+
+            document.querySelector(".result09").innerHTML += "<br>";
+
+            for (let i in num) {
+                document.querySelector(".result09").innerHTML += num[i] + " ";
+            }
         }
 
         //10. 배열 : 데이터 불러오기 : map()
