@@ -257,8 +257,8 @@ a {
     border-radius: 10px;
     background: #f4f8fa;
     overflow-x: auto;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .doc strong {
@@ -271,6 +271,7 @@ a {
 
 .doc .table {
     overflow-x: auto;
+    margin: 20px 0;
 }
 .doc .table table {
     width: 100%;
@@ -316,11 +317,16 @@ a {
     }
 
     .doc h3 {
-        margin-top: 0;
+        margin-top: 10px;
     }
 
     .doc .list {
         padding: 10px 15px;
+    }
+
+    .doc .code {
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .doc .table table {
