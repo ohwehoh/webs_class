@@ -7,10 +7,10 @@ https://ohwehoh.github.io/webs_class/
 https://ohwehoh.github.io/webs_class/javascript/index.html
 
 ## HTML 레퍼런스
-https://ohwehoh.github.io/webs_class/html/index.html
+https://ohwehoh.github.io/webs_class/refer/html.html
 
 ## CSS 래퍼런스
-https://ohwehoh.github.io/webs_class/css/index.html
+https://ohwehoh.github.io/webs_class/refer/css.html
 
 ## layout
 https://ohwehoh.github.io/webs_class/layout/index.html
