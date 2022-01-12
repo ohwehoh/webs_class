@@ -126,6 +126,7 @@ body {
 }
 
 .refer .table {
+    white-space:nowrap;
     overflow-x: auto;
 }
 
@@ -197,6 +198,7 @@ body {
     border-radius: 10px;
     background: #F4F8FA;
     margin-bottom: 10px;
+    overflow-x: auto;
 }
 
 .doc .code h4 {
@@ -266,11 +268,22 @@ body {
         background: #fff;
     }
 
+    .doc h3 {
+        margin-top: 25px;
+    }
+    .doc strong {
+        padding: 0 10px;
+        margin: 1px 0 0 0;
+        display: inline-block;
+        color: #fff;
+    }
+
     .doc .code {
         padding: 10px 10px 7px 10px;
         border-radius: 10px;
         background: #fff;
         margin-bottom: 5px;
+        font-size: 18px;
     }
 
     .doc .code h4 {
