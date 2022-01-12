@@ -315,6 +315,10 @@ a {
         font-size: 18px;
     }
 
+    .doc h3 {
+        margin-top: 0;
+    }
+
     .doc .list {
         padding: 10px 15px;
     }
