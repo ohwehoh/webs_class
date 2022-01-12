@@ -543,27 +543,39 @@
         {
             const num = [100, 200, 300, 400, 500];
 
-            // document.write(num[0], " ");
-            // document.write(num[1], " ");
-            // document.write(num[2], " ");
-            // document.write(num[3], " ");
-            // document.write(num[4], " ");
-            // document.write(num[5], " ");
+            document.querySelector(".result07").innerHTML = num[0] + " ";
+            document.querySelector(".result07").innerHTML += num[1] + " ";
+            document.querySelector(".result07").innerHTML += num[2] + " ";
+            document.querySelector(".result07").innerHTML += num[3] + " ";
+            document.querySelector(".result07").innerHTML += num[4] + " ";
+
+            document.querySelector(".result07").innerHTML += "<br>";
 
             //for()
             //for( let i=0; i<=4; i++) 4가 포함되니까
             // for( let i=0; i<num.length; i++){
             //     document.write(num[i], " ");
             // }
+            for( let i=0; i<num.length; i++){
+                document.querySelector(".result07").innerHTML += num[i] + " ";
+            }
 
-            // document.write(" ");
+            document.querySelector(".result07").innerHTML += "<br>";
 
             //forEach() 메서드. 콜백함수를 쓴다. 
             // num.forEach(function(el){
             //     document.write(el, " ");
             // });
+            num.forEach(function(el){
+                document.querySelector(".result07").innerHTML += el + " ";
+            });
+            
+            document.querySelector(".result07").innerHTML += "<br>";
 
             //forEach(element, index, array)
+            num.forEach(element, index, array){
+                document.querySelector(".result07").innerHTML += element + " " + index + " " + array;
+            }
         }
 
         //08. 배열 : 데이터 불러오기 : for of
