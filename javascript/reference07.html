@@ -95,7 +95,45 @@ while(조건식){
     증감식;
 }</code></pre>
             </div>
+
+            <div class="code">
+                <h4>break문 예제</h4>
+<pre><code>for(var i = 1; i&lt;= 10; i++){
+    if(i == 6) break;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="coment">//i의 값이 6이면 break문으로 종료한다.</span>
+    document.write(i)&nbsp;&nbsp;&nbsp;<span class="coment">//1부터 5까지 출력된다.</span>
+}
+</code></pre>
+
+            </div>
+
             <h3>continue문</h3>
+            <p>continue문은 반복문에서만 사용할 수 있다.</p>
+            <p>while문에 사용할 경우 continue문 다음에 오는 코드는 무시하고 바로 조건식으로 이동해 조건을 검사한다.
+                for문에서 사용할 ruddn continue문 다음에 오는 코드를 무시하고 바로 증감식으로 이동해 증감 연산을 한다.</p>
+
+            <div class="code">
+                <h4>기본형</h4>
+<pre><code>for(초깃값; 조건식; 증감식){
+    continue;
+    자바스크립트코드
+<hr>var 변수 = 초깃값;
+while(조건식){
+    증감식;
+    continue;
+    자바스크립트;
+}
+</code></pre>
+            </div>
+
+            <div class="code">
+                <h4>continue문 예제</h4>
+<pre><code>
+    for(var i = 1; i &lt;= 10; i++){
+        if( i%2 == 0) continue;
+        document.write(i);
+    }
+</code></pre>
+            </div>
         </div>
     </main>
 </body>
