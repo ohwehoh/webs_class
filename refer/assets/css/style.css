@@ -151,16 +151,28 @@ body {
     line-height: 1.4;
 }
 
-.refer .table table td:first-child {
-    background: #F5F5F5;
+.refer .table table tbody tr th a {
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: #fff;
+    background: black;
 }
 
-/* .refer .table table tbody td:hover {
+.refer .table table tbody tr th a:hover {
+    background: #00DB72;
+}
+
+/* .refer .table table td:first-child {
+    background: #F5F5F5;
+} */
+
+/* .refer .table table tbody tr:hover {
     background: #aedbff;
     cursor:pointer;
-}
+} */
 
-.refer .table table td:first-child:hover {
+/*.refer .table table td:first-child:hover {
     background: #aedbff;
     cursor:pointer;
 } */
@@ -198,9 +210,12 @@ body {
 }
 
 .doc .line {
+    margin: 20px 0;
     border: 1px solid #CDCDCD;
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .doc .code {
@@ -287,6 +302,11 @@ body {
         margin: 1px 0 0 0;
         display: inline-block;
         color: #fff;
+    }
+
+    .doc .line {
+        margin: 10px 0;
+        padding: 15PX;
     }
 
     .doc .code {

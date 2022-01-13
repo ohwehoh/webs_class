@@ -231,7 +231,7 @@ a {
 
 .doc h3 {
     font-weight: 500;
-    margin: 20px 0 5px;
+    margin: 30px 0 10px 0;
     text-decoration: underline;
 }
 
@@ -259,6 +259,16 @@ a {
     overflow-x: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.doc .code pre code hr {
+    margin: 20px 0 12px 0;
+    border: none;
+    border-top: 3px dotted #B1E4FD;;
+    color: #f4f8fa;
+    background-color: #f4f8fa;
+    height: 4px;
+    width: 100%;
 }
 
 .doc strong {
@@ -314,10 +324,11 @@ a {
 
     .doc h2 {
         font-size: 18px;
+        margin-top: 20px;
     }
 
     .doc h3 {
-        margin-top: 13px;
+        margin-top: 100px 0 6px 0;
     }
 
     .doc .list {
@@ -327,6 +338,12 @@ a {
     .doc .code {
         margin-bottom: 10px;
         margin-top: 10px;
+    }
+
+    .doc .code pre code hr {
+        margin: 10px 0 10px 0;
+        height: 2px;
+        width: 100%;
     }
 
     .doc .table table {
