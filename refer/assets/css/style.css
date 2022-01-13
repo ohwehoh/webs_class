@@ -126,7 +126,7 @@ body {
 }
 
 .refer .table {
-    white-space:nowrap;
+    white-space: nowrap;
     overflow-x: auto;
 }
 
@@ -159,13 +159,13 @@ body {
     background: black;
 }
 
-.refer .table table tbody tr th a:hover {
+/* .refer .table table tbody tr th a:hover {
     background: #00DB72;
-}
-
-/* .refer .table table td:first-child {
-    background: #F5F5F5;
 } */
+
+.refer .table table td:first-child {
+    background: #F5F5F5;
+}
 
 /* .refer .table table tbody tr:hover {
     background: #aedbff;
@@ -290,13 +290,14 @@ body {
         padding: 10px;
     }
 
-    .refer .table table td:last-child{
+    .refer .table table td:last-child {
         background: #fff;
     }
 
     .doc h3 {
         margin-top: 25px;
     }
+
     .doc strong {
         padding: 0 10px;
         margin: 1px 0 0 0;
@@ -324,6 +325,6 @@ body {
 
     .doc .code p img {
         height: 15px;
-        width : 15px;
+        width: 15px;
     }
 }
