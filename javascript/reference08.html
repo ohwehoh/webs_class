@@ -151,33 +151,38 @@ var 변수 = 함수명();&nbsp;&nbsp;<span class="coment">//2. 함수가 호출�
 
             <div class="code">
                 <h4>리턴값 함수 예제2</h4>
+<pre><code>&lt;script&gt;
+    var num = 1;
+    function gallery(direct) {
+        if(direct) {
+            if (num == 7) return;
+            num++;
+        } else {
+            if (num == 1) return;
+            num--;
+        }
+
+        var imgTag = document.getElementById("photo");
+        imgTag.setAttribute("src", "img/color_" + num + ".jpg");
+    }
+&lt;/script&gt;
+&lt;div id="galleryZone"&gt;
+    &lt;p&gt;&lt;img src="img/color_1.jpg" id="photo" alt=""&gt;&lt;/p&gt;
+    &lt;p&gt;
+        &lt;button onclick="gallery(0)"&gt;이전&lt;/button&gt;
+        &lt;button onclick="gallery(1)"&gt;다음&lt;/button&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+
+</code></pre>
             </div>
 
             <div class="line">
                 <h4>리턴값 함수 예제2 출력 결과</h4>
+                <img src="img/returnfunctionexresult.jpg" alr="리턴값함수예제2결과화면">
             </div>
 
-            <script>
-                var num = 1;
-                function gallery(direct) {
-                    if(direct) {
-                        if (num == 8) return;
-                        num++;
-                    } else {
-                        if (num == 1) return;
-                        num++;
-                    }
-
-                    var imgTag = document.getElementById("photo");
-                    imgTag.setAttribute("src", "images/pic_" + num + ".jpg");
-                }
-            </script>
-            <div id="galleryZone">
-                <p><img src="images/pic_1.jpg" id="photo" alt=""></p>
-                <p>
-                    <button onclick="gallery(0)"></button>
-                </p>
-            </div>
+            
             </div>
         </div>
     </main>
