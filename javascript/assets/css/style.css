@@ -35,6 +35,14 @@
 }
 
 /* reset */
+:root {
+    font-size: 16px;
+}
+@media (max-width: 800px){
+    :root {
+        font-size: 14px;
+    }
+}
 * {
     margin: 0;
     padding: 0;
@@ -231,7 +239,7 @@ a {
 
 .doc h3 {
     font-weight: 500;
-    margin: 15px 0 10px 0;
+    margin: 20px 9 5px;
     text-decoration: underline;
 }
 
@@ -328,7 +336,7 @@ a {
     }
 
     .doc h3 {
-        margin: 100px 0 6px 0;
+        margin: 20px 0 6px 0;
     }
 
     .doc .list {
@@ -495,6 +503,23 @@ table tbody tr td {
         font-size: 55px;
         padding: 10px 0;
     }
+}
+
+/* test */
+.test {
+    max-width: 1000px;
+    width: 100%;
+    margin: 100px auto;
+}
+
+.test h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: .6em;
+}
+
+.test p {
+    font-size: 1.2rem;
 }
 
 /* 간격 설정 */
