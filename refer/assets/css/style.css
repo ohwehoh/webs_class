@@ -126,7 +126,7 @@ body {
 }
 
 .refer .table {
-    /* white-space: nowrap; */
+    white-space: nowrap;
     overflow-x: auto;
 }
 
