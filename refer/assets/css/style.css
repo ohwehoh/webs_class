@@ -279,7 +279,7 @@ body {
 
     .refer .table table {
         min-width: 400px;
-        font-size: 15px;
+        /* font-size: 15px; */
     }
 
     .refer .table table th {
