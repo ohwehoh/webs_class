@@ -54,8 +54,17 @@
 // });
 
 //for문을 이용해서 1~12까지 출력!!!
-for(let i=1; i<= 12; i++){
+for(let i=1; i<= 15; i++){
     document.querySelector(".result"+i+"t h4").addEventListener("click", function(){
         document.querySelector(".result"+i).style.display = "block";
     });
 }
+
+//forEach을 이용해서 1~12까지 출력!!!
+let num = [];
+for(i = 0; i < 12; i++){
+    num[i] = i+1;
+}
+num.forEach(function(el){
+    document.write(el)
+});
