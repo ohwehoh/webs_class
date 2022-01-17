@@ -126,8 +126,8 @@ body {
 }
 
 .refer .table {
-    white-space: nowrap;
     overflow-x: auto;
+    min-width: 800px;
 }
 
 .refer .table table {
@@ -209,7 +209,8 @@ body {
     border: 1px solid #CDCDCD;
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    min-width: 800px;
     overflow-x: auto;
 }
 
@@ -218,7 +219,8 @@ body {
     border-radius: 10px;
     background: #F4F8FA;
     margin-bottom: 10px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    min-width : 800px;
     overflow-x: auto;
 }
 
