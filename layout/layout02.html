@@ -1,80 +1,72 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout02</title>
+    <title>Layout2</title>
+
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
         }
 
-        #container {
-            width: 1200px;
+        body {
             background-color: #EAF5EA;
+        }
+
+        #wrap {
+            width: 1200px;
             margin: 0 auto;
         }
 
-        #header {
+        #wrap #header{
             width: 1200px;
             height: 100px;
             background-color: #CEE5CB;
         }
-
-        #nav {
+        #wrap #nav{
             width: 1200px;
             height: 100px;
             background-color: #AFD5AB;
         }
-
-        #contents {
+        #wrap #main{
             width: 1200px;
+            display: flex;
         }
-
-        #footer {
-            width: 1200px;
-            height: 100px;
-            background-color: #5D9E52;
-            clear: both;
-        }
-
-        #contents .left {
+        #wrap #main .left{
             width: 300px;
             height: 780px;
             background-color: #91C58A;
-            float: left;
         }
-
-        #contents .center {
+        #wrap #main .artice {
             width: 600px;
             height: 780px;
             background-color: #7BB972;
-            float: left;
         }
-
-        #contents .right {
+        #wrap #main .right {
             width: 300px;
             height: 780px;
             background-color: #67AD5B;
-            float: left;
+        }
+        #wrap #footer{
+            width: 1200px;
+            height: 100px;
+            background-color: #5D9E52;
         }
     </style>
 </head>
-
 <body>
-    <div id="container">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="contents">
-            <div class="left"></div>
-            <div class="center"></div>
-            <div class="right"></div>
-        </div>
-        <div id="footer"></div>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="main">
+            <aside class="left"></aside>
+            <article class="artice"></article>
+            <aside class="right"></aside>
+        </section>
+        <footer id="footer"></footer>
     </div>
 </body>
-
 </html>
