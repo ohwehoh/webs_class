@@ -126,7 +126,7 @@ body {
 }
 
 .refer .table {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow-x: auto;
 }
 
@@ -234,6 +234,10 @@ body {
     padding: 2px 15px 0px 15px;
     display: inline-block;
     color: #fff;
+}
+
+.doc img {
+    text-align: center;
 }
 
 @media (max-width: 1220px) {
