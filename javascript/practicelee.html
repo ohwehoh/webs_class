@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1-(1). for문으로 1부터 10출력하기
+        {
+            for (let i = 1; i <= 10; i++) {
+                console.log(i);
+            }
+        }
+
+        //1-(2). forEach문으로 1부터 10출력하기
+        {
+            let loof = [];
+
+            for (let i = 0; i < 10; i++) {
+                loof[i] = i + 1;
+            }
+
+            loof.forEach(function (el) {
+                console.log(el);
+            });
+        }
+
+        //2. 함수 종류 4가지
+        {
+            //선언적함수
+            function func1(){
+                console.log("선언적함수생성");
+            }
+            func1();
+
+            //익명함수
+            let func2 = function(){
+                console.log("익명함수생성");
+            }
+            func2();
+
+            //매개변수함수
+            function func3(str){
+                console.log(str);
+            }
+            func3("매개변수함수생성");
+
+            //리턴값함수
+            function func4(){
+                return "리턴값함수생성";
+            }
+            console.log(func4());
+        }
+
+        //3. 화살표 함수 종류 4가지
+        {
+            //화살표 함수 : 선언적 함수
+            func5 = () => {
+                console.log("화살표함수 : 선언적함수생성");
+            }
+            func5();
+
+            //화살표 함수 : 익명 함수
+            let func6 = () => {
+                console.log("화살표함수 : 익명함수생성");
+            }
+            func6();
+
+            //화살표 함수 : 매개변수 함수
+            func7 = (str) => {
+                console.log(str);
+            }
+            func7("화살표함수 : 매개변수함수생성");
+
+            //화사표 함수 : 리턴값 함수
+            func8 = () => {
+                return ("화살표함수 : 리턴값함수생성");
+            }
+            console.log(func8());
+        }
+    </script>
+</body>
+
+</html>
