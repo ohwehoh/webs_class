@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout05</title>
+    <title>Layout5_1</title>
+
     <style>
         * {
-            margin: 0;
             padding: 0;
+            margin: 0;
         }
 
         #wrap {
@@ -19,56 +20,59 @@
         #header {
             width: 100%;
             height: 100px;
-            background-color: #EFEBE9;
+            background-color: #EEEBE9;
         }
 
         #nav {
             width: 100%;
             height: 100px;
-            background-color: #BCAAA4;
+            background-color: #B8ABA5;
         }
 
         #contents {
             width: 100%;
             height: 780px;
-            background-color: #8D6E63;
+            background-color: #886F64;
         }
 
         #footer {
             width: 100%;
             height: 100px;
-            background-color: #4E342E;
+            background-color: #49352E;
         }
 
         .container {
             width: 1200px;
-            margin: 0 auto;
             height: inherit;
             background-color: rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
         }
 
         #contents .container {
             display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-
-        #contents .container .aside {
-            width: 400px;
-            height: 780px;
-            background-color: #795548;
         }
 
         #contents .container .article1 {
             width: 800px;
+            height: inherit;
+        }
+
+        #contents .container .article1 .mini1 {
+            width: inherit;
             height: 390px;
-            background-color: #6D4C41;
+            background-color: #684D43;
+        }
+
+        #contents .container .article1 .mini2 {
+            width: inherit;
+            height: 390px;
+            background-color: #584138;
         }
 
         #contents .container .article2 {
-            width: 800px;
-            height: 390px;
-            background-color: #5D4037;
+            width: 400px;
+            height: inherit;
+            background-color: #745749;
         }
     </style>
 </head>
@@ -83,8 +87,10 @@
         </nav>
         <section id="contents">
             <div class="container">
-                <aside class="aside"></aside>
-                <article class="article1"></article>
+                <article class="article1">
+                    <div class="mini1"></div>
+                    <div class="mini2"></div>
+                </article>
                 <article class="article2"></article>
             </div>
         </section>

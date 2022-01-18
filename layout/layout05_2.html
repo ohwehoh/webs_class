@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout5_1</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #B9AAA4;
+        }
+
+        #nav .container {
+            display: flex;
+        }
+
+        #nav .container .nav1 {
+            width: 400px;
+            height: inherit;
+            background-color: #B29283;
+        }
+
+        #nav .container .nav2 {
+            width: 800px;
+            height: inherit;
+            background-color: #9D8980;
+        }
+
+        #contents {
+            width: 100%;
+            height: 780px;
+            background-color: #886F64;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #4A352F;
+        }
+
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+        }
+
+        #contents .container {
+            display: flex;
+        }
+
+        #contents .container .article1 {
+            width: 800px;
+            height: inherit;
+        }
+
+        #contents .container .article1 .mini1 {
+            width: inherit;
+            height: 390px;
+            display: flex;
+        }
+
+        #contents .container .article1 .mini1 .min1 {
+            width: 400px;
+            height: inherit;
+            background-color: #684D43;
+        }
+
+        #contents .container .article1 .mini1 .min2 {
+            width: 400px;
+            height: inherit;
+            background-color: #8A6D62;
+        }
+
+        #contents .container .article1 .mini2 {
+            width: inherit;
+            height: 390px;
+            background-color: #594038;
+        }
+
+        #contents .container .article2 {
+            width: 400px;
+            height: inherit;
+            background-color: #74564A;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container"></div>
+        </header>
+        <nav id="nav">
+            <div class="container">
+                <div class="nav1"></div>
+                <div class="nav2"></div>
+            </div>
+        </nav>
+        <section id="contents">
+            <div class="container">
+                <article class="article1">
+                    <div class="mini1">
+                        <div class="min1"></div>
+                        <div class="min2"></div>
+                    </div>
+                    <div class="mini2"></div>
+                </article>
+                <article class="article2"></article>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>
+</body>
+
+</html>

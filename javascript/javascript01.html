@@ -37,8 +37,8 @@
                 <li><a href="javascript07.html">수학 객체</a></li>
                 <li><a href="javascript08.html">숫자 객체</a></li>
                 <li><a href="javascript09.html">브라우저 객체</a></li>
-                <li><a href="javascript010.html">요소 객체</a></li>
-                <li><a href="javascript011.html">이벤트 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul>
                 <li><a href="practice01.html">데이터 연습하기</a></li>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result01"></div>
+                    <div class="result1"></div>
                 </div>
             </div>
             <!-- //sample1 -->
@@ -120,7 +120,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result02"></div>
+                    <div class="result2"></div>
                 </div>
             </div>
             <!-- //sample2 -->
@@ -145,7 +145,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result03"></div>
+                    <div class="result3"></div>
                 </div>
             </div>
             <!-- //sample3 -->
@@ -177,7 +177,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result04">
+                    <div class="result4">
                         함수 안<br>
                         200<br>
                         300<br>
@@ -211,7 +211,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result05"></div>
+                    <div class="result5"></div>
                 </div>
             </div>
             <!-- //sample5 -->
@@ -233,7 +233,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result06"></div>
+                    <div class="result6"></div>
                 </div>
             </div>
             <!-- //sample6 -->
@@ -252,7 +252,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result07"></div>
+                    <div class="result7"></div>
                 </div>
             </div>
             <!-- //sample7 -->
@@ -275,7 +275,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result08"></div>
+                    <div class="result8"></div>
                 </div>
             </div>
             <!-- //sample8 -->
@@ -294,7 +294,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result09"></div>
+                    <div class="result9"></div>
                 </div>
             </div>
             <!-- //sample9 -->
@@ -529,7 +529,7 @@
             var y = 200;            //변수 y에 숫자 200을 저장
             var z = "javascript";   //변수 z에 문자 javascript를 저장
 
-            document.querySelector(".result01").innerHTML = x + "<br>" + y + "<br>" + z;
+            document.querySelector(".result1").innerHTML = x + "<br>" + y + "<br>" + z;
 
             // document.write("<br>*** 01. 변수 ***<br>");
             // document.write(x, "<br>");
@@ -547,7 +547,7 @@
             y = 400;
             z = "jquery";
 
-            document.querySelector(".result02").innerHTML = x + "<br>" + y + "<br>" + z;
+            document.querySelector(".result2").innerHTML = x + "<br>" + y + "<br>" + z;
 
             // document.write("<br>*** 02. 변수 ***<br>");
             // document.write(x, "<br>");
@@ -565,7 +565,7 @@
             y -= 400;  // y = y - 400;
             z += "jquery";
 
-            document.querySelector(".result03").innerHTML = x + "<br>" + y + "<br>" + z;
+            document.querySelector(".result3").innerHTML = x + "<br>" + y + "<br>" + z;
 
             // document.write("<br>*** 03. 변수 ***<br>");
             // document.write(x, "<br>");
@@ -584,7 +584,7 @@
                 x = 200;        //지역변수 100->200
                 y = 300;        //전역변수 200->300      
 
-               // document.querySelector(".result04").innerHTML = "함수 안<br>" + x + "<br>" + y + "<br>" + z;
+               //document.querySelector(".result4").innerHTML = "함수 안<br>" + x + "<br>" + y + "<br>" + z;
 
                 // document.write("함수 안<br>");
                 // document.write(x, "<br>");
@@ -593,7 +593,7 @@
             }
             //func();
 
-            // document.querySelector(".result04").innerHTML = "함수 밖<br>" + x + "<br>" + y + "<br>" + z;
+            // document.querySelector(".result4").innerHTML = "함수 밖<br>" + x + "<br>" + y + "<br>" + z;
 
 
         //     document.write("함수 밖<br>");
@@ -613,7 +613,7 @@
             //y = 400;
             //z = "jquery";
 
-            document.querySelector(".result05").innerHTML = x + "<br>" + y + "<br>" + z;
+            document.querySelector(".result5").innerHTML = x + "<br>" + y + "<br>" + z;
 
         //     document.write("<br>*** 05. 상수 ***<br>");
         //     document.write(x, "<br>");
@@ -629,7 +629,7 @@
             arr[1] = 200;
             arr[2] = "javascript";
 
-            document.querySelector(".result06").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            document.querySelector(".result6").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
             // document.write("<br>*** 06. 배열 ***<br>");
             // document.write(arr[0], "<br>");
@@ -641,7 +641,7 @@
         {
             const arr = new Array(100, 200, "javascript");
 
-            document.querySelector(".result07").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            document.querySelector(".result7").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
             // document.write("<br>*** 07. 배열 ***<br>");
             // document.write(arr[0], "<br>");
@@ -656,7 +656,7 @@
             arr[1] = 200;
             arr[2] = "javascript";
 
-            document.querySelector(".result08").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            document.querySelector(".result8").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
             // document.write("<br>*** 08. 배열 ***<br>");
             // document.write(arr[0], "<br>");
@@ -668,7 +668,7 @@
         {
             const arr = [100, 200, "javascript"];
 
-            document.querySelector(".result09").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+            document.querySelector(".result9").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
         //     document.write("<br>*** 09. 배열 ***<br>");
         //     document.write(arr[0], "<br>");
@@ -845,4 +845,6 @@
         // }
     </script>
 </body>
+
+<script src="assets/js/script.js"></script>
 </html>

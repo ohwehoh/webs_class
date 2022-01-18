@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout05</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #EAF5EA;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #wrap #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #CEE5CB;
+        }
+
+        #wrap #nav {
+            width: 1200px;
+            display: flex;
+        }
+
+        #wrap #nav .nav1{
+            width: 400px;
+            height: 100px;
+            background-color: #AFD5AB;
+        }
+
+        #wrap #nav .nav2{
+            width: 400px;
+            height: 100px;
+            background-color: #82BE7B;
+        }
+
+        #wrap #nav .nav3{
+            width: 400px;
+            height: 100px;
+            background-color: #AFD5AB;
+        }
+        #wrap #contents {
+            width: 1200px;
+            display: flex;
+        }
+        #wrap #contents .asideleft {
+            width: 300px;
+            height: 780px;
+            background-color: #91C58A;
+        }
+        #wrap #contents .content {
+            width: 600px;
+        }
+        #wrap #contents .content .article1 {
+            width: 600px;
+            height: 390px;
+            background-color: #7BB972;
+        }
+        #wrap #contents .content .article2 {
+            width: 600px;
+            height: 390px;
+            background-color: #5B9D51;
+        }
+        #wrap #contents .asideright {
+            width: 300px;
+            height: 780px;
+            background-color: #67AD5B;
+        }
+        #wrap #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #5D9E52;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav">
+            <div class="nav1"></div>
+            <div class="nav2"></div>
+            <div class="nav3"></div>
+        </nav>
+        <section id="contents">
+            <aside class="asideleft"></aside>
+            <section class="content">
+                <article class="article1"></article>
+                <article class="article2"></article>
+            </section>
+            <aside class="asideright"></aside>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
