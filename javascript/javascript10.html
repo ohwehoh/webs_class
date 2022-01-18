@@ -67,12 +67,33 @@
                     <div class="view6"><img src="img/img6.jpg" alt="이미지06"></div>
                 </div>
                 <div class="btn">
-                    <a href="#c" class="btn1">두번째 이미지를 클릭하면 선택됩니다.</a>
+                    <a href="#c" class="btn1">두번째 이미지를 클릭(selected)하면 선택됩니다.</a>
+                    <a href="#c" class="btn2">두번째 이미지를 클릭(selected)하면 해제됩니다.</a>
+                    <a href="#c" class="btn3">이 버튼을 클릭(selected)하면 모든 이미지가 선택 됩니다.</a>
+                    <a href="#c" class="btn4">이 버튼을 클릭(selected)하면 모든 이미지가 해제 됩니다.</a>
                 </div>
                 <div class="code">
-<pre class="line-numbers"><code class="language-js">
-    code
-</code></pre>
+<pre class="line-numbers"><code class="language-js">{
+    //두번째 이미지 선택
+    document.querySelector("#sample1 .btn1").addEventListener("click", function(){
+        document.querySelector("#sample1 .view2").classList.add("selected");
+    });
+    document.querySelector("#sample1 .btn2").addEventListener("click", function(){
+        document.querySelector("#sample1 .view2").classList.remove("selected");
+    });
+
+    //모든 이미지 선택
+    document.querySelector("#sample1 .btn3").addEventListener("click", function(){
+        document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+            el.classList.add("selected");
+        });
+    });
+    document.querySelector("#sample1 .btn4").addEventListener("click", function(){
+        document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+            el.classList.remove("selected");
+        });
+    });
+}</code></pre>
                 </div>
             </div>
             <!-- //sample1 -->
@@ -82,8 +103,24 @@
     </main>
     <!-- script -->
     <script>
+        //두번째 이미지 선택
         document.querySelector("#sample1 .btn1").addEventListener("click", function(){
             document.querySelector("#sample1 .view2").classList.add("selected");
+        });
+        document.querySelector("#sample1 .btn2").addEventListener("click", function(){
+            document.querySelector("#sample1 .view2").classList.remove("selected");
+        });
+
+        //모든 이미지 선택
+        document.querySelector("#sample1 .btn3").addEventListener("click", function(){
+            document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+                el.classList.add("selected");
+            });
+        });
+        document.querySelector("#sample1 .btn4").addEventListener("click", function(){
+            document.querySelectorAll("#sample1 .view > div").forEach(function(el){
+                el.classList.remove("selected");
+            });
         });
     </script>
 </body>
