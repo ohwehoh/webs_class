@@ -1,12 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
     <title>테이블 출력하기</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png">
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism2.css">
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table tr td {
+            border: 1px solid #222;
+            font-size: 16px;
+            padding: 15px;
+            font-family: 'NexonLv1Gothic';
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="back"><a href="practice01.html">Back</a></div>
+    <main id="main">
+        <div class="test">
+            <h2>3. 테이블 출력하기</h2>
+            
+            <!-- 01 -->
+            <h3>3.1 for문을 이용해서 테이블을 출력하시오!</h3>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let table = "&lt;table&gt;";
+
+    for( let i=1; i&lt;=5; i++ ){
+        table += "&lt;tr&gt;";
+            for( let j=1; j&lt;=5; j++){
+                table += "&lt;td&gt;1/td&gt;";
+            }
+        table += "&lt;/tr&gt;";
+    }
+    table += "&lt;/table&gt;";
+
+    document.write(table);
+}</code></pre>
+            </div>
+            <div class="result1"></div>
+            <!-- //01 -->
+
+            <!-- 02 -->
+            <h3>3.2 for문을 이용해서 테이블을 출력하시오!</h3>
+            <p>조건1. 1~25까지 숫자를 넣으시오!</p>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let num = 1;
+    let table = "&lt;table&gt;";
+
+    for( let i=1; i&lt;=5; i++ ){
+        table += "&lt;tr&gt;";
+            for( let j=1; j&lt;=5; j++){
+                table += "&lt;td&gt;" + num + "&lt;/td&gt;";
+                num++;
+            }
+        table += "&lt;/tr&gt;";
+    }
+    table += "&lt;/table&gt;";
+
+    document.write(table);
+}</code></pre>
+            </div>
+            <div class="result2"></div>
+            <!-- //02 -->
+
+            <!-- 03 -->
+            <h3>3.3 while문을 이용해서 테이블을 출력하시오!</h3>
+            <p>1~25까지 숫자를 넣으시오!</p>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let i = 1, j = 1, num = 1;
+    let table = "&lt;table&gt;"
+
+    while(i&lt;=5){
+        table += "&lt;tr&gt;"
+            while(j&lt;=5){
+                table += "&lt;td&gt;" + num + "&lt;/td&gt;";
+                num++;
+                j++;
+            }
+            j = 1;
+        table += "&lt;/tr&gt;";
+        i++;
+    }
+        table += "&lt;/table&gt;";
+
+    document.write(table);
+}</code></pre>
+            </div>
+            <div class="result3"></div>
+            <!-- //03 -->
+
+        </div>
+    </main>
+    <script>
+        //for문을 이용해서 테이블 출력
+        {
+            let table = "<table>";
+
+            for( let i=1; i<=5; i++ ){
+                table += "<tr>";
+                    for( let j=1; j<=5; j++){
+                        table += "<td>1</td>";
+                    }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.querySelector(".result1").innerHTML = table;
+        }
+
+        //for문을 이용해서 테이블 출력(숫자증가)
+        {
+            let num = 1;
+            let table = "<table>";
+
+            for( let i=1; i<=5; i++ ){
+                table += "<tr>";
+                    for( let j=1; j<=5; j++){
+                        table += "<td>" + num + "</td>";
+                        num++;
+                    }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.querySelector(".result2").innerHTML = table;
+        }
+
+        //while문을 이용해서 구구단 출력
+        {
+            let i = 1, j = 1, num = 1;
+            let table = "<table>"
+
+            while(i<=5){
+                table += "<tr>"
+                    while(j<=5){
+                        table += "<td>" + num + "</td>";
+                        num++;
+                        j++;
+                    }
+                    j = 1;
+                table += "</tr>";
+                i++;
+            }
+                table += "</table>";
+
+            document.querySelector(".result3").innerHTML = table;
+        }
+    </script>
 </body>
+<!-- script -->
+<script src="assets/js/prism2.js"></script>
 </html>

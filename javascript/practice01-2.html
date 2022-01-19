@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
     <title>구구단 출력하기</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png">
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism2.css">
+
+    <!-- script -->
+    <script src="assets/js/prism2.js"></script>
 </head>
 <body>
-    
+
+    <div class="back"><a href="practice01.html">Back</a></div>
+    <main id="main">
+        <div class="test">
+            <h2>2. 구구단 출력하기</h2>
+            
+            <!-- 01 -->
+            <h3>2.1 2단부터 9단까지 출력하시오!(for문)</h3>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    for(let i=2; i&lt;=9; i++){
+        for(let j=1; j&lt;=9; j++){
+            document.write(i + " * " + j + " = " +  i*j + "&lt;br&gt;");
+        }
+        document.write("=============&lt;br&gt;");
+    }
+}</code></pre>
+            </div>
+            <!-- //01 -->
+            
+            <!-- 02 -->
+            <h3>2.2 2단부터 9단까지 출력하시오!(while문)</h3>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let i = 2, j = 1;
+
+    while(i &lt;= 9){
+        while(j &lt;= 9){
+            document.write(i + " * " + j + " = " + i*j + "&lt;br&gt;");
+            j++;
+        }
+        j = 1;
+        i++;
+        document.write("=============&lt;br&gt;");
+    }
+}</code></pre>
+            </div>
+            <!-- //02 -->
+
+        </div>
+    </main>
+    <script>
+        //for문을 이용해서 구구단 출력
+        {
+            for(let i=2; i<=9; i++){
+                for(let j=1; j<=9; j++){
+                    console.log(i + " * " + j + " = " +  i*j);
+                }
+            }
+        }
+
+        //while문을 이용해서 구구단 출력
+        {
+            let i = 2, j = 1;
+
+            while(i <= 9){
+                while(j <= 9){
+                    console.log(i + " * " + j + " = " + i*j);
+                    j++;
+                }
+                j = 1;
+                i++;
+            }
+        }
+    </script>
 </body>
 </html>
