@@ -266,6 +266,9 @@
         {
             //리셋
             document.querySelector("#sample3 .btn0").addEventListener("click", function(){
+                document.querySelectorAll("sample3 .view > div").forEach(function(el){
+                    el.classList.remove("selected", "blue");
+                });
                 document.querySelector("#sample3 .view2").classList.add("selected");
                 document.querySelector("#sample3 .view2").classList.remove("blue");
                 document.querySelector("#sample3 .view4").classList.add("selected");
