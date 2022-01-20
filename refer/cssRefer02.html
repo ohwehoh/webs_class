@@ -96,6 +96,14 @@
                 </div>
 
                 <p>inline-block 엘리먼트는 위와 같이 헤당 엘리먼트의 스타일을 display: inline-block로 지정해줘야 합니다. inline-block을 이용하면 여러 개의 엘리먼트를 한 줄에 정확히 원하는 너비만큼 배치할 수 있기 때문에 레이아웃에 활용할 수 있습니다.</p>
+                
+                <h3>inline과 block의 관계</h3>
+                <p>inline 속성은 block속성을 포함할 수 없다.(a태그 예외) block속성은 inline속성을 포함할 수 있다.</p>
+                <div class="code">
+                    &lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt; //안됨 <br>
+                    &lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt; //됨 <br>
+                    &lt;a&gt;&lt;div&gt;&lt;/div&gt;&lt;/a&gt; // 예외적으로 됨
+                </div>
             </div>
 
             

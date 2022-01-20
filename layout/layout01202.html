@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout2</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/layout.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/layout.png">
+    <link rel="icon" href="../assets/face/layout.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ebfcff;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #wrap #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #d7f9ff;
+        }
+
+        #wrap #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #9bedfc;
+        }
+
+        #wrap #main {
+            display: flex;
+        }
+
+        #wrap #main .left {
+            width: 300px;
+            height: 780px;
+            background-color: #5be1f8;
+        }
+
+        #wrap #main .artice {
+            width: 600px;
+        }
+
+        #wrap #main .artice .article1 {
+            width: inherit;
+            height: 390px;
+            background-color: #20d8f8;
+        }
+
+        #wrap #main .artice .article2 {
+            width: inherit;
+            height: 390px;
+            background-color: #00b8d8;
+        }
+
+        #wrap #main .right {
+            width: 300px;
+            height: 780px;
+            background-color: #0194ad;
+        }
+
+        #wrap #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #02687a;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="main">
+            <aside class="left"></aside>
+            <section class="artice">
+                <article class="article1"></article>
+                <article class="article2"></article>
+            </section>
+            <aside class="right"></aside>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>

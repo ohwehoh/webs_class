@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout03</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/layout.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/layout.png">
+    <link rel="icon" href="../assets/face/layout.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f7dffd;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #wrap #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #f3c9fd;
+        }
+
+        #wrap #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #eca9fd;
+        }
+
+        #wrap #main {
+            width: 1200px;
+            display: flex;
+        }
+
+        #wrap #main .aside {
+            width: 300px;
+            height: 780px;
+            background-color: #e585fd;
+        }
+
+        #wrap #main .contents {
+            width: 900px;
+        }
+
+        #wrap #main .contents .article1 {
+            display: flex;
+        }
+
+        #wrap #main .contents .article1 .articleleft{
+            width: 450px;
+            height: 260px;
+            background-color: #dd5efd;
+        }
+
+        #wrap #main .contents .article1 .articleright{
+            width: 450px;
+            height: 260px;
+            background-color: #d73efd;
+        }
+
+        #wrap #main .contents .article2 {
+            width: 900;
+            height: 260px;
+            background-color: #c106f0;
+        }
+
+        #wrap #main .contents .article3 {
+            width: 900;
+            height: 260px;
+            background-color: #9905be;
+        }
+
+        #wrap #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #66067e;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside class="aside"></aside>
+            <section class="contents">
+                <article class="article1">
+                    <article class="articleleft"></article>
+                    <article class="articleright"></article>
+                </article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>
