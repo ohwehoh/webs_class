@@ -35,7 +35,10 @@
     }
 }</code></pre>
             </div>
-            <div class="result1"></div>
+            <div class="result">
+                <h4>결과보기</h4>
+                <div class="result1"></div>
+            </div>
             <!-- //01 -->
 
             <!-- 02 -->
@@ -47,7 +50,10 @@
     }
 }</code></pre>
             </div>
-            <div class="result2"></div>
+            <div class="result">
+                <h4>결과보기</h4>
+                <div class="result2"></div>
+            </div>
             <!-- //02 -->
             
             <!-- 03 -->
@@ -70,7 +76,7 @@
         }
     }
 
-    //다른 방법1
+    //다른 방법1 if문 생략
     for(let i=1; i&lt;=100; i++){
         if( i % 2 == 0 ) console.log(i);
     }
@@ -81,7 +87,10 @@
     }
 }</code></pre>
             </div>
-            <div class="result3"></div>
+            <div class="result">
+                <h4>결과보기</h4>
+                <div class="result3"></div>
+            </div>
             <!-- //03 -->
 
             <!-- 04 -->
@@ -99,7 +108,10 @@
     }
 }</code></pre>
             </div>
-            <div class="result4"></div>
+            <div class="result">
+                <h4>결과보기</h4>
+                <div class="result4"></div>
+            </div>
             <!-- //04 -->
         </div>
     </main>
@@ -109,7 +121,7 @@
             let num = 1;
 
             while(num <= 100){
-                console.log(num);
+                document.querySelector(".result .result1").innerHTML += num + " ";
                 num++;
             }
         }
@@ -117,36 +129,53 @@
         //2. for문을 이용해서 1부터 100까지 출력하시오
         {
             for(let i = 1; i<= 100; i++){
-                console.log(i);
+                document.querySelector(".result .result2").innerHTML += i + " ";
             }
         }
 
         //3. 조건 짝홀
         {
+            let result1 = document.querySelector(".result .result3");
+            
             //짝수
+            result1.innerHTML += "짝수 출력하기<br>"
             for(let i=1; i<=100; i++){
                 if( i % 2 == 0 ){
-                    console.log(i);
+                    result1.innerHTML += i + " ";
                 }
             }
 
             //홀수
+            result1.innerHTML += "<br>홀수 출력하기<br>"
             for(let i=1; i<=100; i++){
                 if( i % 2 != 0 ){
-                    console.log(i);
+                    result1.innerHTML += i + " ";
                 }
             }
 
             //다른 방법1
+            result1.innerHTML += "<br>짝수 출력하기 if문 중괄호 생략<br>"
             for(let i=1; i<=100; i++){
-                if( i % 2 == 0 ) console.log(i);
+                if( i % 2 == 0 ) result1.innerHTML += i + " ";
             }
             
             //다른 방법2
+            result1.innerHTML += "<br>짝수 출력하기 증감식 수정<br>"
             for(let i=2; i<=100; i+=2){
-                console.log(i);
+                if( i % 2 == 0 ) result1.innerHTML += i + " ";
             }
+        }
+
+        //4. 조건 1부터 100 출력
+        {
+            for(i = 1; i<= 100; i++){
+                if(i%2 == 0){
+                    if(i%5 == 0){
+                        document.querySelector(".result .result4").innerHTML += i + " ";
+                    }
                 }
+            }
+        }
     </script>
 </body>
 <!-- script -->

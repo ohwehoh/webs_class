@@ -58,6 +58,32 @@
             </div>
             <!-- //02 -->
 
+            <!-- 02 -->
+            <h3>2.2 2단부터 9단까지 출력하시오!(while문)</h3>
+            <p>조건 : 사용자가 원하는 단을 prompt()를 사용합니다. <a href="#" class="pBtn">클릭</a></p>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let num, result;
+
+    //버튼을 클릭하면 경고창을 띄어주세요.
+    document.querySelector(".pBtn").addEventListener("click", () => {
+        num = prompt("출력할 구구단 숫자를 입력해주세요!!", "2");
+        document.querySelector(".result > div").classList.add("active"); // 버튼을 클릭하면 결과창이 무조건 열리게
+        
+        for(let i = 1; i &lt;= 9; i++){
+            result = num + " * " + i + " = " + (num*i) + "&lt;br&gt;";
+            // console.log(result);
+            document.querySelector(".result > div").innerHTML += result;
+        }
+    });
+}</code></pre>
+            </div>
+            <div class="result">
+                <h4>결과보기</h4>
+                <div></div>
+            </div>
+            <!-- //02 -->
+
         </div>
     </main>
     <script>
@@ -65,7 +91,7 @@
         {
             for(let i=2; i<=9; i++){
                 for(let j=1; j<=9; j++){
-                    console.log(i + " * " + j + " = " +  i*j);
+                    // console.log(i + " * " + j + " = " +  i*j);
                 }
             }
         }
@@ -76,13 +102,32 @@
 
             while(i <= 9){
                 while(j <= 9){
-                    console.log(i + " * " + j + " = " + i*j);
+                    // console.log(i + " * " + j + " = " + i*j);
                     j++;
                 }
                 j = 1;
                 i++;
             }
         }
+
+        //사용자가 원하는 단을 받아 출력하세요!
+        {
+            let num, result;
+
+            //버튼을 클릭하면 경고창을 띄어주세요.
+            document.querySelector(".pBtn").addEventListener("click", () => {
+                document.querySelector(".result > div").innerHTML = "";
+                num = prompt("출력할 구구단 숫자를 입력해주세요!!", "2");
+                document.querySelector(".result > div").classList.add("active");
+                
+                for(let i = 1; i <= 9; i++){
+                    console.log(result);
+                    result = num + " * " + i + " = " + (num*i) + "<br>";
+                    document.querySelector(".result > div").innerHTML += result;
+                }
+            });
+        }
     </script>
 </body>
+<script src="assets/js/script.js"></script>
 </html>

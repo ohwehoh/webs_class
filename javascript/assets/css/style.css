@@ -362,18 +362,19 @@ img {
     cursor: pointer;
 }
 .result > div {
+    display: none;
     background: #272822;
     padding: 20px;
     color: #fff;
     border-radius: 0 0 5px 5px;
     font-size: 16px;
     line-height: 1.4;
-    display: none;
+    
 }
 .result.active h4 {
     border-radius: 5px 5px 0 0;
 }
-.result.active > div {
+.result .active {
     display: block;
     border-radius: 0 0 5px 5px;
 }
@@ -463,6 +464,16 @@ img {
 }
 .test .code {
     margin-top: 1em;
+}
+
+/* 버튼 */
+.pBtn {
+    background: #000;
+    color: #fff;
+    padding: 5px 5px 3px 5px;
+    font-size: 0.8em;
+    vertical-align: 3px;
+    border-radius: 5px;
 }
 /* 간격 설정 */
 .mt0 {margin-top: 0px !important;}
