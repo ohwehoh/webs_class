@@ -101,5 +101,22 @@
 프로토타입의 제작을 모두 지원하는 경우가 일반적이며 상대적으로 적은 시간을 투여해 
 충실도와 사용자 친화도가 높은 프로토타입을 제작할 수 있다.</p>
     </ul>
+    <script>
+        const obj = {
+            a:function(){
+                console.log("obj.a실행 <br>");
+                console.log("??");
+            },
+
+            f: () => {
+                console.log("obj.f실행, 화살표함수 <br>")
+            }
+        };
+        obj.a();
+        obj.f();
+
+        const arr = [1, 2, 3, 4, 5];
+        console.log(...arr);
+    </script>
 </body>
 </html>

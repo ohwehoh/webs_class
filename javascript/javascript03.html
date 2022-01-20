@@ -196,33 +196,33 @@
 
             <!-- sample7 -->
             <div id="sample7" class="sample">
-                <h3>07. 화살표 함수 : 리턴값 함수</h3>
+                <h3>07. 화살표 함수 : 매개변수 함수</h3>
                 <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    func = () => {
-        const str = "함수가 실행되었습니다.7"
-        return str;
-    }
-    document.write(func());
-}</code></pre>
+                    <pre class="line-numbers"><code class="language-js">{
+                        func = (str) => {
+                            document.write(str);
+                        }
+                        func("함수가 실행되었습니다.8");
+                    }</code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result7"></div>
+                    <div class="result8"></div>
                 </div>
             </div>
             <!-- //sample7 -->
-
+            
             <!-- sample8 -->
             <div id="sample8" class="sample">
-                <h3>08. 화살표 함수 : 매개변수 함수</h3>
+                <h3>08. 화살표 함수 : 리턴값 함수</h3>
                 <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    func = (str) => {
-        document.write(str);
-    }
-    func("함수가 실행되었습니다.8");
-}</code></pre>
+        <pre class="line-numbers"><code class="language-js">{
+        func = () => {
+        const str = "함수가 실행되었습니다.7"
+        return str;
+        }
+        document.write(func());
+        }</code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
@@ -367,8 +367,16 @@
                 };
                 func();
             }
+            
+            //07. 화살표 함수 : 매개변수 함수
+            {
+                func = (str) => {
+                    document.querySelector(".result8").innerHTML = str;
+                }
+                func("함수가 실행되었습니다.7");
+            }
 
-            //07. 화살표 함수 : 리턴값 함수
+            //08. 화살표 함수 : 리턴값 함수
             {
                 // function func(){
                 //     const str = "함수가 실행되었습니다.7"
@@ -380,15 +388,7 @@
                     const str = "함수가 실행되었습니다.7"
                     return str;
                 }
-                document.querySelector(".result7").innerHTML = func();
-            }
-
-            //08. 화살표 함수 : 매개변수 함수
-            {
-                func = (str) => {
-                    document.querySelector(".result8").innerHTML = str;
-                }
-                func("함수가 실행되었습니다.8");
+                document.querySelector(".result8").innerHTML = func();
             }
 
             //09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
