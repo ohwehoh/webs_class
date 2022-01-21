@@ -370,9 +370,9 @@
         {
             //조건문
             if(true){
-               document.querySelector(".result01").innerHTML = "실행되었습니다.(true)"; 
+               document.querySelector(".result1").innerHTML = "실행되었습니다.(true)"; 
             } else {
-                document.querySelector(".result01").innerHTML = "실행되었습니다.(false)"; 
+                document.querySelector(".result1").innerHTML = "실행되었습니다.(false)"; 
             }
         }
 
@@ -380,8 +380,8 @@
         {
             const num = 100;
 
-            if(num == 100) document.querySelector(".result02").innerHTML = "실행되었습니다.(true)";
-            else document.querySelector(".result02").innerHTML = "실행되었습니다.(false)";
+            if(num == 100) document.querySelector(".result2").innerHTML = "실행되었습니다.(true)";
+            else document.querySelector(".result2").innerHTML = "실행되었습니다.(false)";
         }
 
         //03. 다중 if문
@@ -389,15 +389,15 @@
             const num = 100;
 
             if(num == 90){
-                document.querySelector(".result03").innerHTML = "실행되었습니다.(num==90)";
+                document.querySelector(".result3").innerHTML = "실행되었습니다.(num==90)";
             } else if (num == 100){
-                document.querySelector(".result03").innerHTML = "실행되었습니다.(num==100)";
+                document.querySelector(".result3").innerHTML = "실행되었습니다.(num==100)";
             } else if (num == 110){
-                document.querySelector(".result03").innerHTML = "실행되었습니다.(num==110)";
+                document.querySelector(".result3").innerHTML = "실행되었습니다.(num==110)";
             } else if (num == 120){
-                document.querySelector(".result03").innerHTML = "실행되었습니다.(num==120)";
+                document.querySelector(".result3").innerHTML = "실행되었습니다.(num==120)";
             } else {
-                document.querySelector(".result03").innerHTML = "실행되었습니다.(num==값이없음)";
+                document.querySelector(".result3").innerHTML = "실행되었습니다.(num==값이없음)";
             }
         }
 
@@ -406,15 +406,15 @@
             const num = 100;
 
             if(num == 100){
-                document.querySelector(".result04").innerHTML = "실행되었습니다.(1)<br>";
+                document.querySelector(".result4").innerHTML = "실행되었습니다.(1)<br>";
                 if(num == 100){
-                    document.querySelector(".result04").innerHTML += "실행되었습니다.(2)<br>";
+                    document.querySelector(".result4").innerHTML += "실행되었습니다.(2)<br>";
                     if(num == 100){
-                        document.querySelector(".result04").innerHTML += "실행되었습니다.(3)";
+                        document.querySelector(".result4").innerHTML += "실행되었습니다.(3)";
                     }
                 }
             } else {
-                document.querySelector(".result04").innerHTML = "실행되었습니다.(4)";
+                document.querySelector(".result4").innerHTML = "실행되었습니다.(4)";
             }
         }
         //05. 삼항 연산자(조건부 연산자)
@@ -422,12 +422,12 @@
             const num = 100;
 
             // if(num == 100){
-            //     document.querySelector(".result05").innerHTML = "true<br>";
+            //     document.querySelector(".result5").innerHTML = "true<br>";
             // } else {
-            //     document.querySelector(".result05").innerHTML = "false<br>";
+            //     document.querySelector(".result5").innerHTML = "false<br>";
             // }
 
-            (num == 100) ? document.querySelector(".result05").innerHTML += "true" : document.querySelector(".result05").innerHTML += "false";
+            (num == 100) ? document.querySelector(".result5").innerHTML += "true" : document.querySelector(".result5").innerHTML += "false";
         }
 
         //06. switch문
@@ -436,19 +436,19 @@
 
             switch(num){
                 case 100 :
-                    document.querySelector(".result06").innerHTML = "실행되었습니다(num==100)";
+                    document.querySelector(".result6").innerHTML = "실행되었습니다(num==100)";
                 break;
                 case 200 :
-                    document.querySelector(".result06").innerHTML = "실행되었습니다(num==200)";
+                    document.querySelector(".result6").innerHTML = "실행되었습니다(num==200)";
                 break;
                 case 300 :
-                    document.querySelector(".result06").innerHTML = "실행되었습니다(num==300)";
+                    document.querySelector(".result6").innerHTML = "실행되었습니다(num==300)";
                 break;
                 case 400 :
-                    document.querySelector(".result06").innerHTML = "실행되었습니다(num==400)";
+                    document.querySelector(".result6").innerHTML = "실행되었습니다(num==400)";
                 break;
                 default :
-                    document.querySelector(".result06").innerHTML = "실행되었습니다(num==값이없음)";
+                    document.querySelector(".result6").innerHTML = "실행되었습니다(num==값이없음)";
             }
         }
 
@@ -457,7 +457,7 @@
             let num = 1;
 
             while(num <= 5){
-                document.querySelector(".result07").innerHTML += num + ". 실행되었습니다." + "<br>";
+                document.querySelector(".result7").innerHTML += num + ". 실행되었습니다." + "<br>";
                 num++;
             }
         }
@@ -467,7 +467,7 @@
             let num = 1;
             
             do {
-                document.querySelector(".result08").innerHTML += num + ". 실행되었습니다.<br>";
+                document.querySelector(".result8").innerHTML += num + ". 실행되었습니다.<br>";
                 num++;
             } while (num <= 5)
         }
@@ -475,7 +475,7 @@
         //09. for문
         {
             for(let i=1; i<=5; i++){
-                document.querySelector(".result09").innerHTML += i + ". 실행되었습니다.<br>";
+                document.querySelector(".result9").innerHTML += i + ". 실행되었습니다.<br>";
             }
         }
 

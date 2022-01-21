@@ -1,139 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리턴값 함수 예제2</title>
+    <title>럴</title>
+
+    <!-- 1 -->
+    <!-- sample1 -->
+    <div id="sample1" class="sample">
+        <h3></h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js"></code></pre>
+        </div>
+        <div class="result">
+            <h4></h4>
+            <div class="result1"></div>
+        </div>
+    </div>
+    <!-- //sample1 -->
+
+    <!-- 2 -->
+    <!-- sample1 -->
+    <div id="sample1" class="sample">
+        <h3></h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js"></code></pre>
+        </div>
+        <div class="result">
+            <h4></h4>
+            <div class="result1"></div>
+        </div>
+    </div>
+    <!--/sample1 -->
+
+    <!-- 3 -->
+    <!-- sample1 -->
+    <div id="sample1" class="sample">
+        <h3></h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js"></code></pre>
+        </div>
+        <div class="result">
+            <h4></h4>
+            <div class="result1"></div>
+        </div>
+    </div>
+    <!-- //sample1 -->
+
+    <!-- 4 -->
+    <!-- sample1 -->
+    <div id="sample1" class="sample">
+        <h3></h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js"></code></pre>
+        </div>
+        <div class="result">
+            <h4></h4>
+            <div class="result01"></div>
+        </div>
+    </div>
+    <!-- //sample1 -->
 </head>
 <body>
-    <script>
-        var num = 1;
-        function gallery(direct) {
-            if(direct) {
-                if (num == 7) return;
-                num++;
-            } else {
-                if (num == 1) return;
-                num--;
-            }
-
-            var imgTag = document.getElementById("photo");
-            imgTag.setAttribute("src", "img/color_" + num + ".jpg");
-        }
-    </script>
-    <div id="galleryZone">
-        <p><img src="img/color_1.jpg" id="photo" alt=""></p>
-        <p>
-            <button onclick="gallery(0)">이전</button>
-            <button onclick="gallery(1)">다음</button>
-        </p>
-    </div>
-
-    <h4>프로토타이핑의 장점과 제약</h4>
-    <p>프로토타이핑은 상품/서비스의 개발에 있어서 다음과 같은 장점을 제공하나 프로토
-        타입에 담아야 할 범위와 진화적 반복과정 등에 기인한 제약이 따른다.</p>
-    <ul>
-        <p>Prototyping 의 이점</p>
-        <li>신속하게 제작될 수 있으며, 반복을 통해 발전된 결과물을 얻을 수 있게 해준다.</li>
-        <li>상품/서비스가 최종적으로 완성되기 전에 사용자로부터 추가/변경 요구사항, 
-            아이디어 등 관련 피드백을 받을 수 있음.</li>
-        <li>개발 참여 인력과 사용자, 개발 참여 인력간의 의사소통이 원활해진다.</li>
-        <li>사용성과 관련된 문제를 조기에 식별할 수 있다.</li>
-        <li> 테스트에 대한 부담이 적으며 조기에 개선이 가능하다.</li>
-    </ul>
-
-    <ul>
-        <p>prototyping 의 제약</p>
-        <li>프로토타입의 제작에만 집중하는 경우 타 업무의 문서화 등이 불충분할 수 있다</li>
-        <li>상품/서비스의 일부만을 대상으로 제작되었음을 간과하면 사용성이 과대평가 
-            될 수도 있다.</li>
-        <li>상품/서비스의 일부만을 대상으로 제작되어 테스트 수행 시 테스트 경로가 제
-            한될 수 있다.</li>
-        <li>지속적이고 반복적인 요구사항 수집에 대한 운영 및 통제가 어려울 수도 있다.</li>
-        <li>반복을 종료하여도 충분함을 판단하기 어려울 수 있다.</li>
-    </ul>
-
-    <h4>프로토타이핑 제작 도구 및 제작 유형</h4>
-    <p>특정플랫폼에 특화되어 있는 제품을 포함해 프로토타이핑 제작 전용의 소프트웨어들
-        을 사용하여 프로토타이핑을 제작할 수도 있지만, 프로토타이핑을 위한 도구가 한정
-        지어지는 것은 아니다. 시각적 표현이 가능한 방법들로 프로토타입의 제작에 적합하
-        다 판단되는 도구, 재료, 방법을 이용한다.</p>
-
-    <ul>
-        <li>종이와 필기구</li>
-        <li>출력된 이미지, 풀과 가위</li>
-        <li>벡터 그래픽 편집 프로그램(이미지의 확대 축소시 해상도의 영향으로부터 자유로
-            운 벡터 그래픽 편집 도구가 일반적으로 래스터(Raster)그래픽 편집 프로그램보다 
-            선호된다.)</li>
-        <li>문서, 스프레드시트, 프레젠테이션 작성 프로그램</li>
-        <li>설치형, 웹기반 프로토타이핑 전용 프로그램</li>
-        <li>HTML, CSS 편집 프로그램 
-            실제 소프트웨어와 유사한 형태를 다음과 같은 형태로 프로토타입이 제작될 수 있다.</li>
-        <li>목업(Mock up)</li>
-        <li>스토리보드</li>
-        <li>스케치</li>
-        <li>시나리오</li>
-        <li>스크린 샷(Screen Shot)</li>
-        <li>기능을 보여주는 인터페이스 (Functional Interface)</li>
-    </ul>
-
-    <h4>와이어프레임 (Wireframe)</h4>
-    <p>UI/UX의 기획단계 또는 시각적 요소들에 대한 디자인을 하기 전에 화면 구성요소의 
-        배치와 속성, 기능, 네비게이션 등과 관련한 동작들을 간단한 선과 사각형 정도만을 사
-        용해 윤곽을 그려 놓은 도면이다. 프로토타입과 비교하면 실제 상품/서비스의 화면과 
-        일치하는 충실도가 낮고, 프로토타입이 사용자의 요구사항을 반영하여 만들어지는 반면 
-        와이어프레임은 요구사항에 대한 식별 이전에 사용자의 개입 없이 기획, 제안 또는 프
-        로젝트 계획 수립에 대한 문서화 용도로도 사용할 수 있다. 와이어프레임은 다음과 같
-        은 정보를 식별할 수 있게 해준다.</p>
-
-    <ul>
-        <li>콘텐츠들의 분류</li>
-        <li>정보의 구조</li>
-        <li>사용자 상호작용(Interaction)</li>
-
-        <p>와이어프레임은 위와 같은 기능을 제공하고, 신속하고 간단하게 작성될 수 있으며, 프로
-토타입과 마찬가지로 사용자의 요구사항을 파악하는 용도로 사용될 수 있으나 상품/서비
-스가 주는 시각적 느낌(Look and Feel)을 파악하기 어렵고 기능, 사용자 상호작용이 복
-잡하게 표현되어 있는 경우에는 사용자가 이를 이해하기 어려울 수 있다는 점과 한 화면
-상에 복잡한 상호작용이 있는 경우 이를 표현하기 어렵다는 점 등의 단점/제약이 있다.
-프로토타이핑 전용 프로그램은 낮은 충실도의 와이어프레임과 중간-높은 충실도를 갖는 
-프로토타입의 제작을 모두 지원하는 경우가 일반적이며 상대적으로 적은 시간을 투여해 
-충실도와 사용자 친화도가 높은 프로토타입을 제작할 수 있다.</p>
-    </ul>
-    <script>
-        const obj = {
-            a:function(){
-                console.log("obj.a실행 <br>");
-                console.log("??");
-            },
-
-            f: () => {
-                console.log("obj.f실행, 화살표함수 <br>")
-            }
-        };
-        obj.a();
-        obj.f();
-
-        const arr = [1, 2, 3, 4, 5];
-        console.log(...arr);
-
-        let n1 = 1;
-
-        while(n1 <= 20){
-            console.log(n1);
-            if(n1 == 10){
-                break;
-            }
-            n1++;
-        }
-
-        for(let i = 1; i<=20; i++){
-            console.log(i);
-            if(i == 10){
-                break;
-            }
-        }
-    </script>
 </body>
 </html>
