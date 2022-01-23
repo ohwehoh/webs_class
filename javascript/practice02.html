@@ -114,14 +114,14 @@
         {
             let num, result;
 
-            //버튼을 클릭하면 경고창을 띄어주세요.
+            //버튼을 클릭하면 숫자를 입력받으시오.
             document.querySelector(".pBtn").addEventListener("click", () => {
                 document.querySelector(".result > div").innerHTML = "";
                 num = prompt("출력할 구구단 숫자를 입력해주세요!!", "2");
                 document.querySelector(".result > div").classList.add("active");
                 
                 for(let i = 1; i <= 9; i++){
-                    console.log(result);
+                    // console.log(result);
                     result = num + " * " + i + " = " + (num*i) + "<br>";
                     document.querySelector(".result > div").innerHTML += result;
                 }
@@ -129,5 +129,5 @@
         }
     </script>
 </body>
-<!-- <script src="assets/js/script.js"></script> -->
+<script src="assets/js/script.js"></script>
 </html>
