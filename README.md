@@ -16,4 +16,4 @@ https://ohwehoh.github.io/webs_class/refer/css.html
 https://ohwehoh.github.io/webs_class/layout/index.html
 
 ## 웹표준 사이트 제작
-https://ohwehoh.github.io/site/webClass/index.html
+https://ohwehoh.github.io/webs_class/site/webClass/index.html
