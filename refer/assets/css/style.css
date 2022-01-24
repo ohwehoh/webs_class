@@ -116,10 +116,6 @@ body {
     margin-bottom: 5px;
 }
 
-.menu ul li.or {
-    list-style:disc
-}
-
 .menu ul li a {
     text-decoration: none;
     background: #00DB72;
@@ -222,7 +218,6 @@ body {
     border: 1px solid #CDCDCD;
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
-    min-width: 1000;
     overflow-x: auto;
 }
 
@@ -230,6 +225,8 @@ body {
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
     background: #DEDEDE;
+    margin-bottom: 10px;
+    overflow-x: auto;
 }
 
 .doc strong {
@@ -296,6 +293,10 @@ body {
 
     .doc h3 {
         font-size: 20px;
+    }
+
+    .doc .code {
+        margin-bottom: 8px;
     }
 }
 
