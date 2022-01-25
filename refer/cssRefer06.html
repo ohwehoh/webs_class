@@ -24,7 +24,7 @@
     </header>
 
     <main id="contents">
-        <h2><a href="css.html">float의 <em>영역깨짐</em></a></h2>
+        <h2><a href="css.html">float</a></h2>
 
         <div class="menu">
             <ul>
@@ -41,6 +41,46 @@
 
         <div class="refer">
             <div class="doc">
+                <h3>개요</h3>
+                <p><strong>float</strong>의 단어는 '뜨다'라는 의미이며, 원래 웹페이지에서 이미지를 어떻게 띄워서 텍스트와 함께 배치할 것인가에 대한 속성입니다.</p>
+                <div class="line">
+                    <h4 class="mt0">float 속성의 값</h4>
+                    <table>
+                        <tr>
+                            <td>inher</td>
+                            <td>: 부모 요소에서 상속</td>
+                        </tr>
+                        <tr>
+                            <td>left</td>
+                            <td>: 왼쪽에 부유하는 블록 박스를 생성. 페이지 내용은 박스 오른쪽에 위치하며 위에서 아래로 흐름.</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top">right</td>
+                            <td>: 오른쪽에 부유하는 블록 박스를 생성. 페이지 내용은 박스 왼쪽에 위치하며 위에서 아래로 흐름. <br>이후 요소에 clear 속성이 있으면 페이지 흐름이 달라짐. none 이 아니라면 display 속성은 무시된다.</td>
+                        </tr>
+                        <tr>
+                            <td>none</td>
+                            <td>: 요소를 부유시키지 않음</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>left와 right를 통해 부유속성을 지정시 display는 무시됩니다. (none은 제외)
+                    또한 이후 요소에 clear 속성이 있으면 페이지 흐름이 달라집니다.</p>
+                <div class="line">
+                    <h4 class="mt0">사용법</h4>
+                    .content > img {float: left;}
+                </div>
+
+                <div class="line mt15">
+                    <h4 class="mt0">float 예제</h4>
+                    <img src="img/float1.jpg" alt="예제소스">
+                    <h4 class="mt0">결과</h4>
+                    <img src="img/float2.jpg" alt="예제결과">
+                </div>
+
+                <h3>레이아웃에서의 float</h3>
+                <p>float 속성은 원래 이미지와 텍스트 배치 용도로 등장했지만, 요즘에는 레이아웃용으로 많이 사용하고 있습니다.</p>
+                
                 <h3>float으로 인한 영역 깨짐을 방지하는 방법</h3>
                 <p>css 속성 중 float를 사용하게 되면 height 값이 사라져 영역이 깨지는 현상이 생깁니다.</p>
 
