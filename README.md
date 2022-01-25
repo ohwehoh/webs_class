@@ -12,6 +12,9 @@ https://ohwehoh.github.io/webs_class/refer/html.html
 ## CSS 래퍼런스
 https://ohwehoh.github.io/webs_class/refer/css.html
 
+## HTML/CSS페이지
+https://ohwehoh.github.io/webs_class/refer/index.html
+
 ## layout
 https://ohwehoh.github.io/webs_class/layout/index.html
 
