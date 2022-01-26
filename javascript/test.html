@@ -5,6 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        p::selection{
+            color: white;
+            background-color: chocolate;
+        }
+        ::first-line{
+            color : red;
+            text-transform: uppercase;
+        }
+        ::first-letter{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -30,8 +43,11 @@
     <h3>for in과 for of의 차이점</h3>
     <p>for in은 객체의 순환이고 for of는 배열의 순환입니다.
         자바스크립트에서는 배열도 객체이기 때문에 for in은 배열의 인덱스 값을 key값으로써 불러옵니다.
+        ::first-line 속성에 선택자를 안주면 document 내의 모든 태그를 받아 각 태그의 첫줄에 스타일 적용을 한다. 화면 크기에 따라 줄바뀜에 따라 오로지 첫번째 줄에만 스타일 적용을 한다. 그래서 이 글자는 검은색으로 나올것!!!!!!!!!!!!!!!!!
     </p>
 
+    <p>::first-letter 속성에 선택자를 안주면 documnet 내의 모든 태그를 받아 각 태그의 첫번째 글자에 스타일 적용을 한다. 난 그래도 단어 단위일 줄 알았는데 딱 문자 하나만 스타일 적용을 한다. 그래서 지금 이 페이지는 굉장히 대한민국 스러운 페이지가 되었다.</p>
+    <p>::selection 속성에 선택자를 안주면 document 내의 모든 요소들에게 selection 스타일을 적용한다. 그래서 지금 해당 문서에서 드레그를 하시면 초콜렛 색 바탕에 흰색 글자로 바뀔 것입니다. 그런데!! ::first-letter 적용한 첫 글자들은 selection 적용이 안되는데 왜지??????????00000</p>
     <h3>자바스크립트의 반복 메소드</h3>
     <h4>기본 동작</h4>
     <p>배열 내 모든 요소들을 순회하면서 특정 작업을 수행하거나 특정 조건을 만족하는 요소를 가져오는 등 반복적인 작업에 사용한다.</p>
