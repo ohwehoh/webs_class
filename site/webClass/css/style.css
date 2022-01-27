@@ -242,7 +242,7 @@
     background-image: url(../img/img_text_bg2.jpg);
 } */
 
-@media (-webkit-min-device-pixel-ratio: 1.5){
+/* @media (-webkit-min-device-pixel-ratio: 1.5){
     .itType01 .img01{
         background-image: url(../img/test@2x.jpg);
     }
@@ -252,4 +252,4 @@
     .itType01 .img01{
         background-image: url(../img/test@3x.jpg);
     }
-}
+} */
