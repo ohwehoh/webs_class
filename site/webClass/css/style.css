@@ -223,10 +223,10 @@
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
-    background-color: #ccc;   
 }
 
 .itType01 .text .text_title {
+    font-family: 'GmarketSans';
     font-size: 50px;
     font-weight: 500;
     margin-top: 70px;
@@ -236,7 +236,6 @@
 .itType01 .text .text_desc {
     font-family: 'NexonLv1Gothic';
     font-size: 18px;
-    line-height: 1.53;
     color: #888;
     margin-bottom: 55px;
 }
@@ -244,7 +243,14 @@
 .itType01 .text .text_more {
     font-family: 'NexonLv1Gothic';
     font-size: 18px;
+}
+
+.itType01 .text .text_more a {
     color: #af3029;
+}
+
+.itType01 .text .text_more svg {
+    vertical-align: 2px;
 }
 
 .itType01 .img01{
