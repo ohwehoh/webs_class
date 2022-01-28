@@ -1,0 +1,126 @@
+/* 전체 레이아웃 */
+#wrap {
+    width: 100%;
+    height: 20000px;
+}
+
+#header {
+    background: #b06262b5;
+}
+
+#header .nav {
+    height: 109px;
+    width: 1200px;
+    background-color: #fb4e4e;
+    margin: 0 auto;
+}
+
+#banner {
+    background-color: #f79400a6;
+}
+
+#banner .bArti {
+    width: 1200px;
+    height: 893px;
+    background-color: #f79400;
+    margin: 0 auto;
+}
+
+#contents .cont1 {
+    background: #f7df00cf;
+}
+
+#contents .cont1 .contArt1 {
+    width: 1200px;
+    height: 640px;
+    background: #f7df00;
+    margin: 0 auto;
+}
+
+#contents .cont2 {
+    background: #86d10eb8;
+}
+
+#contents .cont2 .contArt2 {
+    width: 1200px;
+    height: 3250px;
+    background: #86d10e;
+    margin: 0 auto;
+}
+
+#contents .cont3 {
+    height: 1076px;
+    width: 1200px;
+    padding: 120px 0;
+    margin: 0 auto;
+}
+
+#contents .cont3 .contArt3 {
+    height: 640px;
+}
+
+#contents .cont3 .conText .title {
+    display: inline-block;
+    font-family: 'NexonLv2Gothic';
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 120px;
+    margin-right: 574px;
+}
+
+#contents .cont3 .conText .arrow1 {
+    display: inline-block;
+    margin-right: 75px;
+}
+
+#contents .cont3 .conText .arrow2 {
+    display: inline-block;
+}
+
+#contents .cont3 .conImgTet1 {
+    margin-right: 45px;
+    float: left;
+}
+
+#contents .cont3 .conImgTet1 .img1 {
+    width: 370px;
+    height: 460px;
+    background: url(../img/img1.jpg) center;
+}
+
+#contents .cont3 .t1 {
+    font-family: 'NexonLv2Gothic';
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 22px;
+}
+
+#contents .cont3 .t2 {
+    font-family: 'NexonLv2Gothic';
+    font-size: 18px;
+}
+
+#contents .cont3 .conImgTet2 {
+    float: left;
+    margin-right: 45px;
+}
+
+#contents .cont3 .conImgTet2 .img2 {
+    width: 370px;
+    height: 460px;
+    background: url(../img/img2.jpg) center;
+}
+
+#contents .cont3 .conImgTet3 {
+    float: left;
+}
+#contents .cont3 .conImgTet3 .img3 {
+    width: 370px;
+    height: 460px;
+    background: url(../img/img3.jpg) center;
+}
+
+#footer {
+    background: #0ed1bf;
+    height: 399px;
+}
