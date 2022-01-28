@@ -126,10 +126,10 @@
                 <h3>03. 매개변수 함수</h3>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    const func = function(){
-        document.write("함수가 실행되었습니다.2 ");
+    function func(str){
+        document.write(str);
     }
-    func();
+    func("함수가 실행되었습니다.3");
 }</code></pre>
                 </div>
                 <div class="result">
@@ -330,7 +330,7 @@
                 func();
             }
 
-            //02. 매개변수 함수, 함수를 선언할 때 전달이 되는 변수
+            //03. 매개변수 함수, 함수를 선언할 때 전달이 되는 변수
             {
                 function func(str){
                     document.querySelector(".result3").innerHTML = str;
