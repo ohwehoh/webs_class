@@ -479,7 +479,6 @@
     justify-content: space-between;
 }
 
-
 .img_type02 .img-wrap .left {
     width: 387px;
     height: 387px;
@@ -487,24 +486,25 @@
     position: relative;
 }
 
-.img_type02 .img-wrap .left h4{
-    font-family: Gmarket Sans TTF;
-    font-weight: 500;
-    font-size: 30px;
-    color: #fff;
-    position: absolute;
-    left: 50px;
-    bottom: 50%;
-}
-
 .img_type02 .img-wrap .center {
     width: 387px;
     height: 387px;
     background: #222;
+    position: relative;
 }
 
 .img_type02 .img-wrap .right {
     width: 387px;
     height: 387px;
     background: #333;
+    position: relative;
+}
+.img_type02 .img-wrap h4.text_in_img {
+    font-family: Gmarket Sans TTF;
+    font-weight: 500;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    left: 120px;
+    top: 175px;
 }
