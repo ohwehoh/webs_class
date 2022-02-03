@@ -94,7 +94,7 @@
             <!-- //03 -->
 
             <!-- 04 -->
-            <h3>1.4 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
+            <!-- <h3>1.4 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
             <p>조건1. 짝수만 출력하세요!</p>
             <p>조건2. 5의 배수만 출력하세요!</p>
             <div class="code">
@@ -106,6 +106,23 @@
             }
         }
     }
+}</code></pre>
+            </div>
+            <div class="result">
+                <h4>결과보기</h4>
+                <div class="result4"></div>
+            </div> -->
+            <!-- //04 -->
+
+            <!-- 04 -->
+            <h3>1.4 for문 이용해서 1부터 100까지 합을 출력하세요!</h3>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let sum = 0;
+    for(let i = 1; i &lt;= 100; i++){
+        sum += + i;
+    }
+    document.write(sum);
 }</code></pre>
             </div>
             <div class="result">
@@ -166,15 +183,24 @@
             }
         }
 
-        //4. 조건 1부터 100 출력
+        // //4. 조건 1부터 100 출력
+        // {
+        //     for(i = 1; i<= 100; i++){
+        //         if(i%2 == 0){
+        //             if(i%5 == 0){
+        //                 document.querySelector(".result .result4").innerHTML += i + " ";
+        //             }
+        //         }
+        //     }
+        // }
+
+        //4. for문을 이용해서 1부터 100까지 합을 출력하세요!
         {
-            for(i = 1; i<= 100; i++){
-                if(i%2 == 0){
-                    if(i%5 == 0){
-                        document.querySelector(".result .result4").innerHTML += i + " ";
-                    }
-                }
+            let sum = 0;
+            for(let i = 1; i <= 100; i++){
+                sum += i;
             }
+            document.querySelector(".result .result4").innerHTML = sum;
         }
     </script>
 </body>

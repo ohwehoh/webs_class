@@ -454,7 +454,7 @@
 
             <!-- sample7 -->
             <div id="sample7" class="sample">
-                <h3>07. </h3>
+                <h3>07. 배열 메서드 : reduce() / reduceRight()</h3>
                 <div class="table">
                     <table>
                         <colgroup>
@@ -483,6 +483,24 @@
                                 <td class="sample7_Q2"></td>
                                 <td class="sample7_M2"></td>
                                 <td class="sample7_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample7_N3"></td>
+                                <td class="sample7_Q3"></td>
+                                <td class="sample7_M3"></td>
+                                <td class="sample7_R3"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample7_N4"></td>
+                                <td class="sample7_Q4"></td>
+                                <td class="sample7_M4"></td>
+                                <td class="sample7_R4"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample7_N5"></td>
+                                <td class="sample7_Q5"></td>
+                                <td class="sample7_M5"></td>
+                                <td class="sample7_R5"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -683,7 +701,26 @@
         //{7}
         //10. 배열 메서드 : reduce() : 배열 요소 하나로 정리 : 반환(결괏값)
         {
+            const arrNum1 = [100, 200, 300, 400, 500];
+            const arrReduce1 = arrNum1.reduce(element => element);
 
+            document.querySelector(".sample7_N1").innerHTML = 1;
+            document.querySelector(".sample7_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample7_M1").innerHTML = "reduce(element => element)";
+            document.querySelector(".sample7_R1").innerHTML = arrReduce1;
+
+            const arrNum2 = [100, 200, 300, 400, 500];
+            const arrReduce2 = arrNum2.reduce((previous, current) => previous + current);
+
+            document.querySelector(".sample7_N2").innerHTML = 2;
+            document.querySelector(".sample7_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample7_M2").innerHTML = "reduce((p, c) => p + c)";
+            document.querySelector(".sample7_R2").innerHTML = arrReduce2;
+
+            //arrNum2 값을 for문을 이용해서 출력해주세요!
+            for(let i = 0 ; i < arrNum2.length ; i++){
+                document.write(arrNum2[i]);
+            }
         }
         //11. 배열 메서드 : reduceRight() : 배열 요소 하나로 정리 : 반환(결괏값)
         {
