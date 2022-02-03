@@ -233,6 +233,42 @@ img {
 .script .sample .view > div img {
     border-radius: 1em;
 }
+.script .sample .table {
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    padding: 20px;
+}
+.script .sample .table table {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.script .sample .table table th {
+    padding: 10px 15px;
+    font-weight: normal;
+}
+
+.script .sample .table table td {
+    padding: 10px 15px;
+    border: 1px solid #e6e6e6;
+}
+
+/* .script .sample .table .sample1_R1 {
+    color: #fff;
+    transition: all 0.2s;;
+    cursor: help;
+} */
+
+.script .sample .table td[class*="R"] {
+    color: white;
+}
+
+.script .sample .table td[class*="R"]:hover {
+    color: black;
+}
+
 .script .sample .btn {
     border: 1px solid #e6e6e6;
     border-top: 0;

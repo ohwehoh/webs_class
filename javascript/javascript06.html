@@ -78,13 +78,89 @@
         </div>
         <!-- //list -->
         <div class="script">
-            
+
+            <!-- sample1 -->
+            <div id="sample1" class="sample">
+                <h3>01. 배열 속성 : length : 배열 길이 구하기 : 반환(숫자)</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%;">
+                            <col style="width: 32%;">
+                            <col style="width: 22%;">
+                            <col style="width: 42%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>결괏값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample1_N1"></td>
+                                <td class="sample1_Q1"></td>
+                                <td class="sample1_M1"></td>
+                                <td class="sample1_R1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample1_N2"></td>
+                                <td class="sample1_Q2"></td>
+                                <td class="sample1_M2"></td>
+                                <td class="sample1_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample1_N3"></td>
+                                <td class="sample1_Q3"></td>
+                                <td class="sample1_M3"></td>
+                                <td class="sample1_R3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                </div>
+            </div>
+            <!-- //sample1 -->
+
         </div>
         <!-- //script -->
+
     </main>
+
     <!-- script -->
     <script>
-        
+        //01. 배열 속성 : length : 배열 길이 구하기 : 반환(숫자)
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            const arrNumLength = arrNum.length;
+
+            document.querySelector(".sample1_N1").innerHTML = 1;
+            document.querySelector(".sample1_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample1_M1").innerHTML = ".length";
+            document.querySelector(".sample1_R1").innerHTML = arrNumLength;
+
+            const arrText = ['a', 'b', 'c', 'd', 'e'];
+            const arrTextLength = arrText.length;
+
+            document.querySelector(".sample1_N2").innerHTML = 2;
+            document.querySelector(".sample1_Q2").innerHTML = "['a', 'b', 'c', 'd', 'e']";
+            document.querySelector(".sample1_M2").innerHTML = ".length";
+            document.querySelector(".sample1_R2").innerHTML = arrTextLength;
+
+            const arr = [1, 2, ['a', 'b']];
+            const arrLength = arr.length;
+
+            document.querySelector(".sample1_N3").innerHTML = 3;
+            document.querySelector(".sample1_Q3").innerHTML = "[1, 2, ['a', 'b']]";
+            document.querySelector(".sample1_M3").innerHTML = ".length";
+            document.querySelector(".sample1_R3").innerHTML = arrLength;
+        }
     </script>
 </body>
 </html>
