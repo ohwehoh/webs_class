@@ -261,13 +261,25 @@ img {
     cursor: help;
 } */
 
-.script .sample .table td[class*="R"] {
-    color: white;
+.script .sample .table td[class*="_R"] {
+    color: #fff;
+    transition: all 0.2s;;
+    cursor: help;
 }
 
-.script .sample .table td[class*="R"]:hover {
+.script .sample .table td[class*="_R"]:hover {
     color: black;
 }
+
+/* .script .sample .table tbody td:last-child{
+    background: green;
+} 막상 해보니 생각했던 '자식'요소가 아닌 tbody에서 마지막 본인이 선택된다? */
+/* .script .sample .table tbody td:last-of-type{
+    background: green;
+} 이것도 똑같다?*/
+/* .script .sample .table tbody td:nth-child(2){
+    background: green;
+} 이것도 본인이 선택된다.*/
 
 .script .sample .btn {
     border: 1px solid #e6e6e6;
