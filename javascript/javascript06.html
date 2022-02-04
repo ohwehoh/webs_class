@@ -1198,7 +1198,7 @@
             const arrReduce4 = arrNum4.reduce((p,c) => p.concat(c));
 
             document.querySelector(".sample7_N4").innerHTML = 4;
-            document.querySelector(".sample7_Q4").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample7_Q4").innerHTML = "[[100, 200], [300, 400]]";
             document.querySelector(".sample7_M4").innerHTML = "reduce((p,c) => p.concat(c))";
             document.querySelector(".sample7_R4").innerHTML = arrReduce4;
 
@@ -1498,6 +1498,10 @@
             const arrBox = [100, 200, 300 ,400 ,500, 600 ,700];
 
             //300, 400
+            let result = arrBox.reduce((c,p,i)=>{
+                if(i == 2) {document.write(i)}
+            });
+            document.write(result);
 
             //100, 300, 500, 700
 
