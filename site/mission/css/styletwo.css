@@ -127,7 +127,7 @@
 .content3 .article3 .left .img_left{
     width: 548px;
     height: 548px;
-    background: url(../img/article1left.jpg);
+    background: url(../img/article3left.jpg);
 }
 .content3 .article3 .right {
     margin-top: 102px;
@@ -139,5 +139,10 @@
 .content3 .article3 .right .img_right{
     width: 548px;
     height: 548px;
-    background: url(../img/article1right.jpg);
+    background: url(../img/article3right.jpg);
+}
+
+#footer {
+    height: 370px;
+    background-color: #6D5E6F;
 }
