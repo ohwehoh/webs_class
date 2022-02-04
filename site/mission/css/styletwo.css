@@ -68,6 +68,7 @@
     height: inherit;
     display: grid;
     grid-template-columns: 50% 50%;
+    position: relative;
 
 }
 
@@ -92,6 +93,8 @@
     border-top: 1px solid #000;
     width: 548px;
     height: 600px;
+    position: absolute;
+    right: 0;
 }
 
 .content2 .article2 .right .img_right{
@@ -101,7 +104,7 @@
 }
 
 .content3 {
-    height: 746px;
+    height: 1325px;
 }
 
 .content3 .article3 {
@@ -110,6 +113,7 @@
     height: inherit;
     display: grid;
     grid-template-columns: 50% 50%;
+    position: relative;
 
 }
 
@@ -134,6 +138,8 @@
     border-top: 1px solid #000;
     width: 548px;
     height: 600px;
+    position: absolute;
+    right: 0;
 }
 
 .content3 .article3 .right .img_right{
