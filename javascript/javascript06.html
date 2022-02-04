@@ -507,11 +507,94 @@
                 </div>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const arrNum1 = [100, 200, 300, 400, 500];
+    const arrReduce1 = arrNum1.reduce(element => element);
 
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const arrReduce2 = arrNum2.reduce((previous, current) => previous + current);
+
+    const arrNum3 = [100, 200, 300, 400, 500];
+    let sum = 0;
+    for(let i = 0 ; i &lt; arrNum3.length ; i++){
+        sum += arrNum2[i];
+    }
+
+    const arrNum4 = [[100, 200], [300, 400]];
+    const arrReduce4 = arrNum4.reduce((p,c) => p.concat(c));
+
+    const arrNum5 = ["javascript", "react", "vue"];
+    const arrReduce5 = arrNum5.reduceRight((p,c) => p+c);
 }</code></pre>
                 </div>
             </div>
             <!-- //sample7 -->
+
+            <!-- sample8 -->
+            <div id="sample8" class="sample">
+                <h3>08. 배열 메서드 : slice() : 배열 요소를 다른 요소로 변경 : 반환(배열)</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%;">
+                            <col style="width: 32%;">
+                            <col style="width: 22%;">
+                            <col style="width: 42%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>결괏값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample8_N1"></td>
+                                <td class="sample8_Q1"></td>
+                                <td class="sample8_M1"></td>
+                                <td class="sample8_R1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample8_N2"></td>
+                                <td class="sample8_Q2"></td>
+                                <td class="sample8_M2"></td>
+                                <td class="sample8_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample8_N3"></td>
+                                <td class="sample8_Q3"></td>
+                                <td class="sample8_M3"></td>
+                                <td class="sample8_R3"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample8_N4"></td>
+                                <td class="sample8_Q4"></td>
+                                <td class="sample8_M4"></td>
+                                <td class="sample8_R4"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample8_N5"></td>
+                                <td class="sample8_Q5"></td>
+                                <td class="sample8_M5"></td>
+                                <td class="sample8_R5"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample8_N5"></td>
+                                <td class="sample8_Q5"></td>
+                                <td class="sample8_M5"></td>
+                                <td class="sample8_R5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                </div>
+            </div>
+            <!-- //sample8 -->
 
         </div>
         <!-- //script -->
@@ -700,6 +783,7 @@
 
         //{7}
         //10. 배열 메서드 : reduce() : 배열 요소 하나로 정리 : 반환(결괏값)
+        //11. 배열 메서드 : reduceRight() : 배열 요소 하나로 정리 : 반환(결괏값)
         {
             const arrNum1 = [100, 200, 300, 400, 500];
             const arrReduce1 = arrNum1.reduce(element => element);
@@ -718,13 +802,58 @@
             document.querySelector(".sample7_R2").innerHTML = arrReduce2;
 
             //arrNum2 값을 for문을 이용해서 출력해주세요!
-            for(let i = 0 ; i < arrNum2.length ; i++){
-                document.write(arrNum2[i]);
+            const arrNum3 = [100, 200, 300, 400, 500];
+            let sum = 0;
+            for(let i = 0 ; i < arrNum3.length ; i++){
+                sum += arrNum2[i];
+                //document.write(sum);
             }
-        }
-        //11. 배열 메서드 : reduceRight() : 배열 요소 하나로 정리 : 반환(결괏값)
-        {
 
+            document.querySelector(".sample7_N3").innerHTML = 3;
+            document.querySelector(".sample7_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample7_M3").innerHTML = "for()";
+            document.querySelector(".sample7_R3").innerHTML = sum;
+
+            const arrNum4 = [[100, 200], [300, 400]];
+            const arrReduce4 = arrNum4.reduce((p,c) => p.concat(c));
+
+            document.querySelector(".sample7_N4").innerHTML = 4;
+            document.querySelector(".sample7_Q4").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample7_M4").innerHTML = "reduce((p,c) => p.concat(c))";
+            document.querySelector(".sample7_R4").innerHTML = arrReduce4;
+
+            const arrNum5 = ["javascript", "react", "vue"];
+            const arrReduce5 = arrNum5.reduceRight((p,c) => p+c);
+
+            document.querySelector(".sample7_N5").innerHTML = 5;
+            document.querySelector(".sample7_Q5").innerHTML = "['javascript', 'react', 'vue']";
+            document.querySelector(".sample7_M5").innerHTML = "reducRight((p,c) => p+c)";
+            document.querySelector(".sample7_R5").innerHTML = arrReduce5;
+        }
+
+        //12. 배열 메서드 : slice() : 배열 요소를 다른 요소로 변경 : 반환(배열)
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            const result = arrNum.slice(2);
+
+            document.querySelector(".sample8_N1").innerHTML = 1;
+            document.querySelector(".sample8_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample8_M1").innerHTML = "slice(2)";
+            document.querySelector(".sample8_R1").innerHTML = result;
+
+            const result2 = arrNum.slice(2, 3);
+
+            document.querySelector(".sample8_N2").innerHTML = 2;
+            document.querySelector(".sample8_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample8_M2").innerHTML = "slice(2, 3)";
+            document.querySelector(".sample8_R2").innerHTML = result2;
+
+            const result3 = arrNum.slice(2, 4);
+        
+            document.querySelector(".sample8_N3").innerHTML = 3;
+            document.querySelector(".sample8_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample8_M3").innerHTML = "slice(2, 4)";
+            document.querySelector(".sample8_R3").innerHTML = result3;
         }
     </script>
 </body>
