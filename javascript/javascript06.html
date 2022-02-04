@@ -580,10 +580,89 @@
                                 <td class="sample8_R5"></td>
                             </tr>
                             <tr>
-                                <td class="sample8_N5"></td>
-                                <td class="sample8_Q5"></td>
-                                <td class="sample8_M5"></td>
-                                <td class="sample8_R5"></td>
+                                <td class="sample8_N6"></td>
+                                <td class="sample8_Q6"></td>
+                                <td class="sample8_M6"></td>
+                                <td class="sample8_R6"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arrNum = [100, 200, 300, 400, 500];
+    
+    const result = arrNum.slice(2);
+
+    const result2 = arrNum.slice(2, 3);
+
+    const result3 = arrNum.slice(2, 4);
+
+    const result4 = arrNum.slice(2, 5);
+
+    const result5 = arrNum.slice(-2);
+
+    const result6 = arrNum.slice(-2, 5);
+}</code></pre>
+                </div>
+            </div>
+            <!-- //sample8 -->
+
+            <!-- sample9 -->
+            <div id="sample8" class="sample">
+                <h3>09. 배열 메서드 : slice() : 배열 요소를 다른 요소로 변경 : 반환(배열)</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%;">
+                            <col style="width: 32%;">
+                            <col style="width: 22%;">
+                            <col style="width: 42%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>결괏값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample9_N1"></td>
+                                <td class="sample9_Q1"></td>
+                                <td class="sample9_M1"></td>
+                                <td class="sample9_R1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample9_N2"></td>
+                                <td class="sample9_Q2"></td>
+                                <td class="sample9_M2"></td>
+                                <td class="sample9_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample9_N3"></td>
+                                <td class="sample9_Q3"></td>
+                                <td class="sample9_M3"></td>
+                                <td class="sample9_R3"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample9_N4"></td>
+                                <td class="sample9_Q4"></td>
+                                <td class="sample9_M4"></td>
+                                <td class="sample9_R4"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample9_N5"></td>
+                                <td class="sample9_Q5"></td>
+                                <td class="sample9_M5"></td>
+                                <td class="sample9_R5"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample9_N6"></td>
+                                <td class="sample9_Q6"></td>
+                                <td class="sample9_M6"></td>
+                                <td class="sample9_R6"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -831,7 +910,9 @@
             document.querySelector(".sample7_R5").innerHTML = arrReduce5;
         }
 
+        //{8}
         //12. 배열 메서드 : slice() : 배열 요소를 다른 요소로 변경 : 반환(배열)
+        //slice("시작값","끝나는값");
         {
             const arrNum = [100, 200, 300, 400, 500];
             const result = arrNum.slice(2);
@@ -854,6 +935,41 @@
             document.querySelector(".sample8_Q3").innerHTML = "[100, 200, 300, 400, 500]";
             document.querySelector(".sample8_M3").innerHTML = "slice(2, 4)";
             document.querySelector(".sample8_R3").innerHTML = result3;
+
+            const result4 = arrNum.slice(2, 5);
+        
+            document.querySelector(".sample8_N4").innerHTML = 4;
+            document.querySelector(".sample8_Q4").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample8_M4").innerHTML = "slice(2, 5)";
+            document.querySelector(".sample8_R4").innerHTML = result4;
+
+            const result5 = arrNum.slice(-2);
+
+            document.querySelector(".sample8_N5").innerHTML = 5;
+            document.querySelector(".sample8_Q5").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample8_M5").innerHTML = "slice(-2)";
+            document.querySelector(".sample8_R5").innerHTML = result5;
+
+            const result6 = arrNum.slice(-2, 5);
+
+            document.querySelector(".sample8_N6").innerHTML = 6;
+            document.querySelector(".sample8_Q6").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample8_M6").innerHTML = "slice(-2, 5)";
+            document.querySelector(".sample8_R6").innerHTML = result6;
+        }
+
+        //{9}
+        //13. 배열 메서드 : splice() : 배열 요소를 다른 요소로 변경 : 반환(배열)
+        //splice(위치, 갯수, 요소1...)
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            const result = arrNum.splice(2);
+
+            document.querySelector(".sample9_N1").innerHTML = 1;
+            document.querySelector(".sample9_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample9_M1").innerHTML = "splice(2)";
+            document.querySelector(".sample9_R1").innerHTML = result;
+
         }
     </script>
 </body>
