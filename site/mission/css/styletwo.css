@@ -39,6 +39,10 @@
     top: 40px;
 }
 
+#header .more a {
+    padding-bottom:0;
+}
+
 #contents {
 }
 
@@ -104,6 +108,7 @@
 }
 
 .content3 {
+    margin-top: 50px;
     height: 1325px;
 }
 
