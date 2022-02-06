@@ -976,6 +976,166 @@
             </div>
             <!-- //sample13 -->
 
+            <!-- sample14 -->
+            <div id="sample14" class="sample">
+                <h3>MISSION</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%;">
+                            <col style="width: 36%;">
+                            <col style="width: 30%;">
+                            <col style="width: 30%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>결괏값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample14_N1"></td>
+                                <td class="sample14_Q1"></td>
+                                <td class="sample14_M1"></td>
+                                <td class="sample14_R1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N2"></td>
+                                <td class="sample14_Q2"></td>
+                                <td class="sample14_M2"></td>
+                                <td class="sample14_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N3"></td>
+                                <td class="sample14_Q3"></td>
+                                <td class="sample14_M3"></td>
+                                <td class="sample14_R3"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N4"></td>
+                                <td class="sample14_Q4"></td>
+                                <td class="sample14_M4"></td>
+                                <td class="sample14_R4"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N5"></td>
+                                <td class="sample14_Q5"></td>
+                                <td class="sample14_M5"></td>
+                                <td class="sample14_R5"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N6"></td>
+                                <td class="sample14_Q6"></td>
+                                <td class="sample14_M6"></td>
+                                <td class="sample14_R6"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N7"></td>
+                                <td class="sample14_Q7"></td>
+                                <td class="sample14_M7"></td>
+                                <td class="sample14_R7"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N8"></td>
+                                <td class="sample14_Q8"></td>
+                                <td class="sample14_M8"></td>
+                                <td class="sample14_R8"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N9"></td>
+                                <td class="sample14_Q9"></td>
+                                <td class="sample14_M9"></td>
+                                <td class="sample14_R9"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N10"></td>
+                                <td class="sample14_Q10"></td>
+                                <td class="sample14_M10"></td>
+                                <td class="sample14_R10"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N11"></td>
+                                <td class="sample14_Q11"></td>
+                                <td class="sample14_M11"></td>
+                                <td class="sample14_R11"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample14_N12"></td>
+                                <td class="sample14_Q12"></td>
+                                <td class="sample14_M12"></td>
+                                <td class="sample14_R12"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arrBox1 = [100, 200, 300 ,400 ,500, 600 ,700];
+    const arrBox2 = [100, 200, 300 ,400 ,500, 600 ,700];
+    const arrBox3 = [100, 200, 300 ,400 ,500, 600 ,700];
+    const arrBox4 = [100, 200, 300 ,400 ,500, 600 ,700];
+    const arrBox5 = [100, 200, 300 ,400 ,500, 600 ,700];
+    const arrBox6 = [100, 200, 300 ,400 ,500, 600 ,700];
+
+    //300, 400
+
+    const result1 = arrBox1.splice(2,2);
+    const result2 = arrBox2.filter(el => el >= 300 && el &lt;= 400);
+    console.log(result1)
+    console.log(result2)
+
+
+    //100, 300, 500, 700
+    const result3 = arrBox3.filter(el => el % 200 != 0);
+    const result4 = [];
+    arrBox4.reduce((p,c,i) => {
+        if(c % 200 != 0){
+            result4.push(c);
+            return c
+        }
+    }, 0)
+    console.log(result3);
+    console.log(result4);
+
+    //700
+    const result5 = arrBox5.find(el => el == 700);
+    const result6 = arrBox6.filter(el => el == 700);
+    console.log(result5);
+    console.log(result6);
+}
+{
+    const arrBox1 = ["j", "b", "c", "d", "e"];
+    const arrBox2 = ["j", "b", "c", "d", "e"];
+    const arrBox3 = ["j", "b", "c", "d", "e"];
+    const arrBox4 = ["j", "b", "c", "d", "e"];
+    const arrBox5 = ["j", "b", "c", "d", "e"];
+    const arrBox6 = ["j", "b", "c", "d", "e"];
+
+    //j
+    const result1 = arrBox1.find(el => el == 'j');
+    const result2 = arrBox2.filter(el => el == 'j');
+    console.log(result1);
+    console.log(result2);
+
+    //jc
+    const result3 = arrBox3.filter(el => el == 'j' || el == 'c');
+    arrBox4.splice(1,4,'c');
+    console.log(result3);
+    console.log(arrBox4);
+
+    //jbcd
+    const result5 = arrBox5.slice(0,4);
+    arrBox6.splice(4,1);
+    console.log(result5);
+    console.log(arrBox6);
+}</code></pre>
+                </div>
+            </div>
+            <!-- //sample14 -->
+
         </div>
         <!-- //script -->
 
@@ -1392,7 +1552,7 @@
             document.querySelector(".sample11_Q1").innerHTML = "[100, 200, 300, 400, 500]";
             document.querySelector(".sample11_M1").innerHTML = "find(element => element === 300)";
             document.querySelector(".sample11_R1").innerHTML = result;
-            console.log(result);
+            //console.log(result);
 
             const result2 = arrNum.find(element => element === 600);
 
@@ -1435,7 +1595,7 @@
             document.querySelector(".sample12_Q1").innerHTML = "[100, 200,300, 400, 500]";
             document.querySelector(".sample12_M1").innerHTML = "filter(el => el === 300)";
             document.querySelector(".sample12_R1").innerHTML = result;
-            console.log(result);
+            //console.log(result);
 
             const  arrNum2 = [100, 200,300, 400, 500];
             const result2 = arrNum.filter(el => el === 600);
@@ -1444,7 +1604,7 @@
             document.querySelector(".sample12_Q2").innerHTML = "[100, 200,300, 400, 500]";
             document.querySelector(".sample12_M2").innerHTML = "filter(el => el === 600)";
             document.querySelector(".sample12_R2").innerHTML = result2;
-            console.log(result2);
+            //console.log(result2);
 
             const arrNum3 = [100, 200, 300, 400, 500];
             const result3 = arrNum2.filter(el => el >= 300);
@@ -1495,25 +1655,115 @@
 
         //숙제 ... 답안 2개 이상
         {
-            const arrBox = [100, 200, 300 ,400 ,500, 600 ,700];
+            {
+                const arrBox1 = [100, 200, 300 ,400 ,500, 600 ,700];
+                const arrBox2 = [100, 200, 300 ,400 ,500, 600 ,700];
+                const arrBox3 = [100, 200, 300 ,400 ,500, 600 ,700];
+                const arrBox4 = [100, 200, 300 ,400 ,500, 600 ,700];
+                const arrBox5 = [100, 200, 300 ,400 ,500, 600 ,700];
+                const arrBox6 = [100, 200, 300 ,400 ,500, 600 ,700];
 
-            //300, 400
-            let result = arrBox.reduce((c,p,i)=>{
-                if(i == 2) {document.write(i)}
-            });
-            document.write(result);
+                //300, 400
 
-            //100, 300, 500, 700
+                const result1 = arrBox1.splice(2,2);
+                const result2 = arrBox2.filter(el => el >= 300 && el <= 400);
 
-            //700
+                document.querySelector(".sample14_N1").innerHTML = 1;
+                document.querySelector(".sample14_Q1").innerHTML = "[100, 200, 300 ,400 ,500, 600 ,700]";
+                document.querySelector(".sample14_M1").innerHTML = "splice(2,2)";
+                document.querySelector(".sample14_R1").innerHTML = result1;
+                document.querySelector(".sample14_N2").innerHTML = 2;
+                document.querySelector(".sample14_Q2").innerHTML = "[100, 200, 300 ,400 ,500, 600 ,700]";
+                document.querySelector(".sample14_M2").innerHTML = "filter(el => el >= 300 && el <= 400)";
+                document.querySelector(".sample14_R2").innerHTML = result2;
+                console.log(result1)
+                console.log(result2)
 
-            const arrBox2 = ["j", "b", "c", "d", "e"];
 
-            //j
+                //100, 300, 500, 700
+                const result3 = arrBox3.filter(el => el % 200 != 0);
+                const result4 = [];
+                arrBox4.reduce((p,c,i) => {
+                    if(c % 200 != 0){
+                        result4.push(c);
+                        return c
+                    }
+                }, 0)
+                document.querySelector(".sample14_N3").innerHTML = 3;
+                document.querySelector(".sample14_Q3").innerHTML = "[100, 200, 300 ,400 ,500, 600 ,700]";
+                document.querySelector(".sample14_M3").innerHTML = "filter(el => el % 200 != 0)";
+                document.querySelector(".sample14_R3").innerHTML = result3;
+                document.querySelector(".sample14_N4").innerHTML = 4;
+                document.querySelector(".sample14_Q4").innerHTML = "[100, 200, 300 ,400 ,500, 600 ,700]";
+                document.querySelector(".sample14_M4").innerHTML = "reduce((p,c,i) => {if(c % 200 != 0){ result4.push(c); return c}}, 0)";
+                document.querySelector(".sample14_R4").innerHTML = result4;
+                console.log(result3);
+                console.log(result4);
 
-            //jc
+                //700
+                const result5 = arrBox5.find(el => el == 700);
+                const result6 = arrBox6.filter(el => el == 700);
+                document.querySelector(".sample14_N5").innerHTML = 5;
+                document.querySelector(".sample14_Q5").innerHTML = "[100, 200, 300 ,400 ,500, 600 ,700]";
+                document.querySelector(".sample14_M5").innerHTML = "find(el => el == 700)";
+                document.querySelector(".sample14_R5").innerHTML = result5;
+                document.querySelector(".sample14_N6").innerHTML = 6;
+                document.querySelector(".sample14_Q6").innerHTML = "[100, 200, 300 ,400 ,500, 600 ,700]";
+                document.querySelector(".sample14_M6").innerHTML = "filter(el => el == 700)";
+                document.querySelector(".sample14_R6").innerHTML = result6;
+                console.log(result5);
+                console.log(result6);
+            }
+            {
+                const arrBox1 = ["j", "b", "c", "d", "e"];
+                const arrBox2 = ["j", "b", "c", "d", "e"];
+                const arrBox3 = ["j", "b", "c", "d", "e"];
+                const arrBox4 = ["j", "b", "c", "d", "e"];
+                const arrBox5 = ["j", "b", "c", "d", "e"];
+                const arrBox6 = ["j", "b", "c", "d", "e"];
 
-            //jbcd
+                //j
+                const result1 = arrBox1.find(el => el == 'j');
+                const result2 = arrBox2.filter(el => el == 'j');
+                document.querySelector(".sample14_N7").innerHTML = 7;
+                document.querySelector(".sample14_Q7").innerHTML = "['j', 'b', 'c', 'd', 'e']";
+                document.querySelector(".sample14_M7").innerHTML = "find(el => el == 'j'))";
+                document.querySelector(".sample14_R7").innerHTML = result1;
+                document.querySelector(".sample14_N8").innerHTML = 8;
+                document.querySelector(".sample14_Q8").innerHTML = "['j', 'b', 'c', 'd', 'e']";
+                document.querySelector(".sample14_M8").innerHTML = "filter(el => el == 'j')";
+                document.querySelector(".sample14_R8").innerHTML = result2;
+                console.log(result1);
+                console.log(result2);
+
+                //jc
+                const result3 = arrBox3.filter(el => el == 'j' || el == 'c');
+                arrBox4.splice(1,4,'c');
+                document.querySelector(".sample14_N9").innerHTML = 9;
+                document.querySelector(".sample14_Q9").innerHTML = "['j', 'b', 'c', 'd', 'e']";
+                document.querySelector(".sample14_M9").innerHTML = "filter(el => el == 'j' || el == 'c')";
+                document.querySelector(".sample14_R9").innerHTML = result3;
+                document.querySelector(".sample14_N10").innerHTML = 10;
+                document.querySelector(".sample14_Q10").innerHTML = "['j', 'b', 'c', 'd', 'e']";
+                document.querySelector(".sample14_M10").innerHTML = "splice(1,4,'c')";
+                document.querySelector(".sample14_R10").innerHTML = arrBox4;
+                console.log(result3);
+                console.log(arrBox4);
+
+                //jbcd
+                const result5 = arrBox5.slice(0,4);
+                arrBox6.splice(4,1);
+                document.querySelector(".sample14_N11").innerHTML = 11;
+                document.querySelector(".sample14_Q11").innerHTML = "['j', 'b', 'c', 'd', 'e']";
+                document.querySelector(".sample14_M11").innerHTML = "slice(0,4)";
+                document.querySelector(".sample14_R11").innerHTML = result5;
+                document.querySelector(".sample14_N12").innerHTML = 12;
+                document.querySelector(".sample14_Q12").innerHTML = "['j', 'b', 'c', 'd', 'e']";
+                document.querySelector(".sample14_M12").innerHTML = "splice(4,1)";
+                document.querySelector(".sample14_R12").innerHTML = arrBox6;
+                console.log(result5);
+                console.log(arrBox6);
+            }
         }
     </script>
 </body>
