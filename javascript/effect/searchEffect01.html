@@ -97,7 +97,7 @@
         }
         .board .list li {
             background-color: #BDD6E6;
-            margin: 5px;
+            margin: 5px 0;
             padding: 7px 10px;
             border-radius: 4px;
             list-style: none;
@@ -106,6 +106,10 @@
         .board .list li:hover {
             background-color: #A5C3D5;
             cursor: grabbing
+        }
+
+        .board .list li.hide {
+            display: none;
         }
         @media (max-width: 800px){
             .board {
@@ -137,13 +141,13 @@
     <div id="wrap">
         <div class="number">
             <ul>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
+                <li class="active"><a href="searchEffect01.html">1</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
             </ul>
         </div>
         <div class="board">
-            <span class="sub"><a href="../javascript06.html#sample10">indexOf()를 이용하여 CSS 속성 검색하기</a></span>
+            <span class="sub"><a href="../javascript06.html#sample10">indexOf()</a>를 이용하여 CSS 속성 검색하기</span>
             <h1>CSS 속성 검색하기</h1>
 
             <div class="search">
@@ -158,7 +162,6 @@
                     <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다.</li>
                     <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다.</li>
                     <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다.</li>
-                    <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 끝났을 때 설정합니다.</li>
                     <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</li>
                     <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션의 반복 횟수를 설정합니다.</li>
                     <li data-name="animation-name"><strong>animation-name</strong> : animation-name 속성은 에니메이션 키프레인 이름을 설정합니다.</li>
@@ -176,32 +179,23 @@
         const searchBox = document.querySelector("#search-box");
         const cssList = document.querySelectorAll(".list ul li");
 
+        
+
         searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value
-            console.log(searchWord);
+            const searchWord = searchBox.value; //사용자가 입력한 데이터 저장소 console.log(searchWord);
+
+            cssList.forEach(el => {
+                //console.log(el.dataset.name);
+
+                const cssName = el.dataset.name; //CSS 속성 값
+
+                if(cssName.indexOf(searchWord)){
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");
+                }
+            })
         });
-
-        let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-        //for
-        for(let i = 0; i < numArr.length; i++){
-            console.log(numArr[i]);
-        }
-
-        //forEach
-        numArr.forEach((el)=>{
-            console.log(el);
-        })
-
-        //for of
-        for(let i of numArr){
-            console.log(i);
-        }
-
-        //for in
-        for(let i in numArr){
-            console.log(numArr[i]);
-        }
     </script>
 </body>
 </html>
