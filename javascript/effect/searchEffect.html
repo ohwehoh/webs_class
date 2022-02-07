@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>검색 이펙트</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
         body {
             margin: 0;
         }
@@ -15,10 +16,23 @@
             background: linear-gradient(to bottom, #11E8BB 0%,#8200C9 100%);
             overflow: hidden;
         }
+        h1 {
+            font-family: 'Six Caps', sans-serif;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 8vw;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
     <div id="canvas"></div>
+
+    <h1>Search Effect</h1>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/93/three.min.js"></script>
     <script>
         //화면 설정
