@@ -7,8 +7,11 @@
     <title>검색 이펙트</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
-        body {
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         html {
             width: 100%;
@@ -24,6 +27,11 @@
             font-size: 8vw;
             text-transform: uppercase;
             font-weight: normal;
+            transform: translate(-50%, -50%);
+            letter-spacing: 2vw;
+            background: -webkit-linear-gradient(#590e81, #25e4bb6c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
@@ -31,7 +39,6 @@
     <div id="canvas"></div>
 
     <h1>Search Effect</h1>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/93/three.min.js"></script>
     <script>
@@ -103,12 +110,12 @@
         //애니메이션 설정
         function animate(){
             requestAnimationFrame(animate);
-            particle.rotation.x += 0.0000;
-            particle.rotation.y -= 0.0040;
-            circle.rotation.x -= 0.0020;
-            circle.rotation.y -= 0.0030;
-            skelet.rotation.x -= 0.0010;
-            skelet.rotation.y += 0.0020;
+            particle.rotation.x += 0.001;
+            particle.rotation.y -= 0.003;
+            circle.rotation.x -= 0.002;
+            circle.rotation.y -= 0.003;
+            skelet.rotation.x -= 0.001;
+            skelet.rotation.y += 0.002;
             renderer.clear();
             renderer.render(scene, camera)
         }
