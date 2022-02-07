@@ -153,21 +153,19 @@
 
             <div class="list">
                 <ul>
-                    <li><strong>all</strong> : all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다.</li>
-                    <li><strong>animation</strong> : animation 속성은 장편 애니메이션 속성을 설정하기 위한 약식 속성입니다.</li>
-                    <li><strong>animation-delay</strong> : animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다.</li>
-                    <li><strong>animation-direction</strong> : animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다.</li>
-                    <li><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다.</li>
-                    <li><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 끝났을 때 설정합니다.</li>
-                    <li><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</li>
-                    <li><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션의 반복 횟수를 설정합니다.</li>
-                    <li><strong>animation-name</strong> : animation-name 속성은 에니메이션 키프레인 이름을 설정합니다.</li>
-                    <li><strong>animation-play-state</strong> : animation-play-state 속성은 에니메이션의 진행상태를 설정합니다.</li>
-
-                    <li><strong>backdrop-filter</strong> : backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다.</li>
-                    <li><strong>backface-visibility</strong> : backface-visibility 속성은 요소 뒷면 여부를 설정합니다.</li>
-
-                    <li><strong>caption-side</strong> : caption-side 속성은 테이블 캡션 설정합니다.</li>
+                    <li data-name="all"><strong>all</strong> : all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다.</li>
+                    <li data-name="animation"><strong>animation</strong> : animation 속성은 장편 애니메이션 속성을 설정하기 위한 약식 속성입니다.</li>
+                    <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다.</li>
+                    <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다.</li>
+                    <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다.</li>
+                    <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 끝났을 때 설정합니다.</li>
+                    <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                    <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션의 반복 횟수를 설정합니다.</li>
+                    <li data-name="animation-name"><strong>animation-name</strong> : animation-name 속성은 에니메이션 키프레인 이름을 설정합니다.</li>
+                    <li data-name="animation-play-state"><strong>animation-play-state</strong> : animation-play-state 속성은 에니메이션의 진행상태를 설정합니다.</li>
+                    <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다.</li>
+                    <li data-name="backface-visibility"><strong>backface-visibility</strong> : backface-visibility 속성은 요소 뒷면 여부를 설정합니다.</li>
+                    <li data-name="caption-side"><strong>caption-side</strong> : caption-side 속성은 테이블 캡션 설정합니다.</li>
                 </ul>
             </div>
         </div>
@@ -182,6 +180,28 @@
             const searchWord = searchBox.value
             console.log(searchWord);
         });
+
+        let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        //for
+        for(let i = 0; i < numArr.length; i++){
+            console.log(numArr[i]);
+        }
+
+        //forEach
+        numArr.forEach((el)=>{
+            console.log(el);
+        })
+
+        //for of
+        for(let i of numArr){
+            console.log(i);
+        }
+
+        //for in
+        for(let i in numArr){
+            console.log(numArr[i]);
+        }
     </script>
 </body>
 </html>
