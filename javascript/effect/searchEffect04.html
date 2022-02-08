@@ -198,35 +198,29 @@
             <div class="desc">아래의 속성을 검색하면 설명이 나옵니다!</div>
 
             <!-- CSS 속성 리스트 -->
-            <div class="list">
-                <span>all</span>
-                <span>animation</span>
-                <span>animation-delay</span>
-                <span>animation-direction</span>
-                <span>all</span>
-            </div>
+            <div class="list"></div>
         </div>
     </div>
 
     <!-- script -->
     <script>
         const cssProperty = [   //'CSS 속성 설명' 데이터를 cssProperty 배열에 객체 형태로 저장
-            {name: "all", desc: "all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
-            {name: "animation", desc: "animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
-            {name: "animation-delay", desc: "animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
-            {name: "animation-direction", desc: "animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다."},
-            {name: "animation-duration", desc: "animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
-            {name: "animation-fill-mode", desc: "animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다."},
-            {name: "animation-iteration-count", desc: "animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
-            {name: "animation-name", desc: "animation-name 속성은 애니메이션 키프레임 이름을 설정합니다."},
-            {name: "animation-play-state", desc: "animation-play-state 속성은 애니메이션의 진행상태를 설정합니다."},
-            {name: "backdrop-filter", desc: "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
-            {name: "backface-visibility", desc: "backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다."},
-            {name: "caption-side", desc: "caption-side 속성은 테이블 caption의 위치를 설정합니다."},
-            {name: "direction", desc: "direction 속성은 문장의 방향을 설정합니다."},
-            {name: "filter", desc: "filter 속성은 그래픽 효과를 설정합니다."},
-            {name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
-            {name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
+            {name:"all", desc:"all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
+            {name:"animation", desc:"animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
+            {name:"animation-delay", desc:"animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
+            {name:"animation-direction", desc:"animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다."},
+            {name:"animation-duration", desc:"animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
+            {name:"animation-fill-mode", desc:"animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다."},
+            {name:"animation-iteration-count", desc:"animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
+            {name:"animation-name", desc:"animation-name 속성은 애니메이션 키프레임 이름을 설정합니다."},
+            {name:"animation-play-state", desc:"animation-play-state 속성은 애니메이션의 진행상태를 설정합니다."},
+            {name:"backdrop-filter", desc:"backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
+            {name:"backface-visibility", desc:"backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다."},
+            {name:"caption-side", desc:"caption-side 속성은 테이블 caption의 위치를 설정합니다."},
+            {name:"direction", desc:"direction 속성은 문장의 방향을 설정합니다."},
+            {name:"filter", desc:"filter 속성은 그래픽 효과를 설정합니다."},
+            {name:"flex", desc:"flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
+            {name:"grid-template-columns", desc:"grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
             {name:"direction", desc:"direction 속성은 문장의 방향을 설정합니다."},
             {name:"display", desc:"display 해당 요소를 어떻게 보여줄지를 지정할수있습니다."},
             {name:"empty-cells", desc:"empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다."},
