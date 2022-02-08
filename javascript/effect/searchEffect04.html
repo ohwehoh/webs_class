@@ -290,15 +290,15 @@
                 //클릭한 데이터 값을 가져오기
                 const listProp = span.innerText;    //listPorp에 span에 들어있는 text(CSS속성명)을 저장.
                 //console.log(listProp)
-                findProp(listProp);         //findProp 함수 호출하고 매개변수로 searchWord(input입력값) 전달.
+                findProp(listProp);         //findProp 함수 호출하고 매개변수로 searchWord(클릭한 CSS속성명) 전달.
             });
         });
 
-        function findProp(searchWord) {
-            const targetData = cssProperty.find((data) => data.name === searchWord);
+        function findProp(searchWord) {     //findProp함수 생성, 매개변수 하나 전달 받음.
+            const targetData = cssProperty.find((data) => data.name === searchWord);    //배열cssProperty(CSS속성 데이터)의 키 name(CSS속성명)과 searchWord(매개변수로 전달받은 사용자가 검색(or 클릭)한 CSS속성명)가 같으면(find()메소드로 찾는다.) 해당 CSS속성명을 targetData에 저장
 
             //찾는 데이터가 없을 때
-            if(targetData == null){
+            if(targetData == null){     //targetData
                 cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!";
                 return;
             }
