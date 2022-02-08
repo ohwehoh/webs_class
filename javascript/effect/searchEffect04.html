@@ -295,17 +295,15 @@
         });
 
         function findProp(searchWord) {     //findProp함수 생성, 매개변수 하나 전달 받음.
-            const targetData = cssProperty.find((data) => data.name === searchWord);    //배열cssProperty(CSS속성 데이터)의 키 name(CSS속성명)과 searchWord(매개변수로 전달받은 사용자가 검색(or 클릭)한 CSS속성명)가 같으면(find()메소드로 찾는다.) 해당 CSS속성명을 targetData에 저장
+            const targetData = cssProperty.find((data) => data.name === searchWord);    //배열cssProperty(CSS속성 데이터)의 name(CSS속성명)의 값과 searchWord(매개변수로 전달받은 사용자가 검색(or 클릭)한 CSS속성명)가 같으면(find()메소드로 찾는다.) 해당 배열값 (CSS속성명(name)과 설명(desc))이 targetData에 저장.
 
             //찾는 데이터가 없을 때
-            if(targetData == null){     //targetData
-                cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!";
-                return;
+            if(targetData == null){     //전달받은 searchWord가 cssProperty에 없어서 targetData가 정의되지 않으면
+                cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!";     //설명란(cssDesc, class="desc"태그)에 "해당.."문자열 출력
+                return;     //문자열 출력하면 return하여 if문 종료
             }
 
-            cssDesc.innerHTML = targetData.desc;
-            // cssDesc.innerText = 이런 방법도 가능
-            // cssDesc.textContent = 이런 방법도 가능
+            cssDesc.innerHTML = targetData.desc;    //설명란(cssDesc, class="desc"태그)에 targetData에 저장된 CSS속성중에 desc의 값 출력.
         }
     </script>
 </body>
