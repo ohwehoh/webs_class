@@ -227,32 +227,70 @@
             {name: "filter", desc: "filter 속성은 그래픽 효과를 설정합니다."},
             {name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
             {name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
+            {name:"direction", desc:"direction 속성은 문장의 방향을 설정합니다."},
+            {name:"display", desc:"display 해당 요소를 어떻게 보여줄지를 지정할수있습니다."},
+            {name:"empty-cells", desc:"empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다."},
+            {name:"filter", desc:"filter 속성은 그래픽 효과를 설정합니다."},
+            {name:"flex", desc:"flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
+            {name:"flex-basis", desc:"flex-basis 속성은 요소의 기본 단위를 정의합니다."},
+            {name:"flex-direction", desc:"flex-direction 속성은 요소의 정렬 방향을 정의합니다."},
+            {name:"flex-flow", desc:"flex-flow 속성은 요소의 정렬 방향 flex-direction와 줄 속성 flex-wrap을 같이 설정합니다."},
+            {name:"flex-grow", desc:"flex-grow 속성은 요소의 크기를 숫자를 통해 정의합니다."},
+            {name:"flex-shrink", desc:"flex-shrink 속성은 요소의 크기를 숫자를 통해 줄여줍니다."},
+            {name:"flex-wrap", desc:"flex-wrap 속성은 요소의 줄 속성을 설정합니다."},
+            {name:"float", desc:"flex-grow 속성은 블록요소의 정렬 상태를 설정합니다."},
+            {name:"font", desc:"font 속성은 폰트에 관한 설정을 정의합니다."},
+            {name:"font-family", desc:"font-family 속성은 폰트 종류를 설정합니다."},
+            {name:"font-size", desc:"font-size 속성은 폰트의 크기를 조절할수 있습니다."},
+            {name:"font-size-adjust", desc:"font-size-adjust 속성은 소문자를 기준으로 폰트 크기를 설정합니다."},
+            {name:"font-stretch", desc:"font-stretch 속성은 폰트의 굵기를 정의합니다."},
+            {name:"font-style", desc:"font-style 속성은 폰트의 스타일을 정의합니다."},
+            {name:"font-variant", desc:"font-variant 속성은 글꼴의 변형을 정의합니다."},
+            {name:"font-weight", desc:"font-weight 속성은 폰트의 가중치나 굵기를 명시할수있다."},
+            {name:"grid", desc:"grid 속성은 flex와 달리 가로세로(2방향)설정이 가능한 2차원 레이아웃 시스템입니다."},
+            {name:"grid-area", desc:"grid-area 속성은 영역(Area) 이름을 설정하거나, grid-row와 grid-column의 단축 속성"},
+            {name:"grid-auto-columns", desc:"grid-auto-columns 속성은 암시적인 열(Track)의 크기를 정의"},
+            {name:"grid-auto-flow", desc:"grid-auto-flow 속성은 자동 배치 알고리즘 방식을 정의"},
+            {name:"grid-auto-rows", desc:"grid-auto-rows 속성은 암시적인 행(Track)의 크기를 정의"},
+            {name:"grid-column", desc:"grid-column 속성은 grid-column-xxx의 단축 속성(열 시작/끝 위치)"},
+            {name:"grid-column-end", desc:"grid-column-end 속성은 그리드 아이템의 열 끝 위치 지정"},
+            {name:"grid-column-gap", desc:"grid-column-gap 속성은 열과 열 사이의 간격(Line)을 정의"},
+            {name:"grid-column-start", desc:"grid-column-start 속성은 그리드 아이템의 열 시작 위치 지정"},
+            {name:"grid-gap", desc:"grid-gap 속성은 행과 열 사이의 간격을 설정합니다."},
+            {name:"grid-row", desc:"grid-row 속성은 grid-row-xxx의 단축 속성(행 시작/끝 위치)"},
+            {name:"grid-row-end", desc:"grid-row-end 속성은 그리드 아이템의 행 끝 위치 지정"},
+            {name:"grid-row-gap", desc:"grid-row-gap 속성은 행과 행 사이의 간격(Line)을 정의"},
+            {name:"grid-row-start", desc:"grid-row-start 그리드 아이템(Item)의 행 시작 위치 지정"},
+            {name:"grid-template", desc:"grid-template 속성은 grid-template-xxx의 단축 속성"},
+            {name:"grid-template-areas", desc:"grid-template-areas 속성은 영역(Area) 이름을 참조해 템플릿 생성"},
+            {name:"grid-template-columns", desc:"grid-template-columns 명시적 열(Track)의 크기를 정의"},
+            {name:"grid-template-rows", desc:"grid-template-rows 명시적 행(Track)의 크기를 정의"}
         ];
         const searchBox = document.querySelector("#search-box");    //searchBox에 id="search-box" 태그 저장
-        const cssCount = document.querySelector(".count");  //
-        const cssDesc = document.querySelector(".desc");
-        const cssList = document.querySelector(".list");
+        const cssCount = document.querySelector(".count");  //cssCount에 class="count" 태그 저장
+        const cssDesc = document.querySelector(".desc");    //cssCount에 class="desc" 태그 저장
+        const cssList = document.querySelector(".list");    //cssCount에 class="list" 태그 저장
 
         //CSS 속성 값과 전체 갯수 출력하기
-        cssProperty.map((element, index) => {
-            cssCount.innerText = "전체 목록 갯수 : " + (index+1) + "개";
-            cssList.innerHTML += "<span>"+ element.name +"</span>"
+        cssProperty.map((element, index) => {   //배열 cssProperty를 map메소드로 순회, element,index
+            cssCount.innerText = "전체 목록 갯수 : " + (index+1) + "개";    //cssCount에 최종적으로 마지막 index+1 값이 들어가서 배열 cssProperty의 전체 길이값이 sccCount에 저장된다.
+            cssList.innerHTML += "<span>"+ element.name +"</span>"  //class="list"태그에 element.name(cssCount배열에서 name(키)의 value(CSS속성명))이 들어간다.
         });
 
         //사용자가 검색한 값
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;
+        searchBox.addEventListener("keyup", () => {     //searchBox에서 키보드를눌렀때 땠을 때 이벤트 설정
+            const searchWord = searchBox.value;     //searchWord에 input에 입력된 값 저장.
             //console.log(searchWord);
 
-            findProp(searchWord);
+            findProp(searchWord);       //findProp 함수 호출하고 매개변수로 searchWord(input입력값) 전달.
         });
 
-        document.querySelectorAll(".list span").forEach(span => {
-            span.addEventListener("click", () => {
+        document.querySelectorAll(".list span").forEach(span => {   //class="list"의 하위 태그 span(CSS속성명)을 모두 선택하고 차례대로 순회.
+            span.addEventListener("click", () => {      //span(CSS 속성명)을 클릭할 때 이벤트 설정
                 //클릭한 데이터 값을 가져오기
-                const listProp = span.innerText;
-                console.log(listProp)
-                findProp(listProp);
+                const listProp = span.innerText;    //listPorp에 span에 들어있는 text(CSS속성명)을 저장.
+                //console.log(listProp)
+                findProp(listProp);         //findProp 함수 호출하고 매개변수로 searchWord(input입력값) 전달.
             });
         });
 
