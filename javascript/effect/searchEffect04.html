@@ -205,6 +205,7 @@
     <!-- script -->
     <script>
         const cssProperty = [   //'CSS 속성 설명' 데이터를 cssProperty 배열에 객체 형태로 저장
+            // a
             {name:"all", desc:"all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
             {name:"animation", desc:"animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
             {name:"animation-delay", desc:"animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
@@ -214,16 +215,17 @@
             {name:"animation-iteration-count", desc:"animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
             {name:"animation-name", desc:"animation-name 속성은 애니메이션 키프레임 이름을 설정합니다."},
             {name:"animation-play-state", desc:"animation-play-state 속성은 애니메이션의 진행상태를 설정합니다."},
+            // b
             {name:"backdrop-filter", desc:"backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
             {name:"backface-visibility", desc:"backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다."},
+            // c
             {name:"caption-side", desc:"caption-side 속성은 테이블 caption의 위치를 설정합니다."},
-            {name:"direction", desc:"direction 속성은 문장의 방향을 설정합니다."},
-            {name:"filter", desc:"filter 속성은 그래픽 효과를 설정합니다."},
-            {name:"flex", desc:"flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
-            {name:"grid-template-columns", desc:"grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
+            // d
             {name:"direction", desc:"direction 속성은 문장의 방향을 설정합니다."},
             {name:"display", desc:"display 해당 요소를 어떻게 보여줄지를 지정할수있습니다."},
+            // e
             {name:"empty-cells", desc:"empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다."},
+            // f
             {name:"filter", desc:"filter 속성은 그래픽 효과를 설정합니다."},
             {name:"flex", desc:"flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
             {name:"flex-basis", desc:"flex-basis 속성은 요소의 기본 단위를 정의합니다."},
@@ -241,6 +243,7 @@
             {name:"font-style", desc:"font-style 속성은 폰트의 스타일을 정의합니다."},
             {name:"font-variant", desc:"font-variant 속성은 글꼴의 변형을 정의합니다."},
             {name:"font-weight", desc:"font-weight 속성은 폰트의 가중치나 굵기를 명시할수있다."},
+            // g
             {name:"grid", desc:"grid 속성은 flex와 달리 가로세로(2방향)설정이 가능한 2차원 레이아웃 시스템입니다."},
             {name:"grid-area", desc:"grid-area 속성은 영역(Area) 이름을 설정하거나, grid-row와 grid-column의 단축 속성"},
             {name:"grid-auto-columns", desc:"grid-auto-columns 속성은 암시적인 열(Track)의 크기를 정의"},
@@ -258,7 +261,39 @@
             {name:"grid-template", desc:"grid-template 속성은 grid-template-xxx의 단축 속성"},
             {name:"grid-template-areas", desc:"grid-template-areas 속성은 영역(Area) 이름을 참조해 템플릿 생성"},
             {name:"grid-template-columns", desc:"grid-template-columns 명시적 열(Track)의 크기를 정의"},
-            {name:"grid-template-rows", desc:"grid-template-rows 명시적 행(Track)의 크기를 정의"}
+            {name:"grid-template-rows", desc:"grid-template-rows 명시적 행(Track)의 크기를 정의"},
+            //h
+            //i
+            //h
+            //k
+            //l
+            //m
+            //n
+            //o
+            //p
+            //q
+            //r
+            //s
+            // t
+            {name:"transition-duration", desc:"transition-duration 속성은 애니메이션 소요 시간을 설정합니다."},
+            {name:"transition-property", desc:"transition-property 속성은 transition의 적용 여부를 정의합니다."},
+            {name:"transition-timing-function", desc:"transition-timing-function 속성은 요소의 움직임 기능을 정의합니다."},
+            // u
+            {name:"unicode-bidi", desc:"unicode-bidi 속성은 글자의 방향 속성을 설정합니다."},
+            // v
+            {name:"vertical-align", desc:"vertical-align 속성은 텍스트의 상하 정렬 방식을 설정합니다."},
+            {name:"visibility", desc:"visibility 속성은 요소를 보이지 않게 정의합니다."},
+            // w
+            {name:"white-space", desc:"white-space 속성은 줄바꿈, 공백, 줄 속성을 설정합니다."},
+            {name:"widows", desc:"widows CSS 속성은 페이지, 영역 또는 열의 맨 위에 표시되어야 하는 블록 컨테이너의 최소 줄 수를 설정합니다."},
+            {name:"width", desc: "width 속성은 요소의 가로 값을 정의합니다."},
+            {name:"will-change", desc:"will-change속승은 값이 변경될 속성에 대한 힌트를 미리 지정합니다."},
+            {name:"word-break", desc:" word-break 속성은 줄바꿈 속성을 설정합니다."},
+            {name:"word-spacing", desc:"word-spacing 속성은 단어 사이의 간격을 정의합니다."},
+            {name:"word-wrap", desc:"word-wrap 속성은 줄바꿈을 설정합니다."},
+            {name:"writing-mode", desc:"텍스트의 방향(가로/세로)를 설정합니다."},
+            // z
+            {name:"z-index", desc:"z-index 속성은 요소의 위치가 겹칠 경우 순서를 정의합니다."}
         ];
         const searchBox = document.querySelector("#search-box");    //searchBox에 id="search-box" 태그 저장
         const cssCount = document.querySelector(".count");  //cssCount에 class="count" 태그 저장
