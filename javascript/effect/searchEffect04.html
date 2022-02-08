@@ -210,7 +210,7 @@
 
     <!-- script -->
     <script>
-        const cssProperty = [
+        const cssProperty = [   //'CSS 속성 설명' 데이터를 cssProperty 배열에 객체 형태로 저장
             {name: "all", desc: "all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
             {name: "animation", desc: "animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
             {name: "animation-delay", desc: "animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
@@ -228,8 +228,8 @@
             {name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
             {name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
         ];
-        const searchBox = document.querySelector("#search-box");
-        const cssCount = document.querySelector(".count");
+        const searchBox = document.querySelector("#search-box");    //searchBox에 id="search-box" 태그 저장
+        const cssCount = document.querySelector(".count");  //
         const cssDesc = document.querySelector(".desc");
         const cssList = document.querySelector(".list");
 
@@ -247,12 +247,27 @@
             findProp(searchWord);
         });
 
+        document.querySelectorAll(".list span").forEach(span => {
+            span.addEventListener("click", () => {
+                //클릭한 데이터 값을 가져오기
+                const listProp = span.innerText;
+                console.log(listProp)
+                findProp(listProp);
+            });
+        });
+
         function findProp(searchWord) {
             const targetData = cssProperty.find((data) => data.name === searchWord);
 
+            //찾는 데이터가 없을 때
+            if(targetData == null){
+                cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!";
+                return;
+            }
+
             cssDesc.innerHTML = targetData.desc;
-            // cssDesc.innerText =
-            // cssDesc.textContent =
+            // cssDesc.innerText = 이런 방법도 가능
+            // cssDesc.textContent = 이런 방법도 가능
         }
     </script>
 </body>
