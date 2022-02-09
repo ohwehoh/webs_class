@@ -178,9 +178,9 @@
                 <li><a href="searchEffect01.html">1</a></li>
                 <li><a href="searchEffect02.html">2</a></li>
                 <li><a href="searchEffect03.html">3</a></li>
-                <li class="active"><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
                 <li><a href="searchEffect05.html">5</a></li>
-                <li><a href="searchEffect06.html">6</a></li>
+                <li class="active"><a href="searchEffect06.html">6</a></li>
                 <li><a href="searchEffect07.html">7</a></li>
                 <li><a href="searchEffect08.html">8</a></li>
             </ul>
@@ -353,41 +353,6 @@
         const cssCount = document.querySelector(".count");  //cssCount에 class="count" 태그 저장
         const cssDesc = document.querySelector(".desc");    //cssCount에 class="desc" 태그 저장
         const cssList = document.querySelector(".list");    //cssCount에 class="list" 태그 저장
-
-        //CSS 속성 값과 전체 갯수 출력하기
-        cssProperty.map((element, index) => {   //배열 cssProperty를 map메소드로 순회, element,index
-            cssCount.innerText = "전체 목록 갯수 : " + (index+1) + "개";    //cssCount에 최종적으로 마지막 index+1 값이 들어가서 배열 cssProperty의 전체 길이값이 sccCount에 저장된다.
-            cssList.innerHTML += "<span>"+ element.name +"</span>"  //class="list"태그에 element.name(cssCount배열에서 name(키)의 value(CSS속성명))이 들어간다.
-        });
-
-        //사용자가 검색한 값
-        searchBox.addEventListener("keyup", () => {     //searchBox에서 키보드를눌렀때 땠을 때 이벤트 설정
-            const searchWord = searchBox.value;     //searchWord에 input에 입력된 값 저장.
-            //console.log(searchWord);
-
-            findProp(searchWord);       //findProp 함수 호출하고 매개변수로 searchWord(input입력값) 전달.
-        });
-
-        document.querySelectorAll(".list span").forEach(span => {   //class="list"의 하위 태그 span(CSS속성명)을 모두 선택하고 차례대로 순회.
-            span.addEventListener("click", () => {      //span(CSS 속성명)을 클릭할 때 이벤트 설정
-                //클릭한 데이터 값을 가져오기
-                const listProp = span.innerText;    //listPorp에 span에 들어있는 text(CSS속성명)을 저장.
-                //console.log(listProp)
-                findProp(listProp);         //findProp 함수 호출하고 매개변수로 searchWord(클릭한 CSS속성명) 전달.
-            });
-        });
-
-        function findProp(searchWord) {     //findProp함수 생성, 매개변수 하나 전달 받음.
-            const targetData = cssProperty.find((data) => data.name === searchWord);    //배열cssProperty(CSS속성 데이터)의 name(CSS속성명)의 값과 searchWord(매개변수로 전달받은 사용자가 검색(or 클릭)한 CSS속성명)가 같으면(find()메소드로 찾는다.) 해당 배열값 (CSS속성명(name)과 설명(desc))이 targetData에 저장.
-
-            //찾는 데이터가 없을 때
-            if(targetData == null){     //전달받은 searchWord가 cssProperty에 없어서 targetData가 정의되지 않으면
-                cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!";     //설명란(cssDesc, class="desc"태그)에 "해당.."문자열 출력
-                return;     //문자열 출력하면 return하여 if문 종료
-            }
-
-            cssDesc.innerHTML = targetData.desc;    //설명란(cssDesc, class="desc"태그)에 targetData에 저장된 CSS속성중에 desc의 값 출력.
-        }
     </script>
 </body>
 </html>
