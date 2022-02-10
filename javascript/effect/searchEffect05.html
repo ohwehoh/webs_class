@@ -437,22 +437,22 @@
             {view:"10", name:"z-index", desc:"z-index 속성은 요소의 위치가 겹칠 경우 순서를 정의합니다."}
         ];
         const searchBox = document.querySelectorAll(".search span");    //searchBox에 class="search"의 하위 태그 span 저장
-        const cssList = document.querySelector(".list ul");    //cssCount에 class="list" 태그 저장
+        const cssList = document.querySelector(".list ul");    //cssList에 class="list" 태그 저장
         const cssCount = document.querySelector(".count em");  //cssCount에 class="count" 태그 저장
 
         //목록 보여주기
         function updataList(list) {     //매겨변수로 받은 배열을 보여주는 함수
             let listHTML = "";      //HTML에 나타낼 CSS속성을 문자열로 저장
 
-            for(const data of list){    //
-                listHTML += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`
+            for(const data of list){    //매개변수로 받은 배열의 첫번째 값 부터 data에 넣고 순회.
+                listHTML += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`    //listHTML에 list배열 속 객체 데이터의 name, desc, view의 값을 템플릿 리터럴 방식으로 문자열에 삽입
             }
-            cssList.innerHTML = listHTML;
+            cssList.innerHTML = listHTML;   //cssList(.list ul) 태그 안에 listHTML 삽입
         }
-        updataList(cssProperty);
+        updataList(cssProperty);    //udPataList 함수에 매개변수로 cssProperty 배열 전달 --> cssProperty 배열 전체 출력 (CSS속성 전체 출력)
 
         //버튼 클릭하기
-        searchBox.forEach(span => {
+        searchBox.forEach(span => {     //searchBox(버튼들)을 forEach로 순회
             span.addEventListener("click", () => {
                 const target = span.dataset.view;
                 const filterList = cssProperty.filter(data => data.view >= target);

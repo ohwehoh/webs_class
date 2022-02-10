@@ -199,8 +199,6 @@
     3. 이미지 스프라이트 : background와 ir효과를 통해서 이미지를 표현
 */
 
-#banner {}
-
 /* .img_type {
     width: 100%;
     height: 700px;
@@ -217,7 +215,6 @@
     height: 600px;
 }
 
-.swiper-wrapper {}
 .swiper-slide:nth-child(3n-2) {
     background: url(../img/bg01.jpg) no-repeat center / cover;
 }
@@ -644,8 +641,6 @@
     color: #777;
     vertical-align: -4px;
 }
-
-.img_type02 .img-wrap {}
 
 .img_type02 .img-wrap ul {
     display: flex;
