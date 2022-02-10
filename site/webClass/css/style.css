@@ -214,6 +214,7 @@
 
 .slider {
     position: relative;
+    white-space: nowrap;
 }
 .slider-img {
     height: 600px;
@@ -261,19 +262,55 @@
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
+    width: 27px;
+    height: 56px;
+    background: url(../img/bg-svg.svg);
+    background-position: 0 -50px;
 }
 .slider-arrow .right{
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    width: 27px;
+    height: 56px;
+    background: url(../img/bg-svg.svg);
+    background-position: -22px -50px;
 }
 
-.slider-dot {}
-.slider-dot .dot{}
-.slider-dot .dot.active{}
-.slider-dot .play{}
-.slider-dot .stop{}
+.slider-dot {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+.slider-dot a.dot{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../img/bg-svg.svg);
+    background-position: -70px -50px;
+    margin: 0 2px;
+}
+.slider-dot .dot.active{
+    background-position: -50px -50px;
+}
+.slider-dot .play{
+    display: inline-block;
+    width: 11px;
+    height: 14px;
+    background: url(../img/bg-svg.svg);
+    background-position: -90px -50px;
+    margin: 0 2px;
+}
+.slider-dot .stop{
+    display: inline-block;
+    width: 11px;
+    height: 14px;
+    background: url(../img/bg-svg.svg);
+    background-position: -110px -50px;
+    margin-left: 2px;
+}
 
 /* 이미지/텍스트 유형 유형1(img_text_type)*/
 .imgText_type01 {
