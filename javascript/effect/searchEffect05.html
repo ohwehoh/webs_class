@@ -441,16 +441,15 @@
         const cssCount = document.querySelector(".count em");  //cssCount에 class="count" 태그 저장
 
         //목록 보여주기
-        function updataList(list) {
-            let listHTML = "";
+        function updataList(list) {     //매겨변수로 받은 배열을 보여주는 함수
+            let listHTML = "";      //HTML에 나타낼 CSS속성을 문자열로 저장
 
-            for(const data of list){
+            for(const data of list){    //
                 listHTML += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`
             }
             cssList.innerHTML = listHTML;
         }
         updataList(cssProperty);
-        
 
         //버튼 클릭하기
         searchBox.forEach(span => {
