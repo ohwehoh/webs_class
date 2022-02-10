@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -47,7 +48,8 @@
 
     <div id="skip">
         <a href="#contents">컨텐츠 바로가기</a>
-    </div> <!--//skip-->
+    </div>
+    <!--//skip-->
 
     <div class="wrap">
         <header id="header">
@@ -62,10 +64,11 @@
                     <li><a href="#">헤더 영역</a></li>
                     <li><a href="#">컨텐츠 영역</a></li>
                     <li><a href="#">푸터 영역</a></li>
-                </ul> 
+                </ul>
             </nav>
             <div class="member">
-                <a href="https://www.figma.com/file/pC3BllfgHB4FhZHL2XPIDO/%EC%9B%B9%ED%91%9C%EC%A4%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?node-id=0%3A1">회원가입</a>
+                <a
+                    href="https://www.figma.com/file/pC3BllfgHB4FhZHL2XPIDO/%EC%9B%B9%ED%91%9C%EC%A4%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?node-id=0%3A1">회원가입</a>
                 <a href="#">로그인</a>
             </div>
         </header>
@@ -76,7 +79,7 @@
 
             <section id="banner">
                 <h3 class="ir_so">배너 영역</h3>
-                <div class="img_type slider">
+                <!-- <div class="img_type slider">
                     <div class="slider-img">
                         <div class="desc">
                             <span>DEVELOPER</span>
@@ -100,10 +103,52 @@
                         <a href="#" class="play"><span class="ir_pm">자동플레이</span></a>
                         <a href="#" class="stop"><span class="ir_pm">정지</span></a>
                     </div>
+                </div> -->
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>DEVELOPER</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br>당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>DEVELOPER</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br>당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>DEVELOPER</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br>당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </section>
-
             <!-- //banner -->
+
+
             <section class="imgText_type01 container">
                 <div class="text">
                     <h3 class="text_title">이미지&텍스트</h3>
@@ -119,17 +164,20 @@
                     <div class="text_more">
                         <a href="#">
                             <span>더 많은 유형 살펴보기</span>
-                            <svg width="84" height="8" viewBox="0 0 84 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M83.3536 4.35355C83.5488 4.15829 83.5488 3.84171 83.3536 3.64645L80.1716 0.464466C79.9763 0.269204 79.6597 0.269204 79.4645 0.464466C79.2692 0.659728 79.2692 0.976311 79.4645 1.17157L82.2929 4L79.4645 6.82843C79.2692 7.02369 79.2692 7.34027 79.4645 7.53553C79.6597 7.7308 79.9763 7.7308 80.1716 7.53553L83.3536 4.35355ZM0 4.5H83V3.5L0 3.5L0 4.5Z" fill="#AF3029"/>
-                            </svg> 
+                            <svg width="84" height="8" viewBox="0 0 84 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M83.3536 4.35355C83.5488 4.15829 83.5488 3.84171 83.3536 3.64645L80.1716 0.464466C79.9763 0.269204 79.6597 0.269204 79.4645 0.464466C79.2692 0.659728 79.2692 0.976311 79.4645 1.17157L82.2929 4L79.4645 6.82843C79.2692 7.02369 79.2692 7.34027 79.4645 7.53553C79.6597 7.7308 79.9763 7.7308 80.1716 7.53553L83.3536 4.35355ZM0 4.5H83V3.5L0 3.5L0 4.5Z"
+                                    fill="#AF3029" />
+                            </svg>
                         </a>
-                    </div>                            
+                    </div>
                 </div>
                 <div class="img01"></div>
                 <div class="img02"></div>
             </section>
             <!-- //imgText_typee01 -->
-            
+
             <section class="imgText_type02">
                 <div class="imgText_type02_left"></div>
                 <div class="imgText_type02_right">
@@ -138,10 +186,10 @@
                     <p class="desc">이미지와 텍스트를 같이 사용하는 경우입니다.<br>
                         내가 먹는 것이 곧 내가 된다는 말이 있습니다. 음식 섭취로 나를 구성하는 것들을 건강하고 신선한 것들로 채우면서 건강하고 신선한 삶을 살아봅시다.<br>
                         배경으로 텍스트를 나타내는 경우에도 많이 사용합니다.<br>
-                        Gmarket Sans 24px 140%, Light 
+                        Gmarket Sans 24px 140%, Light
                     </p>
                     <div class="view">
-                            자세히보기
+                        자세히보기
                     </div>
                 </div>
             </section>
@@ -282,7 +330,33 @@
         <!-- //footer -->
     </div>
     <!-- //wrap -->
-    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: false,
+
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable : true
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
 </body>
 
 </html>
