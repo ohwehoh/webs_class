@@ -1,0 +1,157 @@
+#wrap {
+  font-family: 'Poppins', sans-serif;
+  padding: 52px 0 0;
+}
+
+#header {
+    min-width: 1440px;
+}
+#header #menu {
+    
+    margin-bottom: 60px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+#header #menu .logo {
+    margin-left: 101px;
+    width: 156px;
+    height: 35px;
+    background: url(../img/mission3splite.png);
+    background-position: 0 0;
+    position: absolute;
+    bottom: 0;
+}
+#header #menu .nav{
+    height: inherit;
+    min-width: 900px;
+    margin-left: 400px;
+    
+}
+#header #menu .nav ul{
+    height: inherit;
+    margin-left: 175px;
+}
+#header #menu .nav ul li:nth-child(1){
+    margin-left: 0;
+}
+#header #menu .nav ul li{
+    display: inline-block;
+    height: 38px;
+    padding: 7px 10px;
+    margin: 0 34px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#header #menu .nav ul li:nth-child(5){
+    margin-right: 0;
+}
+
+#header #menu .nav ul li:hover {
+    border-bottom: 2px solid #000;
+    box-sizing : border-box; 
+}
+
+#header #menu .myact{
+    min-width: 122px;
+    height: 24px;
+    /* position:absolute;
+    right: 100px; */
+}
+
+#header #menu .myact ul {
+}
+
+#header #menu .myact ul li {
+    display: inline-block;
+}
+
+#header #menu .myact ul li a{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../img/mission3splite.png);
+    margin-right: 20px;
+}
+
+#header #menu .myact ul li a.search {
+    background-position: -157px 0;
+}
+
+#header #menu .myact ul li a.basket {
+    background-position: -181px 0;
+}
+
+#header #menu .myact ul li a.person {
+    background-position: -205px 0;
+    margin-right: 0;
+}
+
+#main {
+    height: 4000px;
+}
+#main .banner{
+    height: 800px;
+    padding-left: 101px;
+    background: url(../img/Image.jpg) right no-repeat;
+    
+}
+#main .banner h3{
+    font-size: 80px;
+    font-weight: 600;
+    width: 1127px;
+    margin-bottom: 2vw;
+}
+#main .banner p{
+    font-size: 18px;
+    text-align: left;
+    color: #72696a;
+    width: 25vw;
+    margin-bottom: 2vw;
+}
+
+#main .banner a{
+    display: inline-block;
+    width: 202px;
+    height: 70px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 21px;
+    box-sizing: border-box;
+}
+#main .banner a.left{
+    background-color: #c4a586;
+    color: #fff;
+    margin-right: 26px;
+    padding-left: 36px;
+}
+#main .banner a.right{
+    background-color: #fff;
+    border: solid 1px #c4a586;
+    color: #c4a586;
+    padding-left: 48px;
+}
+
+#main .nav{
+    height: 800px;
+    background: #333;
+}
+#main .content1{
+    height: 800px;
+    background: #444;
+}
+#main .content2{
+    height: 800px;
+    background: #555;
+}
+#main .content3{
+    height: 800px;
+    background: #666;
+}
+
+#footer {
+    height: 746px;
+    background: #777;
+}
+
