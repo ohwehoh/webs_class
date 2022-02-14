@@ -934,6 +934,7 @@
     position: relative;
     padding-left: 10px;
     font-size: 14px;
+    line-height: 1.6;
 }
 
 .member-form div.guidanceList ul li::before {
