@@ -445,8 +445,8 @@
         const cssCount = document.querySelector(".count");  //CSS 갯수
 
         //데이터 출력
-        const updataList = function(){
-            let listHTML = '';
+        const updataList = function(){      //updateList 함수는 웹화면에 CSS속성 리스트를 출력해준다.
+            let listHTML = '';      //문자열을 받는 변수 listHTML생성
 
             //for문을 이용해서 cssProperty name값을 출력하세요!
             // for(let i = 0; i<cssProperty.length; i++){
@@ -459,27 +459,24 @@
             // }
 
             //forEach
-            cssProperty.forEach((data,index) => {
-                let count = 1;
-                listHTML += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
-                cssCount.textContent = `전체 목록 갯수 : ${index + 1}개`;
-                count ++;
+            cssProperty.forEach((data,index) => {       //CSS속성 리스트가 들어있는 cssProperty배열 순회
+                listHTML += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;    //listHTML에 템플릿리터럴 표현으로 cssProperty의 값 저장
+                cssCount.textContent = `전체 목록 갯수 : ${index + 1}개`;       //최종적으로 마지막 인덱스번호+1값이 들어간다.
             });
 
-            cssList.innerHTML = listHTML;
+            cssList.innerHTML = listHTML;       //cssList에 문자열 listHTML을 넣어준다.
         }
-        updataList();
+        updataList();   //웹화면에 CSS속성 리스트를 출력해주는 함수 호출
 
         //반대 정렬
-        function reverse() {
-            cssProperty.reverse();
-            updataList();
-            
+        function reverse() {        //reverse()함수 생성
+            cssProperty.reverse();  //cssProperty 배열에 저장된 값의 순서를 뒤집어준다. 원본데이터cssProperty값이 변경된다.
+            updataList();   //뒤집힌 cssPropery값이 출력
         }
 
         //오름차순 정렬
-        function sortAscending() {
-            cssProperty.sort((a,b) => {
+        function sortAscending() {      //sortAscending()함수 생성
+            cssProperty.sort((a,b) => { //cssProperty의 최솟값을 a, 최댓값을 b 라고 저장한다.
                 return a.num - b.num;
             });
             updataList();

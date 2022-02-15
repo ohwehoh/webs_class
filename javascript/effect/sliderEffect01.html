@@ -191,35 +191,36 @@ setInterval(() => {
     <script src="js/highlight.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
-        highlight();
-        modal ();
-        tabMenu ();
+        highlight();    //외부 스크립트 함수 (highlight)호출
+        modal ();       //외부 스크립트 함수 (modal, 소스보기 창)호출
+        tabMenu ();     //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
 
         //slider01
-        const sliderWrap = document.querySelector(".slider__wrap")
-        const sliderImg = document.querySelector(".slider__img")
-        const slider = document.querySelectorAll(".slider")
+        const sliderWrap = document.querySelector(".slider__wrap")      //sliderWrap에 div 태그 .slider__wrap 저장
+        const sliderImg = document.querySelector(".slider__img")        //sliderImg에 div 태그 .slider_img 저장
+        const slider = document.querySelectorAll(".slider")             //slider에 div 태그 .slider (최종적으로 이미지를 담는 다섯개의 div)
 
-        console.log(slider[0])
+        //console.log(slider[0])
 
         let currentIndex = 0; //현재 보이는 이미지
         let sliderCount = slider.length //이미지 갯수
 
         setInterval(() => {
-            let nextIndex = (currentIndex + 1) % 5;
+            let nextIndex = (currentIndex + 1) % 5;     //nestIndex는 currentIndex+1 나누기 5를 해서 0~4의 숫자를 가지게된다.
 
-            slider[currentIndex].style.opacity = "0" //첫 번째 이미지를 안보이게
-            slider[nextIndex].style.opacity = "1" //두 번째 이미지를 안보이게
+            slider[currentIndex].style.opacity = "0" //currentIndex 이미지를 안보이게
+            slider[nextIndex].style.opacity = "1" //newIndex 이미지를 안보이게
 
             // console.log("currentIndex :" + currentIndex)
             // console.log("nextIndex : " + nextIndex)
 
             slider.forEach(slider => {
-                slider.style.transition = "all 0.7s"
+                slider.style.transition = "all 0.7s"    //slider에 css 속성 transition을 주어서 0.7초 동안 변화를 준다.
             })
 
-            currentIndex = nextIndex;
-        },2000);
+            currentIndex = nextIndex;       //currentIndex를 nextIndex로 변경
+        },2000);    //setInterval 메소드는 코드를 반복 실행한다. 첫번째 매개변수로 실행문을 담고, 두번째 매개변수로 반복실행되는 시간을 받는다.
     </script>
 </body>
 </html>
+
