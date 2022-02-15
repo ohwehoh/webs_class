@@ -216,6 +216,7 @@
 
     <!-- script -->
     <script>
+
         const cssProperty = [   //'CSS 속성 설명' 데이터를 cssProperty 배열에 객체 형태로 저장
             //a
             {view:9, name:"all", desc:"all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
@@ -453,11 +454,11 @@
 
         //버튼 클릭하기
         searchBox.forEach(span => {     //searchBox(버튼들)을 forEach로 순회
-            span.addEventListener("click", () => {      //sapn 태그 영역 클릭할 때 addEventListener
-                const target = span.dataset.view;
-                const filterList = cssProperty.filter(data => data.view >= target);
+            span.addEventListener("click", () => {      //sapn 태그 영역 클릭할 때
+                const target = span.dataset.view;       //변수 target에 span의 data-view속성의 값을 저장(조회수)
+                const filterList = cssProperty.filter(data => data.view >= target);     //filter메소드를 이용, 배열 cssProperty 중 키view의 값이 target에 저장된 값보다 크면 filterList에 저장
 
-                updataList(filterList);                
+                updataList(filterList);        //updateList함수에 매개변수로 filterList를 넣어서 filter메소드를 통해 나온 배열이 출력        
             });
         });
 
