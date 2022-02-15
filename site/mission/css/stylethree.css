@@ -6,17 +6,31 @@
 }
 #wrap {
     font-family: 'Poppins', sans-serif;
+<<<<<<< Updated upstream
+=======
+    padding: 52px 0 0;
+>>>>>>> Stashed changes
     background-color: #fbfbfb;
 }
 
 /* 헤더 */
 #header {
+<<<<<<< Updated upstream
+=======
+    margin-right: 100px;
+}
+
+#header #menu {
+    margin-bottom: 60px;
+    position: relative;
+>>>>>>> Stashed changes
     display: flex;
     justify-content: space-between;
     width: 1249px;
     margin: 0 auto;
     padding-top: 50px;
 }
+<<<<<<< Updated upstream
 .logo {}
 .logo .logo_icon1 {
     width: 157px;
@@ -29,22 +43,80 @@
 }
 .menu li {
     margin-right: 0;
+=======
+
+#header #menu .logo {
+    margin-left: 101px;
+    width: 156px;
+    height: 35px;
+    background: url(../img/mission3splite.png);
+    background-position: 0 0;
+    position: absolute;
+    bottom: 0;
+}
+
+#header #menu .nav {
+    height: inherit;
+    min-width: 900px;
+    margin-left: 400px;
+}
+
+#header #menu .nav ul {
+    height: inherit;
+    margin-left: 175px;
+}
+
+#header #menu .nav ul li:nth-child(1) {
+    margin-left: 0;
+}
+
+#header #menu .nav ul li {
+    display: inline-block;
+    height: 38px;
+    padding: 7px 10px;
+    margin: 0 34px;
+>>>>>>> Stashed changes
     font-size: 17px;
     margin: 0 18px;
     padding: 0 12px;
     padding-bottom: 12px;
 }
+<<<<<<< Updated upstream
 .menu li a {
     color: #000;
+=======
+
+#header #menu .nav ul li:nth-child(5) {
+    margin-right: 0;
+>>>>>>> Stashed changes
 }
 .menu li:hover {
     padding-bottom: 10px;
     border-bottom: 2px solid #000;
+<<<<<<< Updated upstream
 }
 .header_icon {
     display: flex;
 }
 .header_icon .ico {
+=======
+    box-sizing: border-box;
+}
+
+#header #menu .myact {
+    min-width: 122px;
+    height: 24px;
+}
+
+#header #menu .myact ul {}
+
+#header #menu .myact ul li {
+    display: inline-block;
+}
+
+#header #menu .myact ul li a {
+    display: inline-block;
+>>>>>>> Stashed changes
     width: 24px;
     height: 24px;
     background: url(../img/mission3splite.png);
@@ -66,37 +138,74 @@
     height: 853px;
     margin-top: 126px;
 }
+<<<<<<< Updated upstream
 .banner_bg {
     width: 1249px;
     margin: 0 auto;
 }
 .banner_bg h2 {
+=======
+
+#main .banner {
+    height: 800px;
+    padding-left: 101px;
+    background: url(../img/Image.png) no-repeat;
+    background-position: right bottom;
+}
+
+#main .banner h3 {
+>>>>>>> Stashed changes
     font-size: 80px;
     line-height: 0.95;
     letter-spacing: -1.6px;
     color: #292019;
 }
+<<<<<<< Updated upstream
 .banner_bg p {
+=======
+
+#main .banner p {
+>>>>>>> Stashed changes
     font-size: 18px;
     text-align: left;
     width: 432px;
     margin-top: 55px;
     color: #72696a
 }
+<<<<<<< Updated upstream
 .banner_box {
     display: flex;
     margin-top: 35px;
+=======
+
+#main .banner a {
+    display: inline-block;
+    width: 202px;
+    height: 70px;
+>>>>>>> Stashed changes
     font-size: 16px;
     font-weight: 500;
     line-height: 1.75;
 }
+<<<<<<< Updated upstream
 .banner_box .box1 {
     padding: 21px 45px 21px 36px;
+=======
+
+#main .banner a.left {
+>>>>>>> Stashed changes
     background-color: #c4a586;
     color: #fff;
 }
+<<<<<<< Updated upstream
 .banner_box .box2 {
     padding: 21px 53px 21px 55px;
+=======
+
+#main .banner a.right {
+    background-color: #fff;
+    border: solid 1px #c4a586;
+>>>>>>> Stashed changes
     color: #c4a586;
     border: 1px solid #c4a586;
     margin-left: 26px;
@@ -148,6 +257,7 @@
     background: url(../img/logo6.png) 0 12px no-repeat;
 }
 
+<<<<<<< Updated upstream
 /* 메인 콘텐츠 */
 #contents {}
 
@@ -399,6 +509,24 @@
 .img_text03 {
     /* width: 1056px; */
     /* margin: 0 auto; */
+=======
+#main .nav {
+    height: 800px;
+    background: #333;
+}
+
+#main .content1 {
+    height: 800px;
+    background: #444;
+}
+
+#main .content2 {
+    height: 800px;
+    background: #555;
+}
+
+#main .content3 {
+>>>>>>> Stashed changes
     height: 800px;
     background: #aaa;
     /* margin-top: 307px;
@@ -448,5 +576,9 @@
 #footer {
     /* margin-top: 168px; */
     height: 746px;
+<<<<<<< Updated upstream
     background-color: #ccc;
+=======
+    background: #777;
+>>>>>>> Stashed changes
 }
