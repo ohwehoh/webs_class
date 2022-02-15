@@ -470,29 +470,29 @@
 
         //반대 정렬
         function reverse() {        //reverse()함수 생성
-            cssProperty.reverse();  //cssProperty 배열에 저장된 값의 순서를 뒤집어준다. 원본데이터cssProperty값이 변경된다.
+            cssProperty.reverse();  //reverse()메서드를 사용하여 cssProperty 배열에 저장된 값의 순서를 뒤집어준다. 원본데이터cssProperty값이 변경된다.
             updataList();   //뒤집힌 cssPropery값이 출력
         }
 
         //오름차순 정렬
         function sortAscending() {      //sortAscending()함수 생성
-            cssProperty.sort((a,b) => { //cssProperty의 최솟값을 a, 최댓값을 b 라고 저장한다.
+            cssProperty.sort((a,b) => { //sort()메서드를 사용하여 cssProperty배열의 순서를 num의 오름차순으로 정렬
                 return a.num - b.num;
             });
             updataList();
         }
 
         //내림차순 정렬
-        function sortDescending() {
-            cssProperty.sort((a,b) => {
+        function sortDescending() {     //sortDescending()함수 생성
+            cssProperty.sort((a,b) => { //sort()메서드를 사용하여 cssProperty배열의 순서를 num의 내림차순으로 정렬
                 return b.num - a.num;
             });
             updataList();
         }
 
         //알페벳 정렬(a~z)
-        function sortAlphabet() {
-            cssProperty.sort((a,b) => {
+        function sortAlphabet() {       //sortAlphabet()함수 생성
+            cssProperty.sort((a,b) => { //sort()메서드를 사용하여 cssProperty배열의 순서를 name의 오름차순으로 정렬
                 let x = a.name;
                 let y = b.name;
                 return x.localeCompare(y);
@@ -501,8 +501,8 @@
         }
 
         //알페벳 정렬(z~a)
-        function sortAlphabetZ() {
-            cssProperty.sort((a,b) => {
+        function sortAlphabetZ() {      //sortAlphabetZ()함수 생성
+            cssProperty.sort((a,b) => { //sort()메서드를 사용하여 cssProperty배열의 순서를 name의 내림차순으로 정렬
                 let x = a.name;
                 let y = b.name;
                 return y.localeCompare(x);
@@ -510,28 +510,28 @@
             updataList();
         }
 
-         //반대로 버튼 클릭시
+         //반대로 버튼 클릭시 reverse()함수 호출
          document.querySelector(".btn1").addEventListener("click", () => {
             reverse();
         });
 
 
-        //오름차순 버튼 클릭시
+        //오름차순 버튼 클릭시 sortAscending()함수 호출
         document.querySelector(".btn2").addEventListener("click", () => {
             sortAscending();
         });
 
-        //내림차순 버튼 클릭시
+        //내림차순 버튼 클릭시 sortDescending()함수 호출
         document.querySelector(".btn3").addEventListener("click", () => {
             sortDescending();
         });
 
-        //알파벳순(a~z)
+        //알파벳순(a~z) sortAlphabet()함수 호출
         document.querySelector(".btn4").addEventListener("click", () => {
             sortAlphabet();
         });
 
-        //알파벳순(z~a)
+        //알파벳순(z~a) sortAlphabetZ()함수 호출
         document.querySelector(".btn5").addEventListener("click", () => {
             sortAlphabetZ();
         });
