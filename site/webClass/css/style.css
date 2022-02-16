@@ -941,6 +941,19 @@
     margin-bottom: 30px;
 }
 
+fieldset button{
+    font-size: 16px;
+    background: #eee;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+fieldset button:hover {
+    box-shadow: inset 0 0 0 2px #222;
+    background: #fff;
+}
 .join-submit {
     font-size: 16px;
     background: #eee;
