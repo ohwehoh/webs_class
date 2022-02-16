@@ -18,14 +18,19 @@
             justify-content: center;
             height: 100vh;
         }
-        .slider__img {
-            position: relative;
+        .slider__img {      /*화면 보이는 구간*/
             width: 800px;
             height: 480px;
+            /* overflow: hidden; */
         }
-        .slider {
-            position: absolute;
-            left: 0;top: 0;
+        .slider__inner {        /*이미지 움직이는 영역*/
+            display: flex;
+            width: 4000px;
+            position: relative;     /*left를 사용하기 위해서*/
+        }
+        .slider {       
+            width: 800px;
+            position: relative;
         }
 
         .slider::before {
@@ -40,11 +45,6 @@
         .slider:nth-child(3):before {content: '이미지3';}
         .slider:nth-child(4):before {content: '이미지4';}
         .slider:nth-child(5):before {content: '이미지5';}
-        .slider:nth-child(1) {z-index: 5;}
-        .slider:nth-child(2) {z-index: 4;}
-        .slider:nth-child(3) {z-index: 3;}
-        .slider:nth-child(4) {z-index: 2;}
-        .slider:nth-child(5) {z-index: 1;}
     </style>
 </head>
 <body class="img02">
@@ -53,11 +53,13 @@
         <section id="sliderType01">
             <div class="slider__wrap">
                 <div class="slider__img">
-                    <div class="slider"><img src="img/img6.jpg" alt="이미지6"></div>
-                    <div class="slider"><img src="img/img7.jpg" alt="이미지7"></div>
-                    <div class="slider"><img src="img/img8.jpg" alt="이미지8"></div>
-                    <div class="slider"><img src="img/img9.jpg" alt="이미지9"></div>
-                    <div class="slider"><img src="img/img10.jpg" alt="이미지10"></div>
+                    <div class="slider__inner">
+                        <div class="slider"><img src="img/img6.jpg" alt="이미지6"></div>
+                        <div class="slider"><img src="img/img7.jpg" alt="이미지7"></div>
+                        <div class="slider"><img src="img/img8.jpg" alt="이미지8"></div>
+                        <div class="slider"><img src="img/img9.jpg" alt="이미지9"></div>
+                        <div class="slider"><img src="img/img10.jpg" alt="이미지10"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -106,7 +108,7 @@
 <div><pre><code class="language-html"></code></pre></div>
 <div><pre><code class="language-css"></code></pre></div>
 <div><pre><code class="language-javascript"></code></pre></div>
-<div><pre><code class="language-jQuery"></code></pre></div>
+<!-- <div><pre><code class="language-jQuery"></code></pre></div> -->
                         </div>
                     </div>
                 </div>
@@ -114,7 +116,7 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
     <!-- //info -->
 
     <!-- script -->
@@ -126,6 +128,24 @@
         highlight();    //외부 스크립트 함수 (highlight)호출
         modal ();       //외부 스크립트 함수 (modal, 소스보기 창)호출
         tabMenu ();     //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
+
+        // slider02
+        const sliderWrap = document.querySelector(".slider__wrap");      //sliderWrap에 div 태그 .slider__wrap 저장
+        const sliderImg = document.querySelector(".slider__img");        //sliderImg에 div 태그 .slider_img 저장, 이미지 한 칸만 보이는 영역
+        const sliderInner = document.querySelector(".slider__inner");    //이미지 움직이는 영역
+        const slider = document.querySelectorAll(".slider");             //slider에 div 태그 .slider (최종적으로 이미지를 담는 다섯개의 div)
+
+        let currentIndex = 0;       //첫 번째 이미지(현재 보이는 이미지)
+        let sliderCount = slider.length;    //이미지 갯수
+
+        setInterval(() => {
+            //console.log(currentIndex);
+            //currentIndex = (currentIndex+1) % 5;    //0 1 2 3 4 0 1 2 3 4...
+            if(currentIndex < slider.length){
+                console.log(currentIndex);
+                currentIndex++;
+            }else{currentIndex=0;}
+        }, 2000);
     </script>
 </body>
 </html>
