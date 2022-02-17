@@ -150,9 +150,13 @@
                     &lt;div class="slider"&gt;&lt;img src="../img/img10.jpg" alt="이미지5"&gt;&lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+                &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/section&gt;
-&lt;/main&gt;</code></pre></div>
+&lt;/main></code></pre></div>
 <div><pre><code class="language-css">.slider__wrap {
     display: flex;
     align-items: center;
@@ -186,7 +190,34 @@
 .slider:nth-child(3):before {content: '이미지3';}
 .slider:nth-child(4):before {content: '이미지4';}
 .slider:nth-child(5):before {content: '이미지5';}
-.slider:nth-child(6):before {content: '이미지1';}</code></pre></div>
+.slider:nth-child(6):before {content: '이미지1';}
+
+.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.slider__btn a.prev {
+    left: 0;
+}
+
+.slider__btn a.next {
+    right: 0;
+}
+.slider__btn a:hover {
+    background: rgb(241, 96, 86);
+}</code></pre></div>
 <div><pre><code class="language-javascript">highlight();    //외부 스크립트 함수 (highlight)호출
 modal ();       //외부 스크립트 함수 (modal, 소스보기 창)호출
 tabMenu ();     //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
@@ -196,31 +227,30 @@ const sliderWrap = document.querySelector(".slider__wrap");      //sliderWrap에
 const sliderImg = document.querySelector(".slider__img");        //sliderImg에 div 태그 .slider_img 저장, 이미지 한 칸만 보이는 영역
 const sliderInner = document.querySelector(".slider__inner");    //이미지 움직이는 영역
 const slider = document.querySelectorAll(".slider");             //slider에 div 태그 .slider (최종적으로 이미지를 담는 다섯개의 div)
+const sliderBtn = document.querySelector(".slider__btn");       //sliderBtn에 div 태그 .slider__btn 저장
+const sliderBtnPrev = sliderBtn.querySelector(".prev");         //slideBtnPrev에 이전 이미지로 넘어가는 버튼(a태그) 추가
+const sliderBtnNext = sliderBtn.querySelector(".next");         //slideBtnNext에 다음 이미지로 넘어가는 버튼(a태그) 추가
 
-//.slider__inner > div:first-child
 let currentIndex = 0;
 let sliderCount = slider.length;    //이미지 갯수
 let sliderWidth = sliderImg.offsetWidth;    //이미지 가로 값
-let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
-sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어줌
 
-function sliderEffect(){
-    currentIndex++;     //sliderEffect함수가 실행할 때 마다 index값 1 증가
-    sliderInner.style.transition = "all 0.3s";      //sliderInner의 움직임을 0.3초 동안으로 설정
-    sliderInner.style.transform = `translateX(-${sliderWidth*currentIndex}px)`;     //sliderInner를 x축으로 -sliderWidth(-800px)*currentIndex픽셀만큼 바꾼다.
-
-    //마지막 사진에 갔을때
-    if(currentIndex == sliderCount){    //인덱스 값이 증가하다가 sliderCount(slider의 길이)와 같아지면
-        //setTimeout() 메서드는 만료된 후 함수나 지정한 코드 조각을 실행하는 타이머를 설정합니다.
-        setTimeout(()=>{    
-            //이미지 초기화
-            sliderInner.style.transition = "0s";    //이미지 전환 시간을 0으로 바꿔 초기화가 자연스럽게 이루어지게 한다.
-            sliderInner.style.transform = 'translateX(0)';  //이미지의 위치 값을 0으로 바꿈(제일 처음 이미지로 온다.)
-        }, 300);    //함수 지연시간을 transition의 움직인 시간 0.3초와 맞춰 자연스럽게 이미지초기화/전환이 이어게 한다.
-        currentIndex = 0;   //인덱스 값 초기화
-    }
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms";//0.4초
+    sliderInner.style.transform = `translateX(-${sliderWidth * num}px)`;    //-800만큼 움직인다.
+    currentIndex = num;     //currentIndex에 매개변수로 받은 num값을 넣어 현재 인덱스값을 변경시킨다.
 }
-setInterval(sliderEffect, 2000);    //2초마다 sliderEffect함수를 실행시켜주는 setInterval메소드</code></pre></div>
+
+sliderBtnPrev.addEventListener("click", () => {     //이전 버튼 클릭시
+    let prevIndex = (currentIndex + (sliderCount -1)) % sliderCount;    //prevIndex에는 currentIndex보다 1을 뺀 값이 들어간다. currentIndex가 0일 경우 4가 들어간다.
+    //첫번째 있을 때 0 -> 4
+    gotoSlider(prevIndex);      //매개변수로 prevIndex값을 전달하여 이미지가 움직이는 함수 호출
+})
+sliderBtnNext.addEventListener("click", () => {     //다음 버튼 클릭시
+    let nextIndex = (currentIndex + 1) % sliderCount;       //nextIndex에는 currentIndex보다 1을 더한 값이 들억ㄴ다. currentIndex가 4일 경우 0이 들어간다.
+    //이미지 총 갯수 이상 넘어가지 않게
+    gotoSlider(nextIndex);      //매개변수로 nextIndex값을 전달하여 이미지가 움직이는 함수 호출
+})</code></pre></div>
 <!-- <div><pre><code class="language-jQuery"></code></pre></div> -->
                         </div>
                     </div>
@@ -248,9 +278,9 @@ setInterval(sliderEffect, 2000);    //2초마다 sliderEffect함수를 실행시
         const sliderImg = document.querySelector(".slider__img");        //sliderImg에 div 태그 .slider_img 저장, 이미지 한 칸만 보이는 영역
         const sliderInner = document.querySelector(".slider__inner");    //이미지 움직이는 영역
         const slider = document.querySelectorAll(".slider");             //slider에 div 태그 .slider (최종적으로 이미지를 담는 다섯개의 div)
-        const sliderBtn = document.querySelector(".slider__btn");
-        const sliderBtnPrev = sliderBtn.querySelector(".prev");
-        const sliderBtnNext = sliderBtn.querySelector(".next");
+        const sliderBtn = document.querySelector(".slider__btn");       //sliderBtn에 div 태그 .slider__btn 저장
+        const sliderBtnPrev = sliderBtn.querySelector(".prev");         //slideBtnPrev에 이전 이미지로 넘어가는 버튼(a태그) 추가
+        const sliderBtnNext = sliderBtn.querySelector(".next");         //slideBtnNext에 다음 이미지로 넘어가는 버튼(a태그) 추가
 
         let currentIndex = 0;
         let sliderCount = slider.length;    //이미지 갯수
@@ -259,19 +289,18 @@ setInterval(sliderEffect, 2000);    //2초마다 sliderEffect함수를 실행시
         function gotoSlider(num){
             sliderInner.style.transition = "all 400ms";//0.4초
             sliderInner.style.transform = `translateX(-${sliderWidth * num}px)`;    //-800만큼 움직인다.
-            currentIndex = num;
+            currentIndex = num;     //currentIndex에 매개변수로 받은 num값을 넣어 현재 인덱스값을 변경시킨다.
         }
 
-        sliderBtnPrev.addEventListener("click", () => {
-            let prevIndex = (currentIndex + (sliderCount -1)) % sliderCount;
-            console.log(prevIndex);
+        sliderBtnPrev.addEventListener("click", () => {     //이전 버튼 클릭시
+            let prevIndex = (currentIndex + (sliderCount -1)) % sliderCount;    //prevIndex에는 currentIndex보다 1을 뺀 값이 들어간다. currentIndex가 0일 경우 4가 들어간다.
             //첫번째 있을 때 0 -> 4
-            gotoSlider(prevIndex);
+            gotoSlider(prevIndex);      //매개변수로 prevIndex값을 전달하여 이미지가 움직이는 함수 호출
         })
-        sliderBtnNext.addEventListener("click", () => {
-            let nextIndex = (currentIndex + 1) % sliderCount;
+        sliderBtnNext.addEventListener("click", () => {     //다음 버튼 클릭시
+            let nextIndex = (currentIndex + 1) % sliderCount;       //nextIndex에는 currentIndex보다 1을 더한 값이 들억ㄴ다. currentIndex가 4일 경우 0이 들어간다.
             //이미지 총 갯수 이상 넘어가지 않게
-            gotoSlider(nextIndex);
+            gotoSlider(nextIndex);      //매개변수로 nextIndex값을 전달하여 이미지가 움직이는 함수 호출
         })
 
         // sliderBtnPrev.addEventListener("click", () => {
