@@ -249,19 +249,19 @@
         let currentIndex = 0;
         let sliderCount = slider.length; //이미지 갯수
         let sliderWidth = sliderImg.offsetWidth; //이미지 가로 값
-        let dotIndex = ""; //이미지 갯수에 따라 닷 생성하는 변수
-        let dotActive;
+        let dotIndex = ""; //이미지 갯수에 따라 닷 생성하기 위한 문자열
+        let dotActive;  //class="active"추가/제거를 위한 변수
 
         //초기화 함수, 시작하자마자 실행하는 함수
         function init() {
-            //이미지 갯수만큼 <a></a>
-            slider.forEach(() => {
+            //이미지 갯수만큼 <a></a>추가
+            slider.forEach(() => {      //slider의 크기만큼 dotIndex문자열에 <a>태그 추가된다.
                 dotIndex += `<a href='#' class='dot'></a>`;
             });
-            sliderDot.innerHTML = dotIndex;
+            sliderDot.innerHTML = dotIndex;     //sliderDot에 dotIndex문자열 삽입, 이미지 갯수 만큼 dot버튼이 생성된다.ㅏ
 
             //첫번째 닷 번튼한테 활성화 표시(active)
-            sliderDot.firstElementChild.classList.add("active");
+            sliderDot.firstElementChild.classList.add("active");    //페이지 처음 로드 시 첫번째 dot버튼에 active
 
         }
         init();
