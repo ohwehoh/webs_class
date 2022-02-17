@@ -259,12 +259,15 @@ setInterval(sliderEffect, 2000);    //2초마다 sliderEffect함수를 실행시
         function gotoSlider(num){
             sliderInner.style.transition = "all 400ms";//0.4초
             sliderInner.style.transform = `translateX(-${sliderWidth * num}px)`;    //-800만큼 움직인다.
+            currentIndex = num;
         }
         sliderBtnPrev.addEventListener("click", () => {
-            gotoSlider(4)
+            let prevIndex = currentIndex - 1;
+            gotoSlider(prevIndex);
         })
         sliderBtnNext.addEventListener("click", () => {
-            gotoSlider(1)
+            let nextIndex = currentIndex + 1;
+            gotoSlider(nextIndex);
         })
         
     </script>

@@ -24,13 +24,18 @@
             overflow: hidden;
         }
         .slider__inner {        /*이미지 움직이는 영역*/
-            display: flex;
-            width: 4800px;      /*이미지 총 길이*/
-            transform: translateX(0);     /*left를 사용하기 위해서*/
+            /* display: flex; */
+            /* width: 4800px;      이미지 총 길이 */
+            height: 2880px;      /*이미지 총 길이*/
+            transform: translateY(0);     /*left를 사용하기 위해서*/
         }
         .slider {       
             width: 800px;
             position: relative;
+        }
+
+        .slider img{
+            height: 480px;
         }
 
         .slider::before {
@@ -69,16 +74,16 @@
     <!-- info -->
     <div class="info">
     <div class="title">
-        <h1><a href="sliderEffect.html">Javascript Slider Effect03</a></h1>
-        <p>이미지 슬라이드 - 위로 움직이기</p>
+        <h1><a href="sliderEffect.html">Javascript Slider Effect04</a></h1>
+        <p>이미지 슬라이드 - 연속적으로 넘기기</p>
     </div>
 
     <div class="number">
         <ul>
             <li><a href="sliderEffect01.html">1</a></li>
             <li><a href="sliderEffect02.html">2</a></li>
-            <li><a href="sliderEffect03.html">3</a></li>
-            <li class="active"><a href="sliderEffect04.html">4</a></li>
+            <li class="active"><a href="sliderEffect03.html">3</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
             <li><a href="sliderEffect05.html">5</a></li>
             <li><a href="sliderEffect06.html">6</a></li>
             <li><a href="sliderEffect07.html">7</a></li>
@@ -134,13 +139,18 @@
     overflow: hidden;
 }
 .slider__inner {        /*이미지 움직이는 영역*/
-    display: flex;
-    width: 4800px;      /*이미지 총 길이*/
-    transform: translateX(0);     /*left를 사용하기 위해서*/
+    /* display: flex; */
+    /* width: 4800px;      이미지 총 길이 */
+    height: 2880px;      /*이미지 총 길이*/
+    transform: translateY(0);     /*left를 사용하기 위해서*/
 }
 .slider {       
     width: 800px;
     position: relative;
+}
+
+.slider img{
+    height: 480px;
 }
 
 .slider::before {
@@ -157,6 +167,7 @@
 .slider:nth-child(5):before {content: '이미지5';}
 .slider:nth-child(6):before {content: '이미지1';}</code></pre></div>
 <div><pre><code class="language-javascript">highlight();    //외부 스크립트 함수 (highlight)호출
+highlight();    //외부 스크립트 함수 (highlight)호출
 modal ();       //외부 스크립트 함수 (modal, 소스보기 창)호출
 tabMenu ();     //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
 
@@ -169,14 +180,15 @@ const slider = document.querySelectorAll(".slider");             //slider에 div
 //.slider__inner > div:first-child
 let currentIndex = 0;
 let sliderCount = slider.length;    //이미지 갯수
-let sliderWidth = sliderImg.offsetWidth;    //이미지 가로 값
+let sliderHeight = sliderImg.offsetHeight;    //이미지 세로 값
 let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
 sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어줌
 
 function sliderEffect(){
+    console.log(sliderHeight*currentIndex);
     currentIndex++;     //sliderEffect함수가 실행할 때 마다 index값 1 증가
     sliderInner.style.transition = "all 0.3s";      //sliderInner의 움직임을 0.3초 동안으로 설정
-    sliderInner.style.transform = `translateX(-${sliderWidth*currentIndex}px)`;     //sliderInner를 x축으로 -sliderWidth(-800px)*currentIndex픽셀만큼 바꾼다.
+    sliderInner.style.transform = `translateY(-${sliderHeight*currentIndex}px)`;     //sliderInner를 x축으로 -sliderWidth(-800px)*currentIndex픽셀만큼 바꾼다.
 
     //마지막 사진에 갔을때
     if(currentIndex == sliderCount){    //인덱스 값이 증가하다가 sliderCount(slider의 길이)와 같아지면
@@ -184,7 +196,7 @@ function sliderEffect(){
         setTimeout(()=>{    
             //이미지 초기화
             sliderInner.style.transition = "0s";    //이미지 전환 시간을 0으로 바꿔 초기화가 자연스럽게 이루어지게 한다.
-            sliderInner.style.transform = 'translateX(0)';  //이미지의 위치 값을 0으로 바꿈(제일 처음 이미지로 온다.)
+            sliderInner.style.transform = 'translateY(0)';  //이미지의 위치 값을 0으로 바꿈(제일 처음 이미지로 온다.)
         }, 300);    //함수 지연시간을 transition의 움직인 시간 0.3초와 맞춰 자연스럽게 이미지초기화/전환이 이어게 한다.
         currentIndex = 0;   //인덱스 값 초기화
     }
@@ -221,14 +233,15 @@ setInterval(sliderEffect, 2000);    //2초마다 sliderEffect함수를 실행시
         //.slider__inner > div:first-child
         let currentIndex = 0;
         let sliderCount = slider.length;    //이미지 갯수
-        let sliderWidth = sliderImg.offsetWidth;    //이미지 가로 값
+        let sliderHeight = sliderImg.offsetHeight;    //이미지 세로 값
         let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
         sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어줌
 
         function sliderEffect(){
+            console.log(sliderHeight*currentIndex);
             currentIndex++;     //sliderEffect함수가 실행할 때 마다 index값 1 증가
             sliderInner.style.transition = "all 0.3s";      //sliderInner의 움직임을 0.3초 동안으로 설정
-            sliderInner.style.transform = `translateX(-${sliderWidth*currentIndex}px)`;     //sliderInner를 x축으로 -sliderWidth(-800px)*currentIndex픽셀만큼 바꾼다.
+            sliderInner.style.transform = `translateY(-${sliderHeight*currentIndex}px)`;     //sliderInner를 x축으로 -sliderWidth(-800px)*currentIndex픽셀만큼 바꾼다.
 
             //마지막 사진에 갔을때
             if(currentIndex == sliderCount){    //인덱스 값이 증가하다가 sliderCount(slider의 길이)와 같아지면
@@ -236,7 +249,7 @@ setInterval(sliderEffect, 2000);    //2초마다 sliderEffect함수를 실행시
                 setTimeout(()=>{    
                     //이미지 초기화
                     sliderInner.style.transition = "0s";    //이미지 전환 시간을 0으로 바꿔 초기화가 자연스럽게 이루어지게 한다.
-                    sliderInner.style.transform = 'translateX(0)';  //이미지의 위치 값을 0으로 바꿈(제일 처음 이미지로 온다.)
+                    sliderInner.style.transform = 'translateY(0)';  //이미지의 위치 값을 0으로 바꿈(제일 처음 이미지로 온다.)
                 }, 300);    //함수 지연시간을 transition의 움직인 시간 0.3초와 맞춰 자연스럽게 이미지초기화/전환이 이어게 한다.
                 currentIndex = 0;   //인덱스 값 초기화
             }
