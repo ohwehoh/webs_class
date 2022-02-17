@@ -261,14 +261,27 @@ setInterval(sliderEffect, 2000);    //2초마다 sliderEffect함수를 실행시
             sliderInner.style.transform = `translateX(-${sliderWidth * num}px)`;    //-800만큼 움직인다.
             currentIndex = num;
         }
+
         sliderBtnPrev.addEventListener("click", () => {
-            let prevIndex = currentIndex - 1;
+            let prevIndex = (currentIndex + (sliderCount -1)) % sliderCount;
+            console.log(prevIndex);
+            //첫번째 있을 때 0 -> 4
             gotoSlider(prevIndex);
         })
         sliderBtnNext.addEventListener("click", () => {
-            let nextIndex = currentIndex + 1;
+            let nextIndex = (currentIndex + 1) % sliderCount;
+            //이미지 총 갯수 이상 넘어가지 않게
             gotoSlider(nextIndex);
         })
+
+        // sliderBtnPrev.addEventListener("click", () => {
+        //     currentIndex = (currentIndex-1) % sliderCount;
+        //     gotoSlider();
+        // })
+        // sliderBtnNext.addEventListener("click", () => {
+        //     currentIndex = (currentIndex+1) % sliderCount;
+        //     gotoSlider();
+        // })
         
     </script>
 </body>
