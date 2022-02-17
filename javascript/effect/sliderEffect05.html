@@ -247,7 +247,7 @@ sliderBtnPrev.addEventListener("click", () => {     //이전 버튼 클릭시
     gotoSlider(prevIndex);      //매개변수로 prevIndex값을 전달하여 이미지가 움직이는 함수 호출
 })
 sliderBtnNext.addEventListener("click", () => {     //다음 버튼 클릭시
-    let nextIndex = (currentIndex + 1) % sliderCount;       //nextIndex에는 currentIndex보다 1을 더한 값이 들억ㄴ다. currentIndex가 4일 경우 0이 들어간다.
+    let nextIndex = (currentIndex + 1) % sliderCount;       //nextIndex에는 currentIndex보다 1을 더한 값이 들어간다. currentIndex가 4일 경우 0이 들어간다.
     //이미지 총 갯수 이상 넘어가지 않게
     gotoSlider(nextIndex);      //매개변수로 nextIndex값을 전달하여 이미지가 움직이는 함수 호출
 })</code></pre></div>

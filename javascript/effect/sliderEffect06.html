@@ -261,40 +261,40 @@
             sliderDot.innerHTML = dotIndex;     //sliderDot에 dotIndex문자열 삽입, 이미지 갯수 만큼 dot버튼이 생성된다.ㅏ
 
             //첫번째 닷 번튼한테 활성화 표시(active)
-            sliderDot.firstElementChild.classList.add("active");    //페이지 처음 로드 시 첫번째 dot버튼에 active
+            sliderDot.firstElementChild.classList.add("active");    //페이지 처음 로드 시 첫번째 dot버튼에는 class="active" 추가시킴
 
         }
-        init();
+        init();     //초기화 함수 호출
 
 
         function gotoSlider(num) {
             sliderInner.style.transition = "all 400ms"; //0.4초
             sliderInner.style.transform = `translateX(-${sliderWidth * num}px)`; //-800만큼 움직인다.
-            currentIndex = num;
+            currentIndex = num;     //currentIndex 동기화
 
-            dotActive = document.querySelectorAll(".slider__dot .dot");
-            //num = [1,2,3,4,5]
+            dotActive = document.querySelectorAll(".slider__dot .dot");     //dotActive 변수에 초기화 함수에서 생성된 a.dot태그를 저장한다.
+            
             dotActive.forEach(el => {
-                el.classList.remove("active");
+                el.classList.remove("active");      //a.dot에 있는 class="active" 모두 삭제
             });
-            dotActive[num].classList.add("active");
+            dotActive[num].classList.add("active");     //매개변수로 받은 num(현재인덱스값)과 같은 순서에 있는 a.dot에 class="active"추가
         }
 
-        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
-            btn.addEventListener("click", () => {
-                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
-                let nextIndex = (currentIndex + 1) % sliderCount;
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {   //prev,next버튼
+            btn.addEventListener("click", () => {   //prev나 next버튼이 눌리면
+                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;   //prevIndex에는 currentIndex보다 1을 뺀 값이 들어간다. currentIndex가 0일 경우 4가 들어간다.
+                let nextIndex = (currentIndex + 1) % sliderCount;        //nextIndex에는 currentIndex보다 1을 더한 값이 들어간다. currentIndex가 4일 경우 0이 들어간다.
 
-                if (btn.classList.contains("prev")) {
-                    gotoSlider(prevIndex);
+                if (btn.classList.contains("prev")) {       //클릭한 버튼이 prev여서 class="prev"가 포함되어있으면
+                    gotoSlider(prevIndex);                  //매개변수로 prevIndex(현재 인덱스보다 -1한 번호)가 들어가서 이미지전환/dot버튼에 active 활성화 변경
                 } else {
-                    gotoSlider(nextIndex);
+                    gotoSlider(nextIndex);                  //클릭한 버튼이 next면 매개변수로 nextIndex(현제 인덱스 + 1)전달되어 이미지전환/dot버튼에 active활성화 변경
                 }
             })
         });
 
         document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
-            dot.addEventListener("click", () => {
+            dot.addEventListener("click", () => {   //클릭한 dot버튼인덱스를 gotoSlider함수의 매개변수에 전달하여 이미지전환/dot버튼 active 활성화 변경
                 gotoSlider(index);
             })
         })
