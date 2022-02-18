@@ -791,7 +791,11 @@
 
         //정답 확인
         //정답 버튼 클릭하면 정답 확인은 안보이게... 숨겨진 정답은 보이게
-        quizConfirm.addEventListener("click", () => {          
+        quizConfirm.addEventListener("click", () => {
+            quizTrue.style.opacity = "0"
+            quizFalse.style.opacity = "0";
+            quizDog.classList.remove("like");
+            quizDog.classList.remove("dislike");
             if(quizInput.value == answerResult){
                 quizTrue.style.opacity = "1";
                 quizDog.classList.add("like");
