@@ -21,11 +21,18 @@
             font-style: normal;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'DungGeunMo';
+        @font-face {
+            font-family: 'PFStardust';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Sam3KRFont';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Sam3KRFont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
 
         *,
@@ -33,6 +40,15 @@
         *::after {
             box-sizing: border-box;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DungGeunMo';
+        }
+
+        
 
         a {
             text-decoration: none;
@@ -180,16 +196,48 @@
         }
 
         .quiz__number {
-            font-family: 'Cafe24Dangdanghae';
+            font-family: 'PFStardust';
             color: #64a30b;
         }
 
         .quiz__ask {
-            font-family: 'Cafe24Dangdanghae';
+            font-family: 'PFStardust';
         }
 
         .quiz__view {
             background-color: #f5f5f5;
+            position: relative;
+        }
+
+        .quiz__view .true {
+            position: absolute;
+            left: 70%;
+            top: 120px;
+            width: 120px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            opacity: 0;
+
+        }
+
+        .quiz__view .false {
+            position: absolute;
+            right: 70%;
+            top: 120px;
+            width: 120px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 100px;
+            text-align: center;
+            color: red;
+            opacity: 0;
         }
 
         .quiz__answer {
@@ -204,7 +252,7 @@
             font-size: 22px;
             padding: 13px 20px;
             background: rgb(192, 192, 192);
-            font-family: 'Cafe24Dangdanghae';
+            font-family: 'Sam3KRFont';
             text-shadow: 1px 1px 1px #fff;
             transition: all 0.3s;
             cursor: pointer;
@@ -223,9 +271,37 @@
             background: rgb(255, 255, 255);
             font-family: 'Cafe24Dangdanghae';
             text-shadow: 1px 1px 1px #fff;
+            display: none;
+        }
+
+        .quiz__input {
+            border: 6px ridge #cacaca;
+            text-align: center;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: rgb(255, 255, 255);
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            margin-bottom: 10px;
         }
 
         /* dog */
+        .dog .tail,
+        .dog .chin,
+        .dog .tongue::before,
+        .dog .tongue::after,
+        .dog .mouth,
+        .dog .nose,
+        .dog .teardrop,
+        .dog .eyes,
+        .dog .face::before,
+        .dog .face::after,
+        .dog .ears::before,
+        .dog .ears::after {
+            transition: 0.2s ease-in;
+        }
+
         .dog {
             padding-top: 50px;
         }
@@ -656,7 +732,7 @@
                     <span class="quiz__ask"></span>
                 </h3>
                 <div class="quiz__view">
-                    <div class="dog like">
+                    <div class="dog">
                         <div class='head'>
                             <div class='ears'></div>
                             <div class='face'></div>
@@ -684,7 +760,7 @@
         <div class="quiz_source"></div>
     </main>
     <footer id="footer">
-        <a href="mailto:x7nxc3@gmail.com">x7nxc3@gmail.com</a>
+        <a href="mailto:ohwehoh@naver.com">ohwehoh@naver.com</a>
     </footer>
     <script>
         const quizType = document.querySelector(".quiz__type"); //퀴즈 종류
@@ -692,6 +768,7 @@
         const quizAsk = document.querySelector(".quiz__ask"); //퀴즈 질문
         const quizConfirm = document.querySelector(".quiz__confirm"); //정답 확인 버튼
         const quizResult = document.querySelector(".quiz__result"); //정답 결과
+        const quizDog = document.querySelector(".dog");
         //문제 정보
         const answerType = "HTML"
         const answerNum = 1;
@@ -702,6 +779,12 @@
         quizNumber.textContent = answerNum + ". ";
         quizAsk.textContent = answerAsk;
         quizResult.textContent = answerResult;
+        
+        quizConfirm.addEventListener("click", () => {
+            quizConfirm.style.display = "none";
+            quizResult.style.display = "block";
+            quizDog.classList.add("like");
+        })
     </script>
 </body>
 
