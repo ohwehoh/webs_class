@@ -23,7 +23,7 @@
     display: flex;
 }
 
-.logo .logo_icon1 {
+.logo_icon {
     width: 157px;
     height: 35px;
     background: url(../img/mission3splite.png);
@@ -234,7 +234,7 @@
 /* 이미지 텍스트02 */
 .img_text02 {
     margin-top: 173px;
-    margin-bottom: 188px;
+    margin-bottom: 307px;
 }
 
 .img_text02 .header {
@@ -469,76 +469,134 @@
 
 /* 이미지 텍스트03 */
 .img_text03 {
-    /* width: 1056px; */
-    /* margin: 0 auto; */
+    width: 1056px;
+    margin: 0 auto;
 }
 
-#main .nav {
-    height: 800px;
-    background: #333;
-}
-
-#main .content1 {
-    height: 800px;
-    background: #444;
-}
-
-#main .content2 {
-    height: 800px;
-    background: #555;
-}
-
-#main .content3 {
-    height: 800px;
-    background: #aaa;
-    /* margin-top: 307px;
-    position: relative; */
-}
-
-/* .img_text03 .img_container01 {
+.img_text03 .img_container01 {
     display: flex;
 }
+
 .img_text03 .img_container01 .img {
     width: 470px;
     height: 588px;
-    background-color: #fff4e8;
+    background: url(../img/man.png);
 }
+
 .img_text03 .img_container01 .text {
     margin-left: 107px;
 }
+
 .img_text03 .img_container01 .text .header {
     width: 427px;
     height: 112px;
-    background-color: #fff4e8;
+    font-size: 40px;
+    color: #3d3d3f;
     margin-top: 69px;
 }
+
 .img_text03 .img_container01 .text .desc {
-    width: 445px;
+    width: 500px;
     height: 140px;
-    background-color: #fff4e8;
+    font-size: 18px;
+    line-height: 1.56;
+    color: #72696a;
     margin-top: 43px;
 }
-.img_text03 .img_container02 {
-    display: flex;
-    position: absolute;
-    bottom: -60px;
-}
-.img_text03 .img_container02 .img_txt01 {
-    margin-left: 169px;
-}
-.img_text03 .img_container02 .img_txt02 {}
-.img_text03 .img_container02 .img_txt03 {}
-.img_text03 .img_container02 .iT {
-    width: 128px;
-    height: 132px;
-    background-color: #ecb67c;
-    margin-right: 25px;
-} */
 
 /* 푸터 */
 #footer {
-    /* margin-top: 168px; */
+    padding-top: 130px;
+    background-color: #fff;
+    margin-top: 168px;
     height: 746px;
-    background-color: #ccc;
-    background: #777;
+}
+
+.footer_container1 {
+    display: flex;
+    justify-content: space-around
+}
+
+.footer_cont1 .footer_button {
+    width: 183px;
+    height: 36px;
+    padding: 8px 36px 8px 35px;
+    border-radius: 18px;
+    border: solid 1px #fe8432;
+    background-color: rgba(254, 132, 50, 0.02);
+    color: #fe8432;
+}
+
+.footer_cont1 .footer_head {
+    width: 631px;
+    margin-top: 38px;
+    margin: 38px 57px 43px 0;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.06;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3d3d3f;
+}
+
+.footer_cont1 .playImg {
+    height: 163px;
+    background: url(../img/mission3splite.png) no-repeat;
+    background-position: -254px 0;
+    position: relative;
+}
+
+.footer_cont1 .playImg .playText {
+    text-decoration: underline;
+    height: 20px;
+    flex-grow: 0;
+    margin: 20px 0 19px 14px;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2e2e2e;
+    position: absolute;
+    left: 120px;
+    top: 30px;
+}
+
+.footer_cont2 .footer_img {
+    width: 444px;
+    height: 380px;
+    object-fit: contain;
+    mix-blend-mode: darken;
+    background: url(../img/image269.png) no-repeat;
+}
+
+.footer_container2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.footer_container2 .footer_icon {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.copyright {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    width: 1550px;
+    height: 47px;
+    border-top: 2px solid #dfdfe5;
+    color: #adadad;
+    font-size: 12px;
+    padding: 50px;
 }
