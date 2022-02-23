@@ -44,20 +44,26 @@
             background-color: #70C0F2;
         }
 
-        #section1 {
+        #contents {
             width: 75%;
+            display: flex;
+            flex-wrap: wrap
+        }
+
+        #section1 {
+            width: 100%;
             height: 260px;
             background-color: #5AB3F0;
         }
 
         #section2 {
-            width: 75%;
+            width: 100%;
             height: 260px;
             background-color: #4BA6EE;
         }
 
         #section3 {
-            width: 75%;
+            width: 100%;
             height: 260px;
             background-color: #4599DF;
         }
@@ -66,49 +72,62 @@
             width: 100%;
             height: 100px;
             background-color: #3B86CB;
-            clear: both;
         }
-        @media (max-width: 1220px){
+
+        @media (max-width: 1300px) {
             #wrap {
                 width: 96%;
             }
+
             #section2 {
-                width: calc(75% / 2);
+                width: 50%;
                 height: 520px;
             }
+
             #section3 {
-                width: calc(75% / 2);
+                width: 50%;
                 height: 520px;
             }
         }
-        @media (max-width: 768px){
+
+        @media (max-width: 768px) {
             #wrap {
                 width: 100%;
             }
+
             #section1 {
-                width: 75%;
                 height: 390px;
             }
+
             #section2 {
-                width: 75%;
+                width: 100%;
                 height: 390px;
             }
+
             #section3 {
                 display: none;
             }
         }
-        @media (max-width: 600px){
+
+        @media (max-width: 480px) {
             #main {
                 flex-wrap: wrap;
             }
+
             #aside {
                 width: 100%;
                 height: 200px;
             }
+
+            #contents {
+                width: 100%;
+            }
+
             #section1 {
                 width: 100%;
                 height: 430px;
             }
+
             #section2 {
                 width: 100%;
                 height: 150px;
@@ -123,9 +142,12 @@
         <nav id="nav"></nav>
         <main id="main">
             <aside id="aside"></aside>
-            <section id="section1"></section>
-            <section id="section2"></section>
-            <section id="section3"></section>
+            <div id="contents">
+                <section id="section1"></section>
+                <section id="section2"></section>
+                <section id="section3"></section>
+            </div>
+
         </main>
         </section>
 
