@@ -17,11 +17,11 @@ body {
     height: 50px;
     font-size: 18px;
     border: 4px ridge #a3a3a3;
+    background: rgb(192, 192, 192);
 }
-
-.source button:hover {
-    background: #000;
-    color: #fff
+.source-btn:hover{
+    background: #b3b3b3;
+    cursor: pointer;
 }
 
 .window_wrap {
@@ -31,7 +31,7 @@ body {
     width: 100%;
     height: 100vh;
     z-index: 1000;
-    background: #ff9ae191;
+    background: #fcdcad91;
     display: flex;
     justify-content: center;
     align-items: center;

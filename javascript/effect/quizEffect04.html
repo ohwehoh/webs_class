@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
     <style>
+        @import url(css/quizcustom.css);
+        @import url(css/dracula.min.css);
+
         @font-face {
             font-family: 'DungGeunMo';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
@@ -15,6 +18,19 @@
         @font-face {
             font-family: 'Cafe24Dangdanghae';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'PFStardust';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Sam3KRFont';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Sam3KRFont.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
@@ -92,12 +108,12 @@
         #footer {
             margin-top: 200px;
             width: 100%;
-            background: #fff;
+            background: #838383;
             text-align: center;
             padding: 20px;
         }
         #footer a {
-            color: #000;
+            color: #fff;
             font-size: 16px;
         }
 
@@ -155,7 +171,7 @@
             color: #64a30b;
         }
         .quiz__ask {
-            font-family: 'Cafe24Dangdanghae';
+            font-family: 'PFStardust';
         }
         .quiz__view {
             background-color: #f5f5f5;
@@ -217,7 +233,7 @@
             font-size: 22px;
             padding: 13px 20px;
             background: #d6d6d6;
-            font-family: 'Cafe24Dangdanghae';
+            font-family: 'Sam3KRFont';
             text-shadow: 1px 1px 1px #fff;
             transition: all 0.3s;
             cursor: pointer;
@@ -637,8 +653,8 @@
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
                 <li><a href="quizEffect02.html">2</a></li>
-                <li class="active"><a href="quizEffect03.html">3</a></li>
-                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li class="active"><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
                 <li><a href="quizEffect06.html">6</a></li>
                 <li><a href="quizEffect07.html">7</a></li>
@@ -702,14 +718,221 @@
             </div>
         </div>
 
-        <div class="quiz_source"></div>
+        <button class="source-btn">소스 보기</button>
+        <div class="source">
+
+            <div class="window_wrap">
+                <div class="window">
+                    <div class="title-bar">
+                        <div class="minimize">
+                            <div class="symbol"></div>
+                        </div>
+                        <div class="maximize">
+                            <div class="symbol"></div>
+                        </div>
+                        <div class="close">
+                            <div class="symbol"></div>
+                        </div>
+                    </div>
+                    <div class="menu-bar"><span class="active">HTML</span><span>CSS</span><span>Javascript</span></div>
+                    <div class="content-container">
+                        <div class="content">
+                            <div class="main">
+                                <div>
+<pre><code class="language-html">&lt;div class="quiz"&gt;
+    &lt;h2 class="quiz__type"&gt;&lt;/h2&gt;
+    &lt;h3 class="quiz__question"&gt;
+        &lt;span class="quiz__number"&gt;&lt;/span&gt;
+        &lt;span class="quiz__ask"&gt;&lt;/span&gt;
+    &lt;/h3&gt;
+    &lt;div class="quiz__view"&gt;
+        &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+        &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+        &lt;div class="dog"&gt;
+            &lt;div class="head"&gt;
+                &lt;div class="ears"&gt;&lt;/div&gt;
+                &lt;div class="face"&gt;&lt;/div&gt;
+                &lt;div class="eyes"&gt;
+                    &lt;div class="teardrop"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="nose"&gt;&lt;/div&gt;
+                &lt;div class="mouth"&gt;
+                    &lt;div class="tongue"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="chin"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="body"&gt;
+                &lt;div class="tail"&gt;&lt;/div&gt;
+                &lt;div class="legs"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="quiz__answer"&gt;
+        &lt;div class="quiz__selects"&gt;
+            &lt;label for="select1"&gt;
+                &lt;input class="select" type="radio" id="select1" name="select" value="1"&gt;
+                &lt;span class="choice"&gt;&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label for="select2"&gt;
+                &lt;input class="select" type="radio" id="select2" name="select" value="2"&gt;
+                &lt;span class="choice"&gt;&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label for="select3"&gt;
+                &lt;input class="select" type="radio" id="select3" name="select" value="3"&gt;
+                &lt;span class="choice"&gt;&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label for="select4"&gt;
+                &lt;input class="select" type="radio" id="select4" name="select" value="4"&gt;
+                &lt;span class="choice"&gt;&lt;/span&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;button class="quiz__confirm"&gt;정답 확인하기&lt;/button&gt;
+        &lt;div class="quiz__result"&gt;&lt;/div&gt;
+        &lt;div class="quiz__ex"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-css">.quiz__selects {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.quiz__selects label {
+    display: flex;
+
+}
+.quiz__selects label input {
+    position: absolute;
+    left: -9999px;
+}
+
+.quiz__selects label span {
+    font-size: 20px;
+    line-height: 1.3;
+    padding: 10px 30px 10px 20px;
+    margin: 3px 0;
+    border-radius: 5px;
+    font-family: 'Cafe24Dangdanghae';
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.quiz__selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: #fff;
+    display: flex;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 4px #64A30B;
+    transition: all 0.25s;
+}
+.quiz__selects label input:checked + span {
+    background-color: #F5FFE7;
+}
+.quiz__selects label input:checked + span::before {
+    box-shadow: inset 0 0 0 10px #64A30B;
+}</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-javascript">highlight(); //외부 스크립트 함수 (highlight)호출
+modal(); //외부 스크립트 함수 (modal, 소스보기 창)호출
+tabMenu(); //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
+
+const quiz = document.querySelector(".quiz");
+const quizType = document.querySelector(".quiz__type");         //문제 유형
+const quizNumber = document.querySelector(".quiz__number");     //문제 번호
+const quizAsk = document.querySelector(".quiz__ask");           //문제 질문
+const quizConfirm = document.querySelector(".quiz__confirm");   //문제 정답 버튼
+const quizResult = document.querySelector(".quiz__result");     //문제 정답
+const quizView = document.querySelector(".quiz__view")          //문제 화면
+const quizSelects = document.querySelector(".quiz__selects")    //객관식 보기(전체 박스)
+const quizChoice = quizSelects.querySelectorAll(".choice");     //객관식 보기(input)
+const quizSelect = quizSelects.querySelectorAll(".select");     //객관식 보기(4개의 제시 답안)
+
+//문제 정보
+const quizInfo = [
+    {
+        answerType : "javascript",
+        answerNum : 1,
+        answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+        answerChoice : ["javascript", "html", "css", "jquery"], //4개의 제시 답안, 배열 안 객체 안 배열로 저장되어있다.
+        answerResult : "1",
+        answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
+    }
+];
+
+//문제 출력
+function updateQuiz() {
+    quizType.textContent = quizInfo[0].answerType;
+    quizNumber.textContent = quizInfo[0].answerNum + ". ";
+    quizAsk.textContent = quizInfo[0].answerAsk;
+    quizResult.textContent = quizInfo[0].answerEx;
+
+    //4개의 제시 답안을 입력한다.
+    for(let i=0; i&lt;quizInfo[0].answerChoice.length; i++){
+        quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+    }
+
+    //설명 감추기
+    quizResult.style.display = "none";
+    
+}
+updateQuiz();   //바로실행하는함수
+
+//정답 확인
+function answerQuiz() {
+    //사용자가 클릭한 input --> checked : 사용자가 선택한 정답
+    //객체 안에 정답
+    for(let i = 0; i &lt;quizSelect.length; i++){  //제시 답안 하나씩 순회
+        if(quizSelect[i].checked == true){      //선택 된 제시 답안의
+            if(quizSelect[i].value == quizInfo[0].answerResult){    // value(번호)와 문제정보의 답안번호와 일치하면
+                //정답
+                quizView.classList.add("like");     //강아지 like애니메이션
+                quizConfirm.style.display = "none"; //확인 버튼 감추기
+            } else {         // value(번호)와 문제정보의 답안번호와 불일치하면
+                //오답
+                quizView.classList.add("dislike");  //강아지 dislike애니메이션
+                quizResult.style.display = "block"; //문제 설명 보이기
+                quizConfirm.style.display = "none"; //확인 버튼 감추기
+            }
+        }
+    }
+}
+quizConfirm.addEventListener("click", answerQuiz)   //quizConfirm에 클릭이벤트가 발생하면 answerQuiz 함수 실행</code></pre>
+                                </div>
+                            </div>
+                            <div class="scroll">
+                                <div class="start"></div>
+                                <div class="progress"></div>
+                                <div class="end"></div>
+                            </div>
+                        </div>
+                        <div class="scroll -row">
+                            <div class="start"></div>
+                            <div class="progress"></div>
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer id="footer">
         <a href="mailto:ohwehoh@naver.com">ohwehoh@naver.com</a>
     </footer>
-
+    <script src="js/quizcustom.js"></script>
+    <script src="js/highlight.min.js"></script>
     <script>
+        highlight(); //외부 스크립트 함수 (highlight)호출
+        modal(); //외부 스크립트 함수 (modal, 소스보기 창)호출
+        tabMenu(); //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
+
         const quiz = document.querySelector(".quiz");
         const quizType = document.querySelector(".quiz__type");         //문제 유형
         const quizNumber = document.querySelector(".quiz__number");     //문제 번호
@@ -717,9 +940,9 @@
         const quizConfirm = document.querySelector(".quiz__confirm");   //문제 정답 버튼
         const quizResult = document.querySelector(".quiz__result");     //문제 정답
         const quizView = document.querySelector(".quiz__view")          //문제 화면
-        const quizSelects = document.querySelector(".quiz__selects")    //객관식 보기
-        const quizChoice = quizSelects.querySelectorAll(".choice");     //객관식 보기
-        const quizSelect = quizSelects.querySelectorAll(".select");
+        const quizSelects = document.querySelector(".quiz__selects")    //객관식 보기(전체 박스)
+        const quizChoice = quizSelects.querySelectorAll(".choice");     //객관식 보기(input)
+        const quizSelect = quizSelects.querySelectorAll(".select");     //객관식 보기(4개의 제시 답안)
 
         //문제 정보
         const quizInfo = [
@@ -727,7 +950,7 @@
                 answerType : "javascript",
                 answerNum : 1,
                 answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
-                answerChoice : ["javascript", "html", "css", "jquery"],
+                answerChoice : ["javascript", "html", "css", "jquery"], //4개의 제시 답안, 배열 안 객체 안 배열로 저장되어있다.
                 answerResult : "1",
                 answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
             }
@@ -740,7 +963,8 @@
             quizAsk.textContent = quizInfo[0].answerAsk;
             quizResult.textContent = quizInfo[0].answerEx;
 
-            for(let i=0; i<4; i++){
+            //4개의 제시 답안을 입력한다.
+            for(let i=0; i<quizInfo[0].answerChoice.length; i++){
                 quizChoice[i].textContent = quizInfo[0].answerChoice[i];
             }
 
@@ -748,30 +972,28 @@
             quizResult.style.display = "none";
             
         }
-        updateQuiz();
+        updateQuiz();   //바로실행하는함수
 
         //정답 확인
         function answerQuiz() {
             //사용자가 클릭한 input --> checked : 사용자가 선택한 정답
             //객체 안에 정답
-            for(let i = 0; i <quizSelect.length; i++){
-                if(quizSelect[i].checked == true){
-                    if(quizSelect[i].value == quizInfo[0].answerResult){
+            for(let i = 0; i <quizSelect.length; i++){  //제시 답안 하나씩 순회
+                if(quizSelect[i].checked == true){      //선택 된 제시 답안의
+                    if(quizSelect[i].value == quizInfo[0].answerResult){    // value(번호)와 문제정보의 답안번호와 일치하면
                         //정답
-                        quizView.classList.add("like");
-                        quizResult.style.display = "none";
-                        quizConfirm.style.display = "none";
-                    } else {
+                        quizView.classList.add("like");     //강아지 like애니메이션
+                        quizConfirm.style.display = "none"; //확인 버튼 감추기
+                    } else {         // value(번호)와 문제정보의 답안번호와 불일치하면
                         //오답
-                        quizView.classList.add("dislike");
-                        quizResult.style.display = "block";
-                        quizConfirm.style.display = "none";
+                        quizView.classList.add("dislike");  //강아지 dislike애니메이션
+                        quizResult.style.display = "block"; //문제 설명 보이기
+                        quizConfirm.style.display = "none"; //확인 버튼 감추기
                     }
                 }
             }
-
         }
-        quizConfirm.addEventListener("click", answerQuiz)
+        quizConfirm.addEventListener("click", answerQuiz)   //quizConfirm에 클릭이벤트가 발생하면 answerQuiz 함수 실행
     </script>
 </body>
 </html>
