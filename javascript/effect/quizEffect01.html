@@ -37,7 +37,6 @@
             font-weight: normal;
             font-style: normal;
         }
-
         *,
         *:before,
         *::after {
@@ -128,7 +127,8 @@
 
         /* footer */
         #footer {
-            margin-top: 200px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
             background: #838383;
             text-align: center;
@@ -138,7 +138,6 @@
         #footer a {
             color: #fff;
             font-size: 16px;
-
         }
 
         /* quiz__wrap */
@@ -869,7 +868,8 @@
     <footer id="footer">
         <a href="mailto:ohwehoh@naver.com">ohwehoh@naver.com</a>
     </footer>
-    <script src="js/quizcustom.js"></script>
+</body>
+<script src="js/quizcustom.js"></script>
     <script src="js/highlight.min.js"></script>
     <script>
         highlight(); //외부 스크립트 함수 (highlight)호출
@@ -898,6 +898,4 @@
             quizDog.classList.add("like");
         })
     </script>
-</body>
-
 </html>
