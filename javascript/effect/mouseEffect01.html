@@ -49,6 +49,8 @@
 
         .cursor {
             position: absolute;
+            left: -100px;
+            top: -100px;
             left: 0;
             top: 0;
             width: 50px;
@@ -158,7 +160,7 @@
                             </div>
                             <div class="view-cont">
                                 <div>
-<pre><code class="language-html">&lt;main&gt;
+                                    <pre><code class="language-html">&lt;main&gt;
     &lt;section id="mouseType01"&gt;
         &lt;div class="cursor"&gt;&lt;/div&gt;
         &lt;div class="mouse__wrap"&gt;
@@ -171,7 +173,7 @@
 &lt;/main&gt;</code></pre>
                                 </div>
                                 <div>
-<pre><code class="language-css">body::before {
+                                    <pre><code class="language-css">body::before {
     background: rgba(48, 5, 70, 0.63);
 }
 
@@ -262,7 +264,7 @@
 }</code></pre>
                                 </div>
                                 <div>
-<pre><code class="language-javascript">//출력용
+                                    <pre><code class="language-javascript">//출력용
 window.addEventListener("mousemove", (event) => {
     document.querySelector(".clientX").innerText = event.clientX;       //현재창 기준 마우스커서 수평 좌표
     document.querySelector(".clientY").innerText = event.clientY;       //현재창 기준 마우스커서 수직 좌표
@@ -336,20 +338,26 @@ mouseOver.forEach((span, i) => {        //span태그들 순회, 요소와 인덱
 
         //출력용
         window.addEventListener("mousemove", (event) => {
-            document.querySelector(".clientX").innerText = event.clientX;       //현재창 기준 마우스커서 수평 좌표
-            document.querySelector(".clientY").innerText = event.clientY;       //현재창 기준 마우스커서 수직 좌표
-            document.querySelector(".offsetX").innerText = event.offsetX;       //좌표를 출력하도록 하는 이벤트가 걸려있는 DOM node를 기준으로 수평 좌표
-            document.querySelector(".offsetY").innerText = event.offsetY;       //좌표를 출력하도록 하는 이벤트가 걸려있는 DOM node를 기준으로 수직 좌표
-            document.querySelector(".pageX").innerText = event.pageX;           //전체 문서를 기준으로 수평 좌표
-            document.querySelector(".pageY").innerText = event.pageX;           //전체 문서를 기준으로 수직 좌표
-            document.querySelector(".screenX").innerText = event.screenX;       //사용자 모니터 화면을 기준으로 수평 좌표
-            document.querySelector(".screenY").innerText = event.screenX;       //사용자 모니터 화면을 기준으로 수직 좌표
+            document.querySelector(".clientX").innerText = event.clientX; //현재창 기준 마우스커서 수평 좌표
+            document.querySelector(".clientY").innerText = event.clientY; //현재창 기준 마우스커서 수직 좌표
+            document.querySelector(".offsetX").innerText = event
+            .offsetX; //좌표를 출력하도록 하는 이벤트가 걸려있는 DOM node를 기준으로 수평 좌표
+            document.querySelector(".offsetY").innerText = event
+            .offsetY; //좌표를 출력하도록 하는 이벤트가 걸려있는 DOM node를 기준으로 수직 좌표
+            document.querySelector(".pageX").innerText = event.pageX; //전체 문서를 기준으로 수평 좌표
+            document.querySelector(".pageY").innerText = event.pageX; //전체 문서를 기준으로 수직 좌표
+            document.querySelector(".screenX").innerText = event.screenX; //사용자 모니터 화면을 기준으로 수평 좌표
+            document.querySelector(".screenY").innerText = event.screenX; //사용자 모니터 화면을 기준으로 수직 좌표
         });
 
         //마우스 움직이기
-        window.addEventListener("mousemove", (e) => {       //해당 div(class=".cursor")가 마우스를 따라 좌표값이 바뀌면서 따라다니는 효과가 난다.
-            document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //마우스의 수직 좌표 위치를 .cursor의 left값으로 설정..가운데로오게함
-            document.querySelector(".cursor").style.top = e.clientY - 25 + "px";    //마우스의 수평 좌표 위치를 .cursor의 top값으로 설정..가운데로오게함
+        window.addEventListener("mousemove", (e) => { //해당 div(class=".cursor")가 마우스를 따라 좌표값이 바뀌면서 따라다니는 효과가 난다.
+            document.querySelector(".cursor").style.left = e.clientX - 25 + "px"; //마우스의 수직 좌표 위치를 .cursor의 left값으로 설정..가운데로오게함
+            document.querySelector(".cursor").style.top = e.clientY - 25 + "px"; //마우스의 수평 좌표 위치를 .cursor의 top값으로 설정..가운데로오게함
+
+            // let x = e.clientX - 25 + "px";
+            // let y = e.clientX - 25 + "px";
+            // document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
         });
 
         // //마우스 효과1
@@ -400,7 +408,7 @@ mouseOver.forEach((span, i) => {        //span태그들 순회, 요소와 인덱
         //     document.querySelector(".cursor").classList.remove("style6");
         // });
 
-        const mouseOver = document.querySelectorAll(".mouse__wrap p span");         //mouseOver 변수에 span태그들을 저장
+        //mouseOver 변수에 span태그들을 저장
 
         //for()
         // for (let i = 0; i < mouseOver.length; i++) {
@@ -414,12 +422,24 @@ mouseOver.forEach((span, i) => {        //span태그들 순회, 요소와 인덱
 
 
         //forEach()
-        mouseOver.forEach((span, i) => {        //span태그들 순회, 요소와 인덱스값 받음
-            span.addEventListener("mouseover", () => {  //span태그에 mouseover 이벤트 발생시
-                document.querySelector(".cursor").classList.add(`style${i+1}`); //.cursor에 style 클래스 추가
+        // pSpan.forEach((span, i) => {        //span태그들 순회, 요소와 인덱스값 받음
+        //     span.addEventListener("mouseover", () => {  //span태그에 mouseover 이벤트 발생시
+        //         document.querySelector(".cursor").classList.add(`style${i+1}`); //.cursor에 style 클래스 추가
+        //     });
+        //     span.addEventListener("mouseout", () => {   //span태그에 mouseout 이벤트 발생시
+        //         document.querySelector(".cursor").classList.remove(`style${i+1}`);  //.cursor에 style 클래스 추가
+        //     });
+        // });
+
+        //getAttribute
+        //span 마우스 오버 했을 대 속성값을 alert()
+        document.querySelectorAll(".mouse__wrap p span").forEach((span) => {
+            let attr = span.getAttribute("class");
+            span.addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add(attr); //.cursor에 style 클래스 추가
             });
-            span.addEventListener("mouseout", () => {   //span태그에 mouseout 이벤트 발생시
-                document.querySelector(".cursor").classList.remove(`style${i+1}`);  //.cursor에 style 클래스 추가
+            span.addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove(attr); //.cursor에 style 클래스 추가
             });
         });
     </script>

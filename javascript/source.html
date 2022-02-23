@@ -7,222 +7,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-
     <style>
-        @import url(css/dracula.min.css);
-        @import url(css/custom.css);
-        @import url(css/NexonLv1Gothic.css);
+        @import url("https://fonts.googleapis.com/css?family=Inconsolata");
 
-        /* modal */
+        html {
+            box-sizing: border-box;
+        }
 
-        button {
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-            border: 1px solid #fff;
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+            font-family: "Inconsolata", monospace;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            -ms-overflow-style: none;
+        }
+        ::-webkit-scrollbar { display: none; }
+        .source {
+            height: inherit;
+        }
+
+        .source button {
+            border: 1px solid #000;
             background: transparent;
             font-family: 'NexonLv1Gothic';
-            color: #fff;
+            color: #000;
             font-size: 16px;
             padding: 10px 30px;
             border-radius: 50px;
             transition: all 0.2s;
             cursor: pointer;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
         }
 
         .source button:hover {
-            background: #fff;
-            color: #000
+            background: #000;
+            color: #fff
         }
 
-        #modal {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1000;
-            transform: scale(0);
+        .window_wrap {
+            height: inherit;
+            background: #ff9ae191;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        #modal.show {
+        .window {
+            width: 60vw;
+            height: 60vh;
+            background-color: #c7c7c7;
+            padding: 4px;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            border-right: 2px solid #2A2A2A;
+            border-bottom: 2px solid #2A2A2A;
+        }
+
+        .windowl.show {
             animation: foldOut 1s ease forwards;
         }
 
         #modal.show.hide {
             animation: foldIn 1s 0.3s ease backwards;
-        }
-
-        .modal-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            height: 100vh;
-            transform: scale(0)
-        }
-
-        #modal.show .modal-wrap {
-            animation: zoomOut 0.5s 1s ease forwards;
-        }
-
-        #modal.show.hide .modal-wrap {
-            animation: zoomIn 0.5s ease forwards;
-        }
-
-        @keyframes foldOut {
-            0% {
-                transform: scaleX(0) scaleY(0.005)
-            }
-
-            50% {
-                transform: scaleX(1) scaleY(0.005)
-            }
-
-            100% {
-                transform: scaleX(1) scaleY(1)
-            }
-        }
-
-        @keyframes foldIn {
-            0% {
-                transform: scaleX(1) scaleY(1)
-            }
-
-            50% {
-                transform: scaleX(1) scaleY(0.005)
-            }
-
-            100% {
-                transform: scaleX(0) scaleY(0.005)
-            }
-        }
-
-        @keyframes zoomOut {
-            0% {
-                transform: scale(0)
-            }
-
-            100% {
-                transform: scale(1)
-            }
-        }
-
-        @keyframes zoomIn {
-            0% {
-                transform: scale(1)
-            }
-
-            100% {
-                transform: scale(0)
-            }
-        }
-
-        .modal-cont {
-            opacity: 1;
-            position: relative;
-        }
-
-        .code-view {
-            width: 60vw;
-            height: 60vh;
-            background: #fff;
-            border: 1px solid #f2f2f2;
-            border-radius: 5px;
-            overflow: scroll;
-            overflow-x: hidden;
-        }
-
-        .view-header {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 32px;
-            background: #fff;
-            padding: 7px 0 7px 10px;
-            border-bottom: 1px solid #eee;
-            border-radius: 5px 5px 0 0;
-        }
-
-        .view-header>span {
-            width: 10px;
-            height: 10px;
-            display: inline-block;
-            border-radius: 10px;
-        }
-
-        .view-header>span:nth-child(1) {
-            background-color: #f56565;
-        }
-
-        .view-header>span:nth-child(2) {
-            background-color: #f6e05e;
-        }
-
-        .view-header>span:nth-child(3) {
-            background-color: #4EBB7B;
-        }
-
-        .view-title {
-            position: absolute;
-            left: 0;
-            top: 32px;
-            width: 100%;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            padding: 9px 0 7px;
-            height: 37px;
-        }
-
-        .view-title li {
-            display: inline;
-        }
-
-        .view-title li a {
-            color: rgb(150, 150, 150);
-            font-size: 14px;
-            text-transform: uppercase;
-            padding: 12px 20px 8px 20px;
-            margin: 2px 0 0 0;
-        }
-
-        .view-title li.active a {
-            color: #000;
-            background: #dcdce4;
-        }
-
-        .view-cont {
-            background-color: #282936;
-            height: 100%;
-            padding-top: 65px;
-        }
-
-        .view-cont>div {
-            display: none;
-        }
-
-        .view-cont>div:first-child {
-            display: block;
-        }
-
-        .view-cont pre code.hljs {
-            line-height: 1.6;
-        }
-
-        /* 가져온거 */
-        @import url("https://fonts.googleapis.com/css?family=Inconsolata");
-
-        .window {
-            min-width: 360px;
-            min-height: 220px;
-            background-color: #c7c7c7;
-            padding: 4px;
-            border-left: 2px solid #fcfcfc;
-            border-top: 2px solid #fcfcfc;
-            border-right: 2px solid #2a2a2a;
-            border-bottom: 2px solid #2a2a2a;
         }
 
         .title-bar {
@@ -242,8 +96,8 @@
             height: 22px;
             background-color: #c7c7c7;
             margin-left: 4px;
-            border-left: 2px solid #fcfcfc;
-            border-top: 2px solid #fcfcfc;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -254,10 +108,10 @@
         .title-bar>.maximize:hover,
         .title-bar>.close:hover {
             background-color: #bababa;
-            border-left: 2px solid #2a2a2a;
-            border-top: 2px solid #2a2a2a;
-            border-right: 2px solid #fcfcfc;
-            border-bottom: 2px solid #fcfcfc;
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
         }
 
         .title-bar>.minimize {
@@ -311,24 +165,26 @@
         }
 
         .content-container {
-            border-left: 2px solid #2a2a2a;
-            border-top: 2px solid #2a2a2a;
-            border-right: 2px solid #fcfcfc;
-            border-bottom: 2px solid #fcfcfc;
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
         }
 
         .content-container>.content {
             display: flex;
-            height: 260px;
+            height: 49vh;
         }
 
         .content-container>.content>.main,
         .content-container>.content>.scroll-left {
             height: 100%;
+            overflow: auto;
         }
 
         .content-container>.content>.main {
             width: calc(100% - 26px);
+            font-weight: 500;
         }
 
         .content-container>.content>.scroll {
@@ -336,7 +192,7 @@
         }
 
         .scroll {
-            background-color: #d7d7d7;
+            background-color: #D7D7D7;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -347,10 +203,10 @@
             width: 24px;
             height: 70%;
             cursor: pointer;
-            border-left: 2px solid #fcfcfc;
-            border-top: 2px solid #fcfcfc;
-            border-right: 2px solid #2a2a2a;
-            border-bottom: 2px solid #2a2a2a;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            border-right: 2px solid #2A2A2A;
+            border-bottom: 2px solid #2A2A2A;
             background-color: #c7c7c7;
         }
 
@@ -363,20 +219,20 @@
             width: 24px;
             height: 22px;
             position: relative;
-            border-left: 2px solid #fcfcfc;
-            border-top: 2px solid #fcfcfc;
-            border-right: 2px solid #2a2a2a;
-            border-bottom: 2px solid #2a2a2a;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            border-right: 2px solid #2A2A2A;
+            border-bottom: 2px solid #2A2A2A;
             background-color: #c7c7c7;
         }
 
         .scroll>.start:hover,
         .scroll>.end:hover {
             background-color: #bababa;
-            border-left: 2px solid #2a2a2a;
-            border-top: 2px solid #2a2a2a;
-            border-right: 2px solid #fcfcfc;
-            border-bottom: 2px solid #fcfcfc;
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
         }
 
         .scroll>.start::after,
@@ -414,210 +270,132 @@
         .scroll.-row>.end::after {
             transform: rotate(90deg);
         }
-
-        #modal {
-    position: fixed;
-    left: 0; 
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.4);
-    z-index: 1000;
-    transform: scale(0);
-}
-#modal.show {
-    animation: foldOut 1s ease forwards;
-}
-#modal.show.hide {
-    animation: foldIn 1s 0.3s ease backwards;
-}
-.modal-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    transform: scale(0)
-}
-#modal.show .modal-wrap {
-    animation: zoomOut 0.5s 1s ease forwards;
-}
-#modal.show.hide .modal-wrap {
-    animation: zoomIn 0.5s ease forwards;
-}
-@keyframes foldOut {
-    0%   {transform: scaleX(0) scaleY(0.005)}
-    50%  {transform: scaleX(1) scaleY(0.005)}
-    100% {transform: scaleX(1) scaleY(1)}
-}
-@keyframes foldIn {
-    0%   {transform: scaleX(1) scaleY(1)}
-    50%  {transform: scaleX(1) scaleY(0.005)}
-    100% {transform: scaleX(0) scaleY(0.005)}
-}
-@keyframes zoomOut {
-    0%   {transform: scale(0)}
-    100% {transform: scale(1)}
-}
-@keyframes zoomIn {
-    0%   {transform: scale(1)}
-    100% {transform: scale(0)}
-}
-.modal-close {
-    margin-top: 10px;
-}
-.modal-cont {
-    opacity: 1;
-    position: relative;
-}
-.code-view {
-    width: 60vw;
-    height: 60vh;
-    background: #fff;
-    border: 1px solid #f2f2f2;
-    border-radius: 5px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-.view-header {
-    position: absolute;
-    left: 0; top: 0;
-    width: 100%;
-    height: 32px;
-    background: #fff;
-    padding: 7px 0 7px 10px;
-    border-bottom: 1px solid #eee;
-    border-radius: 5px 5px 0 0;
-}
-.view-header > span {
-    width: 10px; 
-    height: 10px;
-    display: inline-block;
-    border-radius: 10px;
-}    
-.view-header > span:nth-child(1) {
-    background-color: #f56565;
-}
-.view-header > span:nth-child(2) {
-    background-color: #f6e05e;
-}
-.view-header > span:nth-child(3) {
-    background-color: #4EBB7B;
-}
-.view-title {
-    position: absolute;
-    left: 0; 
-    top: 32px;
-    width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 9px 0 7px;
-    height: 37px;
-}
-.view-title li {
-    display: inline;
-}
-.view-title li a {
-    color: rgb(150, 150, 150);
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 12px 20px 8px 20px;
-    margin: 2px 0 0 0;
-}
-.view-title li.active a {
-    color: #000;
-    background: #dcdce4;
-}
-.view-cont {
-    background-color: #282936;
-    height: 100%;
-    padding-top: 65px;
-}
-.view-cont > div {
-    display: none;
-}
-.view-cont > div:first-child {
-    display: block;
-}
-.view-cont pre code.hljs {
-    line-height: 1.6;
-}
     </style>
 </head>
 
 <body>
     <div class="source">
         <button class="source-btn">소스 보기</button>
-        <div id="modal">
-            <div class="modal-wrap">
-                <div class="modal-cont">
-                    <div class="code-view">
-                        <div class="view-header" aria-hidden="true">
-                            <span class="close"></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="view-title">
-                            <ul>
-                                <li class="active"><a href="#">HTML</a></li>
-                                <li><a href="#">CSS</a></li>
-                                <li><a href="#">JavaScript</a></li>
-                                <li><a href="#">jQuery</a></li>
-                            </ul>
-                        </div>
-                        <div class="view-cont">
-                            <div><pre><code class="language-html"></code></pre></div>
-<div><pre><code class="language-css"></code></pre></div>
-<div><pre><code class="language-javascript"></code></pre></div>
-<div><pre><code class="language-jQuery"></code></pre></div>
-                        </div>
+        <div class="window_wrap">
+            <div class="window">
+                <div class="title-bar">
+                    <div class="minimize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div class="maximize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div class="close">
+                        <div class="symbol"></div>
                     </div>
                 </div>
-                <button class="modal-close">닫기</button>
-            </div>
-        </div>
-    </div>
-    <button class="source-btn">소스 보기</button>
-    <div id="modal">
-        <div class="window">
-            <div class="title-bar">
-                <div class="minimize">
-                    <div class="symbol"></div>
-                </div>
-                <div class="maximize">
-                    <div class="symbol"></div>
-                </div>
-                <div class="close modal-close">
-                    <div class="symbol"></div>
-                </div>
-            </div>
-            <div class="menu-bar"><span>File</span><span>Edit</span><span>View</span><span>Help</span></div>
-            <div class="content-container">
-                <div class="content">
-                    <div class="main">
-                        <!-- 소스 -->
+                <div class="menu-bar"><span>HTML</span><span>CSS</span><span>Javascript</span></div>
+                <div class="content-container">
+                    <div class="content">
+                        <div class="main">
+                            <div>
+                                <pre><code class="language-html">&lt;section id="sliderType01"&gt;
+&lt;div class="slider__wrap"&gt;
+    &lt;div class="slider__img"&gt;
+        &lt;div class="slider"&gt;&lt;img src="img/images01.jpg" alt="이미지1"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="img/images02.jpg" alt="이미지2"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="img/images03.jpg" alt="이미지3"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="img/images04.jpg" alt="이미지4"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="img/images05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                            </div>
+                            <div>
+                                <pre><code class="language-css">.slider__wrap {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+}
+
+.slider__img {
+position: relative;
+width: 800px;
+height: 480px;
+}
+
+.slider {
+position: absolute;
+left: 0; top: 0;
+}
+
+.slider::before {
+position: absolute;
+left: 5px; top: 5px;
+color: #fff;
+padding: 5px 10px 3px;
+background: rgba(0,0,0,0.4);
+}
+
+.slider:nth-child(1):before {content: '이미지1';}
+.slider:nth-child(2):before {content: '이미지2';}
+.slider:nth-child(3):before {content: '이미지3';}
+.slider:nth-child(4):before {content: '이미지4';}
+.slider:nth-child(5):before {content: '이미지5';}
+.slider:nth-child(1) {z-index: 5;}
+.slider:nth-child(2) {z-index: 4;}
+.slider:nth-child(3) {z-index: 3;}
+.slider:nth-child(4) {z-index: 2;}
+.slider:nth-child(5) {z-index: 1;}</code></pre>
+                            </div>
+                            <div>
+                                <pre><code class="language-javascript">const sliderWrap = document.querySelector(".slider__wrawp")
+const sliderImg = document.querySelector(".slider__img")
+const slider = document.querySelectorAll(".slider")
+
+console.log(slider[0])
+
+let currentIndex = 0; //현재 보이는 이미지
+let sliderCount = slider.length //이미지 갯수
+
+setInterval(() => {
+let nextIndex = (currentIndex + 1) % 5;
+
+slider[currentIndex].style.opacity = "0" //첫 번째 이미지를 안보이게
+slider[nextIndex].style.opacity = "1" //두 번째 이미지를 안보이게
+
+// console.log("currentIndex :" + currentIndex)
+// console.log("nextIndex : " + nextIndex)
+
+slider.forEach(slider => {
+    slider.style.transition = "all 0.7s"
+})
+
+currentIndex = nextIndex;
+},2000);</code></pre>
+                            </div>
+                            <div>
+                                <pre><code class="language-jQuery"></code></pre>
+                            </div>
+                        </div>
+                        <div class="scroll">
+                            <div class="start"></div>
+                            <div class="progress"></div>
+                            <div class="end"></div>
+                        </div>
                     </div>
-                    <div class="scroll">
+                    <div class="scroll -row">
                         <div class="start"></div>
                         <div class="progress"></div>
                         <div class="end"></div>
                     </div>
                 </div>
-                <div class="scroll -row">
-                    <div class="start"></div>
-                    <div class="progress"></div>
-                    <div class="end"></div>
-                </div>
+                <div class="footer"></div>
             </div>
-            <div class="footer"></div>
         </div>
     </div>
-    <script src="effect/js/highlight.min.js"></script>
-    <script src="effect/js/custom.js"></script>
+
+
+    <script src="effect/js/quizcustom.js"></script>
+    <script src="js/highlight.min.js"></script>
     <script>
-        highlight(); //외부 스크립트 함수 (highlight)호출
-        modal(); //외부 스크립트 함수 (modal, 소스보기 창)호출
-        tabMenu(); //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
+        tabMenu();
     </script>
 </body>
 
