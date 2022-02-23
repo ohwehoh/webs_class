@@ -33,158 +33,77 @@
                 <div class="content-container">
                     <div class="content">
                         <div class="main">
-                            <div>
-<pre><code class="language-html">.quiz__wrap {
+<div><pre><code class="language-html">&lt;section id="sliderType01"&gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/images01.jpg" alt="이미지1"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/images02.jpg" alt="이미지2"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/images03.jpg" alt="이미지3"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/images04.jpg" alt="이미지4"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/images05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre></div>
+<div><pre><code class="language-css">.slider__wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 150px;
+    height: 100vh;
 }
 
-.quiz {
-    max-width: 500px;
-    width: 100%;
-    background: #fff;
-    border: 8px ridge #cacaca;
-    margin: 10px;
-}
-
-.quiz__type {
-    background: #cacaca;
-    text-align: center;
-    font-size: 14px;
-    color: #3b3b3b;
-    border: 3px ridge #cacaca;
-    padding: 3px 0;
+.slider__img {
     position: relative;
+    width: 800px;
+    height: 480px;
 }
 
-.quiz__type::before {
-    content: '';
+.slider {
     position: absolute;
-    left: 2px;
-    top: 2px;
-    width: 5px;
-    height: 5px;
-    border: 6px ridge #cacaca;
+    left: 0; top: 0;
 }
 
-.quiz__type::after {
-    content: '';
+.slider::before {
     position: absolute;
-    right: 2px;
-    top: 2px;
-    width: 5px;
-    height: 5px;
-    border: 6px ridge #cacaca;
+    left: 5px; top: 5px;
+    color: #fff;
+    padding: 5px 10px 3px;
+    background: rgba(0,0,0,0.4);
 }
 
-.quiz__question {
-    border-top: 6px ridge #cacaca;
-    border-bottom: 6px ridge #cacaca;
-    padding: 13px 30px;
-    font-size: 24px;
-    line-height: 1.4;
-}
+.slider:nth-child(1):before {content: '이미지1';}
+.slider:nth-child(2):before {content: '이미지2';}
+.slider:nth-child(3):before {content: '이미지3';}
+.slider:nth-child(4):before {content: '이미지4';}
+.slider:nth-child(5):before {content: '이미지5';}
+.slider:nth-child(1) {z-index: 5;}
+.slider:nth-child(2) {z-index: 4;}
+.slider:nth-child(3) {z-index: 3;}
+.slider:nth-child(4) {z-index: 2;}
+.slider:nth-child(5) {z-index: 1;}</code></pre></div>
+<div><pre><code class="language-javascript">const sliderWrap = document.querySelector(".slider__wrawp")
+const sliderImg = document.querySelector(".slider__img")
+const slider = document.querySelectorAll(".slider")
 
-.quiz__number {
-    font-family: 'PFStardust';
-    color: #64a30b;
-}
+console.log(slider[0])
 
-.quiz__ask {
-    font-family: 'PFStardust';
-}
+let currentIndex = 0; //현재 보이는 이미지
+let sliderCount = slider.length //이미지 갯수
 
-.quiz__view {
-    background-color: #f5f5f5;
-    position: relative;
-}
+setInterval(() => {
+    let nextIndex = (currentIndex + 1) % 5;
 
-.quiz__view .true {
-    position: absolute;
-    left: 70%;
-    top: 120px;
-    width: 120px;
-    height: 100px;
-    background: red;
-    border-radius: 50%;
-    z-index: 100;
-    line-height: 100px;
-    text-align: center;
-    color: white;
-    opacity: 0;
+    slider[currentIndex].style.opacity = "0" //첫 번째 이미지를 안보이게
+    slider[nextIndex].style.opacity = "1" //두 번째 이미지를 안보이게
 
-}
+    // console.log("currentIndex :" + currentIndex)
+    // console.log("nextIndex : " + nextIndex)
 
-.quiz__view .false {
-    position: absolute;
-    right: 70%;
-    top: 120px;
-    width: 120px;
-    height: 100px;
-    background: #fff;
-    border-radius: 50%;
-    z-index: 100;
-    line-height: 100px;
-    text-align: center;
-    color: red;
-    opacity: 0;
-}
+    slider.forEach(slider => {
+        slider.style.transition = "all 0.7s"
+    })
 
-.quiz__answer {
-    background-color: #f5f5f5;
-    border-top: 6px ridge #cacaca;
-    padding: 10px;
-}
-
-.quiz__confirm {
-    border: 6px ridge #cacaca;
-    width: 100%;
-    font-size: 22px;
-    padding: 13px 20px;
-    background: rgb(192, 192, 192);
-    font-family: 'Sam3KRFont';
-    text-shadow: 1px 1px 1px #fff;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.quiz__confirm:hover {
-    background: #b3b3b3;
-}
-
-.quiz__result {
-    border: 6px ridge #cacaca;
-    text-align: center;
-    width: 100%;
-    font-size: 22px;
-    padding: 13px 20px;
-    background: rgb(255, 255, 255);
-    font-family: 'Cafe24Dangdanghae';
-    text-shadow: 1px 1px 1px #fff;
-    display: none;
-}
-
-.quiz__input {
-    border: 6px ridge #cacaca;
-    text-align: center;
-    width: 100%;
-    font-size: 22px;
-    padding: 13px 20px;
-    background: rgb(255, 255, 255);
-    font-family: 'Cafe24Dangdanghae';
-    text-shadow: 1px 1px 1px #fff;
-    margin-bottom: 10px;
-}</code></pre>
-                            </div>
-                            <div>
-                                <pre><code class="language-css"></code></pre>
-                            </div>
-                            <div>
-                                <pre><code class="language-javascript"></code></pre>
-                            </div>
+    currentIndex = nextIndex;
+},2000);</code></pre></div>
                         </div>
                         <div class="scroll">
                             <div class="start"></div>
@@ -198,7 +117,6 @@
                         <div class="end"></div>
                     </div>
                 </div>
-                <div class="footer"></div>
             </div>
         </div>
     </div>
