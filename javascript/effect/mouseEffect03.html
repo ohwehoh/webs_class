@@ -13,12 +13,8 @@
 
     <style>
         body::before {
-            background: rgba(48, 5, 70, 0.63);
+            background: rgba(6, 49, 2, 0.842);
         }
-
-        #mouseType01 {}
-
-        .cursor {}
 
         .mouse__wrap {
             display: flex;
@@ -52,57 +48,28 @@
             position: absolute;
             left: 0px;
             top: 0px;
-            width: 10px;
-            height: 10px;
-            z-index: 9999;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.3s, opacity 0.2s;
-        }
-
-        .cursor-follower {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: 0;
-            top: 0;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.3s, opacity 0.2s;
-        }
-
-        .cursor.active,.cursor.show {
-            transform: scale(0);
-        }
-
-        .cursor-follower.active {
-            transform: scale(10);
-            background: rgba(255, 0, 0, 0.6);
-        }
-
-        .cursor-follower.show {
-            transform: scale(7);
-            border-radius: 0;
-            background: rgba(111, 0, 255, 0.6);
-            cursor: none !important;
+            background-image: url(img/img1.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            border: 5px solid #fff;
         }
     </style>
 </head>
 
-<body class="img08">
+<body class="img01">
     <!-- main -->
     <main>
-        <section id="mouseType02">
+        <section id="mouseType03">
             <div class="cursor"></div>
-            <div class="cursor-follower"></div>
 
             <div class="mouse__wrap">
-                <p>A person who can control <span>time</span> is a person who can control life.</p>
-                <p><span>시간</span>을 지배할 줄 아는 사람은 인생을 지배할줄 아는 사람이다.</p>
+                <p><span>Fortune</span> only smiles to those who are prepared</p>
+                <p><span>행운은</span> 마음의 준비가 있는 사람에게만 미소를 짓는다</p>
             </div>
         </section>
     </main>
@@ -110,15 +77,15 @@
     <!-- info -->
     <div class="info">
         <div class="title">
-            <h1><a href="mounseEffect.html">Javascript Mouse Effect01</a></h1>
-            <p>마우스 이펙트 - 따라다니기2</p>
+            <h1><a href="mounseEffect.html">Javascript Mouse Effect03</a></h1>
+            <p>마우스 이펙트 - 조명 효과</p>
         </div>
 
         <div class="number">
             <ul>
                 <li><a href="mouseEffect01.html">1</a></li>
-                <li class="active"><a href="mouseEffect02.html">2</a></li>
-                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li class="active"><a href="mouseEffect03.html">3</a></li>
                 <li><a href="mouseEffect04.html">4</a></li>
                 <li><a href="mouseEffect05.html">5</a></li>
                 <li><a href="mouseEffect06.html">6</a></li>
@@ -181,57 +148,22 @@
         modal(); //외부 스크립트 함수 (modal, 소스보기 창)호출
         tabMenu(); //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
 
+        function follow(e){
+            // const circle1 = document.querySelector(".cursor").clientWidth;  //190 : border값 빠진 상태
+            // const circle2 = document.querySelector(".cursor").offsetWidth;  //200 : border값 포함 상태
+            const circle3 = document.querySelector(".cursor").getBoundingClientRect();  //bottom, height, left, right, top, width, x(좌표값), y(좌표값)
 
+            // console.log(circle1);
+            // console.log(circle2);
+            // console.log(circle3);
+            gsap.to(".cursor", {duration: .3, left: e.pageX - (circle3.width / 2), top: e.pageY - (circle3.height / 2)});
 
-        const cursor = document.querySelector(".cursor");
-        const follower = document.querySelector(".cursor-follower");
+            //출력용
+            document.querySelector(".pageX").innerText = e.pageX;
+            document.querySelector(".pageY").innerText = e.pageY;
+        }
 
-        window.addEventListener("mousemove", e => {
-            //커서 좌표값 할당
-            // cursor.style.left = e.pageX -5 + "px";
-            // cursor.style.top = e.pageY -5 + "px";
-            // follower.style.left = e.pageX -15 + "px";
-            // follower.style.top = e.pageY -15 + "px";
-
-            gsap.to(cursor, {
-                duration: .3,
-                left: e.pageX - 5,
-                top: e.pageY - 5
-            })
-            gsap.to(follower, {
-                duration: .8,
-                left: e.pageX - 15,
-                top: e.pageY - 15
-            })
-
-            //출력
-            document.querySelector(".pageX").innerText = e.pageX; //전체 문서를 기준으로 수평 좌표
-            document.querySelector(".pageY").innerText = e.pageY; //전체 문서를 기준으로 수직 좌표
-        });
-
-        //오버 효과
-        //mouseover,mouseenter / mouseout,mouseleave
-        document.querySelectorAll(".mouse__wrap p span").forEach(span => {
-            //span에 오버 했을 때 클래스 active 추가
-            span.addEventListener("mouseenter", () => {
-                cursor.classList.add("active");
-                follower.classList.add("active");
-            });
-            //span에 나갔을 때 클래스 active 삭제
-            span.addEventListener("mouseleave", () => {
-                cursor.classList.remove("active");
-                follower.classList.remove("active");
-            });
-        })
-
-        document.querySelector(".info").addEventListener("mouseover", () => {
-            cursor.classList.add("show");
-            follower.classList.add("show");
-        })
-        document.querySelector(".info").addEventListener("mouseout", () => {
-            cursor.classList.remove("show");
-            follower.classList.remove("show");
-        })
+        window.addEventListener("mousemove", follow);
     </script>
 
 </body>

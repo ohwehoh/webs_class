@@ -1,10 +1,15 @@
+//highlight
+const highlight = function(){
+    hljs.highlightAll();
+}
+
 const modal = function(){
     document.querySelector(".source-btn").addEventListener("click", () => {
-        document.querySelector(".window").classList.add("show");
-        document.querySelector(".window").classList.remove("hide");
+        document.querySelector(".window_wrap").classList.add("show");
+        document.querySelector(".window_wrap").classList.remove("hide");
     });
     document.querySelector(".close").addEventListener("click", () => {
-        document.querySelector(".window").classList.add("hide");
+        document.querySelector(".window_wrap").classList.add("hide");
     })
 }
 
