@@ -12,14 +12,20 @@ body {
     display: none;
 }
 
-.source {
+.source-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 400px;
+}
+
+/* .source {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-}
+} */
 
-.source button {
+/* .source button {
     border: 1px solid #000;
     background: transparent;
     font-family: 'NexonLv1Gothic';
@@ -32,7 +38,7 @@ body {
     position: absolute;
     right: 20px;
     bottom: 20px;
-}
+} */
 
 .source button:hover {
     background: #000;
