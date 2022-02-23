@@ -186,6 +186,18 @@
         document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
             //커서
             gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2});
+
+            //마우스 좌표 값
+            let mousePageX = e.pageX;
+            let mousePageY = e.pageY;
+
+            //마우스 좌표 값을 가운데 초기화
+            //전체 가로 값 / 2
+            //전체 가로 : window.innerWidth(브라우저크기),outerWidth(여백 포함 크기): 1920; window.screen.width(화면크기):1920
+            //전체 세로 : window.outerHeight: 1040 , window.innerHeight: 969, window.screen.height: 1080
+            let windowWidth = window.screen.width;
+
+            console.log(windowWidth);
         });
     </script>
 
