@@ -314,7 +314,7 @@ document.querySelector(".info").addEventListener("mouseout", () => {
         tabMenu(); //외부 스크립트 함수 (tabMenu, 소스보기의 탭 메뉴)호출
 
         const cursor = document.querySelector(".cursor");               //div.cursor
-        const follower = document.querySelector(".cursor-follower");    //div.cursor-follower
+        const follower = document.querySelector(".cursor-follower");    //div.cursor-follower,커서에 점 따라다니는 효과
 
         window.addEventListener("mousemove", e => {         //마우스 움직일 때 마다
             //커서 좌표값 할당
@@ -325,12 +325,12 @@ document.querySelector(".info").addEventListener("mouseout", () => {
 
             gsap.to(cursor, {           //gsap으로 부드러운 애니메이션 효과
                 duration: .3,
-                left: e.pageX - 5,
+                left: e.pageX - 5,      //커서 가운데로 오게 한다.(div.cursor의 반 값을 뺌)
                 top: e.pageY - 5
             })
             gsap.to(follower, {
-                duration: .8,
-                left: e.pageX - 15,
+                duration: .8,           //div.cursor보다 느리게 움직이게 해서 따라다니는 효과
+                left: e.pageX - 15,     //커서 가운데로 오게 한다.(div.cursor-follower의 반 값을 뺌)
                 top: e.pageY - 15
             })
 
