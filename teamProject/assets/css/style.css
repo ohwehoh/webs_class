@@ -16,8 +16,19 @@ h1.introdution {
     margin: 50px;
 }
 
-.move {
+div.movebox {
+    width: 150px;
+    height: 100px;
+    margin: 0 auto;
+    background: rgb(1, 208, 223);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+a.move {
     display: inline-block;
     font-size: 50px;
-    text-align: center;
+    line-height: 100px;
+    color: white;
 }
