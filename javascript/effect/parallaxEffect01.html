@@ -374,9 +374,17 @@
 
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
+            // document.querySelectorAll(".content__item").forEach((item,i) => {
+            //     if(scrollTop >= document.getElementById(`section${i+1}`).offsetTop-2){
+            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
+            //         li.classList.remove("active");
+            //     });
+            //     document.querySelector(`#parallax__nav ul li:nth-child(${i+1})`).classList.add("active");
+            // }
+            // })
+
             document.querySelectorAll(".content__item").forEach((item,i) => {
-                console.log(item);
-                if(scrollTop >= document.getElementById(`section${i+1}`).offsetTop){
+                if(scrollTop >= item.offsetTop -2){
                 document.querySelectorAll("#parallax__nav ul li").forEach(li => {
                     li.classList.remove("active");
                 });
