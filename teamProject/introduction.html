@@ -347,10 +347,12 @@
                         //설명 없앰
                         personaDesc.forEach((p) => {
                             p.style.display = "none";
+                            p.style.transition = "display 1s"
                         })
 
                         //설명 다시 만듦
                         personaDesc[index].style.display = "block";
+                        personaDesc[index].style.transition = "display 1s";
                         //active다시만듬
                         li.classList.add("active");
                     })
