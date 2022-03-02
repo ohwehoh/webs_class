@@ -109,17 +109,17 @@
                                 <ul>
                                     <li class="active">
                                         <div>행동변수</div>
-                                        <p style="color: black;">30대에 접어들고 피부 고민이 많아진 김씨.<br>
+                                        <p>30대에 접어들고 피부 고민이 많아진 김씨.<br>
                                             더 늦기 전에 관리를 시작하려고 한다.
                                         </p>
                                     </li>
                                     <li>
                                         <div>불편사항</div>
-                                        <p style="color: white;">화장품에 대한 지식이 부족하지만<br>누군가에게 물어보기에는 부끄럽다.</p>
+                                        <p style="opacity: 0;">화장품에 대한 지식이 부족하지만<br>누군가에게 물어보기에는 부끄럽다.</p>
                                     </li>
                                     <li>
                                         <div>희망사항</div>
-                                        <p style="color: white;">간편하게 화장품 지식을 얻고 후기들을<br>볼 수 있는 플랫폼을 희망한다.</p>
+                                        <p style="opacity: 0;">간편하게 화장품 지식을 얻고 후기들을<br>볼 수 있는 플랫폼을 희망한다.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -131,17 +131,17 @@
                                 <ul>
                                     <li class="active">
                                         <div>행동변수</div>
-                                        <p style="color: black;">효녀 박씨.<br>
+                                        <p>효녀 박씨.<br>
                                             아버지를 위한 선물을 고르고 있다.
                                         </p>
                                     </li>
                                     <li>
                                         <div>불편사항</div>
-                                        <p style="color: white;">깜짝 선물을 해드리고 싶지만<br>남성 화장품에 대해서 정보가 부족하다.</p>
+                                        <p style="opacity: 0;">깜짝 선물을 해드리고 싶지만<br>남성 화장품에 대해서 정보가 부족하다.</p>
                                     </li>
                                     <li>
                                         <div>희망사항</div>
-                                        <p style="color: white;">아버지의 연령에 맞는 남성 화장품 브랜드와<br>제품에 대한 정보를 얻고싶다.</p>
+                                        <p style="opacity: 0;">아버지의 연령에 맞는 남성 화장품 브랜드와<br>제품에 대한 정보를 얻고싶다.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -153,17 +153,17 @@
                                 <ul>
                                     <li class="active">
                                         <div>행동변수</div>
-                                        <p style="color: black;">좋아하는 여자가 생긴 최씨.<br>
+                                        <p>좋아하는 여자가 생긴 최씨.<br>
                                             피부좋은 남자가 이상형이라는 그녀.
                                         </p>
                                     </li>
                                     <li>
                                         <div>불편사항</div>
-                                        <p style="color: white;">아무도 모르게 피부를 개선시키고 싶지만<br>구체적인 케어 방법을 모른다.</p>
+                                        <p style="opacity: 0;">아무도 모르게 피부를 개선시키고 싶지만<br>구체적인 케어 방법을 모른다.</p>
                                     </li>
                                     <li>
                                         <div>희망사항</div>
-                                        <p style="color: white;">주변 지인에게 물어보지 않고<br>집에서 피부 관련 정보를 얻고싶다.</p>
+                                        <p style="opacity: 0;">주변 지인에게 물어보지 않고<br>집에서 피부 관련 정보를 얻고싶다.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -346,16 +346,13 @@
 
                         //설명 없앰
                         personaDesc.forEach((p) => {
-                            // p.style.display = "none"
-                            p.style.color = "#fff";
+                            p.style.opacity = "0"
 
                         })
 
                         //설명 다시 만듦
-                        // personaDesc[index].style.display = "block";
-                        // personaDesc[index].style.display = "block";
-                        personaDesc[index].style.color = "#000";
-                        personaDesc[index].style.transition = "color 1s";
+                        personaDesc[index].style.opacity = "1";
+                        personaDesc[index].style.transition = "all 1s";
                         //active다시만듬
                         li.classList.add("active");
                     })
@@ -363,6 +360,15 @@
         })
 
         document.querySelectorAll("#menu li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                })
+            })
+        })
+
+        document.querySelectorAll(".brief_index a").forEach(li => {
             li.addEventListener("click", (e) => {
                 e.preventDefault();
                 document.querySelector(li.getAttribute("href")).scrollIntoView({
