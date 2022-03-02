@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>=
-</head>
-<body>
-    
-</html>
 
-<!DOCTYPE html>
-<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>searchEffect01 - indexOf()</h1>
     <h2>indexOf()</h2>
@@ -25,5 +15,100 @@
     <p>String.prototype.indexOf()</p>
     <h3>설명</h3>
     <p>indexOf() 메서드는 호출한 String 객체에서 주어진 값과 일치하는 첫 번째 인덱스를 반환합니다. 일치하는 값이 없으면 -1을 반환합니다. </p>
+
+    <script>
+        const str = "babbbabbba";
+
+        console.log("lastIndexOf(): " + str.lastIndexOf("a"));
+        console.log(str.startsWith("babbb"));
+        console.log(str);
+
+        console.log(str.slice(1, 3));
+        console.log(str);
+
+        console.log(str.substring(3, 1));
+        console.log(str);
+
+        console.log(str.substr(1, 2));
+        console.log(str);
+
+        const str2 = "자바스크립트(javascript) 공부";
+        const text = str2.replace('공부', '스터디');
+        const text2 = str.replace('공부', '스터디');
+
+        console.log(text);
+        console.log(str2);
+        console.log(text2);
+
+        const arr = [1, 2, 3, 4, 5];
+
+        console.log(arr.join('-'));
+        console.log(arr);
+
+        console.log(arr.reverse());
+        console.log(arr);
+        console.log(arr.reverse());
+        console.log(arr);
+
+        console.log(arr.sort((a,b) => {return b-a}));
+        console.log(arr);
+
+        const arr2 = ['a', 'b', 'c', 'd', 'e'];
+
+        console.log(arr2.sort((a,b) => b.localeCompare(a)));
+        console.log(arr2);
+
+        console.log(arr.concat(arr2));
+        console.log(arr);
+        console.log(arr2);
+
+        console.log([...arr, ...arr2]);
+        console.log(arr);
+        console.log(arr2);
+
+        const arr3 = ['a', 'b', 'c', 'd', 'e'];
+
+        document.write("<br>***reduce***<br>");
+        document.write("원본데이터: " + arr3);
+        document.write("<br>");
+        document.write("1. 인덱스 설정(0)");
+        arr3.reduce((p, c, i) => {
+            document.write("<br>");
+            document.write("p: " + p);
+            document.write("<br>");
+            document.write("c: " + c);
+            document.write("<br>");
+            document.write("i: " + i);
+        },0);
+        document.write("<br>");
+        document.write("2. 인덱스 설정(X)");
+        arr3.reduce((p, c, i) => {
+            document.write("<br>");
+            document.write("p: " + p);
+            document.write("<br>");
+            document.write("c: " + c);
+            document.write("<br>");
+            document.write("i: " + i);
+        });
+        document.write("<br>");
+        document.write("2. 인덱스 설정(1)");
+        arr3.reduce((p, c, i) => {
+            document.write("<br>");
+            document.write("p: " + p);
+            document.write("<br>");
+            document.write("c: " + c);
+            document.write("<br>");
+            document.write("i: " + i);
+        },1);
+
+        const arr4 = [1, 2, 3, 4, 5];
+        
+        console.log(arr4.slice(2));
+        console.log(arr4);
+
+        console.log(arr4.splice(2));
+        console.log(arr4);
+    </script>
 </body>
+
 </html>
