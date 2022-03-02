@@ -18,7 +18,7 @@
 
 <body>
     <div id="wrap">
-        <a id="up" href="#">맨위로</a>
+        <a id="up" href="#header">맨위로</a>
         <header id="header">
             <nav id="menu">
                 <ul>
@@ -376,6 +376,15 @@
                     behavior:"smooth"
                 })
             })
+        })
+
+        const up = document.querySelector("#up");
+
+        up.addEventListener("click", e => {
+            e.preventDefault();
+            document.querySelector(up.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                })
         })
     </script>
 </body>
