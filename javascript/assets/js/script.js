@@ -2,6 +2,7 @@
 document.querySelectorAll(".result").forEach((el)=>{
     el.querySelector("h4").addEventListener("click", ()=>{
         el.classList.toggle("active");
+        // el.style.transition = "all 0.5s";
     })
 });
 

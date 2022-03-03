@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3차 평가 - flex</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #E5FFCC;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "aside section1"
+                "aside section2"
+                "aside section3"
+                "footer footer"
+            ;
+            grid-template-columns: 20% 80%;
+            grid-template-rows: 100px 200px 200px 200px 100px;
+        }
+
+        #header {
+            grid-area: header;
+            background: #ccff99;
+        }
+
+        #aside {
+            grid-area: aside;
+            background: #b2ff66;
+        }
+
+        #section1 {
+            grid-area: section1;
+            background: #99ff33;
+        }
+
+        #section2 {
+            grid-area: section2;
+            background: #80ff00;
+        }
+
+        #section3 {
+            grid-area: section3;
+            background: #66cc00;
+        }
+
+        #footer {
+            grid-area: footer;
+            background: #4c9900;
+        }
+
+        @media (max-width: 1300px) {
+            #wrap {
+                width: 100%;
+                grid-template-areas: 
+                "header header"
+                "aside section1"
+                "aside section2"
+                "section3 section3"
+                "footer footer"
+            ;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 200px 300px 300px 200px 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #wrap {
+                grid-template-areas: 
+                "header header"
+                "aside aside"
+                "section1 section2"
+                "section3 section3"
+                "footer footer"
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 250px 250px 400px 250px 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #wrap {
+                grid-template-areas: 
+                "header"
+                "aside"
+                "section1"
+                "section2"
+                "footer"
+            ;
+            grid-template-columns: 100%;
+            grid-template-rows: 200px 400px 400px 300px 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside id="aside"></aside>
+        <section id="section1"></section>
+        <section id="section2"></section>
+        <section id="section3"></section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>
