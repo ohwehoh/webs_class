@@ -545,10 +545,12 @@
 
                 (function (){
                     document.querySelector(".result14").innerHTML = "즉시 실행 함수 실행<br>"
+                    console.log("1");
                 }());
 
                 (() => {
                     document.querySelector(".result14").innerHTML += "즉시 실행 화살표 함수 실행"
+                    console.log("2");
                 })();
             }
           

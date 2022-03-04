@@ -1010,6 +1010,14 @@
                 </div>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const text = "javascript";
+    const result = Array.from(text);
+
+    const text2 = "javascript";
+    const result2 = Array.from(text2, el => el+"10");
+
+    const text3 = "javascript";
+    const result3 = [...text3].map(el => el);
 }</code></pre>
                 </div>
             </div>

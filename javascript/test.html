@@ -52,12 +52,14 @@
         console.log(arr.reverse());
         console.log(arr);
 
-        console.log(arr.sort((a,b) => {return b-a}));
+        console.log(arr.sort((a, b) => {
+            return b - a
+        }));
         console.log(arr);
 
         const arr2 = ['a', 'b', 'c', 'd', 'e'];
 
-        console.log(arr2.sort((a,b) => b.localeCompare(a)));
+        console.log(arr2.sort((a, b) => b.localeCompare(a)));
         console.log(arr2);
 
         console.log(arr.concat(arr2));
@@ -81,7 +83,7 @@
             document.write("c: " + c);
             document.write("<br>");
             document.write("i: " + i);
-        },0);
+        }, 0);
         document.write("<br>");
         document.write("2. 인덱스 설정(X)");
         arr3.reduce((p, c, i) => {
@@ -101,16 +103,63 @@
             document.write("c: " + c);
             document.write("<br>");
             document.write("i: " + i);
-        },1);
+        }, 1);
 
         const arr4 = [1, 2, 3, 4, 5];
-        
-        console.log("원본데이터: " +arr4);
-        console.log("리턴값"+arr4.slice(2));
-        console.log("결과값"+arr4);
+
+
+
+        console.log("원본데이터: " + arr4);
+        console.log("리턴값" + arr4.slice(2));
+        console.log("결과값" + arr4);
 
         console.log(arr4.splice(2));
         console.log(arr4);
+
+
+        document.write("<br>즉시실행함수<br>");
+            (() => {
+                document.write("즉시실행함수실행");
+            })();
+
+
+        (() => {
+            console.log("2");
+        })();
+
+        (function(){
+            console.log("!23");
+        }) ();
+
+        (function(){
+            console.log("456");
+        }());
+
+        if("1"){
+            console.log("true");
+        }else{
+            console.log("false");
+        }
+
+        const arrNum1 = [100, 200, 300];
+        console.log(arrNum1.slice(1));
+        console.log(arrNum1);
+
+        const arrNum = [100, 200, 300, 400, 500];
+        const result = arrNum.splice(1,1,'javascript');
+
+        document.write("<br>스프라이스 결과: " + result);
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        for(let i of arrNum){
+            document.write(i);
+        }
+
+        for(let i = 0; i<arrNum.length; i+=2){
+            document.write("<br>" + arrNum[i]);
+        }
     </script>
 </body>
 

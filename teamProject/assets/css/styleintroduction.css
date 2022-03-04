@@ -333,6 +333,11 @@ p.h2 {
     height: 510px;
     background: #E5F8FF;
     box-shadow: 5px 5px 10px rgba(32, 32, 32, 0.25);
+    filter: grayscale(100%);
+}
+
+.persona:hover {
+    filter: grayscale(0);
 }
 
 .persona_picture {
