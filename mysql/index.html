@@ -147,13 +147,43 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
                 <!-- box -->
                 <div class="bs-docs-section">
-                    <h2 id="intro4" class="page-header">MySQL 테이블 생성</h2>
+                    <h2 id="intro4" class="page-header">데이터베이스</h2>
+                    <h3 id="intro4-1" class="page-header">데이터베이스 만들기</h3>
                     <div class="bs-callout bs-callout-info">
-                        create database test01; <br>
+                        create database 데이터베이스 이름;
+                    </div>
+<pre class="language-js"><code>mysql> create database sample01;
+Query OK, 1 row affected (0.00 sec)
+</code></pre>
+                    <h3 id="intro4-2" class="page-header">데이터베이스 보기</h3>
+                    <div class="bs-callout bs-callout-info">
                         show databases;
                     </div>
-<pre class="language-js"><code>mysql> create database test01;
-Query OK, 1 row affected (0.00 sec)
+<pre class="language-js"><code>mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample01           |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+</code></pre>
+                    <h3 id="intro4-3" class="page-header">데이터베이스 사용</h3>
+                    <div class="bs-callout bs-callout-info">
+                        use 데이버베이스 이름;
+                    </div>
+<pre class="language-js"><code>mysql> use sample01;
+Database changed
+</code></pre>
+                    <h3 id="intro4-4" class="page-header">데이터베이스 삭제</h3>
+                    <div class="bs-callout bs-callout-info">
+                        drop database 데이터베이스 이름;
+                    </div>
+<pre class="language-js"><code>mysql> drop database sample01;
+Query OK, 0 rows affected (0.00 sec)
 
 mysql> show databases;
 +--------------------+
@@ -163,9 +193,8 @@ mysql> show databases;
 | mysql              |
 | performance_schema |
 | sys                |
-| test01             |
 +--------------------+
-5 rows in set (0.01 sec)
+4 rows in set (0.00 sec)
 </code></pre>
                 </div>
                 <!-- //box -->
@@ -176,7 +205,14 @@ mysql> show databases;
                         <li><a href="#intro1">MySQL</a></li>
                         <li><a href="#intro2">MySQL 설치</a></li>
                         <li><a href="#intro3">MySQL 실행</a></li>
-                        <li><a href="#intro4">데이터베이스</a></li>
+                        <li><a href="#intro4">데이터베이스</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro4-1">데이터베이스 만들기</a></li>
+                                <li><a href="#intro4-2">데이터베이스 보기</a></li>
+                                <li><a href="#intro4-3">데이터베이스 사용</a></li>
+                                <li><a href="#intro4-4">데이터베이스 삭제</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
