@@ -571,7 +571,33 @@
                 func("0. 함수가 실행되었습니다.<br>", "1. 함수가 실행되었습니다.");
             }
 
-            //17. 
+            //17. 재귀함수 : 자기 스스로를 호출
+            {
+                // function func(){
+                //     document.write("함수가 실행되었습니다.");
+                //     func();
+                // }
+                // func();
+
+                function func(num){
+                    if(num <= 1){
+                        document.write("함수가 실행되었습니다." + num);
+                    } else {
+                        document.write("함수가 실행되었습니다." + num);
+                        func(num-1);
+                    }
+                }
+                func(5);
+            }
+            //재귀함수 : 반복문
+            {
+
+            }
+
+            //18. 콜백함수 : 실행 순서
+            {
+
+            }
         </script>
     </main>
     <!-- script -->
