@@ -244,7 +244,31 @@
 }</code></pre>
                                 </div>
                                 <div>
-<pre><code class="language-javascript"></code></pre>
+<pre><code class="language-javascript">//div.cursor의 속성값 저장
+const circle = document.querySelector(".cursor").getBoundingClientRect();
+
+document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
+    //div.cursor의 위치를 pageX,pageY로 받은 값에서 div.cursor의 크기 절반 값을 빼서 정 가운데로 위치시키게한다.
+    gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2});
+
+    //마우스 좌표 값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    //마우스 좌표 값을 가운데 초기화
+    //전체 길이/2 - 마우스 X좌표값 ==> 가운데으로부터 마우스좌표가 얼만큼 떨어져있는지 나타낸다.
+    let centerPageX = window.innerWidth/2 - mousePageX;
+    let centerPageY = window.innerHeight/2 - mousePageY;
+
+    //이미지의 위치를 centerPage로 받은 값(마우스가 중앙으로부터 떨어진 값)을 반영하여 이동시켜준다.
+    gsap.to(".mouse__img figure img", {duration: .3, x: centerPageX/20, y: centerPageY/20});
+
+    //마우스 위치 출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+});</code></pre>
                                 </div>
                             </div>
                         </div>
@@ -278,7 +302,7 @@
         const circle = document.querySelector(".cursor").getBoundingClientRect();
 
         document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
-            //커서를 마우스의 정 가운데로 위치시킨다.
+            //div.cursor의 위치를 pageX,pageY로 받은 값에서 div.cursor의 크기 절반 값을 빼서 정 가운데로 위치시키게한다.
             gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2});
 
             //마우스 좌표 값
@@ -291,7 +315,7 @@
             //전체 세로 : window.outerHeight: 1040 , window.innerHeight: 969, window.screen.height: 1080
 
             //마우스 좌표 값을 가운데 초기화
-            //전체 길이/2 - 마우스 X좌표값 == 0
+            //전체 길이/2 - 마우스 X좌표값 ==> 가운데으로부터 마우스좌표가 얼만큼 떨어져있는지 나타낸다.
             let centerPageX = window.innerWidth/2 - mousePageX;
             let centerPageY = window.innerHeight/2 - mousePageY;
 
@@ -299,6 +323,7 @@
             // const imgMove = document.querySelector(".mouse__img figure img");
             // imgMove.style.transform = `translate(${centerPageX/20}px, ${centerPageY/20}px)`
 
+            //이미지의 위치를 centerPage로 받은 값(마우스가 중앙으로부터 떨어진 값)을 반영하여 이동시켜준다.
             gsap.to(".mouse__img figure img", {duration: .3, x: centerPageX/20, y: centerPageY/20});
 
             //출력
@@ -308,8 +333,6 @@
              document.querySelector(".mousePageY").textContent = mousePageY;
              document.querySelector(".centerPageX").textContent = centerPageX;
              document.querySelector(".centerPageY").textContent = centerPageY;
-
-        
         });
     </script>
 
