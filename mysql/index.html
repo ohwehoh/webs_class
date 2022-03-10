@@ -309,15 +309,52 @@ mysql> show tables;
 </code></pre>
                     <h3 id="intro6-2" class="page-header">필드 수정하기</h3>
                     <div class="bs-callout bs-callout-info">
-                        
+                        ALTER TABLE 테이블명 MODIFY 수정할 필드명
                     </div>
-<pre class="language-js"><code>
+<pre class="language-js"><code>mysql> desc mymember2;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youName    | varchar(12)      | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TABLE mymember2 MODIFY youName int(20);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mymember2;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youName    | int(20)          | YES  |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
 </code></pre>
                     <h3 id="intro6-3" class="page-header">필드 삭제하기</h3>
                     <div class="bs-callout bs-callout-info">
-                        
+                        ALTER TABLE 테이블명 drop 삭제할 필드명
                     </div>
-<pre class="language-js"><code>
+<pre class="language-js"><code>mysql> ALTER TABLE mymember2 drop youGender;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mymember2;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(12)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | varchar(12)      | NO   |     | NULL    |                |
+| youAddress | varchar(30)      | NO   |     | NULL    |                |
+| youAge     | int(2)           | NO   |     | NULL    |                |
+| regTime    | int(11)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
 </code></pre>
                 </div>
                 <!-- //box -->
