@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
         body::before {
             background: rgba(5, 36, 70, 0.87)
         }
+
         .mouse__wrap {
             display: flex;
             align-items: center;
@@ -23,21 +25,22 @@
             overflow: hidden;
             cursor: none;
         }
+
         .mouse__img {
             position: relative;
             text-align: center;
-            perspective: 600px;
-            transform: rotateX(0deg) rotateY(0deg);
-            transform-style: preserve-3d;
-            will-change: transform;
+            transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+            transform-style: preserve-3d; /* 3d 효과(공간의 깊이:perspective)를 표현하기 위한 지정*/
+            will-change: transform; /*값이 변경될 속성에 대한 힌트를 미리 지정해주는 것, 더 부드러운 이벤트를 구사*/
             transition: all 0.1s;
         }
+
         .mouse__img figure {
             width: 50vw;
             position: relative;
         }
 
-        .mouse__img figure::before {
+        .mouse__img figure::before { /*그림자 효과*/
             content: '';
             position: absolute;
             left: 5%;
@@ -58,14 +61,17 @@
             font-size: 1vw;
             white-space: nowrap;
             line-height: 1.6;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             padding: 1vw 2vw;
             transform: translate3d(-50%, -50%, 150px);
         }
+
         .cursor {
             position: absolute;
-            left: 0;top: 0;
-            width: 100px;height: 100px;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
             background: #fff;
             border-radius: 50%;
             z-index: 1000;
@@ -75,6 +81,7 @@
         }
     </style>
 </head>
+
 <body class="img09">
     <!-- main -->
     <main>
@@ -132,17 +139,159 @@
                             </div>
                             <div class="view-cont">
                                 <div>
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;main&gt;
+    &lt;section id="mouseType03"&gt;
+        &lt;div class="cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;div class="mouse__img"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/img9.jpg" alt="이미지"&gt;
+                &lt;/figure&gt;
+                &lt;figcaption&gt;
+                    &lt;p&gt;Success is walking from failure to failure with no loss of enthusiasm.&lt;/p&gt;
+                    &lt;p&gt;성공이란 열정을 잃지 않고 실패에서 실패로 걸어가는 것이다.&lt;/p&gt;
+                &lt;/figcaption&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
 </code></pre>
                                 </div>
                                 <!-- //cont1 -->
                                 <div>
-<pre><code class="language-javascript">
-</code></pre>
+<pre><code class="language-css">body::before {
+    background: rgba(5, 36, 70, 0.87)
+}
+
+.mouse__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+}
+
+.mouse__img {
+    position: relative;
+    text-align: center;
+    transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d; /* 3d 효과(공간의 깊이:perspective)를 표현하기 위한 지정*/
+    will-change: transform; /*값이 변경될 속성에 대한 힌트를 미리 지정해주는 것, 더 부드러운 이벤트를 구사*/
+    transition: all 0.1s;
+}
+
+.mouse__img figure {
+    width: 50vw;
+    position: relative;
+}
+
+.mouse__img figure::before { /*그림자 효과*/
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: -30px;
+    width: 90%;
+    height: 40px;
+    background: url(img/img9.jpg) center center no-repeat;
+    background-size: 100% 40px;
+    filter: blur(15px) grayscale(50%);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.mouse__img figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 1vw;
+    white-space: nowrap;
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1vw 2vw;
+    transform: translate3d(-50%, -50%, 150px);
+}
+
+.cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}</code></pre>
                                 </div>
                                 <!-- //cont2 -->
                                 <div>
-<pre><code class="language-javascript">
+<pre><code class="language-javascript">const circle = document.querySelector(".cursor").getBoundingClientRect();
+
+function mouseMove(e) {
+
+
+    //마우스 좌표 값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    //마우스 좌표 기준점을 가운데로 변경
+    let centerPageX = window.innerWidth / 2 - mousePageX;
+    let centerPageY = window.innerHeight / 2 - mousePageY;
+
+    //X: 최솟값은 -800 최댓값은 800, Y: 최솟값은 -300, 최댓값은 300
+    let maxPageX = Math.max(-800, Math.min(800, centerPageX));
+    let maxPageY = Math.max(-300, Math.min(300, centerPageY));
+
+    //각도 줄이는 설정
+    let anlexpageX = maxPageX * 0.12;
+    let anlexpageY = maxPageY * 0.12;
+
+    //부드럽게 설정 
+    let softPageX = 0,
+        softPageY = 0;
+
+    softPageX += (anlexpageX - softPageX) * 0.4;
+    softPageY += (anlexpageY - softPageY) * 0.4;
+
+    //부드럽게 설정     10-->30
+    // let softPageX = 0,
+    //     softPageY = 0;
+    // softPageX = anlexpageX * 0.4;
+    // softPageY = anlexpageY * 0.4;
+
+    //div.cursor가 이동할 좌표 구하기(div.cursor가 마우스 좌표값 정 가운데에 오도록)
+    let circleWidth = mousePageX - circle.width / 2;
+    let circleHeight = mousePageY - circle.height / 2;
+
+    //이미지움직이기
+    //transform: rotateX(0deg) rotateY(0deg);
+    //.mouse__img의 transform을 바꿈 rotate값에 커서값을 반영.
+    const imgMove = document.querySelector(".mouse__img");
+    imgMove.style.transform = "perspective(600px) rotateX(" + softPageY + "deg) rotateY(" + -softPageX +
+    "deg)"; //속성값에 ;들어가면 안됨
+
+    //커서의 움직임을 부드럽게 해준다.
+    gsap.to(".cursor", {
+        duration: .3,
+        left: circleWidth,
+        top: circleHeight
+    });
+
+    //출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+
+}
+
+document.addEventListener("mousemove", mouseMove);
 </code></pre>
                                 </div>
                                 <!-- //cont3 -->
@@ -168,20 +317,21 @@
     <script src="js/custom.js"></script>
     <script src="js/gsap.min.js"></script>
     <script>
-        // highlight();
-        // modal();
-        // tabMenu();
+        highlight();
+        modal();
+        tabMenu();
         const circle = document.querySelector(".cursor").getBoundingClientRect();
-        function mouseMove(e){
-            
-            
+
+        function mouseMove(e) {
+
+
             //마우스 좌표 값
             let mousePageX = e.pageX;
             let mousePageY = e.pageY;
-            
+
             //마우스 좌표 기준점을 가운데로 변경
-            let centerPageX = window.innerWidth/2 - mousePageX;
-            let centerPageY = window.innerHeight/2 - mousePageY;
+            let centerPageX = window.innerWidth / 2 - mousePageX;
+            let centerPageY = window.innerHeight / 2 - mousePageY;
 
             //X: 최솟값은 -800 최댓값은 800, Y: 최솟값은 -300, 최댓값은 300
             let maxPageX = Math.max(-800, Math.min(800, centerPageX));
@@ -191,22 +341,36 @@
             let anlexpageX = maxPageX * 0.12;
             let anlexpageY = maxPageY * 0.12;
 
-            //부드럽게 설정     10-->30
-            let softPageX = 0, softPageY = 0;
+            //부드럽게 설정 
+            let softPageX = 0,
+                softPageY = 0;
+
             softPageX += (anlexpageX - softPageX) * 0.4;
             softPageY += (anlexpageY - softPageY) * 0.4;
 
-            //원 크기 구하기
-            let circleWidth = mousePageX - circle.width/2;
-            let circleHeight =  mousePageY - circle.height/2;
+            //부드럽게 설정     10-->30
+            // let softPageX = 0,
+            //     softPageY = 0;
+            // softPageX = anlexpageX * 0.4;
+            // softPageY = anlexpageY * 0.4;
+
+            //div.cursor가 이동할 좌표 구하기(div.cursor가 마우스 좌표값 정 가운데에 오도록)
+            let circleWidth = mousePageX - circle.width / 2;
+            let circleHeight = mousePageY - circle.height / 2;
 
             //이미지움직이기
             //transform: rotateX(0deg) rotateY(0deg);
+            //.mouse__img의 transform을 바꿈 rotate값에 커서값을 반영.
             const imgMove = document.querySelector(".mouse__img");
-            imgMove.style.transform = "perspective(600px) rotateX("+softPageY+"deg) rotateY("+ -softPageX+"deg)"; //속성값에 ;들어가면 안됨
+            imgMove.style.transform = "perspective(600px) rotateX(" + softPageY + "deg) rotateY(" + -softPageX +
+            "deg)"; //속성값에 ;들어가면 안됨
 
-            //커서
-            gsap.to(".cursor", {duration: .3, left: circleWidth, top: circleHeight});
+            //커서의 움직임을 부드럽게 해준다.
+            gsap.to(".cursor", {
+                duration: .3,
+                left: circleWidth,
+                top: circleHeight
+            });
 
             //출력
             document.querySelector(".mousePageX").textContent = mousePageX;
@@ -219,4 +383,5 @@
         document.addEventListener("mousemove", mouseMove);
     </script>
 </body>
+
 </html>
