@@ -533,6 +533,9 @@ mysql> desc mymember2;
                     </div>
                     <h4 class="pt20">모든 회원의 비밀번호를 '1234' 변경</h4>
                     <pre class="language-js"><code>mysql > UPDATE mymember SET youPass = '1234';</code></pre>
+
+                    <h4 class="pt20">아이디가 3번인 회원의 비밀번호를 '1234' 변경</h4>
+                    <pre class="language-js"><code>mysql > UPDATE mymember SET youPass = '1234' WHERE boardID = 3;</code></pre>
                     <h4 class="pt20">5번회원부터 10번회원까지의 비밀번호를 '1234567' 변경</h4>
                     <pre class="language-js"><code>mysql > UPDATE mymember SET youPass = '1234567' where memberID BETWEEN 5 and 10;</code></pre>
                     <h4 class="pt20">아이디 내림차순</h4>
