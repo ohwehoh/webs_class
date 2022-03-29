@@ -383,6 +383,78 @@
             </div>
             <!-- //sample16 -->
 
+            <!-- sample17 -->
+            <div id="sample17" class="sample">
+                <h3>17. 재귀함수 : 자기 자신을 다시 호출하는 함수</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(num){
+        if(num &lt;= 1){
+            document.write("if함수가 실행되었습니다."+num);
+            document.write("&lt;br&gt;");
+        } else {
+            document.write("else함수가 실행되었습니다."+num);
+            func(num-1);
+        }
+    }
+    func(5);
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result17"></div>
+                </div>
+            </div>
+            <!-- //sample17 -->
+
+            <!-- sample18 -->
+            <div id="sample18" class="sample">
+                <h3>18. 콜백함수 : 다른 함수에 인수로 넘겨지는 함수</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(){
+        document.write("함수가 실행 되었습니다.2")
+        document.write("<br>")
+    }
+
+    function callback(str){
+        document.write("함수가 실행되었습니다.1");
+        str();
+    }
+    callback(func);
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result18"></div>
+                </div>
+            </div>
+            <!-- //sample18 -->
+
+            <!-- sample19 -->
+            <div id="sample19" class="sample">
+                <h3>19. 콜백 함수 : 반복문</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(num){
+        document.write("함수가 실행되었습니다.");
+    }
+
+    function callback(num){//인자,파라미터
+        for(let i=1; i&lt;=5; i++){
+            num(i);
+        }
+    }
+    callback(func);//인수
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result19"></div>
+                </div>
+            </div>
+            <!-- //sample19 -->
+
 
         </div>
         <!-- /script -->
@@ -580,10 +652,10 @@
 
                 function func(num){
                     if(num <= 1){
-                        document.write("if함수가 실행되었습니다."+num);
-                        document.write("<br>");
+                        document.querySelector(".result17").innerHTML += "if함수가 실행되었습니다." + num;
                     } else {
-                        document.write("else함수가 실행되었습니다."+num);
+                        document.querySelector(".result17").innerHTML += "else함수가 실행되었습니다." + num;
+                        document.querySelector(".result17").innerHTML += "<br>";
                         func(num-1);
                     }
                 }
@@ -594,21 +666,20 @@
             //18. 콜백함수 : 다른 함수에 인수로 넘겨지는 함수
             {
                 function func(){
-                    document.write("함수가 실행 되었습니다.2")
-                    document.write("<br>")
+                    document.querySelector(".result18").innerHTML += "함수가 실행 되었습니다.2";
                 }
 
                 function callback(str){
-                    document.write("함수가 실행되었습니다.1");
+                    document.querySelector(".result18").innerHTML = "함수가 실행 되었습니다.1 <br>";
                     str();
                 }
                 callback(func);
             }
 
-            // 콜백 함수 : 반복문
+            //19. 콜백 함수 : 반복문
             {
-                function func(){
-                    document.write("함수가 실행되었습니다.");
+                function func(num){
+                    document.querySelector(".result19").innerHTML += "함수가 실행되었습니다." + num + "<br>";
                 }
 
                 function callback(num){//인자,파라미터
