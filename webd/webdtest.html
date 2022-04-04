@@ -11,12 +11,14 @@
             padding: 0;
             box-sizing: border-box;
             list-style: none;
+            text-decoration: none;
         }
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
         .wrap {
             width: 1500px;
             margin: 0 auto;
         }
-        #header {
+        /* #header {
             margin-top: 127px;
             width: 100%;
             height: 130px;
@@ -40,7 +42,17 @@
             font-weight: 700;
             margin-left: 80px;
             font-size: 25px;
-        }
+        } */
+        #header {height: 100px;}
+        #header h1 {float: left; padding-top: 5px;}
+        #header h1 img {width: 130px;}
+        #header .nav {float: right; z-index: 100; position: relative; margin-top: 20px;}
+        #header .nav li {position: relative; float: left; width: 120px; text-align: center;}
+        #header .nav li a {display: block; padding: 20px 15px; background: #ccc; white-space: nowrap;}
+        #header .nav li a:hover {background: #ddd;}
+        #header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 59px; background: #ddd;}
+        #header .nav li ul.submenu li a {padding: 10px;}
+        #header .nav li ul.submenu li a:hover {background: #999;}
         #main {}
         #main #banner {
             width: 100%;
@@ -56,63 +68,17 @@
             justify-content: space-between;
             margin-bottom: 77px;
         }
-        #main #cont_top .left {
-            width: 48%;
-            height: 320px;
-            border: 2px solid #DFDFDF;
-            padding: 50px 40px;
-        }
-        #main #cont_top .left .cont_top_header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 25px;
-        }
-        #main #cont_top .left .cont_top_header .tap {
-            display: flex;
-            align-items: center;
-        }
-        #main #cont_top .left .cont_top_header h3 {
-            font-size: 23px;
-            color: #969696;
-        }
-        #main #cont_top .left .cont_top_header h3.active {
-            font-weight: 700;
-            color: black;
-        }
-        #main #cont_top .left .cont_top_header span.division {
-            font-weight: 700;
-            margin: 0 10px;
-        }
-        
-        #main #cont_top .left .cont_top_header .more {
-            display: flex;
-            align-items: center;
-            
-        }
-        #main #cont_top .left .cont_top_header .more span.more_text{
-            font-size: 20px;
-            color: #8E8E8E;
-        }
-        #main #cont_top .left .cont_top_header .more div.more_icon{
-            height: 20px; width: 20px;
-            background-image: url(more.png);
-            background-size: contain;
-            margin-left: 8px;
-        }
 
-        #main #cont_top .left .cont_top_body {
-            font-size: 20px;
-        }
-        #main #cont_top .left .cont_top_body ul {}
-        #main #cont_top .left .cont_top_body ul li {
-            margin-bottom: 15px;
-        }
-        #main #cont_top .left .cont_top_body ul li span {
-            letter-spacing:-1px;
-            color: #8E8E8E;
-            float: right;
-        }
+        .notice {position: relative; padding: 30px; width: 48%;}
+        .notice ul li {float: left; margin-right: 20px;}
+        .notice ul li a {font-size: 24px; color: #999; font-weight: bold;}
+        .notice ul li.active a {color: #000;}
+        .notice ul li ul {position: absolute; left: 30px; top: 70px;}
+        .notice ul li ul li {width: 95%; padding: 5px 0;}
+        .notice ul li ul li a {float: left; width: 60%; font-size: 16px; color: #333;
+            overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal;}
+        .notice ul li ul li span {float: right; width: 20%;}
+        .notice .more {position: absolute; right: 30px; top: 35px;}
 
         #main #cont_top .right {
             width: 48%;
@@ -187,44 +153,81 @@
             color: #7E7E7E;
         }
     </style>
+
 </head>
 <body>
     <div class="wrap">
-        <header id="header">
-            <div class="logo"></div>
-            <menu class="menu">
-                <ul>
-                    <li>즐길거리</li>
-                    <li>요금/우대혜택</li>
-                    <li>참여프로그램</li>
-                    <li>이용가이드</li>
-                    <li>소통서비스</li>
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="logo.png" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </menu>
+            </nav>
         </header>
+        <!-- //header -->
         <main id="main">
             <section id="banner"></section>
             <section id="cont_top">
-                <article class="left">
-                    <div class="cont_top_header">
-                        <div class="tap">
-                            <h3 class="notice1 active">롯데월드 소식</h3>
-                            <span class="division">|</span>
-                            <h3 class="notice2">뉴스공지</h3>
-                        </div>
-                        <div class="more">
-                            <span class="more_text">더보기</span>
-                            <div class="more_icon"></div>
-                        </div>
-                    </div>
-                    <div class="cont_top_body">
-                        <ul>
-                            <li>그럴싸진관 미라클<span>2018.11.19</span></li>
-                            <li>드림 스테이지 '힘내 소중한 너'<span>2018.11.20</span></li>
-                            <li>'힘내 소중한 너' 음원 발매<span>2018.11.13</span></li>
-                            <li>이용 요금 조정 안내<span>2018.11.12</span></li>
-                        </ul>
-                    </div>
+                <article class="notice">
+                    <ul class="clearfix">
+                        <li class="active"><a href="#">롯데월드 소식</a>
+                            <ul>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">뉴스&middot;공지</a>
+                            <ul>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" class="more">더보기 +</a>
                 </article>
                 <article class="right"></article>
             </section>
@@ -256,5 +259,8 @@
             <p>COPYRIGHT 2018 LOTTEWORLD.ALL RIGHTS RESERVED.</p>
         </footer>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
