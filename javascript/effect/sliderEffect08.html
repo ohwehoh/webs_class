@@ -355,10 +355,10 @@
         })
         sliderInner.addEventListener("mouseleave", () => {
             if(document.querySelector(".play").classList.contains("show")){
-                document.querySelector(".play").classList.remove("show");
-                document.querySelector(".stop").classList.add("show");
+                stopPlay();
+            } else {
                 autoPlay();
-            }else{autoPlay();}
+            }
         })
 
         document.querySelector(".play").addEventListener("click", () => {
