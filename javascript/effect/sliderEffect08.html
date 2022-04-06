@@ -351,11 +351,7 @@
         });
 
         sliderInner.addEventListener("mouseenter", () => {
-            if(document.querySelector(".play").classList.contains("show")){
-                document.querySelector(".stop").classList.remove("show");
-                document.querySelector(".play").classList.add("show");
-                stopPlay();
-            }else{stopPlay();}
+            stopPlay();
         })
         sliderInner.addEventListener("mouseleave", () => {
             if(document.querySelector(".play").classList.contains("show")){
