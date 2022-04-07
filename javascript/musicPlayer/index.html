@@ -223,12 +223,12 @@
             </div>
             <!-- //music__top -->
             <div class="music__img">
-                <img src="images/music-1.jpg" alt="이미지1">
+                <img src="" alt="이미지1">
             </div>
             <!-- //music__img -->
             <div class="music__song">
-                <p class="name">yeonwoo</p>
-                <p class="artist">yeonwoo</p>
+                <p class="name"></p>
+                <p class="artist"></p>
             </div>
             <!-- //music__song -->
             <div class="music__progress">
@@ -290,18 +290,63 @@
     <script src="api/music.js"></script>
     <script>
         const musicWrap = document.querySelector(".wrap__music");
-        const musicImg = musicWrap.querySelector(".music_img img")
+        const musicImg = musicWrap.querySelector(".music__img img");
+        const musicName = musicWrap.querySelector(".music__song .name");
+        const musicArtist = musicWrap.querySelector(".music__song .artist");
+        const musicAudio = musicWrap.querySelector("#main-audio");
+        const musicPlay = musicWrap.querySelector("#control-play");
+        const musicPrevBtn = musicWrap.querySelector("#control-prev");
+        const musicNextBtn = musicWrap.querySelector("#control-next");
 
-        let musicIndex = 10;    //currentIndex
+        let musicIndex = 1;    //currentIndex
 
         //음악 재생
-        function loadMusic(){
-
+        function loadMusic(num){
+            musicImg.src = `images/${allMusic[num - 1].img}.jpg`;
+            musicImg.alt = allMusic[num - 1].name;
+            musicName.innerText = allMusic[num - 1].name;
+            musicArtist.innerText = allMusic[num - 1].artist;
+            musicAudio.src = `songs/${allMusic[num - 1].audio}.mp3`;
         }
 
         window.addEventListener("load", () => {
             loadMusic(musicIndex);
+        });
+
+        //재생 버튼
+        function playMusic(){
+            musicWrap.classList.add("paused");
+            musicPlay.innerText = "pause";
+            musicAudio.play();
+        }
+
+        //정지 버튼
+        function pauseMusic(){
+            musicWrap.classList.remove("paused");
+            musicPlay.innerText = "play_arrow";
+            musicAudio.pause();
+        }
+
+        //이전 곡 듣기 버튼 (1)
+        function prevMusic(){
+            musicIndex == 1 ? musicIndex = allMusic.length : musicIndex--;
+            loadMusic(musicIndex);
+            playMusic();
+        }
+        //다음 곡 듣기 버튼 (10)
+        function nextMusic(){
+            musicIndex == allMusic.length ? musicIndex = 1 : musicIndex++;
+            loadMusic(musicIndex);
+            playMusic();
+        }
+        
+        musicPlay.addEventListener("click", () => {
+            const isMusicPaused = musicWrap.classList.contains("paused");
+            isMusicPaused ? pauseMusic() : playMusic();
         })
+
+        musicPrevBtn.addEventListener("click", prevMusic);
+        musicNextBtn.addEventListener("click", nextMusic);
     </script>
 </body>
 </html>
