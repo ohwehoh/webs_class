@@ -125,7 +125,92 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .music__control {}
+        .music__control i:nth-child(2),
+        .music__control i:nth-child(4) {
+            font-size: 49px;
+        }
+
+        .music__control .play-pause {
+            width: 54px; height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
+            box-shadow: 0 0 0 2px var(--pink);
+            position: relative;
+            z-index: 1;
+        }
+
+        .music__control .play-pause::before {
+            content: '';
+            width: 40px; height: 40px;
+            border-radius: inherit;
+            background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+            position: absolute;
+            z-index: -1;
+        }
+        .music__control .play-pause i {
+            -webkit-text-fill-color: var(--white);
+            opacity: 0.8;
+        }
+        .music__list {
+            position: absolute;
+            background: var(--white);
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: 10;
+            border-radius: 15px;
+            padding: 15px 30px;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.15s ease-out;
+            bottom: -400px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .music__list.show {
+            bottom: 0;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .music__list .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--lightblack);
+            margin-bottom: 10px;
+        }
+        .music__list .title .queue {
+            vertical-align: -6px;
+        }
+        .music__list .list {
+            color: var(--lightblack);
+        }
+        .music__list .list > ul {
+            max-height: 260px;
+            margin: 10px 0;
+            overflow: auto;
+        }
+        .music__list .list > ul::-webkit-scrollbar {
+            width: 0px;
+        }
+        .music__list .list > ul > li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .music__list .list > ul > li > div {}
+        .music__list .list > ul > li > div em {
+            font-style: normal;
+        }
+        .music__list .list > ul > li > div p {
+            opacity: 0.8;
+        }
+        .music__list .list > ul > li > span {}
     </style>
 </head>
 <body>
@@ -164,14 +249,59 @@
                     <!-- <i class="material-icons">pause</i> -->
                 </div>
                 <i id="control-next" class="material-icons">skip_next</i>
-                <i id="control-list" class="material-icons">playlist_play</i>
+                <i id="control-list" class="material-icons">queue_music</i>
 
                 <!-- <i class="material-icons">repeat_one</i>
                 <i class="material-icons">shuffle</i> -->
             </div>
             <!-- //music__control -->
-            <div class="music__list"></div>
+            <div class="music__list">
+                <div class="title">
+                    <div>
+                        <i class="material-icons queue">queue_music</i>
+                        <span>Music List</span>
+                    </div>
+                    <i class="material-icons">close</i>
+                </div>
+                <div class="list">
+                    <ul>
+                        <!-- Javascript -->
+                        <li>
+                            <div>
+                                <em>달이떠오른다. 가자.</em>
+                                <p>장기하</p>
+                            </div>
+                            <span>3:36</span>
+                        </li>
+                        <li>
+                            <div>
+                                <em>달이떠오른다. 가자.</em>
+                                <p>장기하</p>
+                            </div>
+                            <span>3:36</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //music__list -->
         </div>
     </div>
+
+    <script src="api/music.js"></script>
+    <script>
+        const musicWrap = document.querySelector(".wrap__music");
+        const musicImg = musicWrap.querySelector(".music_img img")
+
+        let musicIndex = 10;    //currentIndex
+
+        //음악 재생
+        function loadMusic(){
+
+        }
+
+        window.addEventListener("load", () => {
+            loadMusic(musicIndex);
+        })
+    </script>
 </body>
 </html>
