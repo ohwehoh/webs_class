@@ -285,7 +285,7 @@
         const musicImg = musicWrap.querySelector(".music__img img");
         const musicName = musicWrap.querySelector(".music__song .name");
         const musicArtist = musicWrap.querySelector(".music__song .artist");
-        const musicAudio = musicWrap.querySelector("#main-audio");
+        const musicAudio = musicWrap.querySelector("#main-audio");  //앨리먼트 취득 방식으로 audio 객체를 확보할 수 있다.
         const musicPlay = musicWrap.querySelector("#control-play");
         const musicPrevBtn = musicWrap.querySelector("#control-prev");
         const musicNextBtn = musicWrap.querySelector("#control-next");
@@ -303,65 +303,65 @@
 
         //음악 재생
         function loadMusic(num){
-            musicImg.src = `images/${allMusic[num - 1].img}.jpg`;
-            musicImg.alt = allMusic[num - 1].name;
-            musicName.innerText = allMusic[num - 1].name;
-            musicArtist.innerText = allMusic[num - 1].artist;
-            musicAudio.src = `songs/${allMusic[num - 1].audio}.mp3`;
+            musicImg.src = `images/${allMusic[num - 1].img}.jpg`;   //이미지로드
+            musicImg.alt = allMusic[num - 1].name;                  //이미지로드
+            musicName.innerText = allMusic[num - 1].name;           //노래제목로드
+            musicArtist.innerText = allMusic[num - 1].artist;       //아티스트로드
+            musicAudio.src = `songs/${allMusic[num - 1].audio}.mp3`;//음악로드
         }
 
         //재생 버튼
         function playMusic(){
-            musicWrap.classList.add("paused");
-            musicPlay.innerText = "pause";
-            musicPlay.setAttribute("title", "일시 정지");
-            musicAudio.play();
+            musicWrap.classList.add("paused");  //재생버튼을 누르면(재생중) paused가 생김
+            musicPlay.innerText = "pause";      //재생버튼을 누르면(재생중) 아이콘이 일시정지로 바뀜
+            musicPlay.setAttribute("title", "일시 정지 버튼");   //재생아이콘 타이틀을 '일시 정지 버튼'으로 바꿈(웹접근성)
+            musicAudio.play();      //음악 재생.. audio객체의 메소드play()
         }
 
         //정지 버튼
         function pauseMusic(){
-            musicWrap.classList.remove("paused");
-            musicPlay.innerText = "play_arrow";
-            musicPlay.setAttribute("title", "재생");
-            musicAudio.pause();
+            musicWrap.classList.remove("paused");   //정지버튼을 누르면(정지상태) paused 삭제됨
+            musicPlay.innerText = "play_arrow";     //정지버튼을 누르면(정지상태) 아이콘이 재생으로 바뀜
+            musicPlay.setAttribute("title", "재생 버튼");// 정지아이콘 타이틀을 '재생 버튼'으로 바꿈(웹접근성)
+            musicAudio.pause();     //음악 정지.. audio객체의 메소드pause()
         }
 
         //이전 곡 듣기 버튼 (1)
         function prevMusic(){
-            musicIndex == 1 ? musicIndex = allMusic.length : musicIndex--;
-            loadMusic(musicIndex);
-            playMusic();
-            playListMusic();
+            musicIndex == 1 ? musicIndex = allMusic.length : musicIndex--;  //musicIndex가 1이면 allMusic의 길이값으로(마지막인덱스), 아니면 1뺌
+            loadMusic(musicIndex);      //musicIndex()함수 실행
+            playMusic();                //playMusic()함수 실행
+            playListMusic();            //playListMusic()함수 실행
         }
         //다음 곡 듣기 버튼 (10)
         function nextMusic(){
-            musicIndex == allMusic.length ? musicIndex = 1 : musicIndex++;
-            loadMusic(musicIndex);
-            playMusic();
-            playListMusic();
+            musicIndex == allMusic.length ? musicIndex = 1 : musicIndex++;  //musicIndex가 allMusic의 길이값이면(마지막인덱스) 1로, 아니면 1 더함
+            loadMusic(musicIndex);      //musicIndex()함수 실행
+            playMusic();                //playMusic()함수 실행
+            playListMusic();            //playListMusic()함수 실행
         }
 
         //뮤직 진행바
-        musicAudio.addEventListener("timeupdate", (e) => {
+        musicAudio.addEventListener("timeupdate", (e) => {  //audio객체에는 timeupdate 이벤트가 있다. -> timeupdate는 audio재생중에 계속 발생되는 이벤트임
             // console.log(e);
 
             //진행 바
-            const currentTime = e.target.currentTime;
-            const duration = e.target.duration;
-            let progressWidth = (currentTime/duration) * 100;
+            const currentTime = e.target.currentTime;       //audio객체에는 currentTime프로퍼티가 있다. 현재 재생되는 시간이다. target은 이벤트가 일어난 요소
+            const duration = e.target.duration;             //audio객체에는 duration 프로퍼티가 있다. 현재 재생되는 오디오의 총 길이이다.
+            let progressWidth = (currentTime/duration) * 100;   //전체 길이에서 현재 진행되는 시간을 백분위로 나눔.
 
-            musicProgressBar.style.width = `${progressWidth}%`;
+            musicProgressBar.style.width = `${progressWidth}%`; //백분위로 나눈 값을 css에 보내줌.
 
             //전체 시간
-            musicAudio.addEventListener("loadeddata", () => {
-                let audioDuration = musicAudio.duration;
-                let totalMin = Math.floor(audioDuration / 60);
-                let totalSec = Math.floor(audioDuration % 60);
-                if(totalSec < 10) totalSec = `0${totalSec}`;
-                musicProgressDuration.innerText = `${totalMin}:${totalSec}`;
+            musicAudio.addEventListener("loadeddata", () => {   //audio가 로드되었을때의 이벤트다.
+                let audioDuration = musicAudio.duration;        //audio객체에서 전체시간을 출력하는 프로퍼티.
+                let totalMin = Math.floor(audioDuration / 60);  //전체 시간(초단위)을 분단위로 쪼갬
+                let totalSec = Math.floor(audioDuration % 60);  //남은 초 저장
+                if(totalSec < 10) totalSec = `0${totalSec}`;    //초가 일의 자리 수면 앞에 0을 붙임
+                musicProgressDuration.innerText = `${totalMin}:${totalSec}`;    //완성된 시간 문자열을 출력(.timer의 .duration)
             });
 
-            //진행 시간
+            //진행 시간.... 음악 재생 중에 계속 바뀐다.
             let currentMin = Math.floor(currentTime / 60);
             let currentSec = Math.floor(currentTime % 60);
             if(currentSec < 10) currentSec = `0${currentSec}`;
@@ -371,95 +371,96 @@
         //진행 버튼 클릭
         musicProgress.addEventListener("click", (e) => {
             let progressWidth = musicProgress.clientWidth;  //진행바 전체 길이
-            let clickedOffsetX = e.offsetX;     //클릭한 x위치
+            let clickedOffsetX = e.offsetX;     //진행바 기준으로 측정되는 x좌표
             let songDuration = musicAudio.duration;     //오디오 전체 길이
 
-            musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+            //프로퍼티를 바꾸면 해당 위치부터 재생됨
+            musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;   //백분위로 나눈 숫자에 다시 전체 길이를 곱해서 현재 재생값을 바꿈
             
             // console.log("progressWidth" + progressWidth);
             // console.log("clickedOffsetX" + clickedOffsetX);
             // console.log("songDuration" + songDuration);
             // console.log("(clickedOffsetX / progressWidth) * songDuration" + (clickedOffsetX / progressWidth) * songDuration);
-            playMusic();
+            playMusic(); //이걸 없애면 일시정지 상태에서 재생 위치를 바뀌면 자동재생 안된다.
         })
 
         //반복 버튼
         musicRepeat.addEventListener("click", () => {       //this는 화살표함수에서 못씀..
-            let getText = musicRepeat.innerText;
+            let getText = musicRepeat.innerText;    //해당 버튼의 현재 상태를 가져옴.
 
-            switch(getText){
-                case "repeat":
-                    musicRepeat.innerText = "repeat_one";
-                    musicRepeat.setAttribute("title", "한곡 반복");
+            switch(getText){    //반복 버튼이
+                case "repeat":  //repeat상태였다면
+                    musicRepeat.innerText = "repeat_one";   //repeat_one으로 바꾸고
+                    musicRepeat.setAttribute("title", "한곡 반복"); //title을 '한곡 반복'으로 바꾼다.(웹접근성)
                 break;
-                case "repeat_one":
-                    musicRepeat.innerText = "shuffle";
-                    musicRepeat.setAttribute("title", "랜덤 재생");
+                case "repeat_one":  //repeat_one상태였다면
+                    musicRepeat.innerText = "shuffle";      //shuffle로 바꾸고
+                    musicRepeat.setAttribute("title", "랜덤 재생"); //title을 '랜덤 재생'으로 바꾼다.(웹접근성)
                 break;
-                case "shuffle":
-                    musicRepeat.innerText = "repeat";
-                    musicRepeat.setAttribute("title", "전체 반복");
+                case "shuffle":     //shuffle상태였다면
+                    musicRepeat.innerText = "repeat";   //repeat로 바꾸고
+                    musicRepeat.setAttribute("title", "전체 반복"); //title을 '전체 반복'으로 바꾼다.(웹접근성)
                 break;
             }
-            playListMusic();
+            //playListMusic();
         });
 
         //오디오가 끝나고
-        musicAudio.addEventListener("ended", () => {
-            let getText = musicRepeat.innerText;
+        musicAudio.addEventListener("ended", () => {    //ended는 오디오 객체에서 재생이 다 되면 발생하는 이벤트
+            let getText = musicRepeat.innerText;        //반복 버튼 상태 확인
 
-            switch(getText){
-                case "repeat":
-                    nextMusic();
+            switch(getText){    //반복 버튼이
+                case "repeat":  //repeat면
+                    nextMusic();//다음 곡 재생
                 break;
-                case "repeat_one":
-                    loadMusic(musicIndex);
+                case "repeat_one":  //repeat_one이면
+                    //loadMusic(musicIndex);  //현재 인덱스 재생
                     playMusic();
                     // playMusic();
                 break;
-                case "shuffle":
-                    let randIndex = Math.floor(Math.random() * allMusic.length) + 1;
+                case "shuffle":     //shuffle이면
+                    let randIndex = Math.floor(Math.random() * allMusic.length) + 1;    //랜덤인덱스생성
                     do {
                         randIndex = Math.floor(Math.random() * allMusic.length) + 1;
-                    } while (musicIndex == randIndex);
-                    musicIndex = randIndex;
-                    loadMusic(musicIndex);
-                    playMusic();
+                    } while (musicIndex == randIndex);  //현재인덱스랑 랜덤인덱스 숫자 같으면..
+                    musicIndex = randIndex;     //현재 인덱스를 randIndex로 바꿈.
+                    loadMusic(musicIndex);      //랜덤 인덱스가 반영된 현재 인덱스 값으로 음악을 다시 로드한다.
+                    playMusic();                //로드한 음악 재생
                 break;
             }
-            playListMusic();
+            playListMusic();        //playListMusic실행(재생목록 업데이트)
         });
         
         //플레이 버튼
-        musicPlay.addEventListener("click", () => {
-            const isMusicPaused = musicWrap.classList.contains("paused");
-            isMusicPaused ? pauseMusic() : playMusic();
+        musicPlay.addEventListener("click", () => {     //재생 버튼 누를 때
+            const isMusicPaused = musicWrap.classList.contains("paused");   //음악이 재생중이면
+            isMusicPaused ? pauseMusic() : playMusic();     //일시정지, 아니면 재생
         });
 
         //이전 곡 버튼
         // musicPrevBtn.addEventListener("click", prevMusic);
-        musicPrevBtn.addEventListener("click", () => {
+        musicPrevBtn.addEventListener("click", () => {      //전곡 재생 버튼
             prevMusic();
         });
 
         //다음 곡 버튼
         // musicNextBtn.addEventListener("click", nextMusic);
-        musicNextBtn.addEventListener("click", () => {
+        musicNextBtn.addEventListener("click", () => {      //다음 곡 재생 버튼
             nextMusic();
         });
 
         //뮤직 리스트 버튼
-        musicListBtn.addEventListener("click", () => {
+        musicListBtn.addEventListener("click", () => {      //리스트 버튼
             musicList.classList.add("show");
         });
 
         //뮤직 리스트 닫기
-        musicListClose.addEventListener("click", () => {
+        musicListClose.addEventListener("click", () => {    //리스트 닫기 버튼
             musicList.classList.remove("show");
         });
 
         //뮤직 리스트 구현하기
-        for(let i=0; i<allMusic.length; i++){
+        for(let i=0; i<allMusic.length; i++){               //allMusic길이만큼 반복
             let li = `<li data-index="${i+1}">
                             <div>
                                 <em>${allMusic[i].name}</em>
@@ -468,53 +469,56 @@
                             <audio class="${allMusic[i].audio}" src="songs/${allMusic[i].audio}.mp3"></audio>
                             <span id="${allMusic[i].audio}" class="audio-duration">${i}</span>
                         </li>
-                      `;
-            musicListUl.insertAdjacentHTML("beforeend", li);
+                      `;                                    //리스트 목록 문자열로 불러오기
+            musicListUl.insertAdjacentHTML("beforeend", li);//element 안에 가장 마지막 child에 li붙여놓음..차례대로 붙여넣는거임.
 
-            let liAudioDuration = musicListUl.querySelector(`#${allMusic[i].audio}`);
-            let liAudio = musicListUl.querySelector(`.${allMusic[i].audio}`);
-            liAudio.addEventListener("loadeddata", () => {
-                let audioDuration = liAudio.duration;
-                let totalMin = Math.floor(audioDuration / 60);
-                let totalSec = Math.floor(audioDuration % 60);
-                if(totalSec < 10) totalSec = `0${totalSec}`;
-                liAudioDuration.innerText = `${totalMin}:${totalSec}`;
-                liAudioDuration.setAttribute("data-duration", `${totalMin}:${totalSec}`);
+            //list에 음악시간 불러오기.
+            let liAudioDuration = musicListUl.querySelector(`#${allMusic[i].audio}`);   //li에서 시간을 표시할 노드 가져옴
+            let liAudio = musicListUl.querySelector(`.${allMusic[i].audio}`);           //li에서 audio가져옴
+            liAudio.addEventListener("loadeddata", () => {                      //audio가 로드될 때(li가 생성될 때 로드됨)
+                let audioDuration = liAudio.duration;                           //liAudio의 전체길이
+                let totalMin = Math.floor(audioDuration / 60);                  //전체길이에서 분위로 쪼개고
+                let totalSec = Math.floor(audioDuration % 60);                  //나머지 초로 남기고
+                if(totalSec < 10) totalSec = `0${totalSec}`;                    
+                liAudioDuration.innerText = `${totalMin}:${totalSec}`;          //문자열만들고
+                liAudioDuration.setAttribute("data-duration", `${totalMin}:${totalSec}`); //span의 data에 기록해준다.
             });
         }
 
         //뮤직 리스트 클릭하고 재생
         function playListMusic(){
-            const musicListAll = musicListUl.querySelectorAll("li");
-            for(let j=0; j<musicListAll.length; j++){
-                let audioTag = musicListAll[j].querySelector(".audio-duration");
+            const musicListAll = musicListUl.querySelectorAll("li");        //li가져옴
+            for(let j=0; j<musicListAll.length; j++){                       //전체 음악 갯수 만큼 반복
+                let audioTag = musicListAll[j].querySelector(".audio-duration");    //i번째 li중에 마지막 span태그 가져옴
 
-                if(musicListAll[j].classList.contains("playing")){
-                    musicListAll[j].classList.remove("playing");
-                    let adDuration = audioTag.getAttribute("data-duration");
-                    audioTag.innerText = adDuration;
+                //함수가 실행되면 전체 목록에 적용된다.
+                if(musicListAll[j].classList.contains("playing")){          //i번째 li의 class가 playing이면
+                    musicListAll[j].classList.remove("playing");            //playing 지움
+                    let adDuration = audioTag.getAttribute("data-duration");//해당 음악의 재생 시간 가져옴
+                    audioTag.innerText = adDuration;                        //span태그에 재생 시간 출력
                 }
 
-                if(musicListAll[j].getAttribute("data-index") == musicIndex){
-                    musicListAll[j].classList.add("playing");
-                    audioTag.innerText = "재생중";
+                if(musicListAll[j].getAttribute("data-index") == musicIndex){//data-index가 musicIndex랑 같으면
+                    musicListAll[j].classList.add("playing");               //li의 class에 playing 추가
+                    audioTag.innerText = "재생중";                          //span태그에 '재생중'텍스트 출력
                 }
-                musicListAll[j].setAttribute("onclick", "clicked(this)");
+                musicListAll[j].setAttribute("onclick", "clicked(this)");   //li에 onclick 이벤트 속성 추가, 해당 li를 매개변수로 전달
             }
         }
 
+        //리스트를 클릭하면
         function clicked(el){
-            let getLiIndex = el.getAttribute("data-index");
-            musicIndex = getLiIndex;
-            loadMusic(musicIndex);
-            playMusic();
-            playListMusic()
+            let getLiIndex = el.getAttribute("data-index"); //li의 data-index를 저장
+            musicIndex = getLiIndex;                        //musicIndex를 li의 index로 바꿈
+            loadMusic(musicIndex);                          //해당 인덱스를 로드하고
+            playMusic();                                    //재생하고
+            playListMusic()                                 //리스트업데이트
         }
 
-        //플레이
+        //플레이, 브라우저가 로드되면 바로 실행된다.
         window.addEventListener("load", () => {
-            loadMusic(musicIndex);
-            playListMusic();
+            loadMusic(musicIndex);  //초기 인덱스값은 1이다.
+            playListMusic();        //리스트 초기화
         });
     </script>
 </body>
