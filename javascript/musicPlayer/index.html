@@ -98,7 +98,7 @@
         }
         .music__progress .bar {
             height: inherit;
-            width: 10%;
+            width: 0%;
             position: relative;
             border-radius: inherit;
             background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
@@ -237,7 +237,7 @@
                 </div>
                 <div class="timer">
                     <span class="current">0:00</span>
-                    <span class="max">0:00</span>
+                    <span class="duration">0:00</span>
                 </div>
             </div>
             <!-- //music__progress -->
@@ -297,6 +297,10 @@
         const musicPlay = musicWrap.querySelector("#control-play");
         const musicPrevBtn = musicWrap.querySelector("#control-prev");
         const musicNextBtn = musicWrap.querySelector("#control-next");
+        const musicProgress = musicWrap.querySelector(".music__progress");
+        const musicProgressBar = musicWrap.querySelector(".bar");
+        const musicProgressCurrent = musicWrap.querySelector(".current");
+        const musicProgressDuration = musicWrap.querySelector(".duration");
 
         let musicIndex = 1;    //currentIndex
 
@@ -309,9 +313,7 @@
             musicAudio.src = `songs/${allMusic[num - 1].audio}.mp3`;
         }
 
-        window.addEventListener("load", () => {
-            loadMusic(musicIndex);
-        });
+        
 
         //재생 버튼
         function playMusic(){
@@ -339,14 +341,61 @@
             loadMusic(musicIndex);
             playMusic();
         }
+
+        //뮤직 진행바
+        musicAudio.addEventListener("timeupdate", (e) => {
+            // console.log(e);
+            const currentTime = e.target.currentTime;
+            const duration = e.target.duration;
+            let progressWidth = (currentTime/duration) * 100;
+
+            musicProgressBar.style.width = `${progressWidth}%`;
+
+            musicAudio.addEventListener("loadeddata", () => {
+                let audioDuration = musicAudio.duration;
+                let totalMin = Math.floor(audioDuration / 60);
+                let totalSec = Math.floor(audioDuration % 60);
+                if(totalSec < 10) totalSec = `0${totalSec}`;
+                musicProgressDuration.innerText = `${totalMin}:${totalSec}`;
+            });
+
+            let currentMin = Math.floor(currentTime / 60);
+            let currentSec = Math.floor(currentTime % 60);
+            if(currentSec < 10) currentSec = `0${currentSec}`;
+            musicProgressCurrent.innerText = `${currentMin}:${currentSec}`;
+        });
+
+        //진행 버튼 클릭
+        musicProgress.addEventListener("click", (e) => {
+            let progressWidth = musicProgress.clientWidth;
+            let clickedOffsetX = e.offsetX;
+            let songDuration = musicAudio.duration;
+
+            musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+            playMusic();
+        })
         
+        //플레이 버튼
         musicPlay.addEventListener("click", () => {
             const isMusicPaused = musicWrap.classList.contains("paused");
             isMusicPaused ? pauseMusic() : playMusic();
         })
 
-        musicPrevBtn.addEventListener("click", prevMusic);
-        musicNextBtn.addEventListener("click", nextMusic);
+        //이전 곡 버튼
+        // musicPrevBtn.addEventListener("click", prevMusic);
+        musicPrevBtn.addEventListener("click", () => {
+            prevMusic();
+        });
+
+        //다음 곡 버튼
+        // musicNextBtn.addEventListener("click", nextMusic);
+        musicNextBtn.addEventListener("click", () => {
+            nextMusic();
+        });
+
+        window.addEventListener("load", () => {
+            loadMusic(musicIndex);
+        });
     </script>
 </body>
 </html>
