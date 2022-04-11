@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Poppins";
         }
         body {
             background: #17A2B8;
@@ -22,11 +26,11 @@
         }
         .typing__inner {
             width: 60vw;
-            height: 60vh;
+            min-width: 900px;
+            min-height: 40vh;
             background: #fff;
             border-radius: 20px;
-            padding: 30px;
-            
+            padding: 40px;
         }
         .input__field {
             position: absolute;
@@ -35,10 +39,85 @@
             padding: 10px;
         }
         .typing__text {
-            border: 1px solid #c3c3c3;
+            border: 1px solid #C3C3C3;
             border-radius: 10px;
-            padding: 20px;
-            height: 400px;
+            padding: 30px;
+            min-height: 300px;
+            font-size: 22px;
+            font-weight: 300;
+            text-align: justify;
+            word-break: break-all;
+        }
+        .typing__text p span {
+            position: relative;
+        }
+        .typing__text p span.correct {
+            color: rgb(0, 255, 136);
+        }
+        .typing__text p span.incorrect {
+            color: #cb3439;
+            background: #ffc0cb;
+            outline: 1px solid #fff;
+            border-radius: 4px;
+        }
+        .typing__text p span.active {
+            color: #0c572b;
+            font-weight: 600;
+        }
+        .typing__text p span.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #17a2b8;
+            animation: blink 1s ease-in-out infinite;
+            opacity: 0;
+        }
+        @keyframes blink {
+            50% {opacity: 1;}
+        }
+        .typing__info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .typing__info button {
+            width: 210px;
+            background: #17A2B8;
+            color:#fff;
+            font-family: "Poppins";
+            border: 0;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 22px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .typing__info ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+        .typing__info ul li {
+            width: 20%;
+            list-style: none;
+            display: flex;
+            font-size: 20px;
+            border-left: 1px solid #C3C3C3;
+            padding-left: 40px;
+        }
+        .typing__info ul li:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+        .typing__info li p {
+            white-space: nowrap;
+        }
+        .typing__info li span {
+            padding: 0 10px;
         }
     </style>
 </head>
@@ -49,7 +128,26 @@
             <div class="typing__text">
                 <p></p>
             </div>
-            <div class="typing__info"></div>
+            <div class="typing__info">
+                <ul>
+                    <li class="time">
+                        <p>Time Left: </p>
+                        <span><b>60</b>s</span>
+                    </li>
+                    <li class="mistake">
+                        <p>Mistakes: </p>
+                        <span>0</span></li>
+                    <li class="wpm">
+                        <p>WPM: </p>
+                        <span>0</span>
+                    </li>
+                    <li class="cpm">
+                        <p>CPM: </p>
+                        <span>0</span>
+                    </li>
+                </ul>
+                <button class="again">Try Again</button>
+            </div>
         </div>
     </div>
 
@@ -81,12 +179,101 @@
         ];
 
         const typingText = document.querySelector(".typing__text p");
+        const inputField = document.querySelector(".input__field");
+        const typingMistake = document.querySelector(".mistake span");
+        const typingTime = document.querySelector(".time span b");
+        const typingWpm = document.querySelector(".wpm span"); //1분동안 친 단어 수
+        const typingCpm = document.querySelector(".cpm span"); //1분동안 친 글자 수
+        const typingAgain = document.querySelector(".again");
+
+        let charIndex = 0;
+        let mistakes = 0;
+        let timer;
+        let maxTime = 60;
+        let timeLeft = maxTime;
+        let isTyping = 0;
 
         function randomParagraph(){
             let randIndex = Math.floor(Math.random() * paragraphs.length);
-            console.log(paragraphs[randIndex].split(""));
+            typingText.innerHTML = "";
+            paragraphs[randIndex].split("").forEach(span => {
+                let spanTag = `<span>${span}</span>`;
+                typingText.innerHTML += spanTag;
+            });
+            document.addEventListener("keydown", () => inputField.focus());
+            typingText.addEventListener("click", () => inputField.focus());
         }
+
         randomParagraph();
+        
+        function initTyping(){
+            const characters = typingText.querySelectorAll("span");
+            let typedChar = inputField.value.split("")[charIndex];
+
+            if(charIndex < characters.length -1 && timeLeft > 0){
+                if(!isTyping){
+                timer = setInterval(initTimer, 1000);
+                isTyping = true;
+                }
+
+                if(typedChar == null){
+                    charIndex--;
+                    if(characters[charIndex].classList.contains("incorrect")){
+                        mistakes--;
+                    }
+                    characters[charIndex].classList.remove("correct", "incorrect");
+                }else{
+                    if(characters[charIndex].innerText === typedChar){
+                        characters[charIndex].classList.add("correct");
+                    } else {
+                        mistakes++;
+                        characters[charIndex].classList.add("incorrect");
+                    }
+                    charIndex++;  
+                }
+
+                characters.forEach(span => span.classList.remove("active"));
+                characters[charIndex].classList.add("active");
+                typingMistake.innerText = mistakes;
+
+                //전체 글자수 : charIndex
+                let wpm = Math.round((((charIndex - mistakes)/5) / (maxTime - timeLeft)) * 60);
+                wpm = wpm < 0 || !wpm || wpm == Infinity ? 0 : wpm;
+
+                typingWpm.innerText = wpm;
+                typingCpm.innerText = charIndex - mistakes;
+
+                // characters[charIndex-1].classList.remove("active");
+                
+            } else {
+                clearInterval(timer);
+                inputField.value = "";
+            }
+        }
+
+        function initTimer(){
+            if(timeLeft > 0){
+                timeLeft--;
+                typingTime.innerText = timeLeft;
+            } else {
+                clearInterval(timer);
+            }
+        }
+
+        function resetGame(){
+            randomParagraph();
+            clearInterval(timer);
+            inputField.value = "";
+            timeLeft = maxTime;
+            typingTime.innerText = timeLeft;
+            isTyping = charIndex = mistakes = 0;
+            typingWpm.innerText = 0;
+            typingCpm.innerText = 0;
+            typingMistake.innerText = 0;
+        }
+        
+        inputField.addEventListener("input", initTyping);
+        typingAgain.addEventListener("click", resetGame);
     </script>
 </body>
 </html>
