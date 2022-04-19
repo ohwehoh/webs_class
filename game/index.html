@@ -183,10 +183,13 @@
     </header>
     <main id="main">
 
+        <!-- 커서 -->
         <div class="cursor">
             <img src="img/pointer.svg" alt="마우스커서">
         </div>
+        <!-- //커서 -->
 
+        <!-- 타이핑게임 -->
         <div class="game__wrap typing_w">
             <div class="game__icon typing">
                 <img src="img/heavyblackheart-light.svg" alt="typingGame_icon">
@@ -196,7 +199,9 @@
         <div class="typing_window">
             <iframe src="../javascript/typingGame/index.html" frameborder="0"></iframe>
         </div>
+        <!-- //타이핑게임 -->
 
+        <!-- 메모리게임 -->
         <div class="game__wrap memory_w">
             <div class="game__icon memory">
                 <img src="img/tigerface-light.svg" alt="memoryGame_icon">
@@ -206,7 +211,9 @@
         <div class="memory_window">
             <iframe src="../javascript/memoryGame/index.html" frameborder="0"></iframe>
         </div>
+        <!-- //메모리게임 -->
 
+        <!-- 뮤직 -->
         <div class="game__wrap music_w">
             <div class="game__icon music_icon">
                 <img src="img/guitar-light.svg" alt="music_icon">
@@ -216,12 +223,15 @@
         <div class="music_window">
             <iframe src="../javascript/musicPlayer/index.html" frameborder="0"></iframe>
         </div>
+        <!-- //뮤직 -->
+
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../javascript/effect/js/gsap.min.js"></script>
     <script>
+        //icon
         $(".game__wrap").draggable();
 
         $(".typing_w").click(function(){
@@ -237,13 +247,16 @@
         $(".music_w").click(function(){
             $(".music_window").toggleClass("show");
         });
+        //
 
+        //창띄우기
         const music = document.querySelector(".music_w");
         const musicWindow = music.querySelector(".music_window");
 
         music.addEventListener("click", () => {
             musicWindow.classList.toggle("show");
         })
+        //
 
         //커서
         const cursor = document.querySelector(".cursor");               //div.cursor
@@ -254,6 +267,7 @@
                 top: e.pageY - 5
             })
         });
+        //
 
         //현재시간 출력
         function printTime(){
@@ -267,6 +281,7 @@
         window.onload = function(){
             printTime();
         }
+        //
     </script>
 </body>
 
