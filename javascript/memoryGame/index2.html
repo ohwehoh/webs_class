@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <title>Memory Game</title>
     <link href="https://webfontworld.github.io/NexonMaplestory/NexonMaplestory.css" rel="stylesheet">
     <style>
@@ -30,11 +31,29 @@
         button:active {
             opacity: 0.6;
         }
+        .card__sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+
+        }
+        .card__sound button {
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            color: #007bff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 0;
+        }
+        
         .start__btn,
         .info__box,
         .card__wrap,
         .result__box,
-        .scoreBox {
+        #scoreBox {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -47,7 +66,7 @@
             transition: all 0.3s ease;
         }
 
-        .scoreBox {
+        #scoreBox {
             left: 50%;
             top: 10%;
             transform: translate(-50%, 0) scale(0.8);
@@ -62,7 +81,7 @@
             pointer-events: auto;
             transform: translate(-50%, -50%) scale(1);
         }
-        .scoreBox.active {
+        #scoreBox.active {
             opacity: 1;
             z-index: 10;
             pointer-events: auto;
@@ -241,7 +260,7 @@
             color: #007BFF
         }
 
-        .scoreBox {
+        #scoreBox {
             display: flex;
             justify-content: space-between;
             background: #fff;
@@ -249,8 +268,29 @@
             padding: 1vw 2vw;
             font-size: 1.5rem;
         }
-        .scoreBox.active {
+        #scoreBox.active {
             opacity: 1;
+        }
+
+        @media (max-width: 600px){
+            #scoreBox { 
+                transform: translate(-50%, 0%) scale(0.8);
+                width: 70%;
+                opacity: 0;
+            }
+
+            #scoreBox.active {
+                transform: translate(-50%, 0%) scale(0.8);
+                opacity: 0;
+            }
+            #scoreBox.act {
+                transform: translate(-50%, -70%) scale(1);
+                opacity: 1;
+            }
+
+            .card__sound {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -258,6 +298,11 @@
     <!-- 시작버튼 -->
     <div class="start__btn active">
         <button>Start</button>
+    </div>
+    <!-- 배경음악 -->
+    <div class="card__sound">
+        <button class="material-icons" id="sound">volume_off</button>
+        <audio id="song" src="audio/Jeremy_Black.mp3" loop="loop"></audio>
     </div>
     <!-- 규칙 박스 -->
     <div class="info__box">
@@ -273,13 +318,13 @@
             </ol>
         </div>
         <div class="buttons">
-            <button class="stop">그만하기</button>
+            <button class="stop">처음으로</button>
             <button class="start">도전하기</button>
         </div>
     </div>
 
     <!-- 점수 박스 -->
-    <div class="scoreBox">
+    <div id="scoreBox">
         <div class="timer">남은 시간 : 60s</div>
         <div class="chance">기회 점수 : </div>
         <div class="conti">연속 점수 : </div>
@@ -428,21 +473,26 @@
             당신의 점수는 00점입니다.
         </div>
         <div class="buttons">
-            <button class="stop">그만하기</button>
+            <button class="stop">처음으로</button>
             <button class="restart">다시 도전하기</button>
         </div>
     </div>
 
     <script>
+        const cardSound = document.querySelector(".card__sound button");
+        const cardSong = document.querySelector("#song");
+
         const startBtn = document.querySelector(".start__btn");
         const infoBox = document.querySelector(".info__box");
         const resultBox = document.querySelector(".result__box");
         const cardWrap = document.querySelector(".card__wrap");
         const cards = document.querySelectorAll(".cards li");
         const infoBoxStart = infoBox.querySelector(".start");
+        const infoBoxStop = infoBox.querySelector(".stop");
         const resultBoxRestart = resultBox.querySelector(".restart");
+        const resultBoxStop = resultBox.querySelector(".stop");
         const gameScore = resultBox.querySelector(".score");
-        const scoreBox = document.querySelector(".scoreBox");
+        const scoreBox = document.querySelector("#scoreBox");
         const scoreTimer = scoreBox.querySelector(".timer");
         const scoreChance = scoreBox.querySelector(".chance");
         const scoreConti = scoreBox.querySelector(".conti");
@@ -452,6 +502,19 @@
         var countConti = 0;
         var timeLeft = 60;
         var interval;
+
+        // 음악 이모티콘
+        cardSound.addEventListener("click", function(){
+            this.classList.toggle("is-playing");
+
+            if(this.classList.contains("is-playing")){
+                this.innerText = "volume_up"
+                cardSong.play();
+            } else {
+                this.innerText = "volume_off"
+                cardSong.pause();
+            }
+        })
 
         function scoreUp(cm, cc){
             scoreChance.innerText = "기회 점수 : " + cm;
@@ -486,6 +549,10 @@
         }
         // 게임시작 버튼
         infoBoxStart.onclick = () => {
+            disableDeck = true;
+            // cards.forEach(card => {
+            //     card.removeEventListener('click', flipCard);
+            // })
             cardWrap.classList.add("active");
             scoreBox.classList.add("active");
             setTimeout(() => {
@@ -495,10 +562,27 @@
         }
         // 게임 다시 시작 버튼
         resultBoxRestart.onclick = () => {
+            // cards.forEach(card => {
+            //     card.removeEventListener('click', flipCard);
+            // })
             resultBox.classList.remove("active");
             cardWrap.classList.add("active");
-            shuffledCard();
+            scoreBox.classList.remove("act");
+            setTimeout(() => {
+                shuffledCard();
+            }, 500)
         }
+        // 그만하기 버튼
+        infoBoxStop.onclick = () => {
+            infoBox.classList.remove("active");
+            startBtn.classList.add("active");
+        }
+        resultBoxStop.onclick = () => {
+            resultBox.classList.remove("active");
+            scoreBox.classList.remove("act", "active");
+            startBtn.classList.add("active");
+        }
+
         //카드 클릭
         cards.forEach(card => {
             //card.classList.add("flip")
@@ -529,8 +613,12 @@
                 //완성했을 때
                 statusConti = true;
                 if(matchedCard == 8){
+                    disableDeck = true;
                     clearInterval(interval);
                     setTimeout(() => {
+                        cards.forEach((card, index) => {
+                            card.classList.remove("flip");
+                        });
                         soundSuccess.play();
                         gameScore.innerHTML = `당신의 점수는 ${countMinus + countConti + timeLeft+1}점 입니다.`;
                         gameScore.innerHTML += "<br>";
@@ -544,6 +632,7 @@
 
                         cardWrap.classList.remove("active");
                         resultBox.classList.add("active");
+                        scoreBox.classList.add("act");
                     }, 1000)
                 }
                 cardOne.removeEventListener("click", flipCard);
@@ -570,7 +659,7 @@
         }
         function shuffledCard(){
             cardOne, cardTwo = "";
-            disableDeck = false;
+            disableDeck = true;
             matchedCard = 0;
             countConti = 0;
             countMinus = 5;
@@ -591,7 +680,7 @@
                 let imgTag = card.querySelector(".back img");
                 imgTag.src = `img/img-${arr[index]}.png`;
             })
-            setTimeout(()=>{interval = setInterval(initTimer,1000);},3000)
+            setTimeout(()=>{interval = setInterval(initTimer,1000);disableDeck = false;},3000)
         }
     </script>
 </body>

@@ -72,6 +72,11 @@ body {
     top: 100px;
 }
 
+.react_w {
+    left: 430px;
+    top: 100px;
+}
+
 .game__wrap:hover .game__icon {
     background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
 }
@@ -120,21 +125,7 @@ body {
 }
 
 .typing_window.show {
-    right: 20%;
-}
-
-.memory_window {
-    position: absolute;
-    right: -1000px;
-    top: 50%;
-    transform: translate(0,-50%);
-    width: 1000px;
-    height: 800px;
-    transition: all 0.4s;
-}
-
-.memory_window.show {
-    right: 20%;
+    right: 27%;
 }
 
 .music_window {
@@ -153,6 +144,10 @@ body {
 iframe {
     width: 100%;
     height: 100%;
+}
+
+iframe #scoreBox {
+    display:none
 }
 .cursor {
     position:absolute;
@@ -177,4 +172,12 @@ iframe {
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
                 0 6px 10px 0 rgba(0,0,0,0.17);
+
+    opacity: 0;
+    transition: all 0.5s;
 }
+
+.memoryBox.show {
+    opacity: 1;
+}
+

@@ -32,10 +32,10 @@
             </div>
             <div class="name">TYPING GAME</div>
         </div>
-        <!-- <div class="typing_window">
+        <div class="typing_window">
             <iframe src="../javascript/typingGame/index.html" frameborder="0"></iframe>
-        </div> -->
-        <!-- //타이핑게임 -->
+        </div>
+        <!-- //타이핑게임-->
 
         <!-- 메모리게임 -->
         <div class="game__wrap memory_w">
@@ -44,7 +44,9 @@
             </div>
             <div class="name">MEMORY GAME</div>
         </div>
-
+        <div class="memoryBox">
+            <iframe src="../javascript/memoryGame/index2.html" frameborder="0"></iframe>
+        </div>
         <!-- //메모리게임 -->
 
         <!-- 뮤직 -->
@@ -59,8 +61,12 @@
         </div>
         <!-- //뮤직 -->
 
-        <div class="memoryBox">
-            <iframe src="../javascript/memoryGame/index2.html" frameborder="0"></iframe>
+        <!-- 리액트 -->
+        <div class="game__wrap react_w">
+            <div class="game__icon react_icon">
+                <img src="assets/img/hotbeverage-light.svg" alt="react_icon">
+            </div>
+            <div class="name">REACT</div>
         </div>
 
     </main>
@@ -84,6 +90,10 @@
 
         $(".music_w").click(function(){
             $(".music_window").toggleClass("show");
+        });
+
+        $(".react_w").click(function(){
+            window.open("https://wwoo.netlify.app");
         });
         //
 
