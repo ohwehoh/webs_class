@@ -56,7 +56,8 @@ body {
 .game__wrap {
     position: absolute;
     display: inline-block;
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: none;
 }
 
 .typing_w {
@@ -150,9 +151,11 @@ iframe {
     position:absolute;
     left: 0;
     top: 0;
+    z-index: 10;
+    pointer-events: none;
 }
 .cursor img {
-    width: 10%;
+    width: 2rem;
 }
 
 .memoryBox {
