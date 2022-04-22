@@ -7,173 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bg.css">
     <link rel="stylesheet" href="assets/style.css">
-    <style>
-        @font-face {
-            font-family: 'LABDigital';
-            font-weight: normal;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
-            font-display: swap;
-        }
-        body {
-            box-sizing: 0;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            overflow: hidden;
-            cursor: none;
-        }
 
-        #header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background: hsl(266, 49%, 25%);
-            font-family: "LABDigital";
-            color: #fff;
-        }
-
-        .title {
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            margin: 0;
-        }
-
-        .now {
-            display: inline-block;
-            font-size: 20px;
-            position: absolute;
-            right: 1%;
-            top: 50%;
-            transform: translate(0, -50%);
-            margin: 0;
-        }
-
-        #main {
-            height: calc(100vh - 30px);
-            position: relative;
-        }
-
-        .game__wrap {
-            position: absolute;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .typing_w {
-            left: 100px;
-            top: 100px;
-        }
-        .memory_w {
-            left: 220px;
-            top: 100px;
-        }
-        .music_w {
-            left: 350px;
-            top: 100px;
-        }
-
-        .game__wrap:hover .game__icon {
-            background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
-        }
-
-        .game__wrap:active .game__icon {
-            background: rgba(155, 14, 255, 0.8);
-        }
-
-        .game__icon {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto;
-            border-radius: 50%;
-            background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
-            position: relative;
-        }
-
-        .game__icon img {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            mix-blend-mode: darken;
-        }
-
-        .name {
-            padding: 5px 10px;
-            background-color: rgb(36, 193, 183);
-            margin: 10px auto;
-            color: rgb(30, 0, 255);
-            font-family: "LABDigital";
-            text-align: center;
-            font-size: 15px;
-        }
-
-        .typing_window {
-            position: absolute;
-            right: -1000px;
-            top: 50%;
-            transform: translate(0,-50%);
-            width: 1000px;
-            height: 700px;
-            transition: all 0.4s;
-        }
-
-        .typing_window.show {
-            right: 20%;
-        }
-
-        .memory_window {
-            position: absolute;
-            right: -1000px;
-            top: 50%;
-            transform: translate(0,-50%);
-            width: 1000px;
-            height: 800px;
-            transition: all 0.4s;
-        }
-
-        .memory_window.show {
-            right: 20%;
-        }
-
-        .music_window {
-            position: absolute;
-            right: -500px;
-            top: 10px;
-            width: 400px;
-            height: 700px;
-            transition: all 0.4s;
-        }
-
-        .music_window.show {
-            right: 10px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-        }
-        .cursor {
-            position:absolute;
-            left: 0;
-            top: 0;
-        }
-        .cursor img {
-            width: 10%;
-        }
-    </style>
 </head>
 
 <body>
@@ -185,38 +21,36 @@
 
         <!-- 커서 -->
         <div class="cursor">
-            <img src="img/pointer.svg" alt="마우스커서">
+            <img src="assets/img/pointer.svg" alt="마우스커서">
         </div>
         <!-- //커서 -->
 
         <!-- 타이핑게임 -->
         <div class="game__wrap typing_w">
             <div class="game__icon typing">
-                <img src="img/heavyblackheart-light.svg" alt="typingGame_icon">
+                <img src="assets/img/heavyblackheart-light.svg" alt="typingGame_icon">
             </div>
             <div class="name">TYPING GAME</div>
         </div>
-        <div class="typing_window">
+        <!-- <div class="typing_window">
             <iframe src="../javascript/typingGame/index.html" frameborder="0"></iframe>
-        </div>
+        </div> -->
         <!-- //타이핑게임 -->
 
         <!-- 메모리게임 -->
         <div class="game__wrap memory_w">
             <div class="game__icon memory">
-                <img src="img/tigerface-light.svg" alt="memoryGame_icon">
+                <img src="assets/img/tigerface-light.svg" alt="memoryGame_icon">
             </div>
             <div class="name">MEMORY GAME</div>
         </div>
-        <div class="memory_window">
-            <iframe src="../javascript/memoryGame/index.html" frameborder="0"></iframe>
-        </div>
+
         <!-- //메모리게임 -->
 
         <!-- 뮤직 -->
         <div class="game__wrap music_w">
             <div class="game__icon music_icon">
-                <img src="img/guitar-light.svg" alt="music_icon">
+                <img src="assets/img/guitar-light.svg" alt="music_icon">
             </div>
             <div class="name">MUSIC</div>
         </div>
@@ -224,6 +58,10 @@
             <iframe src="../javascript/musicPlayer/index.html" frameborder="0"></iframe>
         </div>
         <!-- //뮤직 -->
+
+        <div class="memoryBox">
+            <iframe src="../javascript/memoryGame/index2.html" frameborder="0"></iframe>
+        </div>
 
     </main>
 
@@ -235,12 +73,12 @@
         $(".game__wrap").draggable();
 
         $(".typing_w").click(function(){
-            $(".memory_window").removeClass("show");
+            $(".memoryBox").removeClass("show");
             $(".typing_window").toggleClass("show");
         });
 
         $(".memory_w").click(function(){
-            $(".memory_window").toggleClass("show");
+            $(".memoryBox").toggleClass("show");
             $(".typing_window").removeClass("show");
         });
 
