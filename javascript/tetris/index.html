@@ -182,7 +182,6 @@
             direction: 0,
             top: 0,
             left: 4,
-
         }
 
         init();
@@ -239,7 +238,7 @@
                     target.classList.add(type, "moving");
                 } else {
                     gameMovingItem = {...movingItem};
-                    setTimeout(()=>{
+                    setTimeout(()=>{    //무한루프오류없애줌
                         renderBlocks();
                         if(moveType === "top"){
                             seizeBlock();
