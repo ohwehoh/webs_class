@@ -468,7 +468,6 @@
 
         cssList.forEach((e, index) => {
             e.classList.add("show");
-            console.log(index);
             cssCount.innerHTML = index;
         })
 
@@ -478,7 +477,7 @@
             cssList.forEach(el => {
                 const cssName = el.dataset.name; //CSS 속성 모든 값
 
-                if (cssName.includes(searchWord)) {
+                if (cssName.includes(searchWord)) { //검색값이 '포함'된 결과 나옴
                     el.classList.add("show");
                 } else {
                     el.classList.remove("show");

@@ -8,7 +8,46 @@
 </head>
 <body>
     <script>
-        
+        var answer = '';
+        var new_id = 'abcdefghijklmn.p';
+        console.log(new_id);
+        new_id = new_id.toLocaleLowerCase();
+        console.log(new_id);
+        new_id = new_id.replace(/[^a-z0-9-_.]/g,"");
+        console.log(new_id);
+        new_id = new_id.replace(/[.]+/g,".");
+        console.log(new_id);
+        if(new_id.charAt()=="."){
+            new_id = new_id.replace(/^./,"");
+            console.log(new_id);
+        }
+        if(new_id.charAt(new_id.length-1)=="."){
+            new_id = new_id.replace(/.$/,"");
+            console.log(new_id);
+        }
+        console.log(new_id);
+        if(!new_id){
+            new_id = "a";
+            console.log(new_id);
+        }
+        if(new_id.length >= 16){
+            new_id = new_id.substr(0,15);
+            console.log(new_id);
+        }
+        if(new_id.length <= 2){
+            new_id = new_id.padEnd(3,new_id.charAt(new_id.length-1));
+            console.log(new_id);
+        }
+        if(new_id.charAt()=="."){
+            new_id = new_id.replace(/^./,"");
+            console.log(new_id);
+        }
+        if(new_id.charAt(new_id.length-1)=="."){
+            new_id = new_id.replace(/.$/,"");
+            console.log(new_id);
+        }
+        answer = new_id;
+        console.log(answer);
     </script>
 </body>
 </html>

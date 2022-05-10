@@ -196,10 +196,8 @@
                 <span>h</span>
                 <span>i</span>
                 <span>j</span>
-                <span>k</span>
                 <span>l</span>
                 <span>m</span>
-                <span>n</span>
                 <span>o</span>
                 <span>p</span>
                 <span>q</span>
@@ -209,8 +207,6 @@
                 <span>u</span>
                 <span>v</span>
                 <span>w</span>
-                <span>x</span>
-                <span>y</span>
                 <span>z</span>
             </div>
 
@@ -492,6 +488,7 @@
             el.addEventListener("click", () => {    //버튼(span태그) 클릭할 때의 이벤트 설정.
                 const searchWord = el.innerText;    //searchWord에 el(span)의 text를 저장한다. 알파벳 첫글자
                 //console.log(searchWord);
+                var count = 0;
 
                 cssList.forEach(el => {    //버튼 클릭했을 때 cssList(속성의 리스트)
                     //console.log(el);
@@ -503,8 +500,13 @@
                     //알파벳 첫글자(a) == CSS 속성의 첫글자(a)
                     if(searchWord.charAt(0) === cssName.charAt(0) ){//|| searchWord.charAt(0) === cssType.charAt(0)){    //searWord의 첫글자와 cssName의 첫글자를 비교 //searchWord(클릭한 속성명)와 cssType(dataset으로 불러온 속성 타입)이 같은지 비교
                         el.classList.add("show");   //같으면 el(li)에 class="show" 추가
+                        
                     } else {
                         el.classList.remove("show");    //다르면 el(li)에 class="show" 제거
+                    }
+                    if(el.classList.contains("show")){
+                        count++;
+                        cssCount.innerText = count;
                     }
                 });
             });

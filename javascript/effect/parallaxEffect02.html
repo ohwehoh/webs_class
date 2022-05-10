@@ -281,6 +281,8 @@
             <li><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
             <li><a href="parallaxEffect07.html">7</a></li>
+            <li><a href="parallaxEffect08.html">8</a></li>
+            <li><a href="parallaxEffect09.html">9</a></li>
         </ul>
     </header>
     <!-- //parallax__title -->
@@ -424,7 +426,8 @@
             })
         })
         window.addEventListener("scroll", () => {
-            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            // let scrollTop = window.screenY || ;
 
             document.querySelector(".scrollTop span").innerText = scrollTop;
 
@@ -448,7 +451,6 @@
             });
         });
         
-
             // //스크롤 값 구하기
             // window.screenY
             // window.pageYOffset

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코테0510</title>
+</head>
+<body>
+    <script>
+        function solution(lottos, win_nums) {
+            var answer = [];
+            var min_count = 0;
+            var max_count = 0;
+            var min_result, max_result;
+
+            for(var i of lottos){
+                for(var j of win_nums){
+                    i == j ? min_count ++ : 0;
+                }
+            }
+
+            switch(min_count){
+                case 2 :
+                    min_result = 5;
+                break;
+                case 3 :
+                    min_result = 4;
+                break;
+                case 4 :
+                    min_result = 3;
+                break;
+                case 5 :
+                    min_result = 2;
+                break;
+                case 6 :
+                    min_result = 1;
+                break;
+                default :
+                    min_result = 6;
+            }
+            max_count = min_count;
+
+            for(var i of lottos){
+                if(i == 0){
+                    max_count++;
+                }
+            }
+
+            switch(max_count){
+                case 2 :
+                max_result = 5;
+                break;
+                case 3 :
+                max_result = 4;
+                break;
+                case 4 :
+                max_result = 3;
+                break;
+                case 5 :
+                max_result = 2;
+                break;
+                case 6 :
+                max_result = 1;
+                break;
+                default :
+                max_result = 6;
+            }
+
+            answer = [max_result, min_result]
+            
+            return answer;
+        }
+        const sol = solution([44, 1, 0, 0, 31, 25],[31, 10, 45, 1, 6, 19]);
+        console.log(sol);
+    </script>
+</body>
+</html>

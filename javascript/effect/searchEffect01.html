@@ -108,6 +108,15 @@
             width: 50%;
         }
 
+        .board .count {
+            text-align: right;
+            color: #777;
+        }
+
+        .board .count em {
+            font-style: normal;
+        }
+
         .board .list {
             text-align: left;
         }
@@ -185,6 +194,10 @@
                 <input type="text" id="search-box" placeholder="CSS 속성을 입력해주세요!!">
             </div>
 <!-- <a href="https://ohwehoh.github.io/webs_class/javascript/effect/searchEffect04.html">검색효과 사이트</a> 이게..뭐지..? -->
+            <div class="count">
+                전체 속성 갯수 : <em>0</em>개
+            </div>
+
             <div class="list">
                 <ul>
                    <!-- a -->
@@ -442,8 +455,11 @@
     <script>
         const searchBox = document.querySelector("#search-box");
         const cssList = document.querySelectorAll(".list ul li");
+        const cssCount = document.querySelector(".board .count em");
 
-
+        cssList.forEach((e, index) => {
+            cssCount.innerHTML = index;
+        })
 
         searchBox.addEventListener("keyup", () => {
             const searchWord = searchBox.value; //사용자가 입력한 데이터 저장소 console.log(searchWord);
@@ -454,9 +470,11 @@
                 const cssName = el.dataset.name; //CSS 속성 값
 
                 if (cssName.indexOf(searchWord)) {
+                    console.log("true" + cssName.indexOf(searchWord));
                     el.classList.add("hide");
                 } else {
-                    el.classList.remove("hide");
+                    el.classList.remove("hide");//indexOf가 0이되는 값만 hide가 없어진다(첫글자부터 같은 값만 나온다.)
+                    console.log("false" + cssName.indexOf(searchWord));
                 }
             })
         });

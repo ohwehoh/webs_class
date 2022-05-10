@@ -533,6 +533,8 @@
             <li><a href="parallaxEffect05.html">5</a></li>
             <li class="active"><a href="parallaxEffect06.html">6</a></li>
             <li><a href="parallaxEffect07.html">7</a></li>
+            <li><a href="parallaxEffect08.html">8</a></li>
+            <li><a href="parallaxEffect09.html">9</a></li>
         </ul>
     </header>
     <!-- //parallax__title -->
@@ -670,7 +672,8 @@
         })
 
         function scroll() { //재귀함수를 이용한 스크롤값 구하기
-            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            // let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             document.querySelector(".scrollTop span").innerText = scrollTop;
 
             // document.querySelectorAll(".content__item").forEach(item => {
