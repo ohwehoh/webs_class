@@ -114,15 +114,16 @@
             <p>마우스 이펙트 - 따라다니기2</p>
         </div>
     </div>
-        
+    <!-- //info -->
+
     <!-- script -->
+    <script src="js/gsap.min.js"></script>
     <script>
-        const cursor = document.querySelector(".cursor");               //div.cursor
+                const cursor = document.querySelector(".cursor");               //div.cursor
         const follower = document.querySelector(".cursor-follower");    //div.cursor-follower,커서에 점 따라다니는 효과
 
         window.addEventListener("mousemove", e => {         //마우스 움직일 때 마다
             //커서 좌표값 할당
-
             gsap.to(cursor, {           //gsap으로 부드러운 애니메이션 효과
                 duration: .3,
                 left: e.pageX - 5,      //커서 가운데로 오게 한다.(div.cursor의 반 값을 뺌)
@@ -133,6 +134,10 @@
                 left: e.pageX - 15,     //커서 가운데로 오게 한다.(div.cursor-follower의 반 값을 뺌)
                 top: e.pageY - 15
             })
+
+            //출력
+            document.querySelector(".pageX").innerText = e.pageX; //전체 문서를 기준으로 수평 좌표
+            document.querySelector(".pageY").innerText = e.pageY; //전체 문서를 기준으로 수직 좌표
         });
 
         //오버 효과

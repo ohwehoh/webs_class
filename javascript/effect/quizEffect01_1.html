@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <style>
+        @import url(css/quizcustom.css);
+        @import url(css/dracula.min.css);
+        @import url(css/dog.css);
+
+        @font-face {
+            font-family: 'DungGeunMo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Cafe24Dangdanghae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'PFStardust';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Sam3KRFont';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Sam3KRFont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        *,
+        *:before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DungGeunMo';
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            width: 100%;
+            background-color: #f6f6f6;
+            background-image:
+                linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+                linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+                linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+                linear-gradient(#cdcccc, #cdcccc);
+            background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+        }
+
+        #header {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: #262626;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        #header::before {
+            content: '';
+            border: 4px ridge #a3a3a3;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            z-index: -1;
+        }
+
+        #header h1 {
+            padding: 3px 0 6px 10px;
+        }
+
+        #header nav {
+            padding-right: 10px;
+        }
+
+        #header nav li {
+            list-style: none;
+            display: inline;
+        }
+
+        #header nav li a {
+            color: #fff;
+            display: inline-block;
+            padding: 0 10px;
+            transition: all 0.2s;
+            border: 1px dashed #fff;
+        }
+
+        #header nav li.active a {
+            background: #fff;
+            color: #262626;
+        }
+
+        #header nav li a:hover {
+            opacity: 0.5;
+        }
+
+        /* footer */
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #838383;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #footer a {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        /* quiz__wrap */
+        .quiz__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 150px;
+        }
+
+        .quiz {
+            max-width: 500px;
+            width: 100%;
+            background: #fff;
+            border: 8px ridge #cacaca;
+            margin: 10px;
+        }
+
+        .quiz__type {
+            background: #cacaca;
+            text-align: center;
+            font-size: 14px;
+            color: #3b3b3b;
+            border: 3px ridge #cacaca;
+            padding: 3px 0;
+            position: relative;
+        }
+
+        .quiz__type::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #cacaca;
+        }
+
+        .quiz__type::after {
+            content: '';
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #cacaca;
+        }
+
+        .quiz__question {
+            border-top: 6px ridge #cacaca;
+            border-bottom: 6px ridge #cacaca;
+            padding: 13px 30px;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        .quiz__number {
+            font-family: 'PFStardust';
+            color: #64a30b;
+        }
+
+        .quiz__ask {
+            font-family: 'PFStardust';
+        }
+
+        .quiz__view {
+            background-color: #f5f5f5;
+            position: relative;
+        }
+
+        .quiz__view .true {
+            position: absolute;
+            left: 70%;
+            top: 120px;
+            width: 120px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            opacity: 0;
+
+        }
+
+        .quiz__view .false {
+            position: absolute;
+            right: 70%;
+            top: 120px;
+            width: 120px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 100px;
+            text-align: center;
+            color: red;
+            opacity: 0;
+        }
+
+        .quiz__answer {
+            background-color: #f5f5f5;
+            border-top: 6px ridge #cacaca;
+            padding: 10px;
+        }
+
+        .quiz__confirm {
+            border: 6px ridge #cacaca;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: rgb(192, 192, 192);
+            font-family: 'Sam3KRFont';
+            text-shadow: 1px 1px 1px #fff;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .quiz__confirm:hover {
+            background: #b3b3b3;
+        }
+
+        .quiz__result {
+            border: 6px ridge #cacaca;
+            text-align: center;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: rgb(255, 255, 255);
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            display: none;
+        }
+
+        .quiz__input {
+            border: 6px ridge #cacaca;
+            text-align: center;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: rgb(255, 255, 255);
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            margin-bottom: 10px;
+        }
+        header a.back:visited {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <a href="quizEffect.html" class="back"><h1>Quiz</h1></a>
+    </header>
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <h2 class="quiz__type">HTML 퀴즈</h2>
+                <h3 class="quiz__question">
+                    <span class="quiz__number"></span>
+                    <span class="quiz__ask"></span>
+                </h3>
+                <div class="quiz__view">
+                    <div class="dog">
+                        <div class='head'>
+                            <div class='ears'></div>
+                            <div class='face'></div>
+                            <div class='eyes'>
+                                <div class='teardrop'></div>
+                            </div>
+                            <div class='nose'></div>
+                            <div class='mouth'>
+                                <div class='tongue'></div>
+                            </div>
+                            <div class='chin'></div>
+                        </div>
+                        <div class='body'>
+                            <div class='tail'></div>
+                            <div class='legs'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <button class="quiz__confirm">정답 확인하기</button>
+                    <div class="quiz__result"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <a href="mailto:ohwehoh@naver.com">ohwehoh@naver.com</a>
+    </footer>
+</body>
+
+<script>
+    const quizType = document.querySelector(".quiz__type"); //퀴즈 종류
+    const quizNumber = document.querySelector(".quiz__number"); //퀴즈 번호
+    const quizAsk = document.querySelector(".quiz__ask"); //퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz__confirm"); //정답 확인 버튼
+    const quizResult = document.querySelector(".quiz__result"); //정답 결과
+    const quizDog = document.querySelector(".dog");     //강아지 애니메이션
+    //문제 정보 저장
+    const answerType = "HTML"
+    const answerNum = 1;
+    const answerAsk = "컨텐츠의 구조를 정의하는 마크업 언어는 무엇일까요?";
+    const answerResult = "HTML";
+    //문제 출력, querySelector로 받은 태그들에 하나씩 입력해준다.
+    quizType.textContent = answerType;
+    quizNumber.textContent = answerNum + ". ";
+    quizAsk.textContent = answerAsk;
+    quizResult.textContent = answerResult;
+    //정답 확인버튼 클릭 이벤트
+    quizConfirm.addEventListener("click", () => {
+        quizConfirm.style.display = "none";     //클릭하면 확인 버튼 사라지게한다.
+        quizResult.style.display = "block";     //클릭하면 정답이 보이게 한다.
+        quizDog.classList.add("like");          //클래스 like 추가로 애니메이션을 입힌다.
+    })
+</script>
+
+</html>
