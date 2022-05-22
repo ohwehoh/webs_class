@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트</title>
+
+    <link rel="stylesheet" href="css/NexonLv1Gothic.css">
+    <link rel="stylesheet" href="css/dracula.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+        body::before {
+            background: rgba(48, 5, 70, 0.63);
+        }
+
+        #mouseType01 {}
+
+        .cursor {}
+
+        .mouse__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .mouse__wrap p {
+            font-size: 2.5vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 400;
+        }
+
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed orange;
+            color: orange;
+        }
+
+        .cursor {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 10px;
+            height: 10px;
+            z-index: 9999;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.2s;
+        }
+
+        .cursor-follower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.2s;
+        }
+
+        .cursor.active,.cursor.show {
+            transform: scale(0);
+        }
+
+        .cursor-follower.active {
+            transform: scale(10);
+            background: rgba(255, 0, 0, 0.6);
+        }
+
+        .cursor-follower.show {
+            transform: scale(7);
+            border-radius: 0;
+            background: rgba(111, 0, 255, 0.6);
+            cursor: none !important;
+        }
+    </style>
+</head>
+
+<body class="img08">
+    <!-- main -->
+    <main>
+        <section id="mouseType02">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+
+            <div class="mouse__wrap">
+                <p>A person who can control <span>time</span> is a person who can control life.</p>
+                <p><span>시간</span>을 지배할 줄 아는 사람은 인생을 지배할줄 아는 사람이다.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="mounseEffect.html">Javascript Mouse Effect02</a></h1>
+            <p>마우스 이펙트 - 따라다니기2</p>
+        </div>
+    </div>
+        
+    <!-- script -->
+    <script>
+        const cursor = document.querySelector(".cursor");               //div.cursor
+        const follower = document.querySelector(".cursor-follower");    //div.cursor-follower,커서에 점 따라다니는 효과
+
+        window.addEventListener("mousemove", e => {         //마우스 움직일 때 마다
+            //커서 좌표값 할당
+
+            gsap.to(cursor, {           //gsap으로 부드러운 애니메이션 효과
+                duration: .3,
+                left: e.pageX - 5,      //커서 가운데로 오게 한다.(div.cursor의 반 값을 뺌)
+                top: e.pageY - 5
+            })
+            gsap.to(follower, {
+                duration: .8,           //div.cursor보다 느리게 움직이게 해서 따라다니는 효과
+                left: e.pageX - 15,     //커서 가운데로 오게 한다.(div.cursor-follower의 반 값을 뺌)
+                top: e.pageY - 15
+            })
+        });
+
+        //오버 효과
+        //mouseover,mouseenter / mouseout,mouseleave
+        document.querySelectorAll(".mouse__wrap p span").forEach(span => {
+            //span에 오버 했을 때 클래스 active 추가
+            span.addEventListener("mouseenter", () => {
+                cursor.classList.add("active");
+                follower.classList.add("active");
+            });
+            //span에 나갔을 때 클래스 active 삭제
+            span.addEventListener("mouseleave", () => {
+                cursor.classList.remove("active");
+                follower.classList.remove("active");
+            });
+        })
+
+        //.info 영역에서의 마우스효과
+        document.querySelector(".info").addEventListener("mouseover", () => {
+            cursor.classList.add("show");
+            follower.classList.add("show");
+        })
+        document.querySelector(".info").addEventListener("mouseout", () => {
+            cursor.classList.remove("show");
+            follower.classList.remove("show");
+        })
+    </script>
+
+</body>
+
+</html>

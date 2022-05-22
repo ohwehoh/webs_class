@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트</title>
+
+    <link rel="stylesheet" href="css/NexonLv1Gothic.css">
+    <link rel="stylesheet" href="css/dracula.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+        body::before {
+            background: rgba(48, 5, 70, 0.63);
+        }
+
+        #mouseType01 {}
+
+        .cursor {}
+
+        .mouse__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .mouse__wrap p {
+            font-size: 2.5vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 400;
+        }
+
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed #fff;
+        }
+
+        .cursor {
+            position: absolute;
+            left: -100px;
+            top: -100px;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            pointer-events: none;
+            transition:
+                background-color .2s,
+                border-color .2s,
+                border-radius .2s,
+                transform .6s;
+        }
+
+        .cursor.style1 {
+            background-color: rgba(255, 165, 0, 0.4);
+            border-color: orange;
+        }
+
+        .cursor.style2 {
+            background-color: rgba(140, 0, 255, 0.4);
+            border-color: rgb(140, 0, 255);
+            transform: rotate(720deg) scale(2)
+        }
+
+        .cursor.style3 {
+            background-color: rgb(0, 47, 255, 0.4);
+            border-color: rgb(0, 47, 255);
+            transform: scale(1.5) rotate(45deg);
+            border-radius: 10px;
+        }
+
+        .cursor.style4 {
+            background-color: rgb(121, 235, 197, 0.4);
+            border-color: rgb(121, 235, 197);
+            transform: scale(10) rotateY(360deg);
+        }
+
+        .cursor.style5 {
+            background-color: rgb(255, 0, 85, 0.4);
+            border-color: rgb(255, 0, 85);
+            transform: rotateY(720deg) scale(0.1);
+        }
+
+        .cursor.style6 {
+            background-color: rgba(229, 255, 0, 0.4);
+            border-color: rgb(229, 255, 0);
+            transform: rotateY(1080deg) scale(3);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body class="img08">
+    <!-- main -->
+    <main>
+        <section id="mouseType01">
+            <div class="cursor"></div>
+            <div class="mouse__wrap">
+                <p><span class="style1">Regret</span> for <span class="style2">wasted</span> time is more <span
+                        class="style3">wasted</span> time.</p>
+                <p><span class="style4">낭비</span>한 시간에 대한 <span class="style5">후회</span>는 더 큰 시간 <span
+                        class="style6">낭비</span>이다.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="mounseEffect.html">Javascript Mouse Effect01</a></h1>
+            <p>마우스 이펙트 - 따라다니기</p>
+        </div>
+    </div>
+    
+    <!-- script -->
+    <script>
+        //마우스 움직이기
+        window.addEventListener("mousemove", (e) => { //해당 div(class=".cursor")가 마우스를 따라 좌표값이 바뀌면서 따라다니는 효과가 난다.
+            document.querySelector(".cursor").style.left = e.clientX - 25 + "px"; //마우스의 수직 좌표 위치를 .cursor의 left값으로 설정..가운데로오게함
+            document.querySelector(".cursor").style.top = e.clientY - 25 + "px"; //마우스의 수평 좌표 위치를 .cursor의 top값으로 설정..가운데로오게함
+
+        });
+
+        //getAttribute
+        //span 마우스 오버 했을 대 속성값을 alert()
+        document.querySelectorAll(".mouse__wrap p span").forEach((span) => {
+            let attr = span.getAttribute("class");
+            span.addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add(attr); //.cursor에 style 클래스 추가
+            });
+            span.addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove(attr); //.cursor에 style 클래스 추가
+            });
+        });
+    </script>
+
+</body>
+
+</html>
