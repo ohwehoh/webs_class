@@ -97,8 +97,8 @@
     <!-- main -->
     <main>
         <section id="mouseType02">
-            <div class="cursor"></div>
-            <div class="cursor-follower"></div>
+            <div class="cursor2"></div>
+            <div class="cursor-follower2"></div>
 
             <div class="mouse__wrap">
                 <p>A person who can control <span>time</span> is a person who can control life.</p>
@@ -119,25 +119,21 @@
     <!-- script -->
     <script src="js/gsap.min.js"></script>
     <script>
-                const cursor = document.querySelector(".cursor");               //div.cursor
-        const follower = document.querySelector(".cursor-follower");    //div.cursor-follower,커서에 점 따라다니는 효과
+        const cursor2 = document.querySelector(".cursor2");               //div.cursor
+        const follower2 = document.querySelector(".cursor-follower2");    //div.cursor-follower,커서에 점 따라다니는 효과
 
         window.addEventListener("mousemove", e => {         //마우스 움직일 때 마다
             //커서 좌표값 할당
-            gsap.to(cursor, {           //gsap으로 부드러운 애니메이션 효과
+            gsap.to(cursor2, {           //gsap으로 부드러운 애니메이션 효과
                 duration: .3,
                 left: e.pageX - 5,      //커서 가운데로 오게 한다.(div.cursor의 반 값을 뺌)
                 top: e.pageY - 5
             })
-            gsap.to(follower, {
+            gsap.to(follower2, {
                 duration: .8,           //div.cursor보다 느리게 움직이게 해서 따라다니는 효과
                 left: e.pageX - 15,     //커서 가운데로 오게 한다.(div.cursor-follower의 반 값을 뺌)
                 top: e.pageY - 15
             })
-
-            //출력
-            document.querySelector(".pageX").innerText = e.pageX; //전체 문서를 기준으로 수평 좌표
-            document.querySelector(".pageY").innerText = e.pageY; //전체 문서를 기준으로 수직 좌표
         });
 
         //오버 효과
@@ -145,24 +141,24 @@
         document.querySelectorAll(".mouse__wrap p span").forEach(span => {
             //span에 오버 했을 때 클래스 active 추가
             span.addEventListener("mouseenter", () => {
-                cursor.classList.add("active");
-                follower.classList.add("active");
+                cursor2.classList.add("active");
+                follower2.classList.add("active");
             });
             //span에 나갔을 때 클래스 active 삭제
             span.addEventListener("mouseleave", () => {
-                cursor.classList.remove("active");
-                follower.classList.remove("active");
+                cursor2.classList.remove("active");
+                follower2.classList.remove("active");
             });
         })
 
         //.info 영역에서의 마우스효과
         document.querySelector(".info").addEventListener("mouseover", () => {
-            cursor.classList.add("show");
-            follower.classList.add("show");
+            cursor2.classList.add("show");
+            follower2.classList.add("show");
         })
         document.querySelector(".info").addEventListener("mouseout", () => {
-            cursor.classList.remove("show");
-            follower.classList.remove("show");
+            cursor2.classList.remove("show");
+            follower2.classList.remove("show");
         })
     </script>
 
