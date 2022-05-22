@@ -1,147 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/bg.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/bg.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header id="header">
-        <h2 class="title">GAME__WORLD</h2>
-        <span class="now"></span>
+      <h2 class="title">GAME__WORLD</h2>
+      <span class="now"></span>
     </header>
     <main id="main">
+      <!-- 커서 -->
+      <div class="cursor">
+        <img src="assets/img/pointer.svg" alt="마우스커서" />
+      </div>
+      <!-- //커서 -->
 
-        <!-- 커서 -->
-        <div class="cursor">
-            <img src="assets/img/pointer.svg" alt="마우스커서">
+      <!-- 타이핑게임 -->
+      <div class="game__wrap typing_w">
+        <div class="game__icon typing">
+          <img
+            src="assets/img/heavyblackheart-light.svg"
+            alt="typingGame_icon"
+          />
         </div>
-        <!-- //커서 -->
+        <div class="name">TYPING GAME</div>
+      </div>
+      <div class="typing_window">
+        <iframe
+          src="../javascript/typingGame/index.html"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <!-- //타이핑게임-->
 
-        <!-- 타이핑게임 -->
-        <div class="game__wrap typing_w">
-            <div class="game__icon typing">
-                <img src="assets/img/heavyblackheart-light.svg" alt="typingGame_icon">
-            </div>
-            <div class="name">TYPING GAME</div>
+      <!-- 메모리게임 -->
+      <div class="game__wrap memory_w">
+        <div class="game__icon memory">
+          <img src="assets/img/tigerface-light.svg" alt="memoryGame_icon" />
         </div>
-        <div class="typing_window">
-            <iframe src="../javascript/typingGame/index.html" frameborder="0"></iframe>
-        </div>
-        <!-- //타이핑게임-->
+        <div class="name">MEMORY GAME</div>
+      </div>
+      <div class="memoryBox">
+        <iframe
+          src="../javascript/memoryGame/index2.html"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <!-- //메모리게임 -->
 
-        <!-- 메모리게임 -->
-        <div class="game__wrap memory_w">
-            <div class="game__icon memory">
-                <img src="assets/img/tigerface-light.svg" alt="memoryGame_icon">
-            </div>
-            <div class="name">MEMORY GAME</div>
+      <!-- 뮤직 -->
+      <div class="game__wrap music_w">
+        <div class="game__icon music_icon">
+          <img src="assets/img/guitar-light.svg" alt="music_icon" />
         </div>
-        <div class="memoryBox">
-            <iframe src="../javascript/memoryGame/index2.html" frameborder="0"></iframe>
-        </div>
-        <!-- //메모리게임 -->
+        <div class="name">MUSIC</div>
+      </div>
+      <div class="music_window">
+        <iframe
+          src="../javascript/musicPlayer/index.html"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <!-- //뮤직 -->
 
-        <!-- 뮤직 -->
-        <div class="game__wrap music_w">
-            <div class="game__icon music_icon">
-                <img src="assets/img/guitar-light.svg" alt="music_icon">
-            </div>
-            <div class="name">MUSIC</div>
+      <!-- 리액트 -->
+      <div class="game__wrap react_w">
+        <div class="game__icon react_icon">
+          <img src="assets/img/hotbeverage-light.svg" alt="react_icon" />
         </div>
-        <div class="music_window">
-            <iframe src="../javascript/musicPlayer/index.html" frameborder="0"></iframe>
-        </div>
-        <!-- //뮤직 -->
+        <div class="name">REACT</div>
+      </div>
 
-        <!-- 리액트 -->
-        <div class="game__wrap react_w">
-            <div class="game__icon react_icon">
-                <img src="assets/img/hotbeverage-light.svg" alt="react_icon">
-            </div>
-            <div class="name">REACT</div>
+      <!-- 테트리스 -->
+      <div class="game__wrap tetris_w">
+        <div class="game__icon music_icon">
+          <img src="assets/img/guitar-light.svg" alt="music_icon" />
         </div>
-
-        <!-- 테트리스 -->
-        <div class="game__wrap tetris_w">
-            <div class="game__icon music_icon">
-                <img src="assets/img/guitar-light.svg" alt="music_icon">
-            </div>
-            <div class="name">MUSIC</div>
-        </div>
-        <div class="music_window">
-            <iframe src="../javascript/musicPlayer/index.html" frameborder="0"></iframe>
-        </div>
-
+        <div class="name">TETRIS</div>
+      </div>
+      <div class="tetris_window">
+        <iframe src="../javascript/tetris/index.html" frameborder="0"></iframe>
+      </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../javascript/effect/js/gsap.min.js"></script>
     <script>
-        //icon
-        $(".game__wrap").draggable();
+      //icon
+      $(".game__wrap").draggable();
 
-        $(".typing_w").click(function(){
-            $(".memoryBox").removeClass("show");
-            $(".typing_window").toggleClass("show");
-        });
+      $(".typing_w").click(function () {
+        $(".memoryBox").removeClass("show");
+        $(".tetris_window").removeClass("show");
+        $(".typing_window").toggleClass("show");
+      });
 
-        $(".memory_w").click(function(){
-            $(".memoryBox").toggleClass("show");
-            $(".typing_window").removeClass("show");
-        });
+      $(".memory_w").click(function () {
+        $(".memoryBox").toggleClass("show");
+        $(".tetris_window").toggleClass("show");
+        $(".typing_window").removeClass("show");
+      });
 
-        $(".music_w").click(function(){
-            $(".music_window").toggleClass("show");
-        });
+      $(".tetris_w").click(function () {
+        $(".memoryBox").removeClass("show");
+        $(".typing_window").removeClass("show");
+        $(".tetris_window").toggleClass("show");
+      });
 
-        $(".react_w").click(function(){
-            window.open("https://wwoo.netlify.app");
-        });
-        //
+      $(".music_w").click(function () {
+        $(".music_window").toggleClass("show");
+      });
 
-        //창띄우기
-        const music = document.querySelector(".music_w");
-        const musicWindow = music.querySelector(".music_window");
+      $(".react_w").click(function () {
+        window.open("https://wwoo.netlify.app");
+      });
+      //
 
-        music.addEventListener("click", () => {
-            musicWindow.classList.toggle("show");
-        })
-        //
+      //창띄우기
+      const music = document.querySelector(".music_w");
+      const musicWindow = music.querySelector(".music_window");
 
-        //커서
+      music.addEventListener("click", () => {
+        musicWindow.classList.toggle("show");
+      });
+      //
 
-        //div.cursor의 속성값 저장
-        // const cursor = document.querySelector(".cursor img").getBoundingClientRect();
+      //커서
 
-        window.addEventListener("mousemove", (e) => {
-            //div.cursor의 위치를 pageX,pageY로 받은 값에서 div.cursor의 크기 절반 값을 빼서 정 가운데로 위치시키게한다.
-            gsap.to(".cursor", {duration: .2, left: e.pageX, top: e.pageY});
-        });
-        
+      //div.cursor의 속성값 저장
+      // const cursor = document.querySelector(".cursor img").getBoundingClientRect();
 
-        //현재시간 출력
-        function printTime(){
-            var clock = document.querySelector(".now");
-            var now = new Date();
-            var nowTime = now.getFullYear() + "년 " + (now.getMonth()+1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
-            clock.innerText = nowTime;
-            setTimeout("printTime()",1000);
-        }
+      window.addEventListener("mousemove", (e) => {
+        //div.cursor의 위치를 pageX,pageY로 받은 값에서 div.cursor의 크기 절반 값을 빼서 정 가운데로 위치시키게한다.
+        gsap.to(".cursor", { duration: 0.2, left: e.pageX, top: e.pageY });
+      });
 
-        window.onload = function(){
-            printTime();
-        }
-        //
+      //현재시간 출력
+      function printTime() {
+        var clock = document.querySelector(".now");
+        var now = new Date();
+        var nowTime =
+          now.getFullYear() +
+          "년 " +
+          (now.getMonth() + 1) +
+          "월 " +
+          now.getDate() +
+          "일 " +
+          now.getHours() +
+          "시 " +
+          now.getMinutes() +
+          "분 " +
+          now.getSeconds() +
+          "초";
+        clock.innerText = nowTime;
+        setTimeout("printTime()", 1000);
+      }
+
+      window.onload = function () {
+        printTime();
+      };
+      //
     </script>
-</body>
-
+  </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>코테0509 - 신규 아이디 추천</title>
 </head>
 <body>
     <script>
@@ -18,11 +18,11 @@
         new_id = new_id.replace(/[.]+/g,".");
         console.log(new_id);
         if(new_id.charAt()=="."){
-            new_id = new_id.replace(/^./,"");
+            new_id = new_id.slice(1);
             console.log(new_id);
         }
         if(new_id.charAt(new_id.length-1)=="."){
-            new_id = new_id.replace(/.$/,"");
+            new_id = new_id.slice(0,length-1);
             console.log(new_id);
         }
         console.log(new_id);
@@ -33,19 +33,18 @@
         if(new_id.length >= 16){
             new_id = new_id.substr(0,15);
             console.log(new_id);
+            if(new_id.charAt(new_id.length-1)=="."){
+                new_id = new_id.slice(0,length-1);
+            }
         }
         if(new_id.length <= 2){
             new_id = new_id.padEnd(3,new_id.charAt(new_id.length-1));
             console.log(new_id);
         }
-        if(new_id.charAt()=="."){
-            new_id = new_id.replace(/^./,"");
-            console.log(new_id);
-        }
-        if(new_id.charAt(new_id.length-1)=="."){
-            new_id = new_id.replace(/.$/,"");
-            console.log(new_id);
-        }
+        // if(new_id.charAt(new_id.length-1)=="."){
+        //     new_id = new_id.replace(/.$/,"");
+        //     console.log(new_id);
+        // }
         answer = new_id;
         console.log(answer);
     </script>

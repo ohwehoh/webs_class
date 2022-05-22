@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>신고 결과 받기</title>
+</head>
+
+<body>
+    <script>
+        function solution(id_list, report, k) {
+            var answer = [];
+            var reportId = [];
+
+            //reportId의 0번 인덱스는 신고자고 그 뒤의 인덱스는 피신고자
+            report.forEach(el => {
+                var inNew = true;
+                reportId.forEach(re => {
+                    if (re[0] == el.split(" ")[0]) {
+                        if (!re.includes(el.split(" ")[1])) {
+                            re.push(el.split(" ")[1]);
+                        }
+                        inNew = false;
+                    }
+                })
+                if (inNew) {
+                    reportId.push([el.split(" ")[0], el.split(" ")[1]]);
+                }
+            });
+
+            reportId.forEach((el, i) => {
+                var reCount = 0;
+                for (var x = 1; x < el.length; x++) {
+                    for (var j = i + 1; j < reportId.length; j++) {
+                        for (var k = 1; k < reportId[j].length; k++) {
+                            if (reportId[j].includes(el[x])){
+                                reCount++;
+                            }
+                        }
+                    }
+                }
+                console.log(reCount);
+
+            });
+
+            console.log(reportId);
+            return answer;
+        }
+
+        const id_list = ["muzi", "frodo", "apeach", "neo"];
+        const report = ["muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"];
+        const k = 3;
+
+        solution(id_list, report, k)
+    </script>
+</body>
+
+</html>
